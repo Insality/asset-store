@@ -5,7 +5,7 @@
 
 # Disclaimer
 
-The repository in **development stage** and not ready to use. But if you interested in the project, you can inspect what I'm building here :)
+The repository in **development stage** and not fully ready. But if you interested in the project, you can inspect what I'm building here :)
 
 # Asset Store
 
