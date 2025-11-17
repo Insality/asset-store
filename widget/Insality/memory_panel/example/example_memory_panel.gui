@@ -4,10 +4,6 @@ nodes {
     x: 960.0
     y: 540.0
   }
-  scale {
-    x: 3.0
-    y: 3.0
-  }
   type: TYPE_TEMPLATE
   id: "memory_panel"
   inherit_alpha: true
