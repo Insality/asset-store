@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "err",
+	"title": "Err",
+	"description": "Error logging helper.",
+	"tags": [
+		"System"
+	],
+	"stars": 4,
+	"content": [
+		"https://github.com/subsoap/err/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/err",
+	"author_url": "https://github.com/subsoap",
+	"image": "err-thumb.jpg"
+}

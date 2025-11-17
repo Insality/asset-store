@@ -1,0 +1,22 @@
+{
+	"author": "Defold",
+	"id": "crazygames",
+	"title": "CrazyGames SDK",
+	"description": "CrazyGames SDK native extension for Defold game engine",
+	"tags": [
+		"Ads",
+		"Platform",
+		"Social",
+		"System"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.1.0.zip",
+		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.1.1.zip",
+		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.2.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-crazygames",
+	"author_url": "https://github.com/defold",
+	"image": "crazygames-thumb.jpg"
+}

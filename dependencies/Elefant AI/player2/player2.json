@@ -1,0 +1,16 @@
+{
+	"author": "Elefant AI",
+	"id": "player2",
+	"title": "Player 2 AI NPC Plugin for Defold",
+	"description": "The Official Player2 AI NPC Plugin for Defold. The Player 2 AI NPC Defold plugin allows developers to easily create AI NPCs in their Defold projects.",
+	"tags": [
+		"ai"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/elefant-ai/player2-ai-npc-defold/archive/master.zip"
+	],
+	"example_code": "https://github.com/elefant-ai/player2-ai-npc-defold",
+	"author_url": "https://github.com/elefant-ai",
+	"image": "player2-thumb.jpg"
+}

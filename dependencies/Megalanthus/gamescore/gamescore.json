@@ -1,0 +1,28 @@
+{
+	"author": "Megalanthus",
+	"id": "gamescore",
+	"title": "GamePush",
+	"description": "GamePush (previously GameScore) is the GamePush SDK implementation for the Defold game engine.",
+	"tags": [
+		"achievements",
+		"ads",
+		"analytics",
+		"monetization",
+		"platform",
+		"social"
+	],
+	"stars": 11,
+	"content": [
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.1.0.zip",
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.1.1.zip",
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.1.2.zip",
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.1.3.zip",
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.1.4.zip",
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.1.5.zip",
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.2.0.zip",
+		"https://github.com/megalanthus/defold-gamepush/archive/refs/tags/v1.2.1.zip"
+	],
+	"example_code": "https://github.com/megalanthus/defold-gamepush",
+	"author_url": "https://github.com/megalanthus",
+	"image": "https://github.com/megalanthus/defold-gamepush/raw/master/gp-logo-thumbnail.png"
+}

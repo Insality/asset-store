@@ -1,0 +1,18 @@
+{
+	"author": "Insality",
+	"id": "memory_panel",
+	"version": 1,
+	"depends": [ "Insality:mini_graph@1" ],
+	"title": "Memory Panel",
+	"description": "Shows current memory usage and graph of the last 3 seconds of performance",
+	"image": "memory_panel.png",
+	"api": "memory_panel.md",
+	"example": "/widget/Insality/memory_panel/example/example_memory_panel.collection",
+	"example_code": "/widget/Insality/memory_panel/example/example_memory_panel.gui_script",
+	"author_url": "https://github.com/Insality",
+	"tags": ["debug", "system"],
+	"content": [
+		"memory_panel.gui",
+		"memory_panel.lua"
+	]
+}

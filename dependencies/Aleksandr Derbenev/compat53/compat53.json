@@ -1,0 +1,17 @@
+{
+	"author": "Aleksandr Derbenev",
+	"id": "compat53",
+	"title": "compat-5.3",
+	"description": "This is a small module that aims to make it easier to write code in a Lua-5.3-style. This does not make Lua 5.2 (or even Lua 5.1) entirely compatible with Lua 5.3, but it brings the API closer to that of Lua 5.3.",
+	"tags": [
+		"util",
+		"Lua"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/alex-ac/defold-compat-5.3/archive/refs/tags/v1.0.0.zip"
+	],
+	"example_code": "https://github.com/alex-ac/defold-compat-5.3",
+	"author_url": "https://github.com/alex-ac",
+	"image": "compat53-thumb.jpg"
+}

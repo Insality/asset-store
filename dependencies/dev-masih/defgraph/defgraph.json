@@ -1,0 +1,22 @@
+{
+	"author": "dev-masih",
+	"id": "defgraph",
+	"title": "DefGraph",
+	"description": "This module contains functions to create a world map as a shape of a graph and the ability to manipulate it at any time, easily see debug drawing of this graph and move game objects inside of this graph with utilizing auto pathfinder.",
+	"tags": [
+		"AI",
+		"Math"
+	],
+	"stars": 42,
+	"content": [
+		"https://github.com/dev-masih/defgraph/archive/refs/tags/v1.zip",
+		"https://github.com/dev-masih/defgraph/archive/refs/tags/v2.zip",
+		"https://github.com/dev-masih/defgraph/archive/refs/tags/V3.zip",
+		"https://github.com/dev-masih/defgraph/archive/refs/tags/V3.1.zip",
+		"https://github.com/dev-masih/defgraph/archive/refs/tags/V4.zip",
+		"https://github.com/dev-masih/defgraph/archive/refs/tags/V4.1.zip"
+	],
+	"example_code": "https://github.com/dev-masih/defgraph",
+	"author_url": "https://github.com/dev-masih",
+	"image": "defgraph-thumb.jpg"
+}

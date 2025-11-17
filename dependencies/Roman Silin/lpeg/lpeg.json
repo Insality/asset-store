@@ -1,0 +1,20 @@
+{
+	"author": "Roman Silin",
+	"id": "lpeg",
+	"title": "LPeg",
+	"description": "LPeg is a pattern-matching library by Roberto Ierusalimschy based on Parsing Expression Grammars (PEGs).",
+	"tags": [
+		"util"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/astrochili/defold-lpeg/archive/refs/tags/1.0.zip",
+		"https://github.com/astrochili/defold-lpeg/archive/refs/tags/1.0.1.zip",
+		"https://github.com/astrochili/defold-lpeg/archive/refs/tags/1.0.2.zip",
+		"https://github.com/astrochili/defold-lpeg/archive/refs/tags/1.0.3.zip",
+		"https://github.com/astrochili/defold-lpeg/archive/refs/tags/1.0.4.zip"
+	],
+	"example_code": "https://github.com/astrochili/defold-lpeg",
+	"author_url": "https://github.com/astrochili",
+	"image": "lpeg-thumb.jpg"
+}

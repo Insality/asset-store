@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "defmath",
+	"title": "DefMath",
+	"description": "A set of math functions.",
+	"tags": [
+		"Math"
+	],
+	"stars": 25,
+	"content": [
+		"https://github.com/subsoap/defmath/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/defmath",
+	"author_url": "https://github.com/subsoap",
+	"image": "defmath-thumb.jpg"
+}

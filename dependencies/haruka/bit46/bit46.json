@@ -1,0 +1,18 @@
+{
+	"author": "haruka",
+	"id": "bit46",
+	"title": "bit46",
+	"description": "bit46 is a module for 46bit bitwise operations.",
+	"tags": [
+		"Math"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/wmc7n/bit46/archive/refs/tags/1.0.0.zip",
+		"https://github.com/wmc7n/bit46/archive/refs/tags/1.0.1.zip",
+		"https://github.com/wmc7n/bit46/archive/refs/tags/1.0.2.zip"
+	],
+	"example_code": "https://github.com/wmc7n/bit46",
+	"author_url": "https://github.com/wmc7n",
+	"image": "bit46-thumb.jpg"
+}

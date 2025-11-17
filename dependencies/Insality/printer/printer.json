@@ -1,0 +1,19 @@
+{
+	"author": "Insality",
+	"id": "printer",
+	"title": "Printer",
+	"description": "A symbol-by-symbol text writer for rich game dialogs.",
+	"tags": [
+		"Fonts",
+		"GUI"
+	],
+	"stars": 54,
+	"content": [
+		"https://github.com/Insality/defold-printer/archive/refs/tags/1.0.0.zip",
+		"https://github.com/Insality/defold-printer/archive/refs/tags/1.1.0.zip",
+		"https://github.com/Insality/defold-printer/archive/refs/tags/1.2.0.zip"
+	],
+	"example_code": "https://github.com/Insality/defold-printer",
+	"author_url": "https://github.com/Insality",
+	"image": "printer-thumb.jpg"
+}

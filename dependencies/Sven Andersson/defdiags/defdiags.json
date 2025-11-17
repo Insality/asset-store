@@ -1,0 +1,16 @@
+{
+	"author": "Sven Andersson",
+	"id": "defdiags",
+	"title": "Def-Diags",
+	"description": "Simpe cross-platform (OSX, Windows, Linux) native open and save dialogs.",
+	"tags": [
+		"Input"
+	],
+	"stars": 14,
+	"content": [
+		"https://github.com/andsve/def-diags/archive/master.zip"
+	],
+	"example_code": "https://github.com/andsve/def-diags",
+	"author_url": "https://github.com/andsve",
+	"image": "defdiags-thumb.jpg"
+}

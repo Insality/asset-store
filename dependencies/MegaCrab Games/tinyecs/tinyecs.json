@@ -1,0 +1,17 @@
+{
+	"author": "MegaCrab Games",
+	"id": "tinyecs",
+	"title": "Defold Tiny ECS",
+	"description": "The Tiny ECS library packaged as a Defold library.",
+	"tags": [
+		"lua",
+		"system"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/ivanquirino/defold-tiny-ecs/archive/refs/tags/1.3-3.zip"
+	],
+	"example_code": "https://github.com/ivanquirino/defold-tiny-ecs",
+	"author_url": "https://github.com/ivanquirino",
+	"image": "tinyecs-thumb.png"
+}

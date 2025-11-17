@@ -1,0 +1,47 @@
+[bootstrap]
+main_collection = /widget/Insality/external_image/example/example_external_image.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+height = 1080
+high_dpi = 1
+width = 1920
+
+[android]
+input_method = HiddenInputField
+
+[html5]
+cssfile = /builtins/manifests/web/dark_theme.css
+scale_mode = stretch
+show_fullscreen_button = 0
+show_made_with_defold = 0
+
+[project]
+developer = Insality
+title = Defold Asset Store
+version = 1.0
+dependencies#0 = https://github.com/Insality/decore/archive/refs/tags/2.zip
+dependencies#1 = https://github.com/subsoap/defos/archive/refs/tags/v2.8.3.zip
+dependencies#2 = https://github.com/Insality/defold-event/archive/refs/tags/13.zip
+dependencies#3 = https://github.com/Insality/druid/archive/refs/tags/1.1.6.zip
+
+[input]
+game_binding = /builtins/input/all.input_bindingc
+use_accelerometer = 0
+
+[model]
+max_count = 128
+
+[native_extension]
+app_manifest = /scripts/core.appmanifest
+
+[render]
+clear_color_blue = 0.16
+clear_color_green = 0.14
+clear_color_red = 0.13
+
+[library]
+include_dirs = asset_store
+

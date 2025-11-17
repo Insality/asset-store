@@ -1,0 +1,59 @@
+script: "/widget/Insality/mini_graph/example/example_mini_graph.gui_script"
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  scale {
+    x: 3.0
+    y: 3.0
+  }
+  type: TYPE_TEMPLATE
+  id: "mini_graph"
+  inherit_alpha: true
+  template: "/widget/Insality/mini_graph/mini_graph.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "mini_graph/root"
+  parent: "mini_graph"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "mini_graph/header"
+  parent: "mini_graph/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "mini_graph/text_header"
+  parent: "mini_graph/header"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "mini_graph/icon_drag"
+  parent: "mini_graph/header"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "mini_graph/content"
+  parent: "mini_graph/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "mini_graph/prefab_line"
+  parent: "mini_graph/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "mini_graph/color_low"
+  parent: "mini_graph/content"
+  template_node_child: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

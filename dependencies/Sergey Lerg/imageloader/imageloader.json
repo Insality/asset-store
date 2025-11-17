@@ -1,0 +1,16 @@
+{
+	"author": "Sergey Lerg",
+	"id": "imageloader",
+	"title": "Image Loader",
+	"description": "Loads JPG, PNG and other images efficiently into Buffer object.",
+	"tags": [
+		"System"
+	],
+	"stars": 20,
+	"content": [
+		"https://github.com/Lerg/extension-imageloader/archive/master.zip"
+	],
+	"example_code": "https://github.com/Lerg/extension-imageloader",
+	"author_url": "https://github.com/Lerg",
+	"image": "imageloader-thumb.png"
+}

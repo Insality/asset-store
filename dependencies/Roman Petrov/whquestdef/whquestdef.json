@@ -1,0 +1,16 @@
+{
+	"author": "Roman Petrov",
+	"id": "whquestdef",
+	"title": "whQuestDef",
+	"description": "A little helper library for quest games.",
+	"tags": [
+		"Game mechanic"
+	],
+	"stars": 11,
+	"content": [
+		"https://github.com/Megus/whdefquest/archive/1.0.0.zip"
+	],
+	"example_code": "https://github.com/Megus/whdefquest",
+	"author_url": "https://github.com/Megus",
+	"image": "whquestdef-thumb.jpg"
+}

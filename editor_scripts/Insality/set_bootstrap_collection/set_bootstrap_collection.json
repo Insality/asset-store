@@ -1,0 +1,12 @@
+{
+	"author": "Insality",
+	"id": "set_bootstrap_collection",
+	"version": 1,
+	"title": "Set Bootstrap Collection",
+	"description": "Editor script to set a collection as the bootstrap collection with context menu in the editor",
+	"author_url": "https://github.com/Insality",
+	"tags": ["utility"],
+	"content": [
+		"set_bootstrap_collection.editor_script"
+	]
+}

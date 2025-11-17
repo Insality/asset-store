@@ -1,0 +1,18 @@
+{
+	"author": "Björn Ritzl",
+	"id": "imp",
+	"title": "Imp",
+	"description": "Image processing via convolution between a kernel and the image.",
+	"tags": [
+		"Math",
+		"Rendering"
+	],
+	"stars": 4,
+	"content": [
+		"https://github.com/britzl/defold-imp/archive/refs/tags/1.0.zip",
+		"https://github.com/britzl/defold-imp/archive/refs/tags/1.1.0.zip"
+	],
+	"example_code": "https://github.com/britzl/defold-imp",
+	"author_url": "https://github.com/britzl",
+	"image": "imp-thumb.jpg"
+}

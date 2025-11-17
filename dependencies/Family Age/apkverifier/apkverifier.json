@@ -1,0 +1,16 @@
+{
+	"author": "Family Age",
+	"id": "apkverifier",
+	"title": "APK Verifier",
+	"description": "This Extension allows check APK install source (Google play or not) and get APK bundle id to compare with project bundle id (case, when APK is hacked)",
+	"tags": [
+		"System"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/Melsoft-Games/defold-apk_verifier/archive/master.zip"
+	],
+	"example_code": "https://github.com/Melsoft-Games/defold-apk_verifier",
+	"author_url": "https://github.com/Melsoft-Games",
+	"image": "apkverifier-thumb.jpg"
+}

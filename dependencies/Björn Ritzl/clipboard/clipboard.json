@@ -1,0 +1,19 @@
+{
+	"author": "Björn Ritzl",
+	"id": "clipboard",
+	"title": "Clipboard",
+	"description": "Clipboard access to enable copy / paste operations.",
+	"tags": [
+		"System"
+	],
+	"stars": 19,
+	"content": [
+		"https://github.com/britzl/defold-clipboard/archive/refs/tags/1.1.zip",
+		"https://github.com/britzl/defold-clipboard/archive/refs/tags/1.2.0.zip",
+		"https://github.com/britzl/defold-clipboard/archive/refs/tags/1.3.0.zip",
+		"https://github.com/britzl/defold-clipboard/archive/refs/tags/1.24.0.zip"
+	],
+	"example_code": "https://github.com/britzl/defold-clipboard",
+	"author_url": "https://github.com/britzl",
+	"image": "clipboard-thumb.jpg"
+}

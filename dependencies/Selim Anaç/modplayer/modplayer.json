@@ -1,0 +1,16 @@
+{
+	"author": "Selim Anaç",
+	"id": "modplayer",
+	"title": "MOD Player",
+	"description": "Chiptune player native extension.",
+	"tags": [
+		"Audio"
+	],
+	"stars": 12,
+	"content": [
+		"https://github.com/selimanac/defold-modplayer/archive/master.zip"
+	],
+	"example_code": "https://github.com/selimanac/defold-modplayer",
+	"author_url": "https://github.com/selimanac",
+	"image": "modplayer-thumb.jpg"
+}

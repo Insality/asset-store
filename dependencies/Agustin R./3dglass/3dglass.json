@@ -1,0 +1,19 @@
+{
+	"author": "Agustin R.",
+	"id": "3dglass",
+	"title": "3DGlass sample",
+	"description": "3d Glass rendering sample project",
+	"tags": [
+		"3D",
+		"rendering",
+		"model",
+		"glass"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/FlexYourBrain/sample_3dGlass_POP/archive/refs/heads/main.zip"
+	],
+	"example_code": "https://github.com/FlexYourBrain/sample_3dGlass_POP",
+	"author_url": "https://github.com/FlexYourBrain",
+	"image": "3DGlass_thumb.jpg"
+}

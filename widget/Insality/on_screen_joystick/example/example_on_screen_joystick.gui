@@ -1,0 +1,197 @@
+script: "/widget/Insality/on_screen_joystick/example/example_on_screen_joystick.gui_script"
+nodes {
+  position {
+    x: 356.0
+    y: 358.0
+  }
+  type: TYPE_TEMPLATE
+  id: "on_screen_joystick"
+  inherit_alpha: true
+  template: "/widget/Insality/on_screen_joystick/on_screen_joystick.gui"
+}
+nodes {
+  position {
+    y: 218.0
+  }
+  size {
+    x: 1300.0
+    y: 1300.0
+  }
+  type: TYPE_BOX
+  id: "on_screen_joystick/root"
+  parent: "on_screen_joystick"
+  overridden_fields: 1
+  overridden_fields: 4
+  template_node_child: true
+}
+nodes {
+  position {
+    x: -193.0
+    y: -422.0
+  }
+  type: TYPE_BOX
+  id: "on_screen_joystick/content"
+  parent: "on_screen_joystick/root"
+  overridden_fields: 1
+  template_node_child: true
+}
+nodes {
+  type: TYPE_PIE
+  id: "on_screen_joystick/background_mask"
+  parent: "on_screen_joystick/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/background"
+  parent: "on_screen_joystick/background_mask"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/stick_root"
+  parent: "on_screen_joystick/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/stick_shadow"
+  parent: "on_screen_joystick/stick_root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/stick"
+  parent: "on_screen_joystick/stick_root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/dot_1"
+  parent: "on_screen_joystick/stick"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/dot_2"
+  parent: "on_screen_joystick/stick"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/dot_3"
+  parent: "on_screen_joystick/stick"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick/dot_4"
+  parent: "on_screen_joystick/stick"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 1667.0
+    y: 358.0
+  }
+  type: TYPE_TEMPLATE
+  id: "on_screen_joystick_2"
+  inherit_alpha: true
+  template: "/widget/Insality/on_screen_joystick/on_screen_joystick.gui"
+}
+nodes {
+  position {
+    y: 218.0
+  }
+  size {
+    x: 1300.0
+    y: 1300.0
+  }
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/root"
+  parent: "on_screen_joystick_2"
+  overridden_fields: 1
+  overridden_fields: 4
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 87.0
+    y: -415.0
+  }
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/content"
+  parent: "on_screen_joystick_2/root"
+  overridden_fields: 1
+  template_node_child: true
+}
+nodes {
+  type: TYPE_PIE
+  id: "on_screen_joystick_2/background_mask"
+  parent: "on_screen_joystick_2/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/background"
+  parent: "on_screen_joystick_2/background_mask"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/stick_root"
+  parent: "on_screen_joystick_2/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/stick_shadow"
+  parent: "on_screen_joystick_2/stick_root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/stick"
+  parent: "on_screen_joystick_2/stick_root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/dot_1"
+  parent: "on_screen_joystick_2/stick"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/dot_2"
+  parent: "on_screen_joystick_2/stick"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/dot_3"
+  parent: "on_screen_joystick_2/stick"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "on_screen_joystick_2/dot_4"
+  parent: "on_screen_joystick_2/stick"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  type: TYPE_BOX
+  id: "player"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

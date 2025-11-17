@@ -1,0 +1,17 @@
+{
+	"author": "Sven Andersson",
+	"id": "dirtylarry",
+	"title": "Dirty Larry",
+	"description": "A quick and dirty GUI library.",
+	"tags": [
+		"GUI",
+		"Input"
+	],
+	"stars": 74,
+	"content": [
+		"https://github.com/andsve/dirtylarry/archive/master.zip"
+	],
+	"example_code": "https://github.com/andsve/dirtylarry",
+	"author_url": "https://github.com/andsve",
+	"image": "dirtylarry-thumb.jpg"
+}

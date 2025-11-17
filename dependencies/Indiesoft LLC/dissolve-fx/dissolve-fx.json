@@ -1,0 +1,16 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "dissolve-fx",
+	"title": "Dissolve FX",
+	"description": "Dissolve effect for sprites.",
+	"tags": [
+		"Shaders"
+	],
+	"stars": 26,
+	"content": [
+		"https://github.com/indiesoftby/defold-dissolve-fx/archive/refs/tags/1.1.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-dissolve-fx",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-dissolve-fx/raw/main/cover_thumb.jpg"
+}

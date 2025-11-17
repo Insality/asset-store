@@ -1,0 +1,19 @@
+{
+	"author": "SkaterDad",
+	"id": "defvungle",
+	"title": "Def Vungle",
+	"description": "Vungle interstitial and rewarded video ads support for Android & Amazon.",
+	"tags": [
+		"Ads",
+		"Monetization"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/SkaterDad/defold-vungle/archive/refs/tags/1.0.0.zip",
+		"https://github.com/SkaterDad/defold-vungle/archive/refs/tags/1.1.0.zip",
+		"https://github.com/SkaterDad/defold-vungle/archive/refs/tags/1.2.0.zip"
+	],
+	"example_code": "https://github.com/SkaterDad/defold-vungle",
+	"author_url": "https://github.com/SkaterDad",
+	"image": "defvungle-thumb.jpg"
+}

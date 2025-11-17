@@ -1,0 +1,16 @@
+{
+	"author": "y444",
+	"id": "colorlib",
+	"title": "Color Lib",
+	"description": "Enable defining colors in a more traditional hex format. Has presets of all the named web colors. Allows to create your own named colors.",
+	"tags": [
+		"util"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/y444/defold-color-lib/archive/master.zip"
+	],
+	"example_code": "https://github.com/y444/defold-color-lib",
+	"author_url": "https://github.com/y444",
+	"image": "colorlib-thumb.jpg"
+}

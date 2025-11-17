@@ -1,0 +1,21 @@
+{
+	"author": "Jerakin",
+	"id": "editorscriptatlas",
+	"title": "editor-script-atlas",
+	"description": "Editor script to add images to an atlas as well as create a new one from selected images.",
+	"tags": [
+		"Editor script"
+	],
+	"stars": 17,
+	"content": [
+		"https://github.com/Jerakin/editor-script-atlas/archive/refs/tags/v0.1.0.zip",
+		"https://github.com/Jerakin/editor-script-atlas/archive/refs/tags/v1.0.0.zip",
+		"https://github.com/Jerakin/editor-script-atlas/archive/refs/tags/v1.1.0.zip",
+		"https://github.com/Jerakin/editor-script-atlas/archive/refs/tags/v2.0.0.zip",
+		"https://github.com/Jerakin/editor-script-atlas/archive/refs/tags/v2.0.1.zip",
+		"https://github.com/Jerakin/editor-script-atlas/archive/refs/tags/v3.0.0.zip"
+	],
+	"example_code": "https://github.com/Jerakin/editor-script-atlas",
+	"author_url": "https://github.com/Jerakin",
+	"image": "editor-script-atlas-thumb.jpg"
+}

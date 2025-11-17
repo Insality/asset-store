@@ -1,0 +1,10 @@
+name: "on_screen_control"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_on_screen_control\"\n"
+  "  component: \"/widget/Insality/on_screen_joystick/example/example_on_screen_joystick.gui\"\n"
+  "}\n"
+  ""
+}

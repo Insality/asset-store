@@ -1,0 +1,27 @@
+{
+	"author": "Playgama",
+	"id": "playgama-bridge",
+	"title": "Playgama Bridge",
+	"description": "Unified SDK for publishing HTML5 games across multiple platforms",
+	"tags": [
+		"ads",
+		"analytics",
+		"monetization",
+		"platform",
+		"social"
+	],
+	"stars": 26,
+	"content": [
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.20.0.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.21.0.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.22.0.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.23.0.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.24.0.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.25.0.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.26.0.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.26.1.zip"
+	],
+	"example_code": "https://github.com/playgama/bridge-defold",
+	"author_url": "https://github.com/playgama",
+	"image": "playgama-bridge-thumb.png"
+}

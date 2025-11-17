@@ -1,0 +1,19 @@
+{
+	"author": "Björn Ritzl",
+	"id": "luasocket",
+	"title": "LuaSocket",
+	"description": "The missing LuaSocket .lua files, modified to play nicely with Defold.",
+	"tags": [
+		"Network",
+		"Lua"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/britzl/defold-luasocket/archive/refs/tags/0.10.zip",
+		"https://github.com/britzl/defold-luasocket/archive/refs/tags/0.11.zip",
+		"https://github.com/britzl/defold-luasocket/archive/refs/tags/0.11.1.zip"
+	],
+	"example_code": "https://github.com/britzl/defold-luasocket",
+	"author_url": "https://github.com/britzl",
+	"image": "luasocket-thumb.jpg"
+}

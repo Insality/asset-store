@@ -1,0 +1,20 @@
+{
+	"author": "Paweł Jarosz",
+	"id": "immutable",
+	"title": "Immutable",
+	"description": "Makes any Lua table runtime immutable (read-only).",
+	"tags": [
+		"lua",
+		"security",
+		"system",
+		"util"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/paweljarosz/lua-immutable/archive/refs/tags/v1.0.zip",
+		"https://github.com/paweljarosz/lua-immutable/archive/refs/tags/v1.1.zip"
+	],
+	"example_code": "https://github.com/paweljarosz/lua-immutable",
+	"author_url": "https://github.com/paweljarosz",
+	"image": "immutable-thumb.jpg"
+}

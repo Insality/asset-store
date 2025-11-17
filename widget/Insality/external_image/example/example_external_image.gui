@@ -1,0 +1,45 @@
+script: "/widget/Insality/external_image/example/example_external_image.gui_script"
+nodes {
+  position {
+    x: 310.0
+    y: 652.0
+  }
+  size {
+    x: 400.0
+    y: 400.0
+  }
+  type: TYPE_BOX
+  id: "box_1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 984.0
+    y: 652.0
+  }
+  size {
+    x: 400.0
+    y: 400.0
+  }
+  type: TYPE_BOX
+  id: "box_2"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1629.0
+    y: 652.0
+  }
+  size {
+    x: 400.0
+    y: 400.0
+  }
+  type: TYPE_BOX
+  id: "box_3"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

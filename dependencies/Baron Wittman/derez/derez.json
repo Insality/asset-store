@@ -1,0 +1,17 @@
+{
+	"author": "Baron Wittman",
+	"id": "derez",
+	"title": "Derez",
+	"description": "This render script draws a low-resolution view of the world to a game object, in either 2D or 3D. It handles resizing the window by maintaining an internal vertical resolution. This technique is also known as downsampling.",
+	"tags": [
+		"camera",
+		"rendering"
+	],
+	"stars": 15,
+	"content": [
+		"https://github.com/Wolfe2x7/Derez/archive/refs/tags/v1.0.0.zip"
+	],
+	"example_code": "https://github.com/Wolfe2x7/Derez",
+	"author_url": "https://github.com/Wolfe2x7",
+	"image": "derez-thumb.jpg"
+}

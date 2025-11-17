@@ -1,0 +1,17 @@
+{
+	"author": "Sergey Lerg",
+	"id": "cas-ai",
+	"title": "CAS.AI",
+	"description": "Ad mediation. Supports many ad networks.",
+	"tags": [
+		"ads",
+		"monetization"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/Lerg/extension-cas/archive/master.zip"
+	],
+	"example_code": "https://github.com/Lerg/extension-cas",
+	"author_url": "https://github.com/Lerg",
+	"image": "cas.ai-thumb.jpg"
+}

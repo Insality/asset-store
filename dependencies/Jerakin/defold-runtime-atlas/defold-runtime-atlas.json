@@ -1,0 +1,17 @@
+{
+	"author": "Jerakin",
+	"id": "defold-runtime-atlas",
+	"title": "Runtime Atlas",
+	"description": "Runtime creation of an atlas from a set of images.",
+	"tags": [
+		"Rendering",
+		"Util"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/Jerakin/defold-runtime-atlas/archive/refs/heads/main.zip"
+	],
+	"example_code": "https://github.com/Jerakin/defold-runtime-atlas",
+	"author_url": "https://github.com/Jerakin",
+	"image": "runtime-atlas-thumb.jpg"
+}

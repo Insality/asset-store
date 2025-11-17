@@ -1,0 +1,17 @@
+{
+	"author": "Chung Xa",
+	"id": "i18n-defold",
+	"title": "i18n",
+	"description": "i18n for Defold",
+	"tags": [
+		"gui",
+		"util"
+	],
+	"stars": 5,
+	"content": [
+		"https://github.com/baochungit/i18n-defold/archive/refs/tags/1.0.0.zip"
+	],
+	"example_code": "https://github.com/baochungit/i18n-defold",
+	"author_url": "https://github.com/baochungit",
+	"image": "i18n-defold-thumb.jpg"
+}

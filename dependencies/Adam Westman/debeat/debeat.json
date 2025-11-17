@@ -1,0 +1,20 @@
+{
+	"author": "Adam Westman",
+	"id": "debeat",
+	"title": "Debeat",
+	"description": "Debeat, a simple but effective library for audio support.",
+	"tags": [
+		"Audio"
+	],
+	"stars": 28,
+	"content": [
+		"https://github.com/adamwestman/debeat/archive/refs/tags/dbeat-1.0.0.zip",
+		"https://github.com/adamwestman/debeat/archive/refs/tags/debeat-1.0.1.zip",
+		"https://github.com/adamwestman/debeat/archive/refs/tags/debeat-2.0.0.zip",
+		"https://github.com/adamwestman/debeat/archive/refs/tags/debeat-2.0.1.zip",
+		"https://github.com/adamwestman/debeat/archive/refs/tags/debeat-2.2.0.zip"
+	],
+	"example_code": "https://github.com/adamwestman/debeat",
+	"author_url": "https://github.com/adamwestman",
+	"image": "debeat-thumb.jpg"
+}

@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "defblend",
+	"title": "DefBlend",
+	"description": "Blend solid colors with your sprites using various blending modes.",
+	"tags": [
+		"Shaders"
+	],
+	"stars": 22,
+	"content": [
+		"https://github.com/subsoap/defblend/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/defblend",
+	"author_url": "https://github.com/subsoap",
+	"image": "defblend-thumb.jpg"
+}

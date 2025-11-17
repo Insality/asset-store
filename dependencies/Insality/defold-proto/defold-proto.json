@@ -1,0 +1,18 @@
+{
+	"author": "Insality",
+	"id": "defold-proto",
+	"title": "Defold Proto",
+	"description": "Defold Protobuf Library to encode, decode and verifying messages",
+	"tags": [
+		"system",
+		"util",
+		"tools"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/Insality/defold-proto/archive/refs/tags/1.zip"
+	],
+	"example_code": "https://github.com/Insality/defold-proto",
+	"author_url": "https://github.com/Insality",
+	"image": "defold-proto-thumb.png"
+}

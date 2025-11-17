@@ -1,0 +1,22 @@
+{
+	"author": "Insality",
+	"id": "defold-saver",
+	"title": "Defold Saver",
+	"description": "Defold Save File Manager",
+	"tags": [
+		"system",
+		"util",
+		"tools"
+	],
+	"stars": 41,
+	"content": [
+		"https://github.com/Insality/defold-saver/archive/refs/tags/1.zip",
+		"https://github.com/Insality/defold-saver/archive/refs/tags/2.zip",
+		"https://github.com/Insality/defold-saver/archive/refs/tags/3.zip",
+		"https://github.com/Insality/defold-saver/archive/refs/tags/4.zip",
+		"https://github.com/Insality/defold-saver/archive/refs/tags/5.zip"
+	],
+	"example_code": "https://github.com/Insality/defold-saver",
+	"author_url": "https://github.com/Insality",
+	"image": "defold-saver-thumb.png"
+}

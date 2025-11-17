@@ -1,0 +1,17 @@
+{
+	"author": "Marat Gilyazov",
+	"id": "tenjinsdk",
+	"title": "Tenjin",
+	"description": "Native extension for the Tenjin SDK",
+	"tags": [
+		"Analytics"
+	],
+	"stars": 1,
+	"content": [
+		"https://github.com/MaratGilyazov/def_tenjin/archive/refs/tags/1.0.zip",
+		"https://github.com/MaratGilyazov/def_tenjin/archive/refs/tags/1.1.zip"
+	],
+	"example_code": "https://github.com/MaratGilyazov/def_tenjin",
+	"author_url": "https://github.com/MaratGilyazov",
+	"image": "tenjin-thumb.jpg"
+}

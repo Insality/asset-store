@@ -1,0 +1,20 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "zstd",
+	"title": "Zstandard Compression for Defold",
+	"description": "Use Zstandard fast compression library to compress and decompress strings in your Lua code.",
+	"tags": [
+		"System",
+		"Tools"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/indiesoftby/defold-zstd/archive/refs/tags/1.5.6-1.zip",
+		"https://github.com/indiesoftby/defold-zstd/archive/refs/tags/1.5.7-1.zip",
+		"https://github.com/indiesoftby/defold-zstd/archive/refs/tags/1.5.7-2.zip",
+		"https://github.com/indiesoftby/defold-zstd/archive/refs/tags/1.5.7-3.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-zstd",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-zstd/raw/main/cover_thumb.jpg"
+}

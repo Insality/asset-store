@@ -1,0 +1,18 @@
+{
+	"author": "Defold",
+	"id": "videoplayernative",
+	"title": "Videoplayer - native",
+	"description": "A fullscreen videoplayer extension for iOS and Android using native OS functionality and components for videoplayback.",
+	"tags": [
+		"Video"
+	],
+	"stars": 10,
+	"content": [
+		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.zip",
+		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.1.zip",
+		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.2.zip"
+	],
+	"example_code": "https://github.com/defold/extension-videoplayer-native",
+	"author_url": "https://github.com/defold",
+	"image": "videoplayernative-thumb.jpg"
+}

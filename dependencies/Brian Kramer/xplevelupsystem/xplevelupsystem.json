@@ -1,0 +1,17 @@
+{
+	"author": "Brian Kramer",
+	"id": "xplevelupsystem",
+	"title": "XP - Level Up System",
+	"description": "A generic leveling up system.",
+	"tags": [
+		"GUI",
+		"Game mechanic"
+	],
+	"stars": 12,
+	"content": [
+		"https://github.com/subsoap/xp/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/xp",
+	"author_url": "https://github.com/subsoap",
+	"image": "xplevelupsystem-thumb.jpg"
+}

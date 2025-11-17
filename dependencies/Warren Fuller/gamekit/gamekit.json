@@ -1,0 +1,18 @@
+{
+	"author": "Warren Fuller",
+	"id": "gamekit",
+	"title": "Apple GameKit Game Center",
+	"description": "Apple GameKit Game Center extension.",
+	"tags": [
+		"Social",
+		"Achievements",
+		"Platform"
+	],
+	"stars": 17,
+	"content": [
+		"https://github.com/animonger/extension-gamekit/archive/master.zip"
+	],
+	"example_code": "https://github.com/animonger/extension-gamekit",
+	"author_url": "https://github.com/animonger",
+	"image": "gamkit-thumb.jpg"
+}

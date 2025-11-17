@@ -1,0 +1,16 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "yametrica",
+	"title": "YaMetrica",
+	"description": "The asset helps to use Yandex.Metrica to track the stats of your HTML5 game.",
+	"tags": [
+		"Analytics"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/indiesoftby/defold-yametrica/archive/refs/tags/1.0.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-yametrica",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-yametrica/raw/main/cover_thumb.jpg"
+}

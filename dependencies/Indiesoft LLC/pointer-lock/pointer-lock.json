@@ -1,0 +1,16 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "pointer-lock",
+	"title": "Pointer Lock",
+	"description": "Mouse locking, cursor UI and mouselook for first-person 3D games made with Defold.",
+	"tags": [
+		"System"
+	],
+	"stars": 22,
+	"content": [
+		"https://github.com/indiesoftby/defold-pointer-lock/archive/refs/tags/2.0.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-pointer-lock",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-pointer-lock/raw/main/cover_thumb.png"
+}

@@ -1,0 +1,24 @@
+{
+	"author_renames": {
+		"Agnis 'NeZvers' Aldins": "Agnis Aldins",
+		"Maxim Tuprikov": "Insality"
+	},
+	"asset_renames": {
+		"author:old_asset_id": "new_asset_id"
+	},
+	"ignore_repositories": [
+		"Insality:deployer",
+		"Insality:panthera20",
+		"Defold:lua-language-server",
+		"Defold:magiclinker",
+		"Defold:endlessrunner",
+		"Luis Zuno:alienworld",
+		"Luis Zuno:warbattlesassetpack",
+		"Roman Silin:vs-code-ide",
+		"Thorbjørn Lindeijer:tiled",
+		"d954mas:defold-api-emmylua",
+		"Halfstar:matchanovel",
+		"Björn Ritzl:lowrezjamtemplate"
+	]
+}
+

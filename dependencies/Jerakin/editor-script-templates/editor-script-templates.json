@@ -1,0 +1,16 @@
+{
+	"author": "Jerakin",
+	"id": "editor-script-templates",
+	"title": "editor-script-templates",
+	"description": "Create files from your own defined templates.",
+	"tags": [
+		"Editor script"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/Jerakin/editor-script-templates/archive/master.zip"
+	],
+	"example_code": "https://github.com/Jerakin/editor-script-templates",
+	"author_url": "https://github.com/Jerakin",
+	"image": "editor-script-templates-thumb.jpg"
+}

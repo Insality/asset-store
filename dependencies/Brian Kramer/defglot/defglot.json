@@ -1,0 +1,17 @@
+{
+	"author": "Brian Kramer",
+	"id": "defglot",
+	"title": "DefGlot",
+	"description": "A localization module. Easily support multiple translations of your game.",
+	"tags": [
+		"GUI",
+		"System"
+	],
+	"stars": 25,
+	"content": [
+		"https://github.com/subsoap/defglot/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/defglot",
+	"author_url": "https://github.com/subsoap",
+	"image": "defglot-thumb.jpg"
+}

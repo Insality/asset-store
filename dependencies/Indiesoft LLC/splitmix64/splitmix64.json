@@ -1,0 +1,17 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "splitmix64",
+	"title": "SplitMix64",
+	"description": "Get the same random numbers from the same seeds on all platforms supported by Defold.",
+	"tags": [
+		"Math"
+	],
+	"stars": 20,
+	"content": [
+		"https://github.com/indiesoftby/defold-splitmix64/archive/refs/tags/1.0.0.zip",
+		"https://github.com/indiesoftby/defold-splitmix64/archive/refs/tags/1.0.1.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-splitmix64",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-splitmix64/raw/main/cover_thumb.png"
+}

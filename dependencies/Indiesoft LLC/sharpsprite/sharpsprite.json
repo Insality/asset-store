@@ -1,0 +1,19 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "sharpsprite",
+	"title": "Sharp Sprite",
+	"description": "Rotated Grid Super-Sampling (RGSS) for the Defold engine.",
+	"tags": [
+		"Shaders"
+	],
+	"stars": 67,
+	"content": [
+		"https://github.com/indiesoftby/defold-sharp-sprite/archive/refs/tags/0.3.0.zip",
+		"https://github.com/indiesoftby/defold-sharp-sprite/archive/refs/tags/0.4.0.zip",
+		"https://github.com/indiesoftby/defold-sharp-sprite/archive/refs/tags/0.5.0.zip",
+		"https://github.com/indiesoftby/defold-sharp-sprite/archive/refs/tags/1.0.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-sharp-sprite",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-sharp-sprite/raw/main/cover_thumb.png"
+}

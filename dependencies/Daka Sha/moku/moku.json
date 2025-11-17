@@ -1,0 +1,17 @@
+{
+	"author": "Daka Sha",
+	"id": "moku",
+	"title": "Moku",
+	"description": "Map utility/module for tilemaps",
+	"tags": [
+		"AI",
+		"Game mechanic"
+	],
+	"stars": 46,
+	"content": [
+		"https://github.com/Jrayp/Moku/archive/Alpha_v2.2.zip"
+	],
+	"example_code": "https://github.com/Jrayp/Moku",
+	"author_url": "https://github.com/Jrayp",
+	"image": "moku-thumb.jpg"
+}

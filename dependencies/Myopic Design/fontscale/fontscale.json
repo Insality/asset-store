@@ -1,0 +1,18 @@
+{
+	"author": "Myopic Design",
+	"id": "fontscale",
+	"title": "FontScale",
+	"description": "Get the user's preferred font scaling factor.",
+	"tags": [
+		"fonts",
+		"gui",
+		"system"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/myopic-design/defold-fontscale/archive/refs/tags/v0.1.0.zip"
+	],
+	"example_code": "https://github.com/myopic-design/defold-fontscale",
+	"author_url": "https://github.com/myopic-design",
+	"image": "FontScale-thumb.jpg"
+}

@@ -1,0 +1,20 @@
+{
+	"author": "White Box Dev",
+	"id": "tilemapanimator",
+	"title": "Defold Tilemap Animator",
+	"description": "Defold Tilemap Animator provides runtime tile animations in a Defold game engine project.",
+	"tags": [
+		"Animation"
+	],
+	"stars": 40,
+	"content": [
+		"https://github.com/whiteboxdev/library-defold-tilemap-animator/archive/refs/tags/0.1.0.zip",
+		"https://github.com/whiteboxdev/library-defold-tilemap-animator/archive/refs/tags/0.2.0.zip",
+		"https://github.com/whiteboxdev/library-defold-tilemap-animator/archive/refs/tags/0.3.0.zip",
+		"https://github.com/whiteboxdev/library-defold-tilemap-animator/archive/refs/tags/0.3.1.zip",
+		"https://github.com/whiteboxdev/library-defold-tilemap-animator/archive/refs/tags/0.4.0.zip"
+	],
+	"example_code": "https://github.com/whiteboxdev/library-defold-tilemap-animator",
+	"author_url": "https://github.com/whiteboxdev",
+	"image": "defoldtilemapanimator-thumb.jpg"
+}

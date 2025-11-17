@@ -1,0 +1,22 @@
+{
+	"stores": [
+		{
+			"name": "[Assets] Druid Widgets",
+			"type": "folder",
+			"index": "druid_widget_store.json",
+			"content": "widget"
+		},
+		{
+			"name": "[Assets] Editor Scripts",
+			"type": "folder",
+			"index": "assets_editor_scripts_store.json",
+			"content": "editor_scripts"
+		},
+		{
+			"name": "[Assets] Dependencies",
+			"type": "dependencies",
+			"index": "dependencies_store.json",
+			"content": "dependencies"
+		}
+	]
+}

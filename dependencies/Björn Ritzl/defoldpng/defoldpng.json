@@ -1,0 +1,20 @@
+{
+	"author": "Björn Ritzl",
+	"id": "defoldpng",
+	"title": "Defold-PNG",
+	"description": "Decode and encode PNG images.",
+	"tags": [
+		"System"
+	],
+	"stars": 18,
+	"content": [
+		"https://github.com/britzl/defold-png/archive/refs/tags/1.0.zip",
+		"https://github.com/britzl/defold-png/archive/refs/tags/1.1.zip",
+		"https://github.com/britzl/defold-png/archive/refs/tags/1.2.0.zip",
+		"https://github.com/britzl/defold-png/archive/refs/tags/1.2.1.zip",
+		"https://github.com/britzl/defold-png/archive/refs/tags/1.2.2.zip"
+	],
+	"example_code": "https://github.com/britzl/defold-png",
+	"author_url": "https://github.com/britzl",
+	"image": "defoldpng-thumb.jpg"
+}

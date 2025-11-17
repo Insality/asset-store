@@ -1,0 +1,16 @@
+{
+	"author": "Yuichiro Kumagai",
+	"id": "defunico",
+	"title": "DefUniCo",
+	"description": "DefUniCo is a coroutine library",
+	"tags": [
+		"System"
+	],
+	"stars": 11,
+	"content": [
+		"https://github.com/u16kuma/defunico/archive/refs/tags/1.0.zip"
+	],
+	"example_code": "https://github.com/u16kuma/defunico",
+	"author_url": "https://github.com/u16kuma",
+	"image": "defunico-thumb.png"
+}

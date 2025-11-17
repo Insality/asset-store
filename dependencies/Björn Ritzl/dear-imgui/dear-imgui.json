@@ -1,0 +1,37 @@
+{
+	"author": "Björn Ritzl",
+	"id": "dear-imgui",
+	"title": "Dear ImGUI",
+	"description": "Dear ImGui is a bloat-free graphical user interface library.",
+	"tags": [
+		"gui"
+	],
+	"stars": 69,
+	"content": [
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.0.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.1.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.2.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.3.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.3.1.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.3.2.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.3.3.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.3.4.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.4.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.0.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.1.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.1.1.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.2.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.3.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.3.1.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.4.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.4.1.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.5.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.6.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.6.1.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.7.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.8.0.zip"
+	],
+	"example_code": "https://github.com/britzl/extension-imgui",
+	"author_url": "https://github.com/britzl",
+	"image": "dear-imgui-thumb.jpg"
+}

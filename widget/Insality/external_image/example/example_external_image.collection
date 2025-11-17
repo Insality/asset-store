@@ -1,0 +1,10 @@
+name: "example_external_image"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_external_image\"\n"
+  "  component: \"/widget/Insality/external_image/example/example_external_image.gui\"\n"
+  "}\n"
+  ""
+}

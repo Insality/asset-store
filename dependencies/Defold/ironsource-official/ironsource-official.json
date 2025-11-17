@@ -1,0 +1,31 @@
+{
+	"author": "Defold",
+	"id": "ironsource-official",
+	"title": "IronSource Official",
+	"description": "Defold native extension which provides access to IronSource mediation on Android and iOS.",
+	"tags": [
+		"Ads",
+		"Monetization"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.4.0.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.4.1.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.5.0.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.5.1.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.5.2.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.5.3.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.5.4.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.6.0.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/0.7.0.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/1.0.1.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/1.2.0.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/1.2.1.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/1.2.2.zip",
+		"https://github.com/defold/extension-ironsource/archive/refs/tags/1.3.2.zip"
+	],
+	"example_code": "https://github.com/defold/extension-ironsource",
+	"author_url": "https://github.com/defold",
+	"image": "ironsource-official-thumb.jpg"
+}

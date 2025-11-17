@@ -1,0 +1,19 @@
+{
+	"author": "Marat Gilyazov",
+	"id": "ironsource",
+	"title": "IronSource",
+	"description": "Native extension with a partial implementation of the IronSource SDK",
+	"tags": [
+		"Ads",
+		"Monetization"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/MaratGilyazov/def_ironsource/archive/refs/tags/1.0.zip",
+		"https://github.com/MaratGilyazov/def_ironsource/archive/refs/tags/1.1.zip",
+		"https://github.com/MaratGilyazov/def_ironsource/archive/refs/tags/1.2.zip"
+	],
+	"example_code": "https://github.com/MaratGilyazov/def_ironsource",
+	"author_url": "https://github.com/MaratGilyazov",
+	"image": "ironsource-thumb.jpg"
+}

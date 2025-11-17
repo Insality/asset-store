@@ -1,0 +1,17 @@
+{
+	"author": "Marius Petcu",
+	"id": "gog-galaxy",
+	"title": "GoG Galaxy",
+	"description": "Extension that implements achievements using GOG Galaxy SDK.",
+	"tags": [
+		"Achievements",
+		"Platform"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/dapetcu21/defold-gog-galaxy/archive/master.zip"
+	],
+	"example_code": "https://github.com/dapetcu21/defold-gog-galaxy",
+	"author_url": "https://github.com/dapetcu21",
+	"image": "gog-galaxy-thumb.jpg"
+}

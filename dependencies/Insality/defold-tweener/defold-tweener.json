@@ -1,0 +1,23 @@
+{
+	"author": "Insality",
+	"id": "defold-tweener",
+	"title": "Defold Tweener",
+	"description": "Timer Based Defold Tween Library",
+	"tags": [
+		"system",
+		"util",
+		"math",
+		"animation"
+	],
+	"stars": 51,
+	"content": [
+		"https://github.com/Insality/defold-tweener/archive/refs/tags/1.zip",
+		"https://github.com/Insality/defold-tweener/archive/refs/tags/2.zip",
+		"https://github.com/Insality/defold-tweener/archive/refs/tags/3.zip",
+		"https://github.com/Insality/defold-tweener/archive/refs/tags/4.zip",
+		"https://github.com/Insality/defold-tweener/archive/refs/tags/5.zip"
+	],
+	"example_code": "https://github.com/Insality/defold-tweener",
+	"author_url": "https://github.com/Insality",
+	"image": "defold-tweener-thumb.png"
+}

@@ -1,0 +1,18 @@
+{
+	"author": "Mathias Westerdahl",
+	"id": "voronoi",
+	"title": "Voronoi",
+	"description": "2D voronoi functionality.",
+	"tags": [
+		"Math"
+	],
+	"stars": 12,
+	"content": [
+		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.3.0.zip",
+		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.5.0.zip",
+		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.7.0.zip"
+	],
+	"example_code": "https://github.com/JCash/defold-voronoi",
+	"author_url": "https://github.com/JCash",
+	"image": "voronoi-thumb.jpg"
+}

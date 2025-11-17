@@ -1,0 +1,16 @@
+{
+	"author": "Jerakin",
+	"id": "editor-script-extra-locations",
+	"title": "editor-script-extra-locations",
+	"description": "Editor script to open the finder/explorer at different important locations.",
+	"tags": [
+		"Editor script"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/Jerakin/editor-script-extra-locations/archive/master.zip"
+	],
+	"example_code": "https://github.com/Jerakin/editor-script-extra-locations",
+	"author_url": "https://github.com/Jerakin",
+	"image": "editor-script-extra-locations-thumb.jpg"
+}

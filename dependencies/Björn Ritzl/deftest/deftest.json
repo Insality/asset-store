@@ -1,0 +1,35 @@
+{
+	"author": "Björn Ritzl",
+	"id": "deftest",
+	"title": "DefTest",
+	"description": "Run unit tests using the Telescope unit testing framework.",
+	"tags": [
+		"Tools"
+	],
+	"stars": 46,
+	"content": [
+		"https://github.com/britzl/deftest/archive/refs/tags/1.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/1.1.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/1.2.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/1.2.1.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.0.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.1.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.1.1.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.2.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.2.1.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.3.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.4.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.4.1.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.4.2.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.4.3.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.5.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.6.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.7.0.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.7.1.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.7.2.zip",
+		"https://github.com/britzl/deftest/archive/refs/tags/2.8.0.zip"
+	],
+	"example_code": "https://github.com/britzl/deftest",
+	"author_url": "https://github.com/britzl",
+	"image": "deftest-thumb.jpg"
+}

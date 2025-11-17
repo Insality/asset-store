@@ -1,0 +1,18 @@
+{
+	"author": "Adam Westman",
+	"id": "defkit",
+	"title": "DefKit",
+	"description": "A Component based scripts library for Defold engine inspired by the Game Maker studio visual scripting.",
+	"tags": [
+		"System"
+	],
+	"stars": 22,
+	"content": [
+		"https://github.com/adamwestman/defkit/archive/refs/tags/defkit-0.1.0.zip",
+		"https://github.com/adamwestman/defkit/archive/refs/tags/defkit-0.1.2.zip",
+		"https://github.com/adamwestman/defkit/archive/refs/tags/defkit-0.2.0.zip"
+	],
+	"example_code": "https://github.com/adamwestman/defkit",
+	"author_url": "https://github.com/adamwestman",
+	"image": "defkit-thumb.jpg"
+}

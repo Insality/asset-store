@@ -1,0 +1,31 @@
+{
+	"author": "Heroic Labs",
+	"id": "nakama",
+	"title": "Nakama",
+	"description": "Nakama is an open-source server designed to power modern games and apps. Features include user accounts, chat, social, matchmaker, realtime multiplayer, and much more. This client implements the full API and socket options with the server.",
+	"tags": [
+		"Social",
+		"Platform",
+		"Analytics",
+		"Achievements"
+	],
+	"stars": 93,
+	"content": [
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/1.1.1.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/2.0.0.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/2.1.0.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/2.1.1.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/2.1.2.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/3.0.0.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/3.0.1.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/3.0.2.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/3.0.3.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/3.1.0.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/3.2.0.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/v3.3.0.zip",
+		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/v3.4.0.zip"
+	],
+	"example_code": "https://github.com/heroiclabs/nakama-defold",
+	"author_url": "https://github.com/heroiclabs",
+	"image": "nakama-thumb.jpg"
+}

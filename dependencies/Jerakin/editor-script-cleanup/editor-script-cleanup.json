@@ -1,0 +1,16 @@
+{
+	"author": "Jerakin",
+	"id": "editor-script-cleanup",
+	"title": "editor-script-cleanup",
+	"description": "Editor script that adds clean up functionallity.",
+	"tags": [
+		"Editor script"
+	],
+	"stars": 4,
+	"content": [
+		"https://github.com/Jerakin/editor-script-cleanup/archive/master.zip"
+	],
+	"example_code": "https://github.com/Jerakin/editor-script-cleanup",
+	"author_url": "https://github.com/Jerakin",
+	"image": "editor-script-cleanup-thumb.jpg"
+}

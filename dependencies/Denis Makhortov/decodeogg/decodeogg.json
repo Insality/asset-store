@@ -1,0 +1,16 @@
+{
+	"author": "Denis Makhortov",
+	"id": "decodeogg",
+	"title": "DecodeOgg",
+	"description": "Native extension for decoding ogg files in wav.",
+	"tags": [
+		"Audio"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/JAlHund/decodeogg"
+	],
+	"example_code": "https://github.com/JAlHund/decodeogg",
+	"author_url": "https://github.com/JAlHund",
+	"image": "decodeogg-thumb.jpg"
+}

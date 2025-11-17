@@ -1,0 +1,16 @@
+{
+	"author": "Jerakin",
+	"id": "editor-script-check-dependencies-versions",
+	"title": "editor-script-check-dependencies-versions",
+	"description": "Checks your dependencies against github releases to see if there are any updates.",
+	"tags": [
+		"Editor script"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/Jerakin/editor-script-check-dependencies-versions/archive/master.zip"
+	],
+	"example_code": "https://github.com/Jerakin/editor-script-check-dependencies-versions",
+	"author_url": "https://github.com/Jerakin",
+	"image": "editor-script-check-dependencies-versions-thumb.jpg"
+}

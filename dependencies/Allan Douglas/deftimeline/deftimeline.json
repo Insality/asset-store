@@ -1,0 +1,16 @@
+{
+	"author": "Allan Douglas",
+	"id": "deftimeline",
+	"title": "Def Timeline",
+	"description": "Easy way to make animations play in sequence.",
+	"tags": [
+		"Animation"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/AllanDouglas/deftimeline/archive/master.zip"
+	],
+	"example_code": "https://github.com/AllanDouglas/deftimeline",
+	"author_url": "https://github.com/AllanDouglas",
+	"image": "deftimeline-thumb.jpg"
+}

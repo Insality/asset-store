@@ -1,0 +1,24 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "scene3d",
+	"title": "Scene3D",
+	"description": "It's a collection of assets to help you developing 3D games with the Defold game engine. Use included prefabs to quickly prototype structures, levels, and to test game mechanics. Try out ideas quickly!",
+	"tags": [
+		"3D",
+		"Art assets",
+		"Camera",
+		"Shaders",
+		"Physics",
+		"Rendering"
+	],
+	"stars": 183,
+	"content": [
+		"https://github.com/indiesoftby/defold-scene3d/archive/refs/tags/1.0.0.zip",
+		"https://github.com/indiesoftby/defold-scene3d/archive/refs/tags/1.1.0.zip",
+		"https://github.com/indiesoftby/defold-scene3d/archive/refs/tags/1.2.0.zip",
+		"https://github.com/indiesoftby/defold-scene3d/archive/refs/tags/1.2.1.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-scene3d",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-scene3d/raw/main/cover_thumb.jpg"
+}

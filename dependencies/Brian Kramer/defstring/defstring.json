@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "defstring",
+	"title": "Def String",
+	"description": "A module with a set of extra string functions.",
+	"tags": [
+		"System"
+	],
+	"stars": 5,
+	"content": [
+		"https://github.com/subsoap/defstring/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/defstring",
+	"author_url": "https://github.com/subsoap",
+	"image": "defstring-thumb.jpg"
+}

@@ -1,0 +1,40 @@
+{
+	"Lua.diagnostics.globals": [
+		"event_context_manager",
+		"sys",
+		"init",
+		"describe",
+		"before",
+		"after",
+		"it",
+		"pprint",
+		"go",
+		"final",
+		"timer",
+		"factory",
+		"vmath",
+		"gui",
+		"msg",
+		"hash",
+		"on_input",
+		"label",
+		"socket",
+		"update",
+		"on_message"
+	],
+	"Lua.completion.autoRequire": false,
+	"Lua.workspace.ignoreDir": [
+		".vscode",
+		"annotations"
+	],
+	"Lua.workspace.library": [
+		"~/Library/Application Support/Cursor/User/globalStorage/astronachos.defold",
+		"~/Library/Application Support/Cursor/User/workspaceStorage/f7bb55079cac289f90636462740eb173/astronachos.defold"
+	],
+	"files.associations": {
+		"*.editor_script": "lua",
+		"*.render_script": "lua",
+		"*.script": "lua",
+		"*.gui_script": "lua"
+	}
+}

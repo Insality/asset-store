@@ -1,0 +1,26 @@
+{
+	"author": "d954mas",
+	"id": "defold-box2d",
+	"title": "defold-box2d",
+	"description": "Box2D Lua bindings for Defold Game Engine.",
+	"tags": [
+		"physics"
+	],
+	"stars": 41,
+	"content": [
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/0.8.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/0.85.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/0.89.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/0.9.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/0.9.1.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/0.9.2.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/0.9.3.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/1.0.0.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/1.0.1.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/1.0.2.zip",
+		"https://github.com/d954mas/defold-box2d/archive/refs/tags/1.0.3.zip"
+	],
+	"example_code": "https://github.com/d954mas/defold-box2d",
+	"author_url": "https://github.com/d954mas",
+	"image": "defold-box2d-thumb.jpg"
+}

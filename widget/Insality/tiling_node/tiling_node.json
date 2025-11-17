@@ -1,0 +1,19 @@
+{
+	"author": "Insality",
+	"id": "tiling_node",
+	"version": 2,
+	"title": "Tiling Node",
+	"description": "Druid component for creating tiled textures with custom shader. Supports animation, margins, offsets and dynamic repeat count based on node size",
+	"api": "tiling_node.md",
+	"author_url": "https://github.com/Insality",
+	"example": "/widget/Insality/tiling_node/example/example_tiling_node.collection",
+	"example_code": "/widget/Insality/tiling_node/example/example_tiling_node.gui_script",
+	"tags": ["GUI", "shader"],
+	"content": [
+		"tiling_node.lua",
+		"gui_tiling_node.material",
+		"gui_tiling_node.vp",
+		"gui_tiling_node.fp"
+	]
+}
+

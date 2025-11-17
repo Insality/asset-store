@@ -1,0 +1,35 @@
+{
+	"author": "Brian Kramer",
+	"id": "defos",
+	"title": "DefOS",
+	"description": "Extra native OS functions.",
+	"tags": [
+		"System"
+	],
+	"stars": 154,
+	"content": [
+		"https://github.com/subsoap/defos/archive/refs/tags/v1.0.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.0.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.1.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.2.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.2.1.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.2.2.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.2.3.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.3.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.3.1.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.4.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.4.1.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.4.2.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.5.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.6.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.7.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.7.1.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.0.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.1.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.2.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.3.zip"
+	],
+	"example_code": "https://github.com/subsoap/defos",
+	"author_url": "https://github.com/subsoap",
+	"image": "defos-thumb.jpg"
+}

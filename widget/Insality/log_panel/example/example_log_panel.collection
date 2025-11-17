@@ -1,0 +1,10 @@
+name: "example_log_panel"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_log_panel\"\n"
+  "  component: \"/widget/Insality/log_panel/example/example_log_panel.gui\"\n"
+  "}\n"
+  ""
+}

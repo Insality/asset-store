@@ -1,0 +1,10 @@
+name: "example_properties_panel"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_properties_panel\"\n"
+  "  component: \"/widget/Insality/properties_panel/example/example_properties_panel.gui\"\n"
+  "}\n"
+  ""
+}

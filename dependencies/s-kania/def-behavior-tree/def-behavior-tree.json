@@ -1,0 +1,17 @@
+{
+	"author": "s-kania",
+	"id": "def-behavior-tree",
+	"title": "def-behavior-tree",
+	"description": "Library for creating behavioral trees that allow you to easily manage advanced NPC behaviors in your game. It is functional and event-driven, which means you can easily save and load any node in any moment.",
+	"tags": [
+		"ai",
+		"game mechanic"
+	],
+	"stars": 22,
+	"content": [
+		"https://github.com/s-kania/def-behavior-tree/archive/refs/tags/1.0.0.zip"
+	],
+	"example_code": "https://github.com/s-kania/def-behavior-tree",
+	"author_url": "https://github.com/s-kania",
+	"image": "def-behavior-tree-thumb.jpg"
+}

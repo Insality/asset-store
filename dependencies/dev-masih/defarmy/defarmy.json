@@ -1,0 +1,17 @@
+{
+	"author": "dev-masih",
+	"id": "defarmy",
+	"title": "DefArmy",
+	"description": "This module helps you to create groups (army) of game objects (soldiers) and organize them in several different patterns or your customized pattern and manage moving and rotating game objects as a customizable group.",
+	"tags": [
+		"AI",
+		"Math"
+	],
+	"stars": 50,
+	"content": [
+		"https://github.com/dev-masih/defarmy/archive/refs/tags/v1.zip"
+	],
+	"example_code": "https://github.com/dev-masih/defarmy",
+	"author_url": "https://github.com/dev-masih",
+	"image": "defarmy-thumb.jpg"
+}

@@ -1,0 +1,48 @@
+local druid = require("druid.druid")
+local mini_graph = require("widget.Insality.mini_graph.mini_graph")
+
+---@class script.example_mini_graph
+---@field druid druid.instance
+---@field mini_graph widget.mini_graph
+---@field samples number
+---@field time number
+
+---@param self script.example_mini_graph
+function init(self)
+	druid.init_window_listener()
+
+	self.druid = druid.new(self)
+	self.mini_graph = self.druid:new_widget(mini_graph, "mini_graph")
+	self.samples = 64
+	self.mini_graph:set_samples(self.samples)
+	self.mini_graph:set_max_value(1)
+
+	self.time = 0
+end
+
+function final(self)
+	self.druid:final()
+end
+
+---@param self script.example_mini_graph
+function update(self, dt)
+	self.druid:update(dt)
+
+	self.time = self.time + dt
+
+	-- Set values and rotate lines by sine
+	local samples = self.mini_graph:get_samples()
+	for index = 1, samples do
+		-- Set value based on sine wave
+		local value = (math.sin(index * 0.1 + self.time * 2) + 1) * 0.5
+		self.mini_graph:set_line_value(index, value)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end

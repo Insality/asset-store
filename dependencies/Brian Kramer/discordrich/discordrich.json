@@ -1,0 +1,23 @@
+{
+	"author": "Brian Kramer",
+	"id": "discordrich",
+	"title": "DiscordRich",
+	"description": "Rich Presence for games on Discord.",
+	"tags": [
+		"System",
+		"Social",
+		"Platform"
+	],
+	"stars": 14,
+	"content": [
+		"https://github.com/subsoap/discordrich/archive/refs/tags/v1.0.0.zip",
+		"https://github.com/subsoap/discordrich/archive/refs/tags/v1.0.1.zip",
+		"https://github.com/subsoap/discordrich/archive/refs/tags/v1.0.2.zip",
+		"https://github.com/subsoap/discordrich/archive/refs/tags/v1.0.3.zip",
+		"https://github.com/subsoap/discordrich/archive/refs/tags/v1.0.4.zip",
+		"https://github.com/subsoap/discordrich/archive/refs/tags/v1.0.5.zip"
+	],
+	"example_code": "https://github.com/subsoap/discordrich",
+	"author_url": "https://github.com/subsoap",
+	"image": "discordrich-thumb.png"
+}

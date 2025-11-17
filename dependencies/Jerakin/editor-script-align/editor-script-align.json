@@ -1,0 +1,16 @@
+{
+	"author": "Jerakin",
+	"id": "editor-script-align",
+	"title": "editor-script-align",
+	"description": "Adds a menu items under Edit to align GUI nodes. Currently only supports root items due to Defold limitations.",
+	"tags": [
+		"Editor script"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/Jerakin/editor-script-align/archive/master.zip"
+	],
+	"example_code": "https://github.com/Jerakin/editor-script-align",
+	"author_url": "https://github.com/Jerakin",
+	"image": "editor-script-align-thumb.jpg"
+}

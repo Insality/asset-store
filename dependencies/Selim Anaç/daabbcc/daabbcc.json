@@ -1,0 +1,28 @@
+{
+	"author": "Selim Anaç",
+	"id": "daabbcc",
+	"title": "DAABBCC",
+	"description": "This is a Dynamic AABB Tree native extension with Branch and Bound Algorithm.",
+	"tags": [
+		"Physics"
+	],
+	"stars": 85,
+	"content": [
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/1.0.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v1.1.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v2.0.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v2.1.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v2.1.1.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v2.1.2.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v2.1.3.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v.3.0.0.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v3.0.1.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v3.0.2.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v3.0.3.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v3.0.4.zip",
+		"https://github.com/selimanac/DAABBCC/archive/refs/tags/v3.0.5.zip"
+	],
+	"example_code": "https://github.com/selimanac/DAABBCC",
+	"author_url": "https://github.com/selimanac",
+	"image": "daabbcc-thumb.jpg"
+}

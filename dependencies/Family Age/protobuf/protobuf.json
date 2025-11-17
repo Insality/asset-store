@@ -1,0 +1,16 @@
+{
+	"author": "Family Age",
+	"id": "protobuf",
+	"title": "Protobuf",
+	"description": "This extension allow you work with google protobuf protocol (files .proto), encode and decode them.",
+	"tags": [
+		"System"
+	],
+	"stars": 14,
+	"content": [
+		"https://github.com/Melsoft-Games/defold-protobuf/archive/master.zip"
+	],
+	"example_code": "https://github.com/Melsoft-Games/defold-protobuf",
+	"author_url": "https://github.com/Melsoft-Games",
+	"image": "protobuf-thumb.jpg"
+}

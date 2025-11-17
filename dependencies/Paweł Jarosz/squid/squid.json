@@ -1,0 +1,21 @@
+{
+	"author": "Paweł Jarosz",
+	"id": "squid",
+	"title": "Squid",
+	"description": "Squid is a standalone injectable system for saveable logging of user logs, errors and crashes for Defold",
+	"tags": [
+		"security",
+		"system",
+		"tools",
+		"util"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/paweljarosz/squid/archive/refs/tags/1.0.zip",
+		"https://github.com/paweljarosz/squid/archive/refs/tags/1.1.zip",
+		"https://github.com/paweljarosz/squid/archive/refs/tags/1.2.zip"
+	],
+	"example_code": "https://github.com/paweljarosz/squid",
+	"author_url": "https://github.com/paweljarosz",
+	"image": "squid-thumb.jpg"
+}

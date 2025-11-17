@@ -1,0 +1,16 @@
+{
+	"author": "Sergey Lerg",
+	"id": "extensiondirectories",
+	"title": "extension-directories",
+	"description": "Provides path to various system directories.",
+	"tags": [
+		"System"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/Lerg/extension-directories/archive/master.zip"
+	],
+	"example_code": "https://github.com/Lerg/extension-directories",
+	"author_url": "https://github.com/Lerg",
+	"image": "extensiondirectories-thumb.png"
+}

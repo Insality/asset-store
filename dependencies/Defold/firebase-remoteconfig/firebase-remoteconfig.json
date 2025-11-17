@@ -1,0 +1,26 @@
+{
+	"author": "Defold",
+	"id": "firebase-remoteconfig",
+	"title": "Firebase Remote Config",
+	"description": "Firebase Remote Config is a cloud service that lets you change the behavior and appearance of your app without requiring users to download an app update. When using Remote Config, you create in-app default values that control the behavior and appearance of your app. Then, you can later use the Firebase console or the Remote Config backend APIs to override in-app default values for all app users or for segments of your user base. Your app controls when updates are applied, and it can frequently check for updates and apply them with a negligible impact on performance.",
+	"tags": [
+		"System"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.0.1.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.0.2.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.0.3.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.0.4.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.1.0.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.2.0.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.3.0.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/1.3.1.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/2.0.0.zip",
+		"https://github.com/defold/extension-firebase-remoteconfig/archive/refs/tags/2.1.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-firebase-remoteconfig",
+	"author_url": "https://github.com/defold",
+	"image": "firebase-thumb.jpg"
+}

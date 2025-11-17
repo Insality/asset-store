@@ -1,0 +1,23 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "hypertrails",
+	"title": "Hyper Trails",
+	"description": "Easy to use and customizable trail effect.",
+	"tags": [
+		"Rendering",
+		"Shaders"
+	],
+	"stars": 83,
+	"content": [
+		"https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.0.0.zip",
+		"https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.1.0.zip",
+		"https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.2.0.zip",
+		"https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.3.0.zip",
+		"https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.4.0.zip",
+		"https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.4.1.zip",
+		"https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.4.2.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-hyper-trails",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "hypertrails-thumb.jpg"
+}

@@ -1,0 +1,20 @@
+{
+	"author": "Alexey Gulev",
+	"id": "uptime",
+	"title": "UpTime",
+	"description": "Returns an operating system uptime",
+	"tags": [
+		"System"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/AGulev/uptime/archive/refs/tags/1.0.0.zip",
+		"https://github.com/AGulev/uptime/archive/refs/tags/1.0.1.zip",
+		"https://github.com/AGulev/uptime/archive/refs/tags/1.1.0.zip",
+		"https://github.com/AGulev/uptime/archive/refs/tags/1.1.1.zip",
+		"https://github.com/AGulev/uptime/archive/refs/tags/1.2.0.zip"
+	],
+	"example_code": "https://github.com/AGulev/uptime",
+	"author_url": "https://github.com/AGulev",
+	"image": "uptime-thumb.jpg"
+}

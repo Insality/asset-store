@@ -1,0 +1,16 @@
+{
+	"author": "David Lannan",
+	"id": "defold-nuklear",
+	"title": "defold-nuklear",
+	"description": "Nuklear is a minimal-state, immediate-mode graphical user interface toolkit.",
+	"tags": [
+		"gui"
+	],
+	"stars": 12,
+	"content": [
+		"https://github.com/dlannan/defold-nuklear/archive/refs/tags/v1.0.0.zip"
+	],
+	"example_code": "https://github.com/dlannan/defold-nuklear",
+	"author_url": "https://github.com/dlannan",
+	"image": "defold-nuklear-thumb.png"
+}

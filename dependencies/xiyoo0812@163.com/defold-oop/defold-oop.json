@@ -1,0 +1,16 @@
+{
+	"author": "xiyoo0812@163.com",
+	"id": "defold-oop",
+	"title": "defold-oop",
+	"description": "Defold Ext for work with lua Object Oriented Programming!",
+	"tags": [
+		"lua"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/xiyoo0812/defold-oop/archive/master.zip"
+	],
+	"example_code": "https://github.com/xiyoo0812/defold-oop",
+	"author_url": "https://github.com/xiyoo0812",
+	"image": "defold-oop-thumb.jpg"
+}

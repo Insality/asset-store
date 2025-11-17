@@ -1,0 +1,19 @@
+{
+	"author": "Sergey Lerg",
+	"id": "extensionnativetext",
+	"title": "extension-nativetext",
+	"description": "Native Text Rendering extension for Defold.",
+	"tags": [
+		"Fonts",
+		"GUI",
+		"System",
+		"Rendering"
+	],
+	"stars": 12,
+	"content": [
+		"https://github.com/Lerg/extension-nativetext/archive/master.zip"
+	],
+	"example_code": "https://github.com/Lerg/extension-nativetext",
+	"author_url": "https://github.com/Lerg",
+	"image": "nativetext-thumb.png"
+}

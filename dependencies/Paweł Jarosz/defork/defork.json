@@ -1,0 +1,17 @@
+{
+	"author": "Paweł Jarosz",
+	"id": "defork",
+	"title": "DEFork",
+	"description": "Easily and conveniently create different, interactive, intriguing, branched, non-linear conversations using json data.",
+	"tags": [
+		"GUI",
+		"Template projects"
+	],
+	"stars": 27,
+	"content": [
+		"https://github.com/paweljarosz/defork/archive/master.zip"
+	],
+	"example_code": "https://github.com/paweljarosz/defork",
+	"author_url": "https://github.com/paweljarosz",
+	"image": "defork-thumb.jpg"
+}

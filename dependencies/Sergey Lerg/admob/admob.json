@@ -1,0 +1,17 @@
+{
+	"author": "Sergey Lerg",
+	"id": "admob",
+	"title": "AdMob",
+	"description": "AdMob extension.",
+	"tags": [
+		"Ads",
+		"Monetization"
+	],
+	"stars": 18,
+	"content": [
+		"https://github.com/Lerg/extension-admob/archive/master.zip"
+	],
+	"example_code": "https://github.com/Lerg/extension-admob",
+	"author_url": "https://github.com/Lerg",
+	"image": "admob-thumb.png"
+}

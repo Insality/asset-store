@@ -1,0 +1,18 @@
+{
+	"author": "haruka",
+	"id": "rand16",
+	"title": "rand16",
+	"description": "rand16 is a 16bit pseudorandom number generator.",
+	"tags": [
+		"Math"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/wmc7n/rand16/archive/refs/tags/1.0.0.zip",
+		"https://github.com/wmc7n/rand16/archive/refs/tags/1.0.1.zip",
+		"https://github.com/wmc7n/rand16/archive/refs/tags/1.0.2.zip"
+	],
+	"example_code": "https://github.com/wmc7n/rand16",
+	"author_url": "https://github.com/wmc7n",
+	"image": "rand16-thumb.jpg"
+}

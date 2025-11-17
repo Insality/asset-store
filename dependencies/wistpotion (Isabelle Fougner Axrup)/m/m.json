@@ -1,0 +1,16 @@
+{
+	"author": "wistpotion (Isabelle Fougner Axrup)",
+	"id": "m",
+	"title": "m",
+	"description": "A module for creating hot-reloadable modules in Defold.",
+	"tags": [
+		"util"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/wistpotion/m/archive/refs/tags/1.0.zip"
+	],
+	"example_code": "https://github.com/wistpotion/m",
+	"author_url": "https://github.com/wistpotion",
+	"image": "m-thumb.jpg"
+}

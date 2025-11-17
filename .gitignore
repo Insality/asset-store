@@ -1,0 +1,44 @@
+# Build artifacts
+dist/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Editor backups
+*~
+*.swp
+*.swo
+.vscode/*
+!.vscode/settings.json
+.idea/
+/.editor_settings
+/.internal
+/build
+
+doc.json
+deployer_version_settings.txt
+deployer_version_settings.ini
+build.ini
+bob*.jar
+*.pyc

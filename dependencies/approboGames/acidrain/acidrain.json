@@ -1,0 +1,17 @@
+{
+	"author": "approboGames",
+	"id": "acidrain",
+	"title": "Acid Rain",
+	"description": "A single file pure Lua particle system for Defold.",
+	"tags": [
+		"Animation",
+		"ParticleFX"
+	],
+	"stars": 16,
+	"content": [
+		"https://github.com/approboGames/AcidRain/archive/refs/heads/master.zip"
+	],
+	"example_code": "https://github.com/approboGames/AcidRain",
+	"author_url": "https://github.com/approboGames",
+	"image": "acidrain-thumb.jpg"
+}

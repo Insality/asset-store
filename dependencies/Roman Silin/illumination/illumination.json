@@ -1,0 +1,21 @@
+{
+	"author": "Roman Silin",
+	"id": "illumination",
+	"title": "Illumination",
+	"description": "Ready-to-use forward shading lighting for 3D games. Just set the provided material to your mesh and place light sources on the scene.",
+	"tags": [
+		"3D",
+		"rendering",
+		"shaders"
+	],
+	"stars": 50,
+	"content": [
+		"https://github.com/astrochili/defold-illumination/archive/refs/tags/1.0.zip",
+		"https://github.com/astrochili/defold-illumination/archive/refs/tags/1.0.1.zip",
+		"https://github.com/astrochili/defold-illumination/archive/refs/tags/1.0.2.zip",
+		"https://github.com/astrochili/defold-illumination/archive/refs/tags/1.0.3.zip"
+	],
+	"example_code": "https://github.com/astrochili/defold-illumination",
+	"author_url": "https://github.com/astrochili",
+	"image": "illumination-thumb.jpeg"
+}

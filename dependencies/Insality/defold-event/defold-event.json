@@ -1,0 +1,28 @@
+{
+	"author": "Insality",
+	"id": "defold-event",
+	"title": "Defold Event",
+	"description": "Cross-Context Defold Event System",
+	"tags": [
+		"system"
+	],
+	"stars": 62,
+	"content": [
+		"https://github.com/Insality/defold-event/archive/refs/tags/1.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/2.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/3.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/4.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/5.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/6.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/7.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/8.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/9.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/10.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/11.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/12.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/13.zip"
+	],
+	"example_code": "https://github.com/Insality/defold-event",
+	"author_url": "https://github.com/Insality",
+	"image": "defold-event-thumb.png"
+}

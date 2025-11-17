@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "vitahealthenergy",
+	"title": "Vita - Health & Energy",
+	"description": "A generic energy / life system.",
+	"tags": [
+		"Game mechanic"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/subsoap/vita/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/vita",
+	"author_url": "https://github.com/subsoap",
+	"image": "vitahealthenergy-thumb.jpg"
+}

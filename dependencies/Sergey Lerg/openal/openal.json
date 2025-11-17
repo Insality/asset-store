@@ -1,0 +1,16 @@
+{
+	"author": "Sergey Lerg",
+	"id": "openal",
+	"title": "OpenAL",
+	"description": "Provides 3D audio, pitch control and more.",
+	"tags": [
+		"Audio"
+	],
+	"stars": 21,
+	"content": [
+		"https://github.com/Lerg/extension-openal/archive/master.zip"
+	],
+	"example_code": "https://github.com/Lerg/extension-openal",
+	"author_url": "https://github.com/Lerg",
+	"image": "openal-thumb.png"
+}

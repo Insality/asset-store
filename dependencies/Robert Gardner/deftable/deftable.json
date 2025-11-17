@@ -1,0 +1,16 @@
+{
+	"author": "Robert Gardner",
+	"id": "deftable",
+	"title": "DefTable",
+	"description": "A whole bunch of useful table manipulation functions",
+	"tags": [
+		"Util"
+	],
+	"stars": 12,
+	"content": [
+		"https://github.com/shriekbob/deftable/archive/master.zip"
+	],
+	"example_code": "https://github.com/shriekbob/deftable",
+	"author_url": "https://github.com/shriekbob",
+	"image": "deftable-thumb.jpg"
+}

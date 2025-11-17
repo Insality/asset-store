@@ -1,0 +1,18 @@
+{
+	"author": "White Box Dev",
+	"id": "defold-rendy",
+	"title": "Defold Rendy",
+	"description": "Defold Rendy provides a versatile camera suite and render pipeline in a Defold game engine project.",
+	"tags": [
+		"3D",
+		"camera",
+		"rendering"
+	],
+	"stars": 71,
+	"content": [
+		"https://github.com/whiteboxdev/library-defold-rendy/archive/main.zip"
+	],
+	"example_code": "https://github.com/whiteboxdev/library-defold-rendy",
+	"author_url": "https://github.com/whiteboxdev",
+	"image": "defold-rendy.jpg"
+}

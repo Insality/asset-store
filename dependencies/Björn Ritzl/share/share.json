@@ -1,0 +1,39 @@
+{
+	"author": "Björn Ritzl",
+	"id": "share",
+	"title": "Share",
+	"description": "Share application data using native sharing dialogs.",
+	"tags": [
+		"System"
+	],
+	"stars": 24,
+	"content": [
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.1.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.2.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.3.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.3.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.4.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.4.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.5.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.6.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/1.6.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/2.0.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/2.0.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/3.0.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.0.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.0.2.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.1.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.2.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.2.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.3.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.3.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.4.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.5.0.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.5.1.zip",
+		"https://github.com/britzl/defold-sharing/archive/refs/tags/4.6.0.zip"
+	],
+	"example_code": "https://github.com/britzl/defold-sharing",
+	"author_url": "https://github.com/britzl",
+	"image": "share-thumb.jpg"
+}

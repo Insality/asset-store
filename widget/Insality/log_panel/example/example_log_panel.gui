@@ -1,0 +1,37 @@
+script: "/widget/Insality/log_panel/example/example_log_panel.gui_script"
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  type: TYPE_TEMPLATE
+  id: "log_panel"
+  inherit_alpha: true
+  template: "/widget/Insality/log_panel/log_panel.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "log_panel/root"
+  parent: "log_panel"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "log_panel/view"
+  parent: "log_panel/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "log_panel/content"
+  parent: "log_panel/view"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "log_panel/prefab"
+  parent: "log_panel/content"
+  template_node_child: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

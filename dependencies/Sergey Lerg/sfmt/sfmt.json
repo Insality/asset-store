@@ -1,0 +1,16 @@
+{
+	"author": "Sergey Lerg",
+	"id": "sfmt",
+	"title": "SFMT Random",
+	"description": "SFMT Random Number Generator Extension for Defold wraps SIMD-oriented Fast Mersenne Twister (SFMT) random number generator v1.5.1.",
+	"tags": [
+		"math"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/Lerg/extension-sfmtrandom/archive/refs/heads/main.zip"
+	],
+	"example_code": "https://github.com/Lerg/extension-sfmtrandom",
+	"author_url": "https://github.com/Lerg",
+	"image": "sfmt-thumb.png"
+}

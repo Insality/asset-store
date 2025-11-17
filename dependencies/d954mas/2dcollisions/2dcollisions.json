@@ -1,0 +1,17 @@
+{
+	"author": "d954mas",
+	"id": "2dcollisions",
+	"title": "2D Collisions",
+	"description": "Efficiently find collisions between rects and circles",
+	"tags": [
+		"Physics",
+		"System"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/d954mas/defold-2d-collisions-ne/archive/master.zip"
+	],
+	"example_code": "https://github.com/d954mas/defold-2d-collisions-ne",
+	"author_url": "https://github.com/d954mas",
+	"image": "2dcollisions-thumb.jpg"
+}

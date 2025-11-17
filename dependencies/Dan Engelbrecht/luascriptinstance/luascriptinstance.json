@@ -1,0 +1,17 @@
+{
+	"author": "Dan Engelbrecht",
+	"id": "luascriptinstance",
+	"title": "Lua Script Instance",
+	"description": "Library to expose access for getting and setting the current script instance.",
+	"tags": [
+		"System",
+		"Lua"
+	],
+	"stars": 10,
+	"content": [
+		"https://github.com/DanEngelbrecht/LuaScriptInstance/archive/refs/tags/0.1.1.zip"
+	],
+	"example_code": "https://github.com/DanEngelbrecht/LuaScriptInstance",
+	"author_url": "https://github.com/DanEngelbrecht",
+	"image": "luascriptinstance-thumb.jpg"
+}

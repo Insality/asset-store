@@ -1,0 +1,16 @@
+{
+	"author": "Defold",
+	"id": "photon-realtime",
+	"title": "Photon Realtime",
+	"description": "Photon Realtime offers powerful tools for creating multiplayer games and advanced networked experiences.",
+	"tags": [
+		"Network"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/defold/extension-photon-realtime/archive/master.zip"
+	],
+	"example_code": "https://github.com/defold/extension-photon-realtime",
+	"author_url": "https://github.com/defold",
+	"image": "photon-realtime-thumb.jpg"
+}

@@ -1,0 +1,41 @@
+{
+	"author": "Björn Ritzl",
+	"id": "platypus",
+	"title": "Platypus",
+	"description": "2D Platformer engine",
+	"tags": [
+		"Physics",
+		"Game mechanic"
+	],
+	"stars": 69,
+	"content": [
+		"https://github.com/britzl/platypus/archive/refs/tags/1.0.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/1.1.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/2.0.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/2.0.1.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/2.1.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.0.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.0.1.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.0.2.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.1.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.2.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.2.1.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.2.2.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.3.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.4.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.5.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/3.5.1.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.0.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.1.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.2.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.2.1.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.2.2.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.2.3.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.2.4.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.3.0.zip",
+		"https://github.com/britzl/platypus/archive/refs/tags/4.3.1.zip"
+	],
+	"example_code": "https://github.com/britzl/platypus",
+	"author_url": "https://github.com/britzl",
+	"image": "platypus-thumb.jpg"
+}

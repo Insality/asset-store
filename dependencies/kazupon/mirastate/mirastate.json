@@ -1,0 +1,16 @@
+{
+	"author": "kazupon",
+	"id": "mirastate",
+	"title": "MiraState",
+	"description": "Hierarchical State Machine.",
+	"tags": [
+		"system"
+	],
+	"stars": 4,
+	"content": [
+		"https://github.com/stepism/defold-mira-substate/archive/master.zip"
+	],
+	"example_code": "https://github.com/stepism/defold-mira-substate",
+	"author_url": "https://github.com/stepism",
+	"image": "mirastate-thumb.jpg"
+}

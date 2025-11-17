@@ -1,0 +1,18 @@
+{
+	"author": "Defold",
+	"id": "xsolla",
+	"title": "Xsolla",
+	"description": "This extension provides an integration with the Xsolla services for Defold",
+	"tags": [
+		"Monetization"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/defold/extension-xsolla/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-xsolla/archive/refs/tags/1.1.0.zip",
+		"https://github.com/defold/extension-xsolla/archive/refs/tags/1.2.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-xsolla",
+	"author_url": "https://github.com/defold",
+	"image": "xsolla-thumb.jpg"
+}

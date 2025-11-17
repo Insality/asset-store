@@ -1,0 +1,84 @@
+fonts {
+  name: "druid_text_bold"
+  font: "/druid/fonts/druid_text_bold.font"
+}
+fonts {
+  name: "druid_text_regular"
+  font: "/druid/fonts/druid_text_regular.font"
+}
+nodes {
+  size {
+    x: 600.0
+    y: 280.0
+  }
+  color {
+    x: 0.173
+    y: 0.184
+    z: 0.204
+  }
+  type: TYPE_BOX
+  id: "root"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  size {
+    x: 600.0
+    y: 280.0
+  }
+  color {
+    x: 0.173
+    y: 0.184
+    z: 0.204
+  }
+  type: TYPE_BOX
+  id: "view"
+  parent: "root"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 600.0
+    y: 280.0
+  }
+  color {
+    x: 0.173
+    y: 0.184
+    z: 0.204
+  }
+  type: TYPE_BOX
+  id: "content"
+  parent: "view"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: -295.0
+    y: -115.0
+  }
+  size {
+    x: 590.0
+    y: 50.0
+  }
+  color {
+    x: 0.463
+    y: 0.475
+    z: 0.49
+  }
+  type: TYPE_TEXT
+  text: "Log message example"
+  font: "druid_text_regular"
+  id: "prefab"
+  pivot: PIVOT_W
+  parent: "content"
+  inherit_alpha: true
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

@@ -1,0 +1,16 @@
+{
+	"author": "White Box Dev",
+	"id": "defold-typewriter",
+	"title": "Defold Typewriter",
+	"description": "Defold Typewriter provides text scrolling and styling in a Defold game engine project.",
+	"tags": [
+		"gui"
+	],
+	"stars": 29,
+	"content": [
+		"https://github.com/whiteboxdev/library-defold-typewriter/archives/main.zip"
+	],
+	"example_code": "https://github.com/whiteboxdev/library-defold-typewriter",
+	"author_url": "https://github.com/whiteboxdev",
+	"image": "defold-typewriter.jpg"
+}

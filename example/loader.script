@@ -1,0 +1,23 @@
+---@class scripts.loader
+
+---@param self scripts.loader
+function init(self)
+	msg.post(".", "start_example")
+end
+
+
+---@param self scripts.loader
+---@param message_id hash
+---@param message table
+---@param sender url
+function on_message(self, message_id, message, sender)
+	if message_id == hash("start_example") then
+		msg.post("#example_proxy", "load")
+	end
+
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+		msg.post(sender, "acquire_input_focus")
+	end
+end

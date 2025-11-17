@@ -1,0 +1,10 @@
+name: "example_navigation_handler"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_navigation_handler\"\n"
+  "  component: \"/widget/NaakkaaDev/navigation_handler/example/example_navigation_handler.gui\"\n"
+  "}\n"
+  ""
+}

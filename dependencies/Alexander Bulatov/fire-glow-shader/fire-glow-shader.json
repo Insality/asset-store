@@ -1,0 +1,17 @@
+{
+	"author": "Alexander Bulatov",
+	"id": "fire-glow-shader",
+	"title": "Fire Glow Shader",
+	"description": "Fire Glow shader effect for Defold.",
+	"tags": [
+		"Rendering",
+		"Shaders"
+	],
+	"stars": 16,
+	"content": [
+		"https://github.com/ufgo/fire_glow/archive/refs/heads/main.zip"
+	],
+	"example_code": "https://github.com/ufgo/fire_glow",
+	"author_url": "https://github.com/ufgo",
+	"image": "fire-glow-thumb.jpg"
+}

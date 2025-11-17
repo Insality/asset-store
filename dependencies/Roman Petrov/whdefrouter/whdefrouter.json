@@ -1,0 +1,16 @@
+{
+	"author": "Roman Petrov",
+	"id": "whdefrouter",
+	"title": "whDefRouter",
+	"description": "A powerful screen manager.",
+	"tags": [
+		"GUI"
+	],
+	"stars": 27,
+	"content": [
+		"https://github.com/Megus/defold-router/archive/master.zip"
+	],
+	"example_code": "https://github.com/Megus/defold-router",
+	"author_url": "https://github.com/Megus",
+	"image": "whdefrouter-thumb.png"
+}

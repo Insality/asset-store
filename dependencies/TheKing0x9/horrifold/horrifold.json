@@ -1,0 +1,17 @@
+{
+	"author": "TheKing0x9",
+	"id": "horrifold",
+	"title": "Horri-Fold",
+	"description": "A Lo-Fi Horror shader.",
+	"tags": [
+		"rendering",
+		"shaders"
+	],
+	"stars": 47,
+	"content": [
+		"https://github.com/TheKing0x9/horri-fold/archive/main.zip"
+	],
+	"example_code": "https://github.com/TheKing0x9/horri-fold",
+	"author_url": "https://github.com/TheKing0x9",
+	"image": "horrifold-thumb.jpg"
+}

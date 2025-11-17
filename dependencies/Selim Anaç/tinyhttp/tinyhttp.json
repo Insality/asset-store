@@ -1,0 +1,16 @@
+{
+	"author": "Selim Anaç",
+	"id": "tinyhttp",
+	"title": "Tiny Http",
+	"description": "Simple http server and client native extension",
+	"tags": [
+		"Network"
+	],
+	"stars": 11,
+	"content": [
+		"https://github.com/selimanac/defold-tiny-http/archive/refs/tags/v1.0.zip"
+	],
+	"example_code": "https://github.com/selimanac/defold-tiny-http",
+	"author_url": "https://github.com/selimanac",
+	"image": "https://user-images.githubusercontent.com/1324635/67929852-728a9e80-fbcf-11e9-8ba8-90d8559f728d.png"
+}

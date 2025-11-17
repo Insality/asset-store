@@ -1,0 +1,35 @@
+{
+	"author": "Defold",
+	"id": "poki",
+	"title": "Poki SDK",
+	"description": "Poki SDK native extension for Defold game engine",
+	"tags": [
+		"Ads",
+		"Platform",
+		"Social",
+		"System"
+	],
+	"stars": 31,
+	"content": [
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.1.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.2.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.2.1.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.3.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.4.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.4.1.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.4.2.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.4.3.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.5.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/2.0.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/2.0.1.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/2.1.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/2.2.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/2.3.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.0.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.1.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-poki-sdk",
+	"author_url": "https://github.com/defold",
+	"image": "pokisdk-thumb.jpg"
+}

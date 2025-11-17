@@ -1,0 +1,21 @@
+{
+	"author": "Björn Ritzl",
+	"id": "defpro",
+	"title": "DefPro",
+	"description": "Interact with the profiler using Lua",
+	"tags": [
+		"System",
+		"Tools"
+	],
+	"stars": 28,
+	"content": [
+		"https://github.com/britzl/defpro/archive/refs/tags/1.0.zip",
+		"https://github.com/britzl/defpro/archive/refs/tags/1.0.1.zip",
+		"https://github.com/britzl/defpro/archive/refs/tags/1.0.2.zip",
+		"https://github.com/britzl/defpro/archive/refs/tags/1.1.0.zip",
+		"https://github.com/britzl/defpro/archive/refs/tags/1.1.1.zip"
+	],
+	"example_code": "https://github.com/britzl/defpro",
+	"author_url": "https://github.com/britzl",
+	"image": "defpro-thumb.jpg"
+}

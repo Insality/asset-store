@@ -1,0 +1,17 @@
+{
+	"author": "Insality",
+	"id": "mini_graph",
+	"version": 1,
+	"title": "Mini Graph",
+	"description": "Widget to display a several lines with different height in a row",
+	"image": "mini_graph.png",
+	"api": "mini_graph.md",
+	"example": "/widget/Insality/mini_graph/example/example_mini_graph.collection",
+	"example_code": "/widget/Insality/mini_graph/example/example_mini_graph.gui_script",
+	"author_url": "https://github.com/Insality",
+	"tags": ["debug", "system"],
+	"content": [
+		"mini_graph.gui",
+		"mini_graph.lua"
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"author": "Paweł Jarosz",
+	"id": "defluid",
+	"title": "DEFLUID",
+	"description": "Create 2D fluid simulations based on metaballs.",
+	"tags": [
+		"Physics",
+		"Rendering",
+		"Shaders"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/paweljarosz/defluid/archive/master.zip"
+	],
+	"example_code": "https://github.com/paweljarosz/defluid",
+	"author_url": "https://github.com/paweljarosz",
+	"image": "defluid-thumb.jpg"
+}

@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "log",
+	"title": "Log",
+	"description": "General purpose logging.",
+	"tags": [
+		"System"
+	],
+	"stars": 11,
+	"content": [
+		"https://github.com/subsoap/log/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/log",
+	"author_url": "https://github.com/subsoap",
+	"image": "log-thumb.jpg"
+}

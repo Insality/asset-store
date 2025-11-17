@@ -1,0 +1,23 @@
+{
+	"author": "Defold",
+	"id": "camera",
+	"title": "Camera",
+	"description": "Capture images and show a live camera preview using the native camera APIs.",
+	"tags": [
+		"Camera"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/defold/extension-camera/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-camera/archive/refs/tags/2.0.0.zip",
+		"https://github.com/defold/extension-camera/archive/refs/tags/2.0.1.zip",
+		"https://github.com/defold/extension-camera/archive/refs/tags/2.1.0.zip",
+		"https://github.com/defold/extension-camera/archive/refs/tags/2.1.1.zip",
+		"https://github.com/defold/extension-camera/archive/refs/tags/2.2.0.zip",
+		"https://github.com/defold/extension-camera/archive/refs/tags/2.2.1.zip",
+		"https://github.com/defold/extension-camera/archive/refs/tags/2.2.2.zip"
+	],
+	"example_code": "https://github.com/defold/extension-camera",
+	"author_url": "https://github.com/defold",
+	"image": "camera-thumb.jpg"
+}

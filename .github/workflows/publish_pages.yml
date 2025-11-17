@@ -1,0 +1,102 @@
+name: publish_pages
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # Run daily every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      clean_build:
+        description: 'Remove restored assets and rebuild everything from scratch'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq zip curl wget
+
+      - name: setup java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+
+      - name: compute base url
+        id: base
+        run: |
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO="$(echo "${GITHUB_REPOSITORY#*/}")"
+          echo "url=https://${OWNER}.github.io/${REPO}" >> $GITHUB_OUTPUT
+
+      - name: set clean build flag
+        id: clean
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && "${CLEAN_BUILD_INPUT}" == "true" ]]; then
+            echo "value=true" >> "$GITHUB_OUTPUT"
+            echo "🧹 Clean build requested. Restored assets will be skipped."
+          else
+            echo "value=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          CLEAN_BUILD_INPUT: ${{ github.event.inputs.clean_build || 'false' }}
+
+      - name: clean dist directory
+        if: steps.clean.outputs.value == 'true'
+        run: |
+          echo "🧽 Removing existing dist directory for clean build"
+          rm -rf dist
+
+      - name: restore old assets
+        if: steps.clean.outputs.value != 'true'
+        continue-on-error: true
+        env:
+          DIST_DIR: dist
+        run: bash scripts/restore_assets.sh ${{ steps.base.outputs.url }}
+
+      - name: pack all stores
+        env:
+          ASSETS_ROOT: .
+          DIST_DIR: dist
+          BASE_URL: ${{ steps.base.outputs.url }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.event.repository.name }}
+          GITHUB_BRANCH: main
+          TRACKING_SERVICE_URL: ${{ secrets.TRACKING_SERVICE_URL }}
+          TRACKING_WEBHOOK_SECRET: ${{ secrets.TRACKING_WEBHOOK_SECRET }}
+        run: bash scripts/pack_all_stores.sh
+
+      - name: clean bundle directory
+        run: |
+          if [[ -d dist/bundle ]]; then
+            echo "🗑️  Removing dist/bundle directory (not needed in artifact)"
+            rm -rf dist/bundle
+          fi
+
+      - name: configure pages
+        uses: actions/configure-pages@v5
+
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: deploy to pages
+        uses: actions/deploy-pages@v4
+
+      - name: summary
+        run: |
+          echo "Published at: ${{ steps.base.outputs.url }}/"

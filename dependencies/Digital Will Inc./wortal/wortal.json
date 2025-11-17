@@ -1,0 +1,29 @@
+{
+	"author": "Digital Will Inc.",
+	"id": "wortal",
+	"title": "Wortal",
+	"description": "Wortal SDK native extension for Defold.",
+	"tags": [
+		"ads",
+		"analytics",
+		"monetization",
+		"platform"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/releases/download/v1.0.0/wortal-sdk-defold-v1.0.0.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v1.0.1.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/releases/download/v2.0.0/wortal-sdk-defold-v2.0.0.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/releases/download/v2.1.0/wortal-sdk-defold-2.1.0.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v2.2.0.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v2.3.0.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v2.4.0.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v3.0.0.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v3.0.1.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v3.0.2.zip",
+		"https://github.com/Digital-Will-Inc/wortal-sdk-defold/archive/refs/tags/v3.0.3.zip"
+	],
+	"example_code": "https://github.com/Digital-Will-Inc/wortal-sdk-defold",
+	"author_url": "https://github.com/Digital-Will-Inc",
+	"image": "wortal-thumb.jpg"
+}

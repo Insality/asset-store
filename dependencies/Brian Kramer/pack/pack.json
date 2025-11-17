@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "pack",
+	"title": "Pack",
+	"description": "Compress, decompress, and obfuscate table data.",
+	"tags": [
+		"System"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/subsoap/pack/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/pack",
+	"author_url": "https://github.com/subsoap",
+	"image": "pack-thumb.jpg"
+}

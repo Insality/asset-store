@@ -1,0 +1,40 @@
+{
+	"author": "Defold",
+	"id": "googleanalyticsforfirebase",
+	"title": "Google Analytics for Firebase",
+	"description": "Google Analytics for Firebase provides free, unlimited reporting on distinct events. The SDK automatically captures certain key events and user properties, and you can define your own custom events to measure the things that uniquely matter to your game.",
+	"tags": [
+		"Analytics"
+	],
+	"stars": 20,
+	"content": [
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.0.1.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.0.2.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.1.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.2.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.3.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.3.1.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.3.2.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.4.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.4.1.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.4.2.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.5.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/1.6.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.0.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.0.1.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.0.2.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.1.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.1.1.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.2.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.2.1.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/2.2.2.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/3.0.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/3.0.1.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/3.1.0.zip",
+		"https://github.com/defold/extension-firebase-analytics/archive/refs/tags/3.2.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-firebase-analytics",
+	"author_url": "https://github.com/defold",
+	"image": "googleanalyticsforfirebase-thumb.jpg"
+}

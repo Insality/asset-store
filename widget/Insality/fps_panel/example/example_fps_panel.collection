@@ -1,0 +1,10 @@
+name: "example_fps_panel"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_fps_panel\"\n"
+  "  component: \"/widget/Insality/fps_panel/example/example_fps_panel.gui\"\n"
+  "}\n"
+  ""
+}

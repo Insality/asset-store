@@ -1,0 +1,16 @@
+{
+	"author": "GameAnalytics ApS",
+	"id": "gameanalytics",
+	"title": "Game Analytics",
+	"description": "GameAnalytics SDK",
+	"tags": [
+		"Analytics"
+	],
+	"stars": 16,
+	"content": [
+		"https://github.com/GameAnalytics/GA-SDK-DEFOLD/archive/master.zip"
+	],
+	"example_code": "https://github.com/GameAnalytics/GA-SDK-DEFOLD",
+	"author_url": "https://github.com/GameAnalytics",
+	"image": "gameanalytics-thumb.png"
+}

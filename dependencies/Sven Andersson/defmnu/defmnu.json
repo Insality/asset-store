@@ -1,0 +1,17 @@
+{
+	"author": "Sven Andersson",
+	"id": "defmnu",
+	"title": "Def-Mnu",
+	"description": "Simpe cross-platform (OSX + Windows) native context and app menu library.",
+	"tags": [
+		"GUI",
+		"Input"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/andsve/def-mnu/archive/master.zip"
+	],
+	"example_code": "https://github.com/andsve/def-mnu",
+	"author_url": "https://github.com/andsve",
+	"image": "defmnu-thumb.png"
+}

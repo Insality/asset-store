@@ -1,0 +1,17 @@
+{
+	"author": "White Box Dev",
+	"id": "defold-persist",
+	"title": "Defold Persist",
+	"description": "Defold Persist provides a simple interface for saving and loading data in a Defold game engine project.",
+	"tags": [
+		"system",
+		"util"
+	],
+	"stars": 15,
+	"content": [
+		"https://github.com/whiteboxdev/library-defold-persist/archive/main.zip"
+	],
+	"example_code": "https://github.com/whiteboxdev/library-defold-persist",
+	"author_url": "https://github.com/whiteboxdev",
+	"image": "defold-persist.jpg"
+}

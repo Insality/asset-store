@@ -1,0 +1,21 @@
+{
+	"author": "Paweł Jarosz",
+	"id": "defarc",
+	"title": "DefArc - Defold Arcweave",
+	"description": "DefArc is an Arcweave runtime for Defold, a toolset to easily create branching, interactive narratives in your games!",
+	"tags": [
+		"game mechanic",
+		"template projects",
+		"tools",
+		"tutorials",
+		"util"
+	],
+	"stars": 34,
+	"content": [
+		"https://github.com/paweljarosz/defarc/archive/refs/tags/v0.3.zip",
+		"https://github.com/paweljarosz/defarc/archive/refs/tags/v0.3.2.zip"
+	],
+	"example_code": "https://github.com/paweljarosz/defarc",
+	"author_url": "https://github.com/paweljarosz",
+	"image": "https://user-images.githubusercontent.com/11634203/166456744-d7f220ad-8327-4c63-be92-2104da4054d1.png"
+}

@@ -1,0 +1,16 @@
+{
+	"author": "Andrey Panchenko",
+	"id": "defoldandroidpermissions",
+	"title": "Defold Android Permissions",
+	"description": "This is Native Extension that adds support for Android Runtime Permissions",
+	"tags": [
+		"System"
+	],
+	"stars": 5,
+	"content": [
+		"https://github.com/asfdfdfd/defold-android-permissions/archive/master.zip"
+	],
+	"example_code": "https://github.com/asfdfdfd/defold-android-permissions",
+	"author_url": "https://github.com/asfdfdfd",
+	"image": "defoldandroidpermissions-thumb.jpg"
+}

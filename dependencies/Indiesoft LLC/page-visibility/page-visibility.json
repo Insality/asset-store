@@ -1,0 +1,16 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "page-visibility",
+	"title": "Page Visibility API for Defold",
+	"description": "HTML5 extension that provides Page Visibility API integration for Defold games, allowing developers to detect when the page is visible or hidden and pause/resume game systems accordingly. This creates a better user experience compared to window focus/blur events, especially for games embedded in iframes.",
+	"tags": [
+		"System"
+	],
+	"stars": 10,
+	"content": [
+		"https://github.com/indiesoftby/defold-page-visibility/archive/refs/tags/1.0.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-page-visibility",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-page-visibility/raw/main/cover_thumb.jpg"
+}

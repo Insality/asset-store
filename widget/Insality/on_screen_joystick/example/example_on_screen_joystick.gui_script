@@ -1,0 +1,52 @@
+local druid = require("druid.druid")
+local on_screen_joystick = require("widget.Insality.on_screen_joystick.on_screen_joystick")
+
+function init(self)
+	self.druid = druid.new(self)
+	self.on_screen_joystick = self.druid:new_widget(on_screen_joystick, "on_screen_joystick")
+	self.on_screen_joystick_2 = self.druid:new_widget(on_screen_joystick, "on_screen_joystick_2")
+	self.player = gui.get_node("player")
+	self.player_position = gui.get_position(self.player)
+	self.player_scale = gui.get_scale(self.player)
+	self.player_start_position = gui.get_position(self.player)
+
+	self.on_screen_joystick.on_movement:subscribe(function(x, y, dt)
+		self.player_position.x = self.player_position.x + x * 20
+		self.player_position.y = self.player_position.y + y * 20
+		gui.set_position(self.player, self.player_position)
+	end)
+
+	self.on_screen_joystick.on_movement_stop:subscribe(function()
+		self.player_position.x = self.player_start_position.x
+		self.player_position.y = self.player_start_position.y
+		gui.animate(self.player, "position", self.player_position, gui.EASING_OUTBACK, 0.3)
+	end)
+
+	self.on_screen_joystick_2.on_movement:subscribe(function(x, y, dt)
+		self.player_scale.x = self.player_scale.x + x * 0.05
+		self.player_scale.y = self.player_scale.y + y * 0.05
+		gui.set_scale(self.player, self.player_scale)
+	end)
+
+	self.on_screen_joystick_2.on_movement_stop:subscribe(function()
+		self.player_scale.x = 1
+		self.player_scale.y = 1
+		gui.animate(self.player, "scale", self.player_scale, gui.EASING_OUTBACK, 0.3)
+	end)
+end
+
+function final(self)
+	self.druid:final()
+end
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end

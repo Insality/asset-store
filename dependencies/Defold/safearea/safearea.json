@@ -1,0 +1,24 @@
+{
+	"author": "Defold",
+	"id": "safearea",
+	"title": "SafeArea",
+	"description": "Safe Area helps you place your UI within the visible portion of the overall interface to avoid UI being obscured by the notch or interfere with the home status indicator or status bar.",
+	"tags": [
+		"System"
+	],
+	"stars": 30,
+	"content": [
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.1.0.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.2.0.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.3.0.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.3.1.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.4.0.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.5.0.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.5.1.zip",
+		"https://github.com/defold/extension-safearea/archive/refs/tags/1.5.2.zip"
+	],
+	"example_code": "https://github.com/defold/extension-safearea",
+	"author_url": "https://github.com/defold",
+	"image": "safearea-thumb.jpg"
+}

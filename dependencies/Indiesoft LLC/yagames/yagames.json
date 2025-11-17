@@ -1,0 +1,36 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "yagames",
+	"title": "YaGames",
+	"description": "YaGames is the Yandex.Games SDK extension for the Defold game engine.",
+	"tags": [
+		"Ads",
+		"Monetization",
+		"Platform"
+	],
+	"stars": 71,
+	"content": [
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.7.1.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.7.2.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.7.3.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.7.4.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.7.5.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.7.6.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.8.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.8.1.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.9.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.9.1.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.10.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.11.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.12.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.13.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.14.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.15.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.16.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.17.0.zip",
+		"https://github.com/indiesoftby/defold-yagames/archive/refs/tags/0.18.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-yagames",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-yagames/raw/master/cover_thumb.png"
+}

@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "defwindow",
+	"title": "DefWindow",
+	"description": "Extra functionality for the Window API.",
+	"tags": [
+		"System"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/subsoap/defwindow/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/defwindow",
+	"author_url": "https://github.com/subsoap",
+	"image": "defwindow-thumb.jpg"
+}

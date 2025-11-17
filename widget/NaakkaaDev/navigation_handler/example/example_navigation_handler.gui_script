@@ -1,0 +1,36 @@
+local druid = require("druid.druid")
+local navigation_handler = require("widget.NaakkaaDev.navigation_handler.navigation_handler")
+local color = require("druid.color")
+
+function init(self)
+	self.druid = druid.new(self)
+	self.button_1 = self.druid:new_button("button_1")
+	self.button_2 = self.druid:new_button("button_2")
+	self.button_3 = self.druid:new_button("button_3")
+	self.button_4 = self.druid:new_button("button_4")
+	self.button_5 = self.druid:new_button("button_5")
+	self.button_6 = self.druid:new_button("button_6")
+
+	self.navigation_handler = self.druid:new_widget(navigation_handler, nil, nil, "navigation_handler")
+	self.navigation_handler:select_component(self.button_1)
+	self.navigation_handler.on_select:subscribe(function(self, new, previous)
+		color.set_color(previous.node, "#BA92FF")
+		color.set_color(new.node, "#FFFFFF")
+	end)
+end
+
+function final(self)
+	self.druid:final()
+end
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end

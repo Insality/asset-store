@@ -1,0 +1,18 @@
+{
+	"author": "White Box Dev",
+	"id": "defold-colors",
+	"title": "Defold Colors",
+	"description": "Defold Colors provides customizable palettes and color utility features in a Defold game engine project.",
+	"tags": [
+		"art assets",
+		"rendering",
+		"util"
+	],
+	"stars": 20,
+	"content": [
+		"https://github.com/whiteboxdev/library-defold-colors/archive/master.zip"
+	],
+	"example_code": "https://github.com/whiteboxdev/library-defold-colors",
+	"author_url": "https://github.com/whiteboxdev",
+	"image": "defoldcolors-thumb.jpg"
+}

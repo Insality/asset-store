@@ -1,0 +1,17 @@
+{
+	"author": "Happy Games Studio",
+	"id": "def_usercentrics",
+	"title": "Defold Usercentrics CMP",
+	"description": "Defold NE for UserCentrics CMP",
+	"tags": [
+		"util"
+	],
+	"stars": 1,
+	"content": [
+		"https://github.com/HGPoint/def_usercentrics/archive/refs/tags/1.0.0.zip",
+		"https://github.com/HGPoint/def_usercentrics/archive/refs/tags/1.0.2.zip"
+	],
+	"example_code": "https://github.com/HGPoint/def_usercentrics",
+	"author_url": "https://github.com/HGPoint",
+	"image": "def_usercentrics-thumb.png"
+}

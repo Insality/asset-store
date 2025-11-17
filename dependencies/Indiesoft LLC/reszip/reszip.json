@@ -1,0 +1,24 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "reszip",
+	"title": "ResZip",
+	"description": "Use Defold's Live Update to improve the loading speed of the HTML5 games.",
+	"tags": [
+		"Util"
+	],
+	"stars": 35,
+	"content": [
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.0.0.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.1.0.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.1.1.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.2.0.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.3.0.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.3.1.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.4.0.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.5.0.zip",
+		"https://github.com/indiesoftby/defold-liveupdate-reszip/archive/refs/tags/1.6.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-liveupdate-reszip",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "https://github.com/indiesoftby/defold-liveupdate-reszip/raw/main/cover_thumb.jpg"
+}

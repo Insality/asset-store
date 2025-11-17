@@ -1,0 +1,18 @@
+{
+	"author": "Insality",
+	"id": "properties_panel",
+	"version": 1,
+	"title": "Properties Panel",
+	"description": "Allows to create a panel with properties",
+	"image": "properties_panel.png",
+	"api": "properties_panel.md",
+	"example": "/widget/Insality/properties_panel/example/example_properties_panel.collection",
+	"example_code": "/widget/Insality/properties_panel/example/example_properties_panel.gui_script",
+	"author_url": "https://github.com/Insality",
+	"tags": ["GUI"],
+	"content": [
+		"properties_panel.gui",
+		"properties_panel.lua",
+		"properties"
+	]
+}

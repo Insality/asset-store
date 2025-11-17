@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "feat",
+	"title": "Feat",
+	"description": "Achievement and stat tracking for use with DefSave and DefSteam",
+	"tags": [
+		"Achievements"
+	],
+	"stars": 4,
+	"content": [
+		"https://github.com/subsoap/feat/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/feat",
+	"author_url": "https://github.com/subsoap",
+	"image": "feat-thumb.jpg"
+}

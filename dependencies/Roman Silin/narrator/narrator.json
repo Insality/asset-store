@@ -1,0 +1,24 @@
+{
+	"author": "Roman Silin",
+	"id": "narrator",
+	"title": "Narrator",
+	"description": "The Ink language runtime. Narrator allows to convert Ink scripts to the book and play it as a story. Suitable for interactive fiction games, dialogues and complex narrative stories. Requires the LPeg extension.",
+	"tags": [
+		"game mechanic"
+	],
+	"stars": 154,
+	"content": [
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.0.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.1.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.2.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.3.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.4.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.5.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.6.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.7.zip",
+		"https://github.com/astrochili/narrator/archive/refs/tags/1.8.zip"
+	],
+	"example_code": "https://github.com/astrochili/narrator",
+	"author_url": "https://github.com/astrochili",
+	"image": "narrator-thumb.jpg"
+}

@@ -1,0 +1,17 @@
+{
+	"author": "MrZak-dev",
+	"id": "facebookads",
+	"title": "Facebook Ads (Audience Network) ",
+	"description": "Facebook Audience Network Android Android extension",
+	"tags": [
+		"ads",
+		"monetization"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/MrZak-dev/defold-facebook-ads/archive/master.zip"
+	],
+	"example_code": "https://github.com/MrZak-dev/defold-facebook-ads",
+	"author_url": "https://github.com/MrZak-dev",
+	"image": "facebookads-thumb.jpg"
+}

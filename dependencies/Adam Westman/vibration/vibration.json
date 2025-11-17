@@ -1,0 +1,19 @@
+{
+	"author": "Adam Westman",
+	"id": "vibration",
+	"title": "Vibration",
+	"description": "Adds support for device vibration service.",
+	"tags": [
+		"Device control",
+		"System"
+	],
+	"stars": 18,
+	"content": [
+		"https://github.com/adamwestman/extension-vibrate/archive/refs/tags/0.1.0.zip",
+		"https://github.com/adamwestman/extension-vibrate/archive/refs/tags/0.2.0.zip",
+		"https://github.com/adamwestman/extension-vibrate/archive/refs/tags/0.2.1.zip"
+	],
+	"example_code": "https://github.com/adamwestman/extension-vibrate",
+	"author_url": "https://github.com/adamwestman",
+	"image": "vibration-thumb.png"
+}

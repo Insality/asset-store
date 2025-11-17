@@ -1,0 +1,89 @@
+local asset_store = require("asset_store.asset_store")
+
+local M = {}
+
+
+function M.get_prefs_schema()
+	return {
+		["asset_store.install_folder_druid"] = editor.prefs.schema.string({
+			default = "/widget",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.install_folder_editor_scripts"] = editor.prefs.schema.string({
+			default = "/editor_scripts",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.tracking_service_url"] = editor.prefs.schema.string({
+			default = "https://defold-asset-store.vercel.app",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.user_id"] = editor.prefs.schema.string({
+			default = "",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+	}
+end
+
+
+function M.get_commands()
+	local asset_store_commands = {
+		{
+			label = "[Asset Store] Dependencies",
+			locations = { "Project" },
+			run = function()
+				return asset_store.open({
+					store_url = "https://insality.github.io/core/dependencies_store.json",
+					info_url = "https://github.com/Insality/core/blob/main/dependencies_store.md",
+					title = "Dependencies Asset Store",
+					asset_type = "dependency",
+					add_asset_url = "https://github.com/Insality/core/blob/main/dependencies_store.md#how-to-submit",
+					labels = {
+						widget_card = {
+							example_button = "Repository",
+						},
+					},
+				})
+			end
+		},
+		--{
+		--	label = "[Asset Store] Editor Scripts",
+		--	locations = { "Project" },
+		--	run = function()
+		--		return asset_store.open({
+		--			store_url = "https://insality.github.io/core/assets_editor_scripts_store.json",
+		--			info_url = "https://github.com/Insality/core/blob/main/assets_editor_scripts_store.md",
+		--			title = "Editor Scripts Asset Store",
+		--			install_prefs_key = "asset_store.install_folder_editor_scripts",
+		--			asset_type = "folder",
+		--			add_asset_url = "https://github.com/Insality/core/blob/main/assets_editor_scripts_store.md#how-to-submit",
+		--		})
+		--	end
+		--}
+	}
+
+	-- Any Ideas which stores can be useful? Particles, shaders, assets like models and images?
+	-- Also can be a dependencies which will be added to game.projects, but require different logic for install
+
+	local is_druid_installed = pcall(editor.can_get, "/druid", "path")
+	if is_druid_installed then
+		table.insert(asset_store_commands, {
+			label = "[Asset Store] Druid Widgets",
+			locations = { "Project" },
+			run = function()
+				return asset_store.open({
+					store_url = "https://insality.github.io/core/druid_widget_store.json",
+					info_url = "https://github.com/Insality/core/blob/main/druid_widget_store.md",
+					title = "Druid Asset Store",
+					install_prefs_key = "asset_store.install_folder_druid",
+					asset_type = "folder",
+					add_asset_url = "https://github.com/Insality/core/blob/main/druid_widget_store.md#how-to-submit",
+				})
+			end
+		})
+	end
+
+	return asset_store_commands
+end
+
+
+return M

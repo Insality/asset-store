@@ -1,0 +1,16 @@
+{
+	"author": "Jerakin",
+	"id": "editor-script-components",
+	"title": "editor-script-components",
+	"description": "This script adds a menu items in the outline to create new resources depending on your selection. ",
+	"tags": [
+		"Editor script"
+	],
+	"stars": 4,
+	"content": [
+		"https://github.com/Jerakin/editor-script-components/archive/master.zip"
+	],
+	"example_code": "https://github.com/Jerakin/editor-script-components",
+	"author_url": "https://github.com/Jerakin",
+	"image": "editor-script-components-thumb.jpg"
+}

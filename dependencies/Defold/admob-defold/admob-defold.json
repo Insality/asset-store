@@ -1,0 +1,42 @@
+{
+	"author": "Defold",
+	"id": "admob-defold",
+	"title": "Google AdMob",
+	"description": "Monetize your mobile app with innovative and engaging in-app ads.",
+	"tags": [
+		"Monetization",
+		"Ads",
+		"Platform"
+	],
+	"stars": 48,
+	"content": [
+		"https://github.com/defold/extension-admob/archive/refs/tags/v1.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.0.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.0.1.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.0.2.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.0.3.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.0.4.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.0.5.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.1.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.1.1.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.1.2.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/2.2.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.0.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.0.1.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.1.1.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.1.2.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.2.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.2.1.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.3.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.3.1.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.4.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.4.1.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.4.2.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.5.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.6.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/3.7.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-admob",
+	"author_url": "https://github.com/defold",
+	"image": "admob-defold-thumb.jpg"
+}

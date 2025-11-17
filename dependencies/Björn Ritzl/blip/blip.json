@@ -1,0 +1,19 @@
+{
+	"author": "Björn Ritzl",
+	"id": "blip",
+	"title": "Blip",
+	"description": "Procedurally generate and play sound effects.",
+	"tags": [
+		"Audio"
+	],
+	"stars": 23,
+	"content": [
+		"https://github.com/britzl/blip/archive/refs/tags/1.0.zip",
+		"https://github.com/britzl/blip/archive/refs/tags/1.1.zip",
+		"https://github.com/britzl/blip/archive/refs/tags/1.1.1.zip",
+		"https://github.com/britzl/blip/archive/refs/tags/1.2.0.zip"
+	],
+	"example_code": "https://github.com/britzl/blip",
+	"author_url": "https://github.com/britzl",
+	"image": "blip-thumb.jpg"
+}

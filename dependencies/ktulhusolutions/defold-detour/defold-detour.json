@@ -1,0 +1,18 @@
+{
+	"author": "ktulhusolutions",
+	"id": "defold-detour",
+	"title": "Defold Detour",
+	"description": "Defold native extension for recast navigation.",
+	"tags": [
+		"3D",
+		"ai",
+		"math"
+	],
+	"stars": 21,
+	"content": [
+		"https://github.com/abadonna/defold-detour/archive/main.zip"
+	],
+	"example_code": "https://github.com/abadonna/defold-detour",
+	"author_url": "https://github.com/abadonna",
+	"image": "defold-detour-thumb.jpg"
+}

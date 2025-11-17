@@ -1,0 +1,17 @@
+{
+	"author": "dev-masih",
+	"id": "cafebazaar",
+	"title": "Cafebazaar In-app purchases",
+	"description": "Defold native extension which provides access to In-app purchase functionality on Cafebazaar Android app store.",
+	"tags": [
+		"Monetization"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/dev-masih/cafebazaar-iap/archive/refs/tags/v1.0.1.zip",
+		"https://github.com/dev-masih/cafebazaar-iap/archive/refs/tags/v1.1.zip"
+	],
+	"example_code": "https://github.com/dev-masih/cafebazaar-iap",
+	"author_url": "https://github.com/dev-masih",
+	"image": "cafebazaar-thumb.jpg"
+}

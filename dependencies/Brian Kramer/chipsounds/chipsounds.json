@@ -1,0 +1,16 @@
+{
+	"author": "Brian Kramer",
+	"id": "chipsounds",
+	"title": "Chip Sounds",
+	"description": "A collection of lowfi retro like sound effects.",
+	"tags": [
+		"Audio"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/subsoap/chip-sounds/archive/master.zip"
+	],
+	"example_code": "https://github.com/subsoap/chip-sounds",
+	"author_url": "https://github.com/subsoap",
+	"image": "chipsounds-thumb.jpg"
+}

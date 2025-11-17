@@ -1,0 +1,14 @@
+name: "example_tiling_node"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_tiling_node\"\n"
+  "  component: \"/widget/Insality/tiling_node/example/example_tiling_node.gui\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"druid\"\n"
+  "  component: \"/druid/druid.script\"\n"
+  "}\n"
+  ""
+}

@@ -1,0 +1,111 @@
+script: "/widget/NaakkaaDev/navigation_handler/example/example_navigation_handler.gui_script"
+nodes {
+  position {
+    x: 432.0
+    y: 703.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.8
+    y: 0.702
+  }
+  type: TYPE_BOX
+  id: "button_1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 996.0
+    y: 703.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.8
+    y: 0.702
+  }
+  type: TYPE_BOX
+  id: "button_2"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1523.0
+    y: 703.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.8
+    y: 0.702
+  }
+  type: TYPE_BOX
+  id: "button_3"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1507.0
+    y: 314.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.8
+    y: 0.702
+  }
+  type: TYPE_BOX
+  id: "button_6"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 454.0
+    y: 314.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.8
+    y: 0.702
+  }
+  type: TYPE_BOX
+  id: "button_4"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 985.0
+    y: 314.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.8
+    y: 0.702
+  }
+  type: TYPE_BOX
+  id: "button_5"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

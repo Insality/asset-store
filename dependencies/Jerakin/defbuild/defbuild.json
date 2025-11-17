@@ -1,0 +1,20 @@
+{
+	"author": "Jerakin",
+	"id": "defbuild",
+	"title": "DefBuild",
+	"description": "DefBuild enables you to easily build, install, uninstall and more for both Android and iOS (if you are using macOS) with a simple unified CL interface. You can easily switch which Defold version you are building on to easily test a new versions.",
+	"tags": [
+		"System"
+	],
+	"stars": 4,
+	"content": [
+		"https://github.com/Jerakin/DefBuild/archive/refs/tags/1.1.1.zip",
+		"https://github.com/Jerakin/DefBuild/archive/refs/tags/1.0.0.zip",
+		"https://github.com/Jerakin/DefBuild/archive/refs/tags/1.0.1.zip",
+		"https://github.com/Jerakin/DefBuild/archive/refs/tags/1.1.5.zip",
+		"https://github.com/Jerakin/DefBuild/archive/refs/tags/1.1.4.zip"
+	],
+	"example_code": "https://github.com/Jerakin/DefBuild",
+	"author_url": "https://github.com/Jerakin",
+	"image": "defbuild-thumb.jpg"
+}

@@ -1,0 +1,24 @@
+{
+	"author": "Brian Kramer",
+	"id": "defsave",
+	"title": "DefSave",
+	"description": "A module to help you save / load config and player data between session.",
+	"tags": [
+		"System"
+	],
+	"stars": 91,
+	"content": [
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.0.0.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.1.0.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.2.0.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.2.1.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.2.2.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.2.3.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.2.4.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.2.5.zip",
+		"https://github.com/subsoap/defsave/archive/refs/tags/v1.2.6.zip"
+	],
+	"example_code": "https://github.com/subsoap/defsave",
+	"author_url": "https://github.com/subsoap",
+	"image": "defsave-thumb.jpg"
+}
