@@ -81,8 +81,8 @@ Create a `{dependency_id}.json` file:
 1. Fork the repository on GitHub
 2. Clone your fork:
    ```bash
-   git clone https://github.com/YourUsername/core.git
-   cd core
+   git clone https://github.com/YourUsername/asset_store.git
+   cd asset_store
    ```
 3. Create a branch:
    ```bash

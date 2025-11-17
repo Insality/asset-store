@@ -90,7 +90,7 @@ if [[ -f /tmp/all_example_urls.txt ]]; then
 
     # Download main files
     downloaded=0
-    for file in index.html dmloader.js Core.wasm Core_wasm.js; do
+    for file in index.html dmloader.js; do
       if curl -f -s "$example_base_url/$file" -o "$DIST_DIR/$example_path/$file" 2>/dev/null; then
         downloaded=$((downloaded + 1))
       fi

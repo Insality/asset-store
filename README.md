@@ -27,10 +27,10 @@ All assets will be copied to your project automatically after installation, so y
 
 Open your `game.project` file and add the following line to the dependencies field under the project section:
 
-**[Asset Store](https://github.com/Insality/core/archive/refs/tags/1.zip)**
+**[Asset Store](https://github.com/Insality/asset-store/archive/refs/tags/1.zip)**
 
 ```
-https://github.com/Insality/core/archive/refs/tags/1.zip
+https://github.com/Insality/asset-store/archive/refs/tags/1.zip
 ```
 
 After that, select `Project ▸ Fetch Libraries` to update [library dependencies](https://defold.com/manuals/libraries/#setting-up-library-dependencies). This happens automatically whenever you open a project so you will only need to do this if the dependencies change without re-opening the project.
@@ -60,13 +60,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Issues and suggestions
 
-If you have any issues, questions or suggestions please [create an issue](https://github.com/Insality/core/issues).
+If you have any issues, questions or suggestions please [create an issue](https://github.com/Insality/asset-store/issues).
 
 
 ## 👏 Contributors
 
-<a href="https://github.com/Insality/core/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=insality/core"/>
+<a href="https://github.com/Insality/asset-store/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=insality/asset-store"/>
 </a>
 
 

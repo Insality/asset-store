@@ -32,11 +32,11 @@ function M.get_commands()
 			locations = { "Project" },
 			run = function()
 				return asset_store.open({
-					store_url = "https://insality.github.io/core/dependencies_store.json",
-					info_url = "https://github.com/Insality/core/blob/main/dependencies_store.md",
+					store_url = "https://insality.github.io/asset-store/dependencies_store.json",
+					info_url = "https://github.com/Insality/asset-store/blob/main/dependencies_store.md",
 					title = "Dependencies Asset Store",
 					asset_type = "dependency",
-					add_asset_url = "https://github.com/Insality/core/blob/main/dependencies_store.md#how-to-submit",
+					add_asset_url = "https://github.com/Insality/asset-store/blob/main/dependencies_store.md#how-to-submit",
 					labels = {
 						widget_card = {
 							example_button = "Repository",
@@ -50,12 +50,12 @@ function M.get_commands()
 		--	locations = { "Project" },
 		--	run = function()
 		--		return asset_store.open({
-		--			store_url = "https://insality.github.io/core/assets_editor_scripts_store.json",
-		--			info_url = "https://github.com/Insality/core/blob/main/assets_editor_scripts_store.md",
+		--			store_url = "https://insality.github.io/asset-store/assets_editor_scripts_store.json",
+		--			info_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md",
 		--			title = "Editor Scripts Asset Store",
 		--			install_prefs_key = "asset_store.install_folder_editor_scripts",
 		--			asset_type = "folder",
-		--			add_asset_url = "https://github.com/Insality/core/blob/main/assets_editor_scripts_store.md#how-to-submit",
+		--			add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
 		--		})
 		--	end
 		--}
@@ -71,12 +71,12 @@ function M.get_commands()
 			locations = { "Project" },
 			run = function()
 				return asset_store.open({
-					store_url = "https://insality.github.io/core/druid_widget_store.json",
-					info_url = "https://github.com/Insality/core/blob/main/druid_widget_store.md",
+					store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
+					info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
 					title = "Druid Asset Store",
 					install_prefs_key = "asset_store.install_folder_druid",
 					asset_type = "folder",
-					add_asset_url = "https://github.com/Insality/core/blob/main/druid_widget_store.md#how-to-submit",
+					add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
 				})
 			end
 		})

@@ -101,7 +101,8 @@ function init(self)
 	self.properties_panel:set_hidden(true)
 	self.properties_panel:set_header("Druid Widgets")
 
-	load_examples(self, "https://insality.github.io/core/druid_widget_store.json", function(data)
+	-- TODO: should be for any available store, not only druid widget
+	load_examples(self, "https://insality.github.io/asset-store/druid_widget_store.json", function(data)
 		create_pages(self, data.items)
 	end)
 
