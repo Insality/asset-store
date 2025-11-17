@@ -382,6 +382,17 @@ build_example_if_needed() {
     return
   fi
 
+  local example_dir_name="${author}:${id}@${version}"
+  local example_output_dir="$DIST_DIR/examples/$example_dir_name"
+  local example_url="${BASE_URL:+$BASE_URL/}examples/$example_dir_name/index.html"
+
+  # Check if example directory already exists with required files (restored from GitHub Pages)
+  # Do this BEFORE modifying the proxy file to avoid leaving it in wrong state
+  if [[ -d "$example_output_dir" && -f "$example_output_dir/index.html" && -f "$example_output_dir/dmloader.js" ]]; then
+    echo "$example_url"
+    return
+  fi
+
   local collection_path_for_proxy="$example_path"
 
   local tmp_proxy_backup
@@ -392,16 +403,6 @@ build_example_if_needed() {
   trap 'cp "$tmp_proxy_backup" "$collection_proxy_path" 2>/dev/null || true; rm -f "$tmp_proxy_backup" "$ROOT/build.ini"; trap - RETURN' RETURN
 
   printf 'collection: "%s"\n' "$collection_path_for_proxy" > "$collection_proxy_path"
-
-  local example_dir_name="${author}:${id}@${version}"
-  local example_output_dir="$DIST_DIR/examples/$example_dir_name"
-  local example_url="${BASE_URL:+$BASE_URL/}examples/$example_dir_name/index.html"
-
-  # Check if example directory already exists with required files (restored from GitHub Pages)
-  if [[ -d "$example_output_dir" && -f "$example_output_dir/index.html" && -f "$example_output_dir/dmloader.js" ]]; then
-    echo "$example_url"
-    return
-  fi
 
   ensure_dir "$example_output_dir"
 
