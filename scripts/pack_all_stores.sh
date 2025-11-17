@@ -6,7 +6,7 @@ SRC_STORES_JSON="$ROOT/stores.json"
 
 # GitHub repository info (can be overridden by environment variables)
 GITHUB_OWNER="${GITHUB_OWNER:-Insality}"
-GITHUB_REPO="${GITHUB_REPO:-core}"
+GITHUB_REPO="${GITHUB_REPO:-asset-store}"
 GITHUB_BRANCH="${GITHUB_BRANCH:-main}"
 
 # Convert ASSETS_ROOT to absolute path if relative
