@@ -145,6 +145,31 @@ local function handle_update(item, all_items, asset_type, on_success, on_error, 
 end
 
 
+---Handle asset removal (dependency only)
+---@param item table - Dependency item to remove
+---@param asset_type string - Type of asset: "folder" or "dependency"
+---@param on_success function - Success callback
+---@param on_error function - Error callback
+local function handle_remove(item, asset_type, on_success, on_error)
+	local adapter = adapters.get_adapter(asset_type)
+
+	if not adapter.remove_dependency then
+		on_error("Remove not supported for asset type: " .. asset_type)
+		return
+	end
+
+	print("Removing " .. asset_type .. ":", item.id)
+	local success, message = adapter.remove_dependency(item)
+	if success then
+		print("Removal successful:", message)
+		on_success(message)
+	else
+		print("Removal failed:", message)
+		on_error(message)
+	end
+end
+
+
 function M.open(config_input)
 	local config = normalize_config(config_input)
 
@@ -270,6 +295,12 @@ function M.open(config_input)
 					table.insert(options, version_name)
 				end
 			end
+
+			-- Add "delete" option if dependency is installed
+			if adapter.is_installed(item, install_folder) then
+				table.insert(options, "delete")
+			end
+
 			return #options > 0 and options or nil
 		end
 
@@ -285,11 +316,44 @@ function M.open(config_input)
 			return extract_version_name_from_url(installed_url)
 		end
 
-		-- Handle version change (immediately update dependency)
-		local function on_version_change(item, selected_url)
+		-- Handle version change (immediately update or remove dependency)
+		local function on_version_change(item, selected_version_name)
 			if config.asset_type ~= "dependency" then
 				return
 			end
+
+			-- Check if "delete" was selected
+			if selected_version_name == "delete" then
+				handle_remove(item, config.asset_type,
+					function(message)
+						set_install_status("Success: " .. message)
+						-- Track changes for dependency type assets
+						dependencies_changed = true
+					end,
+					function(message)
+						set_install_status("Error: " .. message)
+					end
+				)
+				return
+			end
+
+			-- Find the URL corresponding to the selected version
+			local selected_url = nil
+			if item.content then
+				for _, url in ipairs(item.content) do
+					local version_name = extract_version_name_from_url(url)
+					if version_name == selected_version_name then
+						selected_url = url
+						break
+					end
+				end
+			end
+
+			if not selected_url then
+				set_install_status("Error: Could not find URL for version: " .. selected_version_name)
+				return
+			end
+
 			handle_update(item, all_items, config.asset_type,
 				function(message)
 					set_install_status("Success: " .. message)

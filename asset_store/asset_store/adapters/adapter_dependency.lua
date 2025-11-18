@@ -452,5 +452,43 @@ function M.update_dependency(item, new_url)
 end
 
 
+---Remove a dependency by removing its URL from game.project
+---@param item table - Dependency item with content array
+---@return boolean, string - Success status and message
+function M.remove_dependency(item)
+	local installed_url = M.get_installed_version_url(item)
+	if not installed_url then
+		return false, "Dependency is not installed"
+	end
+
+	local dependencies = get_dependencies()
+	if not dependencies then
+		return false, "Failed to read game.project dependencies"
+	end
+
+	-- Find and remove the URL
+	local found = false
+	for idx, existing_url in ipairs(dependencies) do
+		if existing_url == installed_url then
+			table.remove(dependencies, idx)
+			found = true
+			print("Removing dependency from game.project:", installed_url, "at index", idx)
+			break
+		end
+	end
+
+	if not found then
+		return false, "Could not find installed dependency URL in game.project"
+	end
+
+	local success = set_dependencies(dependencies)
+	if success then
+		return true, "Dependency removed successfully"
+	else
+		return false, "Failed to update game.project"
+	end
+end
+
+
 return M
 

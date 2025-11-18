@@ -225,16 +225,9 @@ function M.create(item, context)
 			value = selected_value,
 			options = version_options,
 			on_value_changed = function(selected_version_name)
-				-- Find the URL corresponding to the selected version
-				if item.content then
-					for _, url in ipairs(item.content) do
-						local version_name = extract_version_name_from_url(url)
-						if version_name == selected_version_name then
-							on_version_change(item, url)
-							break
-						end
-					end
-				end
+				-- Pass selected version name directly to on_version_change
+				-- It will handle both version updates and "delete" option
+				on_version_change(item, selected_version_name)
 			end
 		}))
 	end
