@@ -16,6 +16,7 @@
 		"https://github.com/Insality/defold-lang/archive/refs/tags/4.zip"
 	],
 	"example_code": "https://github.com/Insality/defold-lang",
+	"api": "https://github.com/Insality/defold-lang/blob/main/API_REFERENCE.md",
 	"author_url": "https://github.com/Insality",
 	"image": "defold-lang-thumb.png"
 }

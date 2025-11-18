@@ -23,6 +23,7 @@
 		"https://github.com/Insality/defold-event/archive/refs/tags/13.zip"
 	],
 	"example_code": "https://github.com/Insality/defold-event",
+	"api": "https://github.com/Insality/defold-event/blob/main/api/api.md",
 	"author_url": "https://github.com/Insality",
 	"image": "defold-event-thumb.png"
 }

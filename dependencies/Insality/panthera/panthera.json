@@ -1,0 +1,27 @@
+{
+	"author": "Insality",
+	"id": "panthera",
+	"title": "Panthera Runtime",
+	"depends": [
+		"Insality:defold-tweener"
+	],
+	"description": "Panthera Software - give you the huge speed up at Defold animation flow even with more accuracy! You not required to do animations via code and run the game every change to see the changes. Make animations and export it via code right into the game!",
+	"example_code": "https://github.com/Insality/panthera",
+	"api": "https://github.com/Insality/panthera/blob/main/api/panthera_api.md",
+	"author_url": "https://github.com/Insality",
+	"tags": [
+		"animation",
+		"editor",
+		"gui",
+		"tools",
+		"util"
+	],
+	"content": [
+		"https://github.com/Insality/panthera/archive/refs/tags/runtime.1.zip",
+		"https://github.com/Insality/panthera/archive/refs/tags/runtime.2.zip",
+		"https://github.com/Insality/panthera/archive/refs/tags/runtime.3.zip",
+		"https://github.com/Insality/panthera/archive/refs/tags/runtime.4.zip",
+		"https://github.com/Insality/panthera/archive/refs/tags/runtime.5.zip"
+	],
+	"stars": 95
+}
