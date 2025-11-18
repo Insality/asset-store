@@ -161,6 +161,9 @@ function M.open(config_input)
 	local initial_install_folder = config.install_prefs_key and editor.prefs.get(config.install_prefs_key) or nil
 	local filter_overrides = config.labels.filters and { labels = config.labels.filters } or nil
 
+	-- Track if dependencies were changed during dialog session
+	local dependencies_changed = false
+
 	local dialog_component = editor.ui.component(function(props)
 		local all_items = editor.ui.use_state(initial_items)
 		local install_folder, set_install_folder = editor.ui.use_state(initial_install_folder)
@@ -209,6 +212,10 @@ function M.open(config_input)
 			handle_install(item, install_folder, all_items, config.asset_type,
 				function(message)
 					set_install_status("Success: " .. message)
+					-- Track changes for dependency type assets
+					if config.asset_type == "dependency" then
+						dependencies_changed = true
+					end
 				end,
 				function(message)
 					set_install_status("Error: " .. message)
@@ -220,6 +227,10 @@ function M.open(config_input)
 			handle_update(item, all_items, config.asset_type,
 				function(message)
 					set_install_status("Success: " .. message)
+					-- Track changes for dependency type assets
+					if config.asset_type == "dependency" then
+						dependencies_changed = true
+					end
 				end,
 				function(message)
 					set_install_status("Error: " .. message)
@@ -282,6 +293,8 @@ function M.open(config_input)
 			handle_update(item, all_items, config.asset_type,
 				function(message)
 					set_install_status("Success: " .. message)
+					-- Track changes for dependency type assets
+					dependencies_changed = true
 				end,
 				function(message)
 					set_install_status("Error: " .. message)
@@ -390,6 +403,12 @@ function M.open(config_input)
 	end)
 
 	local result = editor.ui.show_dialog(dialog_component({}))
+
+	-- If dependencies were changed, call fetch-libraries via HTTP API
+	if dependencies_changed and config.asset_type == "dependency" then
+		print("Asset Store: Dependencies were changed, calling fetch-libraries...")
+		internal.call_editor_command("fetch-libraries")
+	end
 
 	if result then
 		if result == INFO_RESULT then
