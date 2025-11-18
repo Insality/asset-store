@@ -168,7 +168,7 @@ function M.open(config_input)
 		local filter_type, set_filter_type = editor.ui.use_state("All")
 		local filter_author, set_filter_author = editor.ui.use_state("All Authors")
 		local filter_tag, set_filter_tag = editor.ui.use_state("All Tags")
-		local sort_by, set_sort_by = editor.ui.use_state("Popularity")
+		local sort_by, set_sort_by = editor.ui.use_state("Stars")
 		local install_status, set_install_status = editor.ui.use_state("")
 
 		local authors = editor.ui.use_memo(internal.extract_authors, all_items)
@@ -182,7 +182,8 @@ function M.open(config_input)
 
 		-- Build sort options based on asset type
 		local sort_options = editor.ui.use_memo(function(asset_type)
-			local options = {"Popularity", "Asset Name", "Author"}
+			--local options = {"Popularity", "Asset Name", "Author"}
+			local options = {"Asset Name", "Author"}
 			if asset_type == "dependency" then
 				table.insert(options, "Stars")
 			elseif asset_type == "folder" then

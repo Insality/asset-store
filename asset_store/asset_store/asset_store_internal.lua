@@ -285,6 +285,7 @@ end
 
 
 ---Track download event via external tracking service
+---Used to grant popularity points to the asset and different sorting day to day
 ---@param item table - Asset item that was downloaded (widget or dependency)
 ---@param asset_type string - Asset type: "widget" or "dependency"
 function M.track_download(item, asset_type)

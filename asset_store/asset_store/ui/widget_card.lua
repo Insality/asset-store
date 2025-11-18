@@ -130,12 +130,12 @@ function M.create(item, context)
 	end
 
 	-- Add weekly downloads for dependencies if available
-	if is_dependency and item.popularity and item.popularity.week and item.popularity.week > 0 then
-		table.insert(header_right, editor.ui.label({
-			text = " ↓ " .. tostring(item.popularity.week) .. "  ",
-			color = editor.ui.COLOR.HINT
-		}))
-	end
+	--if is_dependency and item.popularity and item.popularity.week and item.popularity.week > 0 then
+	--	table.insert(header_right, editor.ui.label({
+	--		text = " ↓ " .. tostring(item.popularity.week) .. "  ",
+	--		color = editor.ui.COLOR.HINT
+	--	}))
+	--end
 
 	-- Combine left, spacer, and right parts
 	local header_children = {}
