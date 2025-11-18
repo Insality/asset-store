@@ -53,6 +53,7 @@ local DEFAULT_CLOSE_BUTTON = "Close"
 local DEFAULT_ADD_ASSET_BUTTON_LABEL = "Add Asset"
 local DEFAULT_EMPTY_SEARCH_MESSAGE = "No items found matching '%s'."
 local DEFAULT_EMPTY_FILTER_MESSAGE = "No items found matching the current filters."
+local DEFAULT_EMPTY_INSTALLED_MESSAGE = "No installed items found. Select `All` in the `Type` filter to see all items."
 local DEFAULT_SEARCH_LABELS = {
 	search_tooltip = "Search by title, author, or description"
 }
@@ -189,11 +190,13 @@ function M.open(config_input)
 	-- Track if dependencies were changed during dialog session
 	local dependencies_changed = false
 
+	local default_type = config.asset_type == "dependency" and "Installed" or "All"
+
 	local dialog_component = editor.ui.component(function(props)
 		local all_items = editor.ui.use_state(initial_items)
 		local install_folder, set_install_folder = editor.ui.use_state(initial_install_folder)
 		local search_query, set_search_query = editor.ui.use_state("")
-		local filter_type, set_filter_type = editor.ui.use_state("All")
+		local filter_type, set_filter_type = editor.ui.use_state(default_type)
 		local filter_author, set_filter_author = editor.ui.use_state("All Authors")
 		local filter_tag, set_filter_tag = editor.ui.use_state("All Tags")
 		local sort_by, set_sort_by = editor.ui.use_state("Stars")
@@ -408,29 +411,32 @@ function M.open(config_input)
 			if search_query ~= "" then
 				message = string.format(config.empty_search_message, search_query)
 			end
+			if filter_type == "Installed" then
+				message = DEFAULT_EMPTY_INSTALLED_MESSAGE
+			end
 			table.insert(content_children, editor.ui.label({
 				text = message,
 				color = editor.ui.COLOR.HINT,
 				alignment = editor.ui.ALIGNMENT.CENTER
 			}))
-		else
-			table.insert(content_children, widget_list_ui.create(filtered_items, {
-				on_install = on_install,
-				on_update = on_update,
-				on_version_change = on_version_change,
-				open_url = internal.open_url,
-				is_installed = function(item)
-					return adapter.is_installed(item, install_folder)
-				end,
-				can_update = function(item)
-					local can_update_result, _ = adapter.can_update(item)
-					return can_update_result
-				end,
-				get_version_options = get_version_options,
-				get_installed_version_name = get_installed_version_name,
-				labels = config.labels.widget_card,
-			}))
 		end
+
+		table.insert(content_children, widget_list_ui.create(filtered_items, {
+			on_install = on_install,
+			on_update = on_update,
+			on_version_change = on_version_change,
+			open_url = internal.open_url,
+			is_installed = function(item)
+				return adapter.is_installed(item, install_folder)
+			end,
+			can_update = function(item)
+				local can_update_result, _ = adapter.can_update(item)
+				return can_update_result
+			end,
+			get_version_options = get_version_options,
+			get_installed_version_name = get_installed_version_name,
+			labels = config.labels.widget_card,
+		}))
 
 		local buttons = {}
 

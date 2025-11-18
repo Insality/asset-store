@@ -4,9 +4,9 @@ local DEFAULT_LABELS = {
 	tag_label = "Tag:",
 	all_types = "All",
 	installed = "Installed",
-	not_installed = "Not Installed",
+	not_installed = "Not Installed                     ",
 	all_authors = "All Authors",
-	all_tags = "All Tags",
+	all_tags = "All Tags                               ", -- Legit hack now to stretch the select box...
 }
 
 

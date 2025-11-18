@@ -63,6 +63,17 @@ function M.create(items, overrides)
 		end
 	end
 
+	---- Add empty spacers if there are few items to make dialog taller
+	local min_items = 5
+	if #items < min_items then
+		for i = #items, min_items - 1 do
+			for index = 1, 18 do
+			table.insert(widget_items, editor.ui.vertical({ grow = true }))
+			end
+		end
+	end
+
+	print("widget_items", #widget_items)
 	return editor.ui.scroll({
 		content = editor.ui.vertical({
 			children = widget_items
