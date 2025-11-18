@@ -435,12 +435,12 @@ function M.open(config_input)
 		local buttons = {}
 
 		-- Add "Add Asset" button if URL is provided
-		if config.add_asset_url then
-			table.insert(buttons, editor.ui.dialog_button({
-				text = config.add_asset_button_label or DEFAULT_ADD_ASSET_BUTTON_LABEL,
-				result = ADD_ASSET_RESULT,
-			}))
-		end
+		--if config.add_asset_url then
+		--	table.insert(buttons, editor.ui.dialog_button({
+		--		text = config.add_asset_button_label or DEFAULT_ADD_ASSET_BUTTON_LABEL,
+		--		result = ADD_ASSET_RESULT,
+		--	}))
+		--end
 
 		-- Add support button
 		table.insert(buttons, editor.ui.dialog_button({
@@ -459,8 +459,11 @@ function M.open(config_input)
 			cancel = true
 		}))
 
+		-- Build title with entity count
+		local title_with_count = config.title .. " (" .. #all_items .. " entities)"
+
 		return dialog_ui.build({
-			title = config.title,
+			title = title_with_count,
 			children = content_children,
 			buttons = buttons
 		})

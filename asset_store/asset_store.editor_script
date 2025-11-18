@@ -34,7 +34,7 @@ function M.get_commands()
 				return asset_store.open({
 					store_url = "https://insality.github.io/asset-store/dependencies_store.json",
 					info_url = "https://github.com/Insality/asset-store/blob/main/dependencies_store.md",
-					title = "Dependencies Asset Store",
+					title = "Defold Asset Portal",
 					asset_type = "dependency",
 					add_asset_url = "https://github.com/Insality/asset-store/blob/main/dependencies_store.md#how-to-submit",
 					labels = {
@@ -73,7 +73,7 @@ function M.get_commands()
 				return asset_store.open({
 					store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
 					info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
-					title = "Druid Asset Store",
+					title = "Druid Widgets",
 					install_prefs_key = "asset_store.install_folder_druid",
 					asset_type = "folder",
 					add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
