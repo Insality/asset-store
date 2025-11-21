@@ -125,6 +125,8 @@ end
 
 function M.filter_items_by_filters(items, search_query, filter_type, filter_author, filter_tag, install_folder, adapter, sort_by, asset_type)
 	local lower_query = normalize_query(search_query)
+	-- Normalize filter_type by trimming whitespace for comparison
+	local normalized_filter_type = filter_type and filter_type:match("^%s*(.-)%s*$") or nil
 	local visible_items = {}
 
 	for _, item in ipairs(items) do
@@ -139,12 +141,12 @@ function M.filter_items_by_filters(items, search_query, filter_type, filter_auth
 		filtered = M.filter_items(filtered, search_query)
 	end
 
-	if filter_type and filter_type ~= "All" then
+	if normalized_filter_type and normalized_filter_type ~= "All" then
 		local type_filtered = {}
 		for _, item in ipairs(filtered) do
 			local is_installed = adapter.is_installed(item, install_folder)
-			if (filter_type == "Installed" and is_installed) or
-				(filter_type == "Not Installed" and not is_installed) then
+			if (normalized_filter_type == "Installed" and is_installed) or
+				(normalized_filter_type == "Not Installed" and not is_installed) then
 				table.insert(type_filtered, item)
 			end
 		end
