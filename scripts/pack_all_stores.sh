@@ -827,7 +827,6 @@ if [[ -d "$DIST_DIR/examples" && -n "$(find "$DIST_DIR/examples" -mindepth 1 -ma
   examples_zip="$DIST_DIR/examples.zip"
   (cd "$DIST_DIR" && zip -q -r "examples.zip" "examples/")
   if [[ -f "$examples_zip" ]]; then
-    local zip_size
     zip_size="$(get_file_size "$examples_zip")"
     echo "✅ Created examples.zip ($(format_size "$zip_size"))"
     echo "   URL: ${BASE_URL:+$BASE_URL/}examples.zip"
