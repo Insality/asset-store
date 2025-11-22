@@ -803,6 +803,41 @@ else
   echo "ℹ️  Created empty statistics file: $DIST_DIR/stats.json"
 fi
 
+# Helper function to format file size
+format_size() {
+  local size="$1"
+  if command -v numfmt >/dev/null 2>&1; then
+    numfmt --to=iec-i --suffix=B "$size" 2>/dev/null || echo "${size} bytes"
+  else
+    # Fallback: simple formatting
+    if [[ $size -gt 1048576 ]]; then
+      echo "$(( size / 1048576 ))MB"
+    elif [[ $size -gt 1024 ]]; then
+      echo "$(( size / 1024 ))KB"
+    else
+      echo "${size} bytes"
+    fi
+  fi
+}
+
+# Create examples.zip archive for faster restoration
+if [[ -d "$DIST_DIR/examples" && -n "$(find "$DIST_DIR/examples" -mindepth 1 -maxdepth 1 2>/dev/null)" ]]; then
+  echo ""
+  echo "📦 Creating examples.zip archive..."
+  examples_zip="$DIST_DIR/examples.zip"
+  (cd "$DIST_DIR" && zip -q -r "examples.zip" "examples/")
+  if [[ -f "$examples_zip" ]]; then
+    local zip_size
+    zip_size="$(get_file_size "$examples_zip")"
+    echo "✅ Created examples.zip ($(format_size "$zip_size"))"
+    echo "   URL: ${BASE_URL:+$BASE_URL/}examples.zip"
+  else
+    echo "⚠️  Warning: Failed to create examples.zip"
+  fi
+fi
+
+
+echo ""
 echo "✅ Build complete: $DIST_DIR/stores.json"
 if [[ -n "$BASE_URL" ]]; then
   echo "🌐 Published at: $BASE_URL/stores.json"

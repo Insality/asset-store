@@ -31,7 +31,7 @@ jobs:
       - name: install deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq zip curl wget python3 python3-pip
+          sudo apt-get install -y jq zip unzip curl wget python3 python3-pip
 
       - name: setup java
         uses: actions/setup-java@v3
