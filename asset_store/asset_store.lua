@@ -248,7 +248,7 @@ function M.open(config_input)
 
 		-- Calculate pagination
 		local total_pages = math.max(1, math.ceil(#filtered_items / ITEMS_PER_PAGE))
-		
+
 		-- Ensure current_page is valid (in case filtered_items count decreased)
 		local safe_current_page = math.min(current_page, math.max(1, total_pages))
 		if safe_current_page ~= current_page then
@@ -259,16 +259,16 @@ function M.open(config_input)
 		local paginated_items = editor.ui.use_memo(function(items, page, per_page)
 			local start_index = (page - 1) * per_page + 1
 			local end_index = math.min(page * per_page, #items)
-			
+
 			if start_index > #items or start_index < 1 then
 				return {}
 			end
-			
+
 			local page_items = {}
 			for i = start_index, end_index do
 				table.insert(page_items, items[i])
 			end
-			
+
 			return page_items
 		end, filtered_items, safe_current_page, ITEMS_PER_PAGE)
 
@@ -543,6 +543,7 @@ function M.open(config_input)
 	if dependencies_changed and config.asset_type == "dependency" then
 		print("Asset Store: Dependencies were changed, calling fetch-libraries...")
 		internal.call_editor_command("fetch-libraries")
+		editor.save()
 	end
 
 	if result then
