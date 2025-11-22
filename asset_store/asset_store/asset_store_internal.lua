@@ -153,22 +153,28 @@ function M.filter_items_by_filters(items, search_query, filter_type, filter_auth
 		filtered = type_filtered
 	end
 
-	if filter_author and filter_author ~= "All Authors" then
+	-- Normalize filter_author by trimming whitespace for comparison
+	local normalized_filter_author = filter_author and filter_author:match("^%s*(.-)%s*$") or nil
+
+	if normalized_filter_author and normalized_filter_author ~= "All Authors" then
 		local author_filtered = {}
 		for _, item in ipairs(filtered) do
-			if item.author == filter_author then
+			if item.author == normalized_filter_author then
 				table.insert(author_filtered, item)
 			end
 		end
 		filtered = author_filtered
 	end
 
-	if filter_tag and filter_tag ~= "All Tags" then
+	-- Normalize filter_tag by trimming whitespace for comparison
+	local normalized_filter_tag = filter_tag and filter_tag:match("^%s*(.-)%s*$") or nil
+
+	if normalized_filter_tag and normalized_filter_tag ~= "All Tags" then
 		local tag_filtered = {}
 		for _, item in ipairs(filtered) do
 			if item.tags then
 				for _, tag in ipairs(item.tags) do
-					if tag == filter_tag then
+					if tag == normalized_filter_tag then
 						table.insert(tag_filtered, item)
 						break
 					end
