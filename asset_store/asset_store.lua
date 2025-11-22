@@ -2,6 +2,7 @@ local adapters = require("asset_store.asset_store.adapters.adapters")
 local internal = require("asset_store.asset_store.asset_store_internal")
 local dialog_ui = require("asset_store.asset_store.ui.dialog")
 local filters_ui = require("asset_store.asset_store.ui.filters")
+local pagination_ui = require("asset_store.asset_store.ui.pagination")
 local search_ui = require("asset_store.asset_store.ui.search")
 local settings_ui = require("asset_store.asset_store.ui.settings")
 local widget_list_ui = require("asset_store.asset_store.ui.widget_list")
@@ -57,6 +58,7 @@ local DEFAULT_EMPTY_INSTALLED_MESSAGE = "No installed items found. Select `All` 
 local DEFAULT_SEARCH_LABELS = {
 	search_tooltip = "Search by title, author, or description"
 }
+local ITEMS_PER_PAGE = 50
 
 
 local function normalize_config(input)
@@ -201,6 +203,7 @@ function M.open(config_input)
 		local filter_tag, set_filter_tag = editor.ui.use_state("All Tags")
 		local sort_by, set_sort_by = editor.ui.use_state("Stars")
 		local install_status, set_install_status = editor.ui.use_state("")
+		local current_page, set_current_page = editor.ui.use_state(1)
 
 		local authors = editor.ui.use_memo(internal.extract_authors, all_items)
 		local tags = editor.ui.use_memo(internal.extract_tags, all_items)
@@ -223,6 +226,13 @@ function M.open(config_input)
 			return options
 		end, config.asset_type)
 
+		-- Helper function to reset page when filters change
+		local function reset_page_if_needed()
+			if current_page ~= 1 then
+				set_current_page(1)
+			end
+		end
+
 		local filtered_items = editor.ui.use_memo(
 			internal.filter_items_by_filters,
 			all_items,
@@ -235,6 +245,32 @@ function M.open(config_input)
 			sort_by,
 			config.asset_type
 		)
+
+		-- Calculate pagination
+		local total_pages = math.max(1, math.ceil(#filtered_items / ITEMS_PER_PAGE))
+		
+		-- Ensure current_page is valid (in case filtered_items count decreased)
+		local safe_current_page = math.min(current_page, math.max(1, total_pages))
+		if safe_current_page ~= current_page then
+			set_current_page(safe_current_page)
+		end
+
+		-- Slice filtered_items for current page
+		local paginated_items = editor.ui.use_memo(function(items, page, per_page)
+			local start_index = (page - 1) * per_page + 1
+			local end_index = math.min(page * per_page, #items)
+			
+			if start_index > #items or start_index < 1 then
+				return {}
+			end
+			
+			local page_items = {}
+			for i = start_index, end_index do
+				table.insert(page_items, items[i])
+			end
+			
+			return page_items
+		end, filtered_items, safe_current_page, ITEMS_PER_PAGE)
 
 		local function on_install(item)
 			handle_install(item, install_folder, all_items, config.asset_type,
@@ -391,18 +427,33 @@ function M.open(config_input)
 			type_options = type_options,
 			author_options = author_options,
 			tag_options = tag_options,
-			on_type_change = set_filter_type,
-			on_author_change = set_filter_author,
-			on_tag_change = set_filter_tag,
+			on_type_change = function(value)
+				set_filter_type(value)
+				reset_page_if_needed()
+			end,
+			on_author_change = function(value)
+				set_filter_author(value)
+				reset_page_if_needed()
+			end,
+			on_tag_change = function(value)
+				set_filter_tag(value)
+				reset_page_if_needed()
+			end,
 			labels = config.labels.filters,
 		}))
 
 		table.insert(content_children, search_ui.create({
 			search_query = search_query,
-			on_search = set_search_query,
+			on_search = function(value)
+				set_search_query(value)
+				reset_page_if_needed()
+			end,
 			sort_by = sort_by,
 			sort_options = sort_options,
-			on_sort_change = set_sort_by,
+			on_sort_change = function(value)
+				set_sort_by(value)
+				reset_page_if_needed()
+			end,
 			labels = config.labels.search,
 		}))
 
@@ -421,7 +472,7 @@ function M.open(config_input)
 			}))
 		end
 
-		table.insert(content_children, widget_list_ui.create(filtered_items, {
+		table.insert(content_children, widget_list_ui.create(paginated_items, {
 			on_install = on_install,
 			on_update = on_update,
 			on_version_change = on_version_change,
@@ -437,6 +488,17 @@ function M.open(config_input)
 			get_installed_version_name = get_installed_version_name,
 			labels = config.labels.widget_card,
 		}))
+
+		-- Add pagination controls if there's more than one page
+		if total_pages > 1 then
+			table.insert(content_children, pagination_ui.create({
+				current_page = safe_current_page,
+				total_pages = total_pages,
+				total_items = #filtered_items,
+				items_per_page = ITEMS_PER_PAGE,
+				on_page_change = set_current_page
+			}))
+		end
 
 		local buttons = {}
 
