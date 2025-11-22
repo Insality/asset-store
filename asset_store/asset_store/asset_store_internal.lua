@@ -406,14 +406,6 @@ function M.call_editor_command(command)
 				["Accept"] = "application/json"
 			}
 		})
-
-		if response then
-			if response.status == 202 then
-				print("Asset Store: Editor command '" .. command .. "' executed successfully")
-			else
-				print("Asset Store: Editor command '" .. command .. "' returned status: " .. tostring(response.status))
-			end
-		end
 	end)
 
 	return true

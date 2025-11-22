@@ -541,7 +541,6 @@ function M.open(config_input)
 
 	-- If dependencies were changed, call fetch-libraries via HTTP API
 	if dependencies_changed and config.asset_type == "dependency" then
-		print("Asset Store: Dependencies were changed, calling fetch-libraries...")
 		internal.call_editor_command("fetch-libraries")
 		editor.save()
 	end
