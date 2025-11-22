@@ -19,7 +19,8 @@
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.1.3.zip",
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.2.0.zip",
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.3.0.zip",
-		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.4.0.zip"
+		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.4.0.zip",
+		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.5.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-texturepacker",
 	"author_url": "https://github.com/defold",
