@@ -29,7 +29,6 @@ Temporary Items
 *~
 *.swp
 *.swo
-.vscode/*
 !.vscode/settings.json
 .idea/
 /.editor_settings
@@ -42,3 +41,4 @@ deployer_version_settings.ini
 build.ini
 bob*.jar
 *.pyc
+log.txt
