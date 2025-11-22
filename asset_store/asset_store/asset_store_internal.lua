@@ -166,15 +166,16 @@ function M.filter_items_by_filters(items, search_query, filter_type, filter_auth
 		filtered = author_filtered
 	end
 
-	-- Normalize filter_tag by trimming whitespace for comparison
+	-- Normalize filter_tag by trimming whitespace and converting to lowercase for comparison
 	local normalized_filter_tag = filter_tag and filter_tag:match("^%s*(.-)%s*$") or nil
 
 	if normalized_filter_tag and normalized_filter_tag ~= "All Tags" then
 		local tag_filtered = {}
+		local lower_filter_tag = string.lower(normalized_filter_tag)
 		for _, item in ipairs(filtered) do
 			if item.tags then
 				for _, tag in ipairs(item.tags) do
-					if tag == normalized_filter_tag then
+					if string.lower(tag) == lower_filter_tag then
 						table.insert(tag_filtered, item)
 						break
 					end
