@@ -12,6 +12,10 @@ on:
         description: 'Remove restored assets and rebuild everything from scratch'
         type: boolean
         default: false
+      update_from_portal:
+        description: 'Update assets from asset-portal before building'
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -27,7 +31,7 @@ jobs:
       - name: install deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq zip curl wget
+          sudo apt-get install -y jq zip curl wget python3 python3-pip
 
       - name: setup java
         uses: actions/setup-java@v3
@@ -54,6 +58,25 @@ jobs:
         env:
           CLEAN_BUILD_INPUT: ${{ github.event.inputs.clean_build || 'false' }}
 
+      - name: set update from portal flag
+        id: update_portal
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
+            if [[ "${UPDATE_PORTAL_INPUT}" == "true" ]]; then
+              echo "value=true" >> "$GITHUB_OUTPUT"
+              echo "🔄 Update from asset-portal enabled."
+            else
+              echo "value=false" >> "$GITHUB_OUTPUT"
+              echo "⏭️  Update from asset-portal skipped."
+            fi
+          else
+            # For scheduled and push events, always update
+            echo "value=true" >> "$GITHUB_OUTPUT"
+            echo "🔄 Update from asset-portal enabled (automatic)."
+          fi
+        env:
+          UPDATE_PORTAL_INPUT: ${{ github.event.inputs.update_from_portal || 'true' }}
+
       - name: clean dist directory
         if: steps.clean.outputs.value == 'true'
         run: |
@@ -66,6 +89,13 @@ jobs:
         env:
           DIST_DIR: dist
         run: bash scripts/restore_assets.sh ${{ steps.base.outputs.url }}
+
+      - name: update from asset-portal
+        if: steps.update_portal.outputs.value == 'true'
+        run: |
+          echo "📥 Updating assets from asset-portal..."
+          python3 scripts/update_from_asset_portal.py --dependencies-dir dependencies
+          echo "✓ Asset update complete"
 
       - name: pack all stores
         env:
