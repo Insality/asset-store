@@ -12,7 +12,6 @@ end
 
 
 function M:create_element(data)
-	print("Create")
 end
 
 

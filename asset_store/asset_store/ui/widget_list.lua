@@ -73,7 +73,6 @@ function M.create(items, overrides)
 		end
 	end
 
-	print("widget_items", #widget_items)
 	return editor.ui.scroll({
 		content = editor.ui.vertical({
 			children = widget_items
