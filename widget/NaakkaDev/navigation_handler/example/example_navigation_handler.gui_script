@@ -1,5 +1,5 @@
 local druid = require("druid.druid")
-local navigation_handler = require("widget.NaakkaaDev.navigation_handler.navigation_handler")
+local navigation_handler = require("widget.NaakkaDev.navigation_handler.navigation_handler")
 local color = require("druid.color")
 
 function init(self)

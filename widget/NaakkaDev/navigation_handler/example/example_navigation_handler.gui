@@ -1,4 +1,4 @@
-script: "/widget/NaakkaaDev/navigation_handler/example/example_navigation_handler.gui_script"
+script: "/widget/NaakkaDev/navigation_handler/example/example_navigation_handler.gui_script"
 nodes {
   position {
     x: 432.0

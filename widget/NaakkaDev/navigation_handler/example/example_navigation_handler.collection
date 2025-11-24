@@ -4,7 +4,7 @@ embedded_instances {
   id: "go"
   data: "components {\n"
   "  id: \"example_navigation_handler\"\n"
-  "  component: \"/widget/NaakkaaDev/navigation_handler/example/example_navigation_handler.gui\"\n"
+  "  component: \"/widget/NaakkaDev/navigation_handler/example/example_navigation_handler.gui\"\n"
   "}\n"
   ""
 }
