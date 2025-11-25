@@ -9,7 +9,12 @@
 	],
 	"stars": 46,
 	"content": [
-		"https://github.com/Jrayp/Moku/archive/Alpha_v2.2.zip"
+		"https://github.com/Jrayp/Moku/archive/refs/tags/Alpha_v1.0.zip",
+		"https://github.com/Jrayp/Moku/archive/refs/tags/Alpha_v1.01.zip",
+		"https://github.com/Jrayp/Moku/archive/refs/tags/Alpha_v2.0.zip",
+		"https://github.com/Jrayp/Moku/archive/refs/tags/Alpha_v2.01.zip",
+		"https://github.com/Jrayp/Moku/archive/refs/tags/Alpha_v2.1.zip",
+		"https://github.com/Jrayp/Moku/archive/refs/tags/Alpha_v2.2.zip"
 	],
 	"example_code": "https://github.com/Jrayp/Moku",
 	"author_url": "https://github.com/Jrayp",

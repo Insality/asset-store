@@ -10,7 +10,9 @@
 	"content": [
 		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.zip",
 		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.1.zip",
-		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.2.zip"
+		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.2.zip",
+		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.1.0.zip",
+		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.2.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-videoplayer-native",
 	"author_url": "https://github.com/defold",

@@ -9,7 +9,10 @@
 	],
 	"stars": 11,
 	"content": [
-		"https://github.com/GameDistribution/gd-defold/archive/main.zip"
+		"https://github.com/GameDistribution/gd-defold/archive/refs/tags/1.0.0.zip",
+		"https://github.com/GameDistribution/gd-defold/archive/refs/tags/1.1.0.zip",
+		"https://github.com/GameDistribution/gd-defold/archive/refs/tags/1.1.1.zip",
+		"https://github.com/GameDistribution/gd-defold/archive/refs/tags/1.2.0.zip"
 	],
 	"example_code": "https://github.com/GameDistribution/gd-defold",
 	"author_url": "https://github.com/GameDistribution",

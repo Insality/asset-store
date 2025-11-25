@@ -1,0 +1,20 @@
+{
+	"author": "8BitSkull",
+	"id": "dicebag",
+	"title": "Dicebag",
+	"description": "A module of probability functions designed specifically for games.",
+	"tags": [
+		"game mechanic",
+		"math",
+		"util"
+	],
+	"stars": 38,
+	"content": [
+		"https://github.com/8bitskull/dicebag/archive/refs/tags/0.1.zip",
+		"https://github.com/8bitskull/dicebag/archive/refs/tags/0.2.zip",
+		"https://github.com/8bitskull/dicebag/archive/refs/tags/0.3.zip"
+	],
+	"example_code": "https://github.com/8bitskull/dicebag",
+	"author_url": "https://github.com/8bitskull",
+	"image": "dicebag-thumb.jpg"
+}

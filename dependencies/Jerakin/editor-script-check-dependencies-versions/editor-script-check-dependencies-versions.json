@@ -8,7 +8,9 @@
 	],
 	"stars": 3,
 	"content": [
-		"https://github.com/Jerakin/editor-script-check-dependencies-versions/archive/master.zip"
+		"https://github.com/Jerakin/editor-script-check-dependencies-versions/archive/refs/tags/v0.1.0.zip",
+		"https://github.com/Jerakin/editor-script-check-dependencies-versions/archive/refs/tags/v0.1.1.zip",
+		"https://github.com/Jerakin/editor-script-check-dependencies-versions/archive/refs/tags/v1.0.0.zip"
 	],
 	"example_code": "https://github.com/Jerakin/editor-script-check-dependencies-versions",
 	"author_url": "https://github.com/Jerakin",

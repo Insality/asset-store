@@ -9,7 +9,9 @@
 	],
 	"stars": 47,
 	"content": [
-		"https://github.com/TheKing0x9/horri-fold/archive/main.zip"
+		"https://github.com/TheKing0x9/horri-fold/archive/refs/tags/v1.0.0-beta.1.zip",
+		"https://github.com/TheKing0x9/horri-fold/archive/refs/tags/v1.0.0-beta.2.zip",
+		"https://github.com/TheKing0x9/horri-fold/archive/refs/tags/v1.0.0-beta.3.zip"
 	],
 	"example_code": "https://github.com/TheKing0x9/horri-fold",
 	"author_url": "https://github.com/TheKing0x9",

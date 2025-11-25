@@ -8,7 +8,8 @@
 	],
 	"stars": 7,
 	"content": [
-		"https://github.com/Jerakin/editor-script-align/archive/master.zip"
+		"https://github.com/Jerakin/editor-script-align/archive/refs/tags/0.1.0.zip",
+		"https://github.com/Jerakin/editor-script-align/archive/refs/tags/0.2.0.zip"
 	],
 	"example_code": "https://github.com/Jerakin/editor-script-align",
 	"author_url": "https://github.com/Jerakin",
