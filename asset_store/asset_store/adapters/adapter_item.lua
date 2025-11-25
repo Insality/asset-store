@@ -213,6 +213,20 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		print("Warning: No content list in JSON data")
 	end
 
+	-- Create install folder if it doesn't exist
+	local install_folder_attrs = editor.resource_attributes(install_folder)
+	if not install_folder_attrs or not install_folder_attrs.exists then
+		editor.create_directory(install_folder)
+		print("Created install folder:", install_folder)
+	end
+
+	-- Create widget folder if it doesn't exist
+	local widget_folder_path = install_folder .. "/" .. item.id
+	local widget_folder_attrs = editor.resource_attributes(widget_folder_path)
+	if not widget_folder_attrs or not widget_folder_attrs.exists then
+		editor.create_directory(widget_folder_path)
+		print("Created widget folder:", widget_folder_path)
+	end
 
 	local zip_file_path = "." .. install_folder .. "/" .. filename
 	local zip_file = io.open(zip_file_path, "wb")
@@ -220,9 +234,8 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		if installing_set then
 			installing_set[item.id] = nil
 		end
-		print("Directory does not exist: " .. install_folder)
-		print("Please create the directory manually and try again.")
-		return false, "Directory does not exist: " .. install_folder
+		print("Failed to create zip file: " .. zip_file_path)
+		return false, "Failed to create zip file: " .. zip_file_path
 	end
 
 	zip_file:write(zip_data)
