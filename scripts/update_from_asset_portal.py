@@ -9,6 +9,7 @@ existing dependency JSON files with stars, tags, description, and new releases.
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -151,7 +152,6 @@ def extract_github_author_url(project_url: str) -> Optional[str]:
         return None
     
     # Match GitHub URLs: https://github.com/username/repo
-    import re
     match = re.match(r'https?://github\.com/([^/]+)', project_url)
     if match:
         username = match.group(1)
@@ -160,20 +160,41 @@ def extract_github_author_url(project_url: str) -> Optional[str]:
     return None
 
 
+def is_main_or_master_branch(url: str) -> bool:
+    """Check if URL points to main or master branch."""
+    if not url or not isinstance(url, str):
+        return False
+    return '/main.zip' in url or '/master.zip' in url
+
+
+def is_tag_url(url: str) -> bool:
+    """Check if URL points to a tag or release (not a branch)."""
+    if not url or not isinstance(url, str):
+        return False
+    # Accept both /refs/tags/ URLs and /releases/download/ URLs (GitHub releases)
+    return '/refs/tags/' in url or '/releases/download/' in url
+
+
 def create_new_asset_file(
     local_path: Path,
     portal_data: Dict,
     author: str,
     asset_id: str,
-    assets_dir: Path
+    assets_dir: Path,
+    local_data: Optional[Dict] = None
 ) -> bool:
     """
     Create a new asset file from portal data.
     Returns True if file was created, False otherwise.
     """
-    # Check if we have library_url or releases
+    # Skip assets that are not Defold libraries
+    if portal_data.get('isDefoldLibrary') is False:
+        return False
+    
+    # Check if we have library_url or releases/release_tags
     has_library_url = bool(portal_data.get('library_url'))
-    has_releases = bool(portal_data.get('releases') and isinstance(portal_data.get('releases'), list) and len(portal_data.get('releases', [])) > 0)
+    releases_to_use = get_releases_to_use(portal_data, local_data)
+    has_releases = bool(releases_to_use)
     
     if not has_library_url and not has_releases:
         return False
@@ -237,15 +258,19 @@ def create_new_asset_file(
             new_data['image'] = thumb_name
             print(f"    ⚠ Warning: Image file not found: {image_path}", file=sys.stderr)
     
-    # Set content based on releases or library_url
+    # Set content based on releases/release_tags or library_url
     if has_releases:
-        # Extract zip URLs from releases and sort by date
-        releases = portal_data.get('releases', [])
-        zip_urls = [r.get('zip') for r in releases if r.get('zip')]
-        new_data['content'] = sort_content_by_date(zip_urls, releases)
+        # Extract zip URLs from releases/release_tags, filter out main/master and non-tag URLs, and sort by date
+        zip_urls = [r.get('zip') for r in releases_to_use if r.get('zip') and is_tag_url(r.get('zip'))]
+        new_data['content'] = sort_content_by_date(zip_urls, releases_to_use)
     elif has_library_url:
-        # Use library_url as single content item
-        new_data['content'] = [portal_data.get('library_url')]
+        # Use library_url as single content item (only if it's a tag URL, not main/master)
+        library_url = portal_data.get('library_url')
+        if library_url and (is_tag_url(library_url) or not is_main_or_master_branch(library_url)):
+            new_data['content'] = [library_url]
+        else:
+            # If library_url is main/master, don't add it
+            new_data['content'] = []
     
     # Remove None values
     new_data = {k: v for k, v in new_data.items() if v is not None}
@@ -253,6 +278,43 @@ def create_new_asset_file(
     # Save file
     save_json_file(local_path, new_data)
     return True
+
+
+def get_releases_to_use(portal_data: Dict, local_data: Optional[Dict] = None) -> Optional[List[Dict]]:
+    """
+    Determine which releases to use: releases or release_tags.
+    Returns list of releases to use, or None if neither is available.
+    
+    Logic:
+    1. If local_data has use_tags_as_releases: true, use release_tags (if available)
+    2. If releases exist and are not empty, use releases
+    3. If releases are missing or empty, use release_tags (if available)
+    """
+    # Check if local file has use_tags_as_releases flag
+    use_tags = False
+    if local_data:
+        use_tags = local_data.get('use_tags_as_releases', False)
+    
+    # Check if release_tags exist
+    release_tags = portal_data.get('release_tags')
+    has_release_tags = bool(release_tags and isinstance(release_tags, list) and len(release_tags) > 0)
+    
+    # If use_tags_as_releases is true, prefer release_tags
+    if use_tags and has_release_tags:
+        return release_tags
+    
+    # Check if releases exist and are not empty
+    releases = portal_data.get('releases')
+    has_releases = bool(releases and isinstance(releases, list) and len(releases) > 0)
+    
+    if has_releases:
+        return releases
+    
+    # Releases are missing or empty, use release_tags if available
+    if has_release_tags:
+        return release_tags
+    
+    return None
 
 
 def get_existing_content_urls(local_data: Dict) -> Set[str]:
@@ -263,26 +325,105 @@ def get_existing_content_urls(local_data: Dict) -> Set[str]:
     return set()
 
 
+def extract_version_from_url(url: str) -> Optional[str]:
+    """Extract version from URL if possible (e.g., /refs/tags/1.zip -> "1")."""
+    if not url or not isinstance(url, str):
+        return None
+    # Try to extract version from /refs/tags/VERSION.zip or /refs/tags/VERSION/
+    match = re.search(r'/refs/tags/([^/]+?)(?:\.zip|/)', url)
+    if match:
+        return match.group(1)
+    # Try to extract from /tags/VERSION.zip (fallback for old format)
+    match = re.search(r'/tags/([^/]+?)(?:\.zip|/)', url)
+    if match:
+        return match.group(1)
+    # Try to extract from /releases/download/VERSION/
+    match = re.search(r'/releases/download/([^/]+)/', url)
+    if match:
+        return match.group(1)
+    return None
+
+
 def sort_content_by_date(content: List[str], portal_releases: List[Dict]) -> List[str]:
     """
     Sort content array by published_at date from portal releases.
-    URLs without date info are placed at the end.
+    URLs without date info are sorted by version number if available, otherwise alphabetically.
     """
-    # Create mapping from zip URL to published_at date
+    # Create mapping from zip URL to published_at date and version
     url_to_date = {}
+    url_to_version = {}
     for release in portal_releases:
         zip_url = release.get('zip')
         published_at = release.get('published_at')
-        if zip_url and published_at:
-            url_to_date[zip_url] = published_at
+        version = release.get('version')
+        if zip_url:
+            if published_at:
+                url_to_date[zip_url] = published_at
+            if version:
+                url_to_version[zip_url] = version
+    
+    # Also try to extract version from URL if not in release data
+    for url in content:
+        if url not in url_to_version:
+            extracted_version = extract_version_from_url(url)
+            if extracted_version:
+                url_to_version[url] = extracted_version
+
+    def parse_version(version_str: str) -> tuple:
+        """Parse version string into tuple for sorting (e.g., "1.2.3" -> (1, 2, 3))."""
+        if not version_str:
+            return (0,)
+        try:
+            # Remove common prefixes
+            version_str = str(version_str).replace('v', '').replace('V', '').strip()
+            # Try to parse as numbers
+            parts = []
+            for part in version_str.split('.'):
+                try:
+                    parts.append(int(part))
+                except ValueError:
+                    # If not a number, try to extract number from string (e.g., "Alpha_v2.1" -> 2, 1)
+                    numbers = re.findall(r'\d+', part)
+                    if numbers:
+                        parts.extend([int(n) for n in numbers])
+                    else:
+                        # If no numbers, use string comparison
+                        parts.append(part)
+            return tuple(parts)
+        except Exception:
+            return (0,)
+
+    # Check if all URLs have simple numeric versions (like "1", "2", "3")
+    # If so, prefer version-based sorting over date-based sorting
+    all_have_simple_versions = True
+    for url in content:
+        if url not in url_to_version:
+            all_have_simple_versions = False
+            break
+        version = url_to_version[url]
+        version_str = str(version).strip()
+        # Check if version is a simple number (like "1", "2", "3" or "1.0", "2.0")
+        if not re.match(r'^v?\d+(\.\d+)*$', version_str, re.IGNORECASE):
+            all_have_simple_versions = False
+            break
 
     def sort_key(url: str) -> tuple:
-        if url in url_to_date:
+        if all_have_simple_versions and url in url_to_version:
+            # If all have simple numeric versions, use version for sorting
+            version = url_to_version[url]
+            parsed_version = parse_version(str(version))
+            return (0, parsed_version)  # 0 means use version
+        elif url in url_to_date:
             # Return date string for sorting (ISO format sorts correctly)
-            return (0, url_to_date[url])  # 0 means has date
+            return (1, url_to_date[url])  # 1 means has date
+        elif url in url_to_version:
+            # Use version for sorting if date is not available
+            version = url_to_version[url]
+            parsed_version = parse_version(str(version))
+            return (2, parsed_version)  # 2 means has version but no date
         else:
-            # URLs without date go to the end, sorted alphabetically
-            return (1, url)
+            # URLs without date or version go to the end, sorted alphabetically
+            return (3, url)
 
     return sorted(content, key=sort_key)
 
@@ -290,8 +431,9 @@ def sort_content_by_date(content: List[str], portal_releases: List[Dict]) -> Lis
 def merge_releases_into_content(local_data: Dict, portal_releases: List[Dict]) -> tuple:
     """
     Merge releases from asset-portal into local content array.
-    Returns tuple: (new_releases_count, was_resorted).
+    Returns tuple: (new_releases_count, was_resorted, was_filtered).
     Content array is sorted by published_at date in ascending order (oldest first).
+    Filters out main/master branches and invalid URLs (non-tag URLs).
     """
     existing_urls = get_existing_content_urls(local_data)
     new_count = 0
@@ -300,6 +442,24 @@ def merge_releases_into_content(local_data: Dict, portal_releases: List[Dict]) -
     if 'content' not in local_data:
         local_data['content'] = []
 
+    # Filter out main/master branches and invalid URLs from existing content
+    # Keep only tag URLs
+    original_content_count = len(local_data['content'])
+    filtered_content = []
+    for url in local_data['content']:
+        if is_main_or_master_branch(url):
+            # Remove main/master branches
+            continue
+        if not is_tag_url(url):
+            # Remove non-tag URLs (like /archive/Alpha_v2.2.zip without /refs/tags/)
+            continue
+        filtered_content.append(url)
+    
+    was_filtered = len(filtered_content) < original_content_count
+    local_data['content'] = filtered_content
+    # Update existing_urls to reflect filtered content
+    existing_urls = set(filtered_content)
+
     # Save original order to check if sorting changed it
     original_content = local_data['content'].copy()
 
@@ -307,9 +467,20 @@ def merge_releases_into_content(local_data: Dict, portal_releases: List[Dict]) -
     for release in portal_releases:
         zip_url = release.get('zip')
         if zip_url and zip_url not in existing_urls:
-            local_data['content'].append(zip_url)
-            existing_urls.add(zip_url)
-            new_count += 1
+            # Only add tag URLs
+            if is_tag_url(zip_url):
+                local_data['content'].append(zip_url)
+                existing_urls.add(zip_url)
+                new_count += 1
+
+    # Remove duplicates (in case they were added somehow)
+    seen = set()
+    unique_content = []
+    for url in local_data['content']:
+        if url not in seen:
+            seen.add(url)
+            unique_content.append(url)
+    local_data['content'] = unique_content
 
     # Sort content by published_at date in ascending order (oldest first)
     was_resorted = False
@@ -320,7 +491,7 @@ def merge_releases_into_content(local_data: Dict, portal_releases: List[Dict]) -
             was_resorted = True
         local_data['content'] = sorted_content
 
-    return (new_count, was_resorted)
+    return (new_count, was_resorted, was_filtered)
 
 
 def update_local_asset(local_path: Path, portal_data: Dict) -> Dict[str, int]:
@@ -378,12 +549,18 @@ def update_local_asset(local_path: Path, portal_data: Dict) -> Dict[str, int]:
                 stats['fields_updated'].append('author_url')
                 stats['updated'] = True
 
-    # Merge releases into content
-    if 'releases' in portal_data and isinstance(portal_data['releases'], list):
-        new_releases, was_resorted = merge_releases_into_content(local_data, portal_data['releases'])
+    # Merge releases/release_tags into content
+    releases_to_use = get_releases_to_use(portal_data, local_data)
+    if releases_to_use:
+        new_releases, was_resorted, was_filtered = merge_releases_into_content(local_data, releases_to_use)
         if new_releases > 0:
             stats['new_releases'] = new_releases
             stats['updated'] = True
+        if was_filtered:
+            # Content was filtered (main/master branches removed), need to save
+            stats['updated'] = True
+            if 'content (filtered)' not in stats['fields_updated']:
+                stats['fields_updated'].append('content (filtered)')
         if was_resorted:
             # Content was resorted, need to save
             stats['updated'] = True
@@ -419,6 +596,10 @@ def process_asset(
     if not portal_data:
         return {'processed': False}
 
+    # Skip assets that are not Defold libraries
+    if portal_data.get('isDefoldLibrary') is False:
+        return {'processed': False, 'skipped': True, 'reason': 'not_defold_library'}
+
     author = portal_data.get('author')
     asset_id = portal_data.get('id')
 
@@ -451,10 +632,17 @@ def process_asset(
     # Construct local file path: dependencies/{author}/{id}/{id}.json
     local_path = dependencies_dir / author / asset_id / f"{asset_id}.json"
 
+    # Load local file if it exists (needed for use_tags_as_releases flag)
+    local_data = None
+    if local_path.exists():
+        local_data = load_json_file(local_path)
+
     if not local_path.exists():
-        # Try to create new file if we have library_url or releases
-        if create_new_asset_file(local_path, portal_data, author, asset_id, assets_dir):
+        # Try to create new file if we have library_url or releases/release_tags
+        if create_new_asset_file(local_path, portal_data, author, asset_id, assets_dir, local_data):
             created_assets.append(f"{author}:{asset_id}")
+            # Reload local file after creation
+            local_data = load_json_file(local_path)
             # Now update it with portal data (to ensure all fields are synced)
             stats = update_local_asset(local_path, portal_data)
             stats['processed'] = True
