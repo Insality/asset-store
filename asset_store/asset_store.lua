@@ -5,6 +5,7 @@ local filters_ui = require("asset_store.asset_store.ui.filters")
 local pagination_ui = require("asset_store.asset_store.ui.pagination")
 local search_ui = require("asset_store.asset_store.ui.search")
 local settings_ui = require("asset_store.asset_store.ui.settings")
+local update_confirmation_ui = require("asset_store.asset_store.ui.update_confirmation")
 local widget_list_ui = require("asset_store.asset_store.ui.widget_list")
 
 ---@class asset_store.config
@@ -116,16 +117,55 @@ local function handle_install(item, install_folder, all_items, asset_type, on_su
 end
 
 
----Handle asset update (dependency only)
----@param item table - Dependency item to update
+---Handle asset update
+---@param item table - Asset item to update
 ---@param all_items table - List of all items for dependency resolution
 ---@param asset_type string - Type of asset: "folder" or "dependency"
+---@param install_folder string|nil - Install folder (for folder type assets)
 ---@param on_success function - Success callback
 ---@param on_error function - Error callback
 ---@param new_url string|nil - Optional URL to update to (if nil, uses latest from can_update)
-local function handle_update(item, all_items, asset_type, on_success, on_error, new_url)
+local function handle_update(item, all_items, asset_type, install_folder, on_success, on_error, new_url)
 	local adapter = adapters.get_adapter(asset_type)
 
+	-- For widgets (folder type), show confirmation dialog
+	if asset_type == "folder" then
+		-- Get installed version for display
+		local installed_version = nil
+		if install_folder and adapter.get_installed_version then
+			installed_version = adapter.get_installed_version(item, install_folder)
+		end
+
+		-- Create item copy with installed version for dialog
+		local item_with_version = {}
+		for k, v in pairs(item) do
+			item_with_version[k] = v
+		end
+		item_with_version.installed_version = installed_version
+
+		-- Show confirmation dialog
+		update_confirmation_ui.show(item_with_version,
+			function()
+				-- User confirmed, proceed with update
+				print("Updating " .. asset_type .. ":", item.id)
+				local success, message = adapter.update(item, install_folder, all_items)
+				if success then
+					print("Update successful:", message)
+					on_success(message)
+				else
+					print("Update failed:", message)
+					on_error(message)
+				end
+			end,
+			function()
+				-- User cancelled
+				on_error("Update cancelled by user")
+			end
+		)
+		return
+	end
+
+	-- For dependencies, use existing logic
 	-- If new_url is provided, use it directly; otherwise check can_update
 	if not new_url then
 		local can_update_result, latest_url = adapter.can_update(item)
@@ -288,7 +328,7 @@ function M.open(config_input)
 		end
 
 		local function on_update(item)
-			handle_update(item, all_items, config.asset_type,
+			handle_update(item, all_items, config.asset_type, install_folder,
 				function(message)
 					set_install_status("Success: " .. message)
 					-- Track changes for dependency type assets
@@ -343,16 +383,22 @@ function M.open(config_input)
 			return #options > 0 and options or nil
 		end
 
-		-- Get installed version name for dependency
+		-- Get installed version name for asset
 		local function get_installed_version_name(item)
-			if config.asset_type ~= "dependency" then
+			if config.asset_type == "dependency" then
+				local installed_url = adapter.get_installed_version_url(item)
+				if not installed_url then
+					return nil
+				end
+				return extract_version_name_from_url(installed_url)
+			elseif config.asset_type == "folder" then
+				-- For widgets, read version from version file
+				if install_folder and adapter.get_installed_version then
+					return adapter.get_installed_version(item, install_folder)
+				end
 				return nil
 			end
-			local installed_url = adapter.get_installed_version_url(item)
-			if not installed_url then
-				return nil
-			end
-			return extract_version_name_from_url(installed_url)
+			return nil
 		end
 
 		-- Handle version change (immediately update or remove dependency)
@@ -481,7 +527,7 @@ function M.open(config_input)
 				return adapter.is_installed(item, install_folder)
 			end,
 			can_update = function(item)
-				local can_update_result, _ = adapter.can_update(item)
+				local can_update_result, _ = adapter.can_update(item, install_folder)
 				return can_update_result
 			end,
 			get_version_options = get_version_options,

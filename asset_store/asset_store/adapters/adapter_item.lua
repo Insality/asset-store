@@ -61,6 +61,65 @@ local function find_widget_by_dependency(dep_string, all_items)
 end
 
 
+---Get path to version file for a widget
+---@param item table - Widget item data containing id
+---@param install_folder string - Install folder
+---@return string - Path to version file
+local function get_version_file_path(item, install_folder)
+	return install_folder .. "/" .. item.id .. "/" .. item.id .. ".version"
+end
+
+
+---Read installed version from version file
+---@param item table - Widget item data containing id
+---@param install_folder string - Install folder
+---@return string|nil - Version string or nil if file doesn't exist
+local function read_installed_version(item, install_folder)
+	local version_path = get_version_file_path(item, install_folder)
+	local version_file = io.open("." .. version_path, "r")
+	if not version_file then
+		return nil
+	end
+
+	local version_data = version_file:read("*a")
+	version_file:close()
+
+	-- Trim whitespace
+	version_data = version_data:match("^%s*(.-)%s*$")
+	if version_data == "" then
+		return nil
+	end
+
+	-- Parse format: "author:id@version" - extract version
+	local version = version_data:match("@(.+)$")
+	return version
+end
+
+
+---Write version to version file in format: author:id@version
+---@param item table - Widget item data containing id, author, and version
+---@param install_folder string - Install folder
+---@return boolean - Success status
+local function write_installed_version(item, install_folder)
+	if not item.version or not item.id or not item.author then
+		return false
+	end
+
+	local version_path = get_version_file_path(item, install_folder)
+	local version_file = io.open("." .. version_path, "w")
+	if not version_file then
+		return false
+	end
+
+	-- Write in format: author:id@version
+	local full_version = item.author .. ":" .. item.id .. "@" .. tostring(item.version)
+	version_file:write(full_version)
+	version_file:close()
+
+	return true
+end
+
+
 ---Install widget dependencies recursively
 ---@param item asset_store.item - Widget item
 ---@param all_items table - List of all available widgets
@@ -191,6 +250,16 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		print("Warning: No file list available, skipping path replacement")
 	end
 
+	-- Write version to version file
+	if item.version then
+		local version_written = write_installed_version(item, install_folder)
+		if version_written then
+			print("Version written to file:", item.author .. ":" .. item.id .. "@" .. tostring(item.version))
+		else
+			print("Warning: Failed to write version file")
+		end
+	end
+
 	if installing_set then
 		installing_set[item.id] = nil
 	end
@@ -221,10 +290,110 @@ function M.is_widget_installed(item, install_folder)
 end
 
 
----Check if item can be updated (items don't support updates, always returns false)
+---Update a widget by removing old version and installing new one
+---@param item asset_store.item - Widget item data
+---@param install_folder string - Target folder to install to
+---@param all_items table|nil - Optional list of all widgets for dependency resolution
+---@param installing_set table|nil - Optional set of widget IDs currently being installed (to prevent cycles)
+---@return boolean, string - Success status and message
+local function update_widget(item, install_folder, all_items, installing_set)
+	if not item.id then
+		return false, "Invalid widget data: missing id"
+	end
+
+	local widget_path = install_folder .. "/" .. item.id
+
+	-- Check if widget is installed
+	if not M.is_installed(item, install_folder) then
+		return false, "Widget is not installed: " .. item.id
+	end
+
+	-- Remove old widget folder using editor.delete_directory
+	print("Removing old widget:", widget_path)
+
+	-- Check if folder exists
+	local resource_attrs = editor.resource_attributes(widget_path)
+	if not resource_attrs or not resource_attrs.exists then
+		-- Widget folder doesn't exist, nothing to remove
+		print("Widget folder doesn't exist, skipping removal")
+	else
+		-- Remove directory using editor API
+		editor.delete_directory(widget_path)
+		print("Old widget removed successfully")
+	end
+
+	-- Install new version
+	return M.install_widget(item, install_folder, all_items, installing_set)
+end
+
+
+---Get installed version of a widget
+---@param item table - Widget item data containing id
+---@param install_folder string - Install folder
+---@return string|nil - Installed version or nil if not found
+function M.get_installed_version(item, install_folder)
+	if not item or not item.id or not install_folder then
+		return nil
+	end
+	return read_installed_version(item, install_folder)
+end
+
+
+---Update a widget
+---@param item asset_store.item - Widget item data
+---@param install_folder string|nil - Target folder (optional, will be retrieved if not provided)
+---@param all_items table|nil - Optional list of all widgets for dependency resolution
+---@param installing_set table|nil - Optional set of widget IDs currently being installed (to prevent cycles)
+---@return boolean, string - Success status and message
+function M.update(item, install_folder, all_items, installing_set)
+	if not item or not item.id then
+		return false, "Invalid widget data"
+	end
+
+	install_folder = install_folder or M.get_install_folder()
+	if not install_folder then
+		return false, "Install folder not set"
+	end
+
+	return update_widget(item, install_folder, all_items, installing_set)
+end
+
+
+---Check if item can be updated
 ---@param item table - Item data
----@return boolean, nil - Always returns false for items
-function M.can_update(item)
+---@param install_folder string|nil - Install folder (optional, will be retrieved if not provided)
+---@return boolean, nil - True if can be updated, nil if no update available
+function M.can_update(item, install_folder)
+	if not item or not item.id or not item.version then
+		return false, nil
+	end
+
+	install_folder = install_folder or M.get_install_folder()
+	if not install_folder then
+		return false, nil
+	end
+
+	-- Check if widget is installed
+	if not M.is_installed(item, install_folder) then
+		return false, nil
+	end
+
+	-- Read installed version
+	local installed_version = read_installed_version(item, install_folder)
+	if not installed_version then
+		-- No version file means version is unknown, don't show update
+		return false, nil
+	end
+
+	-- Compare versions (simple string/number comparison)
+	local store_version = tostring(item.version)
+	local installed_version_str = tostring(installed_version)
+
+	-- If versions are different, can update
+	if store_version ~= installed_version_str then
+		return true, nil
+	end
+
 	return false, nil
 end
 
