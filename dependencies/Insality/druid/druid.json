@@ -3,6 +3,9 @@
 	"id": "druid",
 	"title": "Druid",
 	"description": "Druid - powerful Defold component UI framework that empowers developers to create stunning and customizable GUIs by leveraging a wide range of embedded components or effortlessly designing their own game-specific components.",
+	"depends": [
+		"Insality:defold-event"
+	],
 	"tags": [
 		"gui",
 		"input",
