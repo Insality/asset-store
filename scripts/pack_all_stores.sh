@@ -222,7 +222,19 @@ copy_image() {
   local author="$3"
   local id="$4"
 
-  if [[ -z "$image_rel" || "$image_rel" == "null" || ! -f "$asset_dir/$image_rel" ]]; then
+  if [[ -z "$image_rel" || "$image_rel" == "null" ]]; then
+    echo ""
+    return
+  fi
+
+  # If image_rel is a URL (starts with http:// or https://), return it as is
+  if [[ "$image_rel" =~ ^https?:// ]]; then
+    echo "$image_rel"
+    return
+  fi
+
+  # Otherwise, it's a local file path - check if it exists and copy it
+  if [[ ! -f "$asset_dir/$image_rel" ]]; then
     echo ""
     return
   fi
