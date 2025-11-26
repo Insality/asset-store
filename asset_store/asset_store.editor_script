@@ -25,7 +25,8 @@ local function parse_query(query_string)
 	for pair in query_string:gmatch("([^&]+)") do
 		local key, value = pair:match("([^=]+)=(.+)")
 		if key and value then
-			-- URL decode
+			-- URL decode: first replace + with space, then decode %XX
+			value = value:gsub("+", " ")
 			value = value:gsub("%%(%x%x)", function(hex)
 				return string.char(tonumber(hex, 16))
 			end)
