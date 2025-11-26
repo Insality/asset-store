@@ -1,0 +1,14 @@
+{
+	"author": "Insality",
+	"id": "rich_input",
+	"version": 1,
+	"title": "Rich Input",
+	"description": "A widget that handles a rich text input field, it's a wrapper around the druid.input component with cursor animation, text selection, and drag support",
+	"author_url": "https://github.com/Insality",
+	"tags": ["GUI", "input", "text"],
+	"content": [
+		"rich_input.gui",
+		"rich_input.lua"
+	]
+}
+

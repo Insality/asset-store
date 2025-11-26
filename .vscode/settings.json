@@ -20,7 +20,8 @@
 		"label",
 		"socket",
 		"update",
-		"on_message"
+		"on_message",
+		"utf8"
 	],
 	"Lua.completion.autoRequire": false,
 	"Lua.workspace.ignoreDir": [
