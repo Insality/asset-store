@@ -175,39 +175,6 @@ def is_tag_url(url: str) -> bool:
     return '/refs/tags/' in url or '/releases/download/' in url
 
 
-def is_url(text: str) -> bool:
-    """Check if string is a URL (starts with http:// or https://)."""
-    if not text or not isinstance(text, str):
-        return False
-    return text.strip().startswith(('http://', 'https://'))
-
-
-def extract_filename_from_url(url: str) -> str:
-    """Extract filename from URL."""
-    if not url or not isinstance(url, str):
-        return 'image.png'
-    # Remove query parameters and fragments
-    url_clean = url.split('?')[0].split('#')[0]
-    # Get the last part of the path
-    filename = url_clean.rstrip('/').split('/')[-1]
-    # If no filename found or filename doesn't have extension, try to determine it
-    if not filename or '.' not in filename:
-        # Check if URL contains common image extensions in path
-        url_lower = url_clean.lower()
-        if '.png' in url_lower:
-            filename = 'image.png'
-        elif '.jpg' in url_lower or '.jpeg' in url_lower:
-            filename = 'image.jpg'
-        elif '.gif' in url_lower:
-            filename = 'image.gif'
-        elif '.webp' in url_lower:
-            filename = 'image.webp'
-        else:
-            # Default to png
-            filename = 'image.png'
-    return filename
-
-
 def create_new_asset_file(
     local_path: Path,
     portal_data: Dict,
@@ -269,45 +236,27 @@ def create_new_asset_file(
         thumb_name = images
     
     if thumb_name:
-        dest_image_path = None
-        final_image_name = None
+        # Images are located in assets/images/ directory
+        # assets_dir is the path to assets/ directory, so images are in assets_dir.parent / 'assets' / 'images'
+        # But actually, if assets_dir is already assets/, then images are in assets_dir.parent / 'assets' / 'images'
+        # Let's check: assets_dir should be {extracted_root}/assets
+        # So images should be in {extracted_root}/assets/images/
+        images_dir = assets_dir / 'images'
+        image_path = images_dir / thumb_name
         
-        if is_url(thumb_name):
-            # Download image from URL
+        if image_path.exists() and image_path.is_file():
+            dest_image_path = local_path.parent / thumb_name
             try:
-                # Extract filename from URL
-                final_image_name = extract_filename_from_url(thumb_name)
-                dest_image_path = local_path.parent / final_image_name
-                
-                # Download the image
-                download_file(thumb_name, dest_image_path)
-                new_data['image'] = final_image_name
+                shutil.copy2(image_path, dest_image_path)
+                new_data['image'] = thumb_name
             except Exception as e:
-                print(f"    ⚠ Warning: Could not download image from {thumb_name}: {e}", file=sys.stderr)
-                # Still add the image field with URL (might be processed later)
+                print(f"    ⚠ Warning: Could not copy image {thumb_name}: {e}", file=sys.stderr)
+                # Still add the image field even if copy failed
                 new_data['image'] = thumb_name
         else:
-            # Images are located in assets/images/ directory
-            # assets_dir is the path to assets/ directory, so images are in assets_dir.parent / 'assets' / 'images'
-            # But actually, if assets_dir is already assets/, then images are in assets_dir.parent / 'assets' / 'images'
-            # Let's check: assets_dir should be {extracted_root}/assets
-            # So images should be in {extracted_root}/assets/images/
-            images_dir = assets_dir / 'images'
-            image_path = images_dir / thumb_name
-            
-            if image_path.exists() and image_path.is_file():
-                dest_image_path = local_path.parent / thumb_name
-                try:
-                    shutil.copy2(image_path, dest_image_path)
-                    new_data['image'] = thumb_name
-                except Exception as e:
-                    print(f"    ⚠ Warning: Could not copy image {thumb_name}: {e}", file=sys.stderr)
-                    # Still add the image field even if copy failed
-                    new_data['image'] = thumb_name
-            else:
-                # If image file not found, still add the image field (might be added manually later)
-                new_data['image'] = thumb_name
-                print(f"    ⚠ Warning: Image file not found: {image_path}", file=sys.stderr)
+            # If image file not found, still add the image field (might be added manually later)
+            new_data['image'] = thumb_name
+            print(f"    ⚠ Warning: Image file not found: {image_path}", file=sys.stderr)
     
     # Set content based on releases/release_tags or library_url
     if has_releases:
@@ -598,46 +547,6 @@ def update_local_asset(local_path: Path, portal_data: Dict) -> Dict[str, int]:
             if github_author_url:
                 local_data['author_url'] = github_author_url
                 stats['fields_updated'].append('author_url')
-                stats['updated'] = True
-
-    # Update image if available and not already set locally
-    # Only update if local file doesn't have image or if portal has a URL (to download it)
-    images = portal_data.get('images', {})
-    thumb_name = None
-    if isinstance(images, dict):
-        thumb_name = images.get('thumb')
-    elif isinstance(images, str):
-        thumb_name = images
-    
-    if thumb_name:
-        # Only update image if:
-        # 1. Local file doesn't have image, OR
-        # 2. Portal has URL (to download it)
-        should_update_image = False
-        if 'image' not in local_data or not local_data.get('image'):
-            should_update_image = True
-        elif is_url(thumb_name):
-            # Portal has URL, download it even if local has image
-            should_update_image = True
-        
-        if should_update_image:
-            if is_url(thumb_name):
-                # Download image from URL
-                try:
-                    final_image_name = extract_filename_from_url(thumb_name)
-                    dest_image_path = local_path.parent / final_image_name
-                    
-                    # Download the image
-                    download_file(thumb_name, dest_image_path)
-                    local_data['image'] = final_image_name
-                    stats['fields_updated'].append('image')
-                    stats['updated'] = True
-                except Exception as e:
-                    print(f"    ⚠ Warning: Could not download image from {thumb_name}: {e}", file=sys.stderr)
-            else:
-                # Use local filename from portal
-                local_data['image'] = thumb_name
-                stats['fields_updated'].append('image')
                 stats['updated'] = True
 
     # Merge releases/release_tags into content
