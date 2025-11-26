@@ -30,7 +30,8 @@
 	],
 	"Lua.workspace.library": [
 		"~/Library/Application Support/Cursor/User/globalStorage/astronachos.defold",
-		"~/Library/Application Support/Cursor/User/workspaceStorage/f7bb55079cac289f90636462740eb173/astronachos.defold"
+		"~/Library/Application Support/Cursor/User/workspaceStorage/f7bb55079cac289f90636462740eb173/astronachos.defold",
+		"~/Library/Application Support/Cursor/User/workspaceStorage/bd72dab8eebe405fb9e7f923aa49171a/astronachos.defold"
 	],
 	"files.associations": {
 		"*.editor_script": "lua",

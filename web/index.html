@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defold Asset Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <h1 class="title">Defold Asset Store</h1>
+                <div class="port-input-container">
+                    <label for="port-input">Editor Port:</label>
+                    <input
+                        id="port-input"
+                        type="number"
+                        v-model.number="editorPort"
+                        placeholder="Enter port (e.g. 54627)"
+                        class="port-input"
+                        @input="savePort"
+                    />
+                </div>
+            </header>
+
+            <!-- Store Tabs -->
+            <div class="tabs">
+                <button
+                    v-for="store in stores"
+                    :key="store.type"
+                    :class="['tab', { active: activeStore === store.type }]"
+                    @click="switchStore(store.type)"
+                >
+                    {{ store.name }}
+                </button>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="filters-section">
+                <div class="search-container">
+                    <input
+                        type="text"
+                        v-model="searchQuery"
+                        placeholder="Search by title, author, or description..."
+                        class="search-input"
+                    />
+                </div>
+                <div class="filters-row">
+                    <select v-model="filterAuthor" class="filter-select">
+                        <option value="All Authors">All Authors</option>
+                        <option v-for="author in authors" :key="author" :value="author">
+                            {{ author }}
+                        </option>
+                    </select>
+                    <select v-model="filterTag" class="filter-select">
+                        <option value="All Tags">All Tags</option>
+                        <option v-for="tag in tags" :key="tag" :value="tag">
+                            {{ tag }}
+                        </option>
+                    </select>
+                    <select v-model="sortBy" class="filter-select">
+                        <option v-for="option in sortOptions" :key="option" :value="option">
+                            {{ option }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div v-if="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading assets...</p>
+            </div>
+
+            <!-- Error State -->
+            <div v-if="error" class="error">
+                <p>{{ error }}</p>
+                <button @click="loadStoreData" class="retry-button">Retry</button>
+            </div>
+
+            <!-- Assets Grid -->
+            <div v-if="!loading && !error" class="assets-grid">
+                <div
+                    v-for="item in filteredItems"
+                    :key="item.id"
+                    class="asset-card"
+                >
+                    <div class="card-image">
+                        <img
+                            v-if="item.image"
+                            :src="getImageUrl(item.image)"
+                            :alt="item.title"
+                            @error="handleImageError"
+                        />
+                        <div v-else class="image-placeholder">
+                            <span>{{ item.title.charAt(0).toUpperCase() }}</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">{{ item.title || item.id }}</h3>
+                        <p class="card-author" v-if="item.author">
+                            by <a :href="item.author_url" target="_blank" v-if="item.author_url">{{ item.author }}</a>
+                            <span v-else>{{ item.author }}</span>
+                        </p>
+                        <p class="card-description">{{ item.description || 'No description available.' }}</p>
+
+                        <div class="card-meta">
+                            <span v-if="item.version" class="meta-badge version">v{{ item.version }}</span>
+                            <span v-if="item.size" class="meta-badge size">{{ formatSize(item.size) }}</span>
+                            <span v-if="item.stars" class="meta-badge stars">⭐ {{ item.stars }}</span>
+                        </div>
+
+                        <div v-if="item.tags && item.tags.length > 0" class="card-tags">
+                            <span
+                                v-for="tag in item.tags"
+                                :key="tag"
+                                class="tag-badge"
+                            >
+                                {{ tag }}
+                            </span>
+                        </div>
+
+                        <div v-if="item.depends && item.depends.length > 0" class="card-depends">
+                            <span class="depends-label">Depends:</span>
+                            <span class="depends-list">{{ item.depends.join(', ') }}</span>
+                        </div>
+
+                        <div class="card-actions">
+                            <button
+                                @click="installAsset(item)"
+                                :disabled="!editorPort || installing === item.id || isAssetInstalled(item)"
+                                :class="['install-button', { 'installed': isAssetInstalled(item) }]"
+                            >
+                                <span v-if="installing === item.id">Installing...</span>
+                                <span v-else-if="isAssetInstalled(item)">✓ Installed</span>
+                                <span v-else>Install</span>
+                            </button>
+                            <a
+                                v-if="item.api"
+                                :href="item.api"
+                                target="_blank"
+                                class="action-link"
+                            >
+                                API
+                            </a>
+                            <a
+                                v-if="item.example_url || item.example_code"
+                                :href="item.example_url || item.example_code"
+                                target="_blank"
+                                class="action-link"
+                            >
+                                Example
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div v-if="!loading && !error && filteredItems.length === 0" class="empty-state">
+                <p>No assets found matching your filters.</p>
+            </div>
+
+            <!-- Notification -->
+            <div v-if="notification" :class="['notification', notification.type]">
+                <p>{{ notification.message }}</p>
+                <button @click="notification = null" class="close-notification">×</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
