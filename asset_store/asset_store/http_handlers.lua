@@ -1,0 +1,242 @@
+local adapters = require("asset_store.asset_store.adapters.adapters")
+local internal = require("asset_store.asset_store.asset_store_internal")
+
+local M = {}
+
+
+-- JSON response headers
+local JSON_HEADERS = {
+	["content-type"] = "application/json"
+}
+
+
+-- Store URLs mapping
+local STORE_URLS = {
+	dependency = "https://insality.github.io/asset-store/dependencies_store.json",
+	widget = "https://insality.github.io/asset-store/druid_widget_store.json",
+	folder = "https://insality.github.io/asset-store/druid_widget_store.json",
+}
+
+
+-- Parse query parameters from URL
+--@param query_string string - Query string (e.g., "author=Insality&id=druid&type=dependency")
+--@return table - Table with parsed parameters
+local function parse_query(query_string)
+	local params = {}
+	if not query_string or query_string == "" then
+		return params
+	end
+
+	for pair in query_string:gmatch("([^&]+)") do
+		local key, value = pair:match("([^=]+)=(.+)")
+		if key and value then
+			-- URL decode: first replace + with space, then decode %XX
+			value = value:gsub("+", " ")
+			value = value:gsub("%%(%x%x)", function(hex)
+				return string.char(tonumber(hex, 16))
+			end)
+			params[key] = value
+		end
+	end
+
+	return params
+end
+
+
+-- Find item in store by author and id
+--@param items table - Array of items from store
+--@param author string|nil - Author name (optional, case-insensitive)
+--@param id string - Item ID
+--@return table|nil - Found item or nil
+local function find_item(items, author, id)
+	if not items or not id then
+		return nil
+	end
+
+	for _, item in ipairs(items) do
+		if item.id == id then
+			-- If author is specified, check it matches (case-insensitive)
+			if not author or (item.author and string.lower(item.author) == string.lower(author)) then
+				return item
+			end
+		end
+	end
+
+	return nil
+end
+
+
+-- Handle install request
+--@param params table - Path parameters (contains query string in params.query)
+--@param query_params table - Query parameters (may be nil)
+--@param client table - Client information
+--@return table - Response with status_code and data
+function M.handle_install(params, query_params, client)
+	-- Parse query string from params.query
+	local query_string = ""
+	if params and params.query then
+		query_string = params.query
+	elseif query_params and type(query_params) == "table" then
+		-- If query_params is a table, use it directly
+		local id = query_params.id
+		local author = query_params.author
+		local asset_type = query_params.type or "dependency"
+		-- Continue with parsed params...
+	else
+		query_string = ""
+	end
+
+	-- Parse query string
+	local parsed_params = parse_query(query_string)
+	local id = parsed_params.id
+	local author = parsed_params.author
+	local asset_type = parsed_params.type or "dependency"
+
+	if not id or id == "" then
+		return http.server.response(400, JSON_HEADERS, json.encode({ error = "Missing required parameter: id" }))
+	end
+
+	-- Normalize asset_type
+	if asset_type == "widget" then
+		asset_type = "folder"
+	end
+
+	-- Get store URL
+	local store_url = STORE_URLS[asset_type]
+	if not store_url then
+		return http.server.response(400, JSON_HEADERS, json.encode({ error = "Invalid asset type: " .. asset_type }))
+	end
+
+	-- Load store data
+	local store_data, fetch_error = internal.download_json(store_url)
+	if not store_data then
+		return http.server.response(500, JSON_HEADERS, json.encode({ error = "Failed to load store: " .. (fetch_error or "unknown error") }))
+	end
+
+	-- Find item
+	local item = find_item(store_data.items, author, id)
+	if not item then
+		return http.server.response(404, JSON_HEADERS, json.encode({ error = "Asset not found: " .. (author and (author .. ":") or "") .. id }))
+	end
+
+	-- Get adapter
+	local adapter = adapters.get_adapter(asset_type)
+
+	-- Get install folder for folder type assets
+	local install_folder = nil
+	if asset_type == "folder" then
+		install_folder = editor.prefs.get("asset_store.install_folder_druid")
+		if not install_folder or install_folder == "" then
+			install_folder = "/widget"
+		end
+	end
+
+	-- Install the asset
+	local success, message = adapter.install(item, install_folder, store_data.items)
+
+	if success then
+		-- For dependencies, call fetch-libraries
+		if asset_type == "dependency" then
+			internal.call_editor_command("fetch-libraries")
+			editor.save()
+		end
+
+		return http.server.response(200, JSON_HEADERS, json.encode({
+			success = true,
+			message = message or "Installation successful",
+			item = {
+				id = item.id,
+				title = item.title,
+				author = item.author
+			}
+		}))
+	else
+		return http.server.response(500, JSON_HEADERS, json.encode({
+			success = false,
+			error = message or "Installation failed"
+		}))
+	end
+end
+
+
+-- Handle check installed status request
+--@param params table - Path parameters (contains query string in params.query)
+--@param query_params table - Query parameters (may be nil)
+--@param client table - Client information
+--@return table - Response with status_code and data
+function M.handle_check_installed(params, query_params, client)
+	-- Parse query string from params.query
+	local query_string = ""
+	if params and params.query then
+		query_string = params.query
+	elseif query_params and type(query_params) == "table" then
+		-- If query_params is a table, use it directly
+		local id = query_params.id
+		local author = query_params.author
+		local asset_type = query_params.type or "dependency"
+		-- Continue with parsed params...
+	else
+		query_string = ""
+	end
+
+	-- Parse query string
+	local parsed_params = parse_query(query_string)
+	local id = parsed_params.id
+	local author = parsed_params.author
+	local asset_type = parsed_params.type or "dependency"
+
+	if not id or id == "" then
+		return http.server.response(400, JSON_HEADERS, json.encode({ error = "Missing required parameter: id" }))
+	end
+
+	-- Normalize asset_type
+	if asset_type == "widget" then
+		asset_type = "folder"
+	end
+
+	-- Get store URL
+	local store_url = STORE_URLS[asset_type]
+	if not store_url then
+		return http.server.response(400, JSON_HEADERS, json.encode({ error = "Invalid asset type: " .. asset_type }))
+	end
+
+	-- Load store data
+	local store_data, fetch_error = internal.download_json(store_url)
+	if not store_data then
+		return http.server.response(500, JSON_HEADERS, json.encode({ error = "Failed to load store: " .. (fetch_error or "unknown error") }))
+	end
+
+	-- Find item
+	local item = find_item(store_data.items, author, id)
+	if not item then
+		return http.server.response(404, JSON_HEADERS, json.encode({ error = "Asset not found: " .. (author and (author .. ":") or "") .. id }))
+	end
+
+	-- Get adapter
+	local adapter = adapters.get_adapter(asset_type)
+
+	-- Get install folder for folder type assets
+	local install_folder = nil
+	if asset_type == "folder" then
+		install_folder = editor.prefs.get("asset_store.install_folder_druid")
+		if not install_folder or install_folder == "" then
+			install_folder = "/widget"
+		end
+	end
+
+	-- Check if installed
+	local is_installed = adapter.is_installed(item, install_folder)
+
+	return http.server.response(200, JSON_HEADERS, json.encode({
+		installed = is_installed,
+		item = {
+			id = item.id,
+			title = item.title,
+			author = item.author
+		}
+	}))
+end
+
+
+return M
+
