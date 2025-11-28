@@ -277,9 +277,6 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		installing_set[item.id] = nil
 	end
 
-	-- When http async call will be available, let's return popularity option back? Seems cool to have
-	--internal.track_download(item, "item")
-
 	return true, "Widget installed successfully"
 end
 

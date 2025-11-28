@@ -105,8 +105,6 @@ jobs:
           GITHUB_OWNER: ${{ github.repository_owner }}
           GITHUB_REPO: ${{ github.event.repository.name }}
           GITHUB_BRANCH: main
-          TRACKING_SERVICE_URL: ${{ secrets.TRACKING_SERVICE_URL }}
-          TRACKING_WEBHOOK_SECRET: ${{ secrets.TRACKING_WEBHOOK_SECRET }}
         run: bash scripts/pack_all_stores.sh
 
       - name: clean bundle directory

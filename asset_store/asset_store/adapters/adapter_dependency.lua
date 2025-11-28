@@ -278,9 +278,6 @@ function M.install_dependency(item, all_items, installing_set)
 		installing_set[item.id] = nil
 	end
 
-	-- When http async call will be available, let's return popularity option back? Seems cool to have
-	--internal.track_download(item, "dependency")
-
 	return true, "Dependency installed successfully"
 end
 

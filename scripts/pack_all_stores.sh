@@ -31,7 +31,6 @@ fi
 mkdir -p "$DIST_DIR"
 
 BASE_URL="${BASE_URL:-}"  # set by CI to Pages URL
-STATS_FILE="$DIST_DIR/stats.json"
 
 require() { command -v "$1" >/dev/null 2>&1 || { echo "Missing '$1'"; exit 1; }; }
 require jq
@@ -71,27 +70,7 @@ get_sha256() {
 }
 
 get_download_stats() {
-  local asset_id="$1"  # Format: type:author:id
-
-  if [[ -z "$asset_id" || ! -f "$STATS_FILE" ]]; then
-    echo '{"total":0,"week":0,"month":0}'
-    return
-  fi
-
-  jq --arg id "$asset_id" '
-    if .downloads == null or .downloads[$id] == null then
-      { total: 0, week: 0, month: 0 }
-    else
-      (
-        .downloads[$id] |
-        {
-          total: (.total // 0),
-          week: (.last_week // 0 | if type == "number" then . else length end),
-          month: (.last_month // 0 | if type == "number" then . else length end)
-        }
-      )
-    end
-  ' "$STATS_FILE"
+  echo '{"total":0,"week":0,"month":0}'
 }
 
 encode_base64() {
@@ -100,66 +79,6 @@ encode_base64() {
     base64 -w 0 "$path"  # Linux
   else
     base64 -i "$path"     # macOS
-  fi
-}
-
-# Fetch and load statistics from tracking service or GitHub Pages
-fetch_statistics() {
-  local stats_file="$1"
-
-  # Fetch fresh statistics from tracking service if credentials are provided
-  if [[ -n "${TRACKING_SERVICE_URL:-}" && -n "${TRACKING_WEBHOOK_SECRET:-}" ]]; then
-    echo "📊 Fetching fresh statistics from tracking service..."
-    echo "   URL: $TRACKING_SERVICE_URL/api/webhook?days=30"
-
-    local http_code
-    http_code=$(curl -s -L -w "%{http_code}" -o "$stats_file" -X POST \
-      -H "x-webhook-secret: $TRACKING_WEBHOOK_SECRET" \
-      -H "Content-Type: application/json" \
-      "$TRACKING_SERVICE_URL/api/webhook?days=30" 2>/dev/null | tail -c 4 || echo "")
-
-    if [[ "$http_code" == "200" && -s "$stats_file" ]]; then
-      if jq empty "$stats_file" 2>/dev/null; then
-        local filtered_stats
-        filtered_stats=$(jq --arg updated_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-          '.downloads | with_entries(select(.key | test("^(item|dependency):"))) | {downloads: ., updated_at: $updated_at}' \
-          "$stats_file" 2>/dev/null)
-
-        if [[ -n "$filtered_stats" ]]; then
-          echo "$filtered_stats" > "$stats_file"
-        fi
-
-        local stats_count
-        stats_count=$(jq '.downloads | length // 0' "$stats_file" 2>/dev/null || echo "0")
-        if [[ "$stats_count" -gt 0 ]]; then
-          echo "✅ Successfully fetched fresh statistics from tracking service (${stats_count} assets)"
-        else
-          echo "⚠️  Statistics fetched but empty (no downloads yet), using empty stats"
-        fi
-      else
-        echo "⚠️  Invalid JSON from tracking service, falling back to GitHub Pages"
-        rm -f "$stats_file"
-      fi
-    else
-      echo "⚠️  Failed to fetch statistics from tracking service (HTTP ${http_code:-unknown}), falling back to GitHub Pages"
-      rm -f "$stats_file"
-    fi
-  else
-    echo "ℹ️  Tracking service credentials not provided, will load existing stats from GitHub Pages if available"
-  fi
-
-  # Load existing statistics from GitHub Pages if not already fetched or if fetch failed
-  if [[ ! -f "$stats_file" || ! -s "$stats_file" ]]; then
-    if [[ -n "$BASE_URL" ]]; then
-      if curl -f -s "$BASE_URL/stats.json" -o "$stats_file" 2>/dev/null; then
-        echo "✅ Loaded existing statistics from GitHub Pages"
-      else
-        echo "{}" > "$stats_file"
-        echo "ℹ️  No existing statistics found, starting with empty stats"
-      fi
-    else
-      echo "{}" > "$stats_file"
-    fi
   fi
 }
 
@@ -754,8 +673,6 @@ if [[ ! -f "$SRC_STORES_JSON" ]]; then
   exit 1
 fi
 
-# Fetch statistics
-fetch_statistics "$STATS_FILE"
 
 # Build per-store indices
 store_objs=()
@@ -806,14 +723,6 @@ jq --arg base "$BASE_URL" --arg updated_at "$updated_at" '
     ]
   }
 ' "$SRC_STORES_JSON" > "$DIST_DIR/stores.json"
-
-# Ensure stats.json is saved to dist (for publishing)
-if [[ -f "$STATS_FILE" ]]; then
-  echo "✅ Statistics saved: $DIST_DIR/stats.json"
-else
-  echo "{}" > "$DIST_DIR/stats.json"
-  echo "ℹ️  Created empty statistics file: $DIST_DIR/stats.json"
-fi
 
 # Helper function to format file size
 format_size() {
