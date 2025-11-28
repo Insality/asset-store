@@ -232,7 +232,14 @@ function M.open(config_input)
 	-- Track if dependencies were changed during dialog session
 	local dependencies_changed = false
 
-	local default_type = config.asset_type == "dependency" and "Installed" or "All"
+	-- Determine default filter type
+	local default_type = "All"
+	if config.asset_type == "dependency" then
+		-- Check if there are any installed dependencies by checking game.project
+		local dependencies = editor.get("/game.project", "project.dependencies")
+		local has_installed = dependencies and type(dependencies) == "table" and #dependencies > 0
+		default_type = has_installed and "Installed" or "All"
+	end
 
 	local dialog_component = editor.ui.component(function(props)
 		local all_items = editor.ui.use_state(initial_items)
