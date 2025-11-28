@@ -97,9 +97,8 @@ end
 
 function M.get_http_server_routes()
 	local routes = {
-		http.server.route("/install", "GET", "json", http_handlers.handle_install),
-		http.server.route("/install", "POST", "json", http_handlers.handle_install),
-		http.server.route("/check-installed", "GET", "json", http_handlers.handle_check_installed),
+		http.server.route("/install", "GET", http_handlers.handle_install),
+		http.server.route("/install", "POST", http_handlers.handle_install),
 	}
 
 	return routes
