@@ -235,9 +235,16 @@ function M.open(config_input)
 	-- Determine default filter type
 	local default_type = "All"
 	if config.asset_type == "dependency" then
-		-- Check if there are any installed dependencies by checking game.project
-		local dependencies = editor.get("/game.project", "project.dependencies")
-		local has_installed = dependencies and type(dependencies) == "table" and #dependencies > 0
+		-- Check if there are any installed dependencies from the store
+		-- (not all dependencies in game.project may be in the store)
+		local adapter = adapters.get_adapter(config.asset_type)
+		local has_installed = false
+		for _, item in ipairs(initial_items) do
+			if adapter.is_installed(item) then
+				has_installed = true
+				break
+			end
+		end
 		default_type = has_installed and "Installed" or "All"
 	end
 
