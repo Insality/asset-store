@@ -1,12 +1,18 @@
+local locales = require("asset_store.asset_store.locales")
+
+
 local DEFAULT_LABELS = {
-	install_label = "Installation Folder:",
-	install_title = "Installation Folder:",
-	install_tooltip = "The folder to install the assets to",
+	install_label = locales.get("settings_install_label"),
+	install_title = locales.get("settings_install_title"),
+	install_tooltip = locales.get("settings_install_tooltip"),
 }
 
 local M = {}
 
 
+---Build labels with overrides
+---@param overrides table|nil Label overrides
+---@return table labels Labels table
 local function build_labels(overrides)
 	if not overrides then
 		return DEFAULT_LABELS
@@ -21,6 +27,9 @@ local function build_labels(overrides)
 end
 
 
+---Create settings UI component
+---@param params table Parameters: install_folder, on_install_folder_changed, labels
+---@return userdata component UI component
 function M.create(params)
 	local labels = build_labels(params and params.labels)
 

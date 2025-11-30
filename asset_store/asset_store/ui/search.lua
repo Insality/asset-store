@@ -1,14 +1,20 @@
+local locales = require("asset_store.asset_store.locales")
+
+
 local DEFAULT_LABELS = {
-	search_label = "Search:",
-	search_title = "Search:",
-	search_tooltip = "Search for items",
-	sort_label = "Sort:",
+	search_label = locales.get("search_label"),
+	search_title = locales.get("search_title"),
+	search_tooltip = locales.get("search_tooltip"),
+	sort_label = locales.get("sort_label"),
 }
 
 
 local M = {}
 
 
+---Build labels with overrides
+---@param overrides table|nil Label overrides
+---@return table labels Labels table
 local function build_labels(overrides)
 	if not overrides then
 		return DEFAULT_LABELS
@@ -23,6 +29,9 @@ local function build_labels(overrides)
 end
 
 
+---Create search UI component
+---@param params table Parameters: search_query, on_search, sort_by, sort_options, on_sort_change, labels
+---@return userdata component UI component
 function M.create(params)
 	local labels = build_labels(params and params.labels)
 

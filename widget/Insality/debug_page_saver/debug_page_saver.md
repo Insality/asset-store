@@ -17,7 +17,7 @@ debug_page_saver:render_properties_panel(druid, properties_panel)
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### open_at_desktop
 

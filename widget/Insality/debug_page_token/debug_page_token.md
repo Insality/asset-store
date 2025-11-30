@@ -20,7 +20,7 @@ debug_page_token:render_properties_panel(druid, properties_panel)
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### token_count_containers
 
@@ -64,7 +64,7 @@ Render a specific container page
 - **Parameters:**
 	- `token` *(token)*:
 	- `container_id` *(string)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_token_details_page
 
@@ -78,5 +78,5 @@ Render the details page for a specific token
 - **Parameters:**
 	- `container` *(token.container)*:
 	- `token_id` *(string)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 

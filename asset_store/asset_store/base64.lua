@@ -4,6 +4,9 @@ local M = {}
 
 local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 
+---Encode data to base64
+---@param data string Data to encode
+---@return string encoded Base64 encoded string
 function M.encode(data)
 	return ((data:gsub('.', function(x)
 		local r,byte_val='',x:byte()
@@ -17,6 +20,9 @@ function M.encode(data)
 	end)..({ '', '==', '=' })[#data%3+1])
 end
 
+---Decode base64 data
+---@param data string Base64 encoded data
+---@return string decoded Decoded string
 function M.decode(data)
 	data = string.gsub(data, '[^'..b..'=]', '')
 	return (data:gsub('.', function(x)

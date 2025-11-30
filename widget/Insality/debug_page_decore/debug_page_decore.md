@@ -20,7 +20,7 @@ debug_page_decore:render_properties_panel(world, druid, properties_panel)
 - **Parameters:**
 	- `world` *(world)*:
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_entities_page
 
@@ -32,7 +32,7 @@ debug_page_decore:render_entities_page(world, druid, properties_panel)
 - **Parameters:**
 	- `world` *(world)*:
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_systems_page
 
@@ -44,7 +44,7 @@ debug_page_decore:render_systems_page(world, druid, properties_panel)
 - **Parameters:**
 	- `world` *(world)*:
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_entity_prefabs_page
 
@@ -56,5 +56,5 @@ debug_page_decore:render_entity_prefabs_page(world, druid, properties_panel)
 - **Parameters:**
 	- `world` *(world)*:
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 

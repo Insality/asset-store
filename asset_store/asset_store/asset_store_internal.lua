@@ -1,6 +1,9 @@
 local M = {}
 
 
+---Normalize search query
+---@param query string|nil Search query
+---@return string|nil normalized Normalized query or nil
 local function normalize_query(query)
 	if not query or query == "" then
 		return nil
@@ -10,6 +13,10 @@ local function normalize_query(query)
 end
 
 
+---Check if unlisted item should be visible
+---@param item table Item to check
+---@param lower_query string|nil Lowercase search query
+---@return boolean visible True if item should be visible
 local function is_unlisted_visible(item, lower_query)
 	if not item.unlisted then
 		return true
@@ -23,6 +30,10 @@ local function is_unlisted_visible(item, lower_query)
 end
 
 
+---Download JSON from URL
+---@param json_url string URL to download JSON from
+---@return table|nil data JSON data or nil
+---@return string|nil error Error message or nil
 function M.download_json(json_url)
 	local response = http.request(json_url, { as = "json" })
 
@@ -38,6 +49,10 @@ function M.download_json(json_url)
 end
 
 
+---Filter items by search query
+---@param items table Array of items to filter
+---@param query string Search query
+---@return table filtered Filtered items array
 function M.filter_items(items, query)
 	if query == "" or query == nil then
 		return items
@@ -85,6 +100,9 @@ function M.filter_items(items, query)
 end
 
 
+---Extract unique authors from items
+---@param items table Array of items
+---@return table authors Array of unique author names (sorted)
 function M.extract_authors(items)
 	local authors = {}
 	local author_set = {}
@@ -102,6 +120,9 @@ function M.extract_authors(items)
 end
 
 
+---Extract unique tags from items
+---@param items table Array of items
+---@return table tags Array of unique tag names (sorted)
 function M.extract_tags(items)
 	local tags = {}
 	local tag_set = {}
@@ -123,6 +144,17 @@ function M.extract_tags(items)
 end
 
 
+---Filter and sort items by multiple criteria
+---@param items table Array of items to filter
+---@param search_query string Search query string
+---@param filter_type string Filter type (e.g., "All", "Installed", "Not Installed")
+---@param filter_author string Filter author (e.g., "All Authors" or specific author)
+---@param filter_tag string Filter tag (e.g., "All Tags" or specific tag)
+---@param install_folder string|nil Installation folder
+---@param adapter table Adapter instance
+---@param sort_by string Sort criteria
+---@param asset_type string Asset type: "folder" or "dependency"
+---@return table filtered Filtered and sorted items array
 function M.filter_items_by_filters(items, search_query, filter_type, filter_author, filter_tag, install_folder, adapter, sort_by, asset_type)
 	local lower_query = normalize_query(search_query)
 	-- Normalize filter_type by trimming whitespace for comparison
@@ -274,6 +306,8 @@ function M.sort_items(items, sort_by, asset_type)
 end
 
 
+---Open URL in browser
+---@param url string|nil URL to open
 function M.open_url(url)
 	if not url then
 		print("No URL available for:", url)
@@ -284,7 +318,7 @@ end
 
 
 ---Read editor port from .internal/editor.port file
----@return number|nil - Editor port number or nil if not found
+---@return number|nil port Editor port number or nil if not found
 local function get_editor_port()
 	local port_file_path = ".internal/editor.port"
 	local port_file = io.open(port_file_path, "r")
@@ -307,8 +341,8 @@ end
 
 
 ---Call editor HTTP API command
----@param command string - Command name (e.g., "fetch-libraries")
----@return boolean - True if request was sent successfully
+---@param command string Command name (e.g., "fetch-libraries")
+---@return boolean success True if request was sent successfully
 function M.call_editor_command(command)
 	if not command or command == "" then
 		return false

@@ -1,4 +1,4 @@
----@class druid.widget.property_three_buttons: druid.widget
+---@class widget.property_three_buttons: druid.widget
 ---@field root node
 ---@field container druid.container
 ---@field text_name druid.text
@@ -49,7 +49,7 @@ end
 
 
 ---@param text string
----@return druid.widget.property_three_buttons
+---@return widget.property_three_buttons
 function M:set_text_property(text)
 	self.text_name:set_text(text)
 	return self

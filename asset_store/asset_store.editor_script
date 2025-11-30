@@ -1,5 +1,4 @@
 local asset_store = require("asset_store.asset_store")
-local http_handlers = require("asset_store.asset_store.http_handlers")
 
 local M = {}
 
@@ -13,29 +12,13 @@ function M.get_prefs_schema()
 		["asset_store.install_folder_editor_scripts"] = editor.prefs.schema.string({
 			default = "/editor_scripts",
 			scope = editor.prefs.SCOPE.PROJECT
-		}),
-		["asset_store.user_id"] = editor.prefs.schema.string({
-			default = "",
-			scope = editor.prefs.SCOPE.PROJECT
-		}),
+		})
 	}
 end
 
 
 function M.get_commands()
 	local asset_store_commands = {
-		--{
-		--	label = "[Asset Store] Open Web Page",
-		--	locations = { "Project" },
-		--	run = function()
-		--		local port = http.server.port
-		--		if not port then
-		--			return
-		--		end
-		--		local url = string.format("https://insality.github.io/asset-store/web/?port=%d", port)
-		--		editor.browse(url)
-		--	end
-		--},
 		{
 			label = "[Asset Store] Dependencies",
 			locations = { "Project" },
@@ -54,54 +37,52 @@ function M.get_commands()
 				})
 			end
 		},
-		--{
-		--	label = "[Asset Store] Editor Scripts",
-		--	locations = { "Project" },
-		--	run = function()
-		--		return asset_store.open({
-		--			store_url = "https://insality.github.io/asset-store/assets_editor_scripts_store.json",
-		--			info_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md",
-		--			title = "Editor Scripts Asset Store",
-		--			install_prefs_key = "asset_store.install_folder_editor_scripts",
-		--			asset_type = "folder",
-		--			add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
-		--		})
-		--	end
-		--}
-	}
-
-	-- Any Ideas which stores can be useful? Particles, shaders, assets like models and images?
-	-- Also can be a dependencies which will be added to game.projects, but require different logic for install
-
-	local is_druid_installed = pcall(editor.can_get, "/druid", "path")
-	if is_druid_installed then
-		table.insert(asset_store_commands, {
-			label = "[Asset Store] Druid Widgets",
+		{
+			label = "[Asset Store] Assets",
 			locations = { "Project" },
 			run = function()
+				-- Define available stores
+				local stores = {}
+
+				-- Add Druid Widgets if druid is installed
+				local is_druid_installed = pcall(editor.can_get, "/druid", "path")
+				if is_druid_installed then
+					table.insert(stores, {
+						name = "Druid Widgets",
+						store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
+						info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
+						title = "Druid Widgets",
+						install_prefs_key = "asset_store.install_folder_druid",
+						asset_type = "folder",
+						add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
+					})
+				end
+
+				-- Add Editor Scripts
+				--table.insert(stores, {
+				--	name = "Editor Scripts",
+				--	store_url = "https://insality.github.io/asset-store/assets_editor_scripts_store.json",
+				--	info_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md",
+				--	title = "Editor Scripts Asset Store",
+				--	install_prefs_key = "asset_store.install_folder_editor_scripts",
+				--	asset_type = "folder",
+				--	add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
+				--})
+
+				if #stores == 0 then
+					print("No asset stores available")
+					return
+				end
+
 				return asset_store.open({
-					store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
-					info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
-					title = "Druid Widgets",
-					install_prefs_key = "asset_store.install_folder_druid",
-					asset_type = "folder",
-					add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
+					stores = stores,
+					title = "Asset Store",
 				})
 			end
-		})
-	end
-
-	return asset_store_commands
-end
-
-
-function M.get_http_server_routes()
-	local routes = {
-		http.server.route("/install", "GET", http_handlers.handle_install),
-		http.server.route("/install", "POST", http_handlers.handle_install),
+		},
 	}
 
-	return routes
+	return asset_store_commands
 end
 
 

@@ -1,3 +1,6 @@
+local locales = require("asset_store.asset_store.locales")
+
+
 local M = {}
 
 
@@ -12,40 +15,40 @@ function M.show(item, on_confirm, on_cancel)
 		local store_version = item.version or "unknown"
 
 		return editor.ui.dialog({
-			title = "Update Widget",
+			title = locales.get("update_confirmation_title"),
 			content = editor.ui.vertical({
 				spacing = editor.ui.SPACING.MEDIUM,
 				padding = editor.ui.PADDING.MEDIUM,
 				children = {
 					editor.ui.paragraph({
-						text = "All changes to this widget will be lost. Make sure you have everything saved in git.",
+						text = locales.get("update_confirmation_warning"),
 						color = editor.ui.COLOR.TEXT
 					}),
 					editor.ui.label({
-						text = "Widget: " .. widget_title,
+						text = locales.get("update_confirmation_widget_label", widget_title),
 						color = editor.ui.COLOR.OVERRIDE
 					}),
 					editor.ui.label({
-						text = "Current version: " .. tostring(installed_version),
+						text = locales.get("update_confirmation_current_version", tostring(installed_version)),
 						color = editor.ui.COLOR.HINT
 					}),
 					editor.ui.label({
-						text = "New version: " .. tostring(store_version),
+						text = locales.get("update_confirmation_new_version", tostring(store_version)),
 						color = editor.ui.COLOR.HINT
 					}),
 					editor.ui.paragraph({
-						text = "Update widget?",
+						text = locales.get("update_confirmation_question"),
 						color = editor.ui.COLOR.TEXT
 					})
 				}
 			}),
 			buttons = {
 				editor.ui.dialog_button({
-					text = "Cancel",
+					text = locales.get("update_confirmation_cancel"),
 					cancel = true
 				}),
 				editor.ui.dialog_button({
-					text = "Update",
+					text = locales.get("update_confirmation_update"),
 					result = "update"
 				})
 			}

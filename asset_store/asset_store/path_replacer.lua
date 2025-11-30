@@ -5,10 +5,10 @@ local M = {}
 
 
 ---Replace paths in file content
----@param content string - File content
----@param author string - Author name (e.g., "Insality")
----@param install_folder string - Installation folder (e.g., "widget")
----@return string - Modified content
+---@param content string File content
+---@param author string Author name (e.g., "Insality")
+---@param install_folder string Installation folder (e.g., "widget")
+---@return string modified Modified content
 local function replace_paths_in_content(content, author, install_folder)
 	if not content or not author then
 		return content
@@ -46,8 +46,10 @@ local function replace_paths_in_content(content, author, install_folder)
 end
 
 
----@param file_path string
----@return string|nil, string|nil @success, reason
+---Read file content
+---@param file_path string File path
+---@return string|nil content File content or nil on error
+---@return string|nil reason Error reason or nil
 function M.read_file(file_path)
 	local file = io.open(file_path, "r")
 	if file == nil then
@@ -61,9 +63,11 @@ function M.read_file(file_path)
 end
 
 
----@param file_path string
----@param content string
----@return boolean, string|nil @success, reason
+---Write file content
+---@param file_path string File path
+---@param content string Content to write
+---@return boolean success Success status
+---@return string|nil reason Error reason or nil
 function M.write_file(file_path, content)
 	local file = io.open(file_path, "w")
 	if file == nil then
@@ -78,12 +82,13 @@ end
 
 
 ---Process widget paths in all files
----@param folder_path string - Path to the unpacked widget folder
----@param install_folder string - Installation folder (e.g., "widget")
----@param widget_id string - Widget ID (e.g., "fps_panel")
----@param author string|nil - Author name (e.g., "Insality")
----@param file_list table - Optional list of file paths from zip content
----@return boolean, string|nil - Success status and error message if any
+---@param folder_path string Path to the unpacked widget folder
+---@param install_folder string Installation folder (e.g., "widget")
+---@param widget_id string Widget ID (e.g., "fps_panel")
+---@param author string|nil Author name (e.g., "Insality")
+---@param file_list table Optional list of file paths from zip content
+---@return boolean success Success status
+---@return string|nil error Error message if any
 function M.process_widget_paths(folder_path, install_folder, widget_id, author, file_list)
 	print("Processing widget paths in:", folder_path)
 

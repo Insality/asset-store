@@ -1,20 +1,26 @@
+local locales = require("asset_store.asset_store.locales")
+
+
 local DEFAULT_LABELS = {
-	install_button = "Install",
-	update_button = "Update",
-	api_button = "API",
-	example_button = "Example",
-	author_caption = "Author",
-	installed_tag = "Version",
-	tags_prefix = "Tags: ",
-	depends_prefix = "Depends: ",
-	size_separator = "• ",
-	unknown_size = "Unknown size",
+	install_button = locales.get("widget_card_install_button"),
+	update_button = locales.get("widget_card_update_button"),
+	api_button = locales.get("widget_card_api_button"),
+	example_button = locales.get("widget_card_example_button"),
+	author_caption = locales.get("widget_card_author_caption"),
+	installed_tag = locales.get("widget_card_installed_tag"),
+	tags_prefix = locales.get("widget_card_tags_prefix"),
+	depends_prefix = locales.get("widget_card_depends_prefix"),
+	size_separator = locales.get("widget_card_size_separator"),
+	unknown_size = locales.get("widget_card_unknown_size"),
 }
 
 
 local M = {}
 
 
+---Format size in bytes to human-readable string
+---@param size_bytes number|nil Size in bytes
+---@return string formatted Formatted size string
 local function format_size(size_bytes)
 	if not size_bytes then
 		return DEFAULT_LABELS.unknown_size
@@ -30,6 +36,9 @@ local function format_size(size_bytes)
 end
 
 
+---Build labels with overrides
+---@param overrides table|nil Label overrides
+---@return table labels Labels table
 local function build_labels(overrides)
 	if not overrides then
 		return DEFAULT_LABELS
@@ -45,8 +54,8 @@ end
 
 
 ---Extract version name from dependency URL (filename without .zip extension)
----@param url string - Dependency URL
----@return string|nil - Version name or nil
+---@param url string Dependency URL
+---@return string|nil version_name Version name or nil
 local function extract_version_name_from_url(url)
 	if not url or type(url) ~= "string" then
 		return nil
@@ -75,6 +84,10 @@ local function extract_version_name_from_url(url)
 end
 
 
+---Create widget card UI component
+---@param item asset_store.item Asset item
+---@param context table Context: on_install, on_update, on_version_change, open_url, is_installed, can_update, version_options, installed_version_name, labels
+---@return userdata component UI component
 function M.create(item, context)
 	local labels = build_labels(context and context.labels)
 	local open_url = context and context.open_url or function(_) end
@@ -153,7 +166,7 @@ function M.create(item, context)
 			children = header_children
 		}),
 		editor.ui.paragraph({
-			text = item.description or "No description available",
+			text = item.description or locales.get("widget_card_no_description"),
 			color = editor.ui.COLOR.TEXT
 		})
 	}

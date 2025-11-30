@@ -6,7 +6,7 @@ local M = {}
 
 
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_properties_panel(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Quest Panel")
@@ -81,7 +81,7 @@ end
 
 ---Render the active quests page
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_active_quests_page(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Active Quests")
@@ -109,7 +109,7 @@ end
 ---Render the quests page
 ---@param druid druid.instance
 ---@param quests table<string, any>
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.add_render_quests(druid, quests, properties_panel)
 	local sorted_quests = {}
 	for quest_id, _ in pairs(quests) do
@@ -130,7 +130,7 @@ end
 
 ---Render the completed quests page
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_completed_quests_page(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Completed Quests")
@@ -140,7 +140,7 @@ end
 
 ---Render the available quests page
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_available_quests_page(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Available Quests")
@@ -150,7 +150,7 @@ end
 
 ---Render the all quests page
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_all_quests_page(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("All Quests")
@@ -160,7 +160,7 @@ end
 
 ---Render the quest events page
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_quest_events_page(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Quest Events")
@@ -194,7 +194,7 @@ end
 ---Render the quest event page
 ---@param druid druid.instance
 ---@param action string
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_quest_event_page(druid, action, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Quest Event: " .. action)
@@ -248,7 +248,7 @@ end
 ---Render the details page for a specific quest
 ---@param druid druid.instance
 ---@param quest_id string
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_quest_details_page(druid, quest_id, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Quest: " .. quest_id)

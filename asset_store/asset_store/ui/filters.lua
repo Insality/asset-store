@@ -1,18 +1,24 @@
+local locales = require("asset_store.asset_store.locales")
+
+
 local DEFAULT_LABELS = {
-	type_label = "Type:",
-	author_label = "Author:",
-	tag_label = "Tag:",
-	all_types = "All",
-	installed = "Installed",
-	not_installed = "Not Installed                     ",
-	all_authors = "All Authors",
-	all_tags = "All Tags                               ", -- Legit hack now to stretch the select box...
+	type_label = locales.get("filters_type_label"),
+	author_label = locales.get("filters_author_label"),
+	tag_label = locales.get("filters_tag_label"),
+	all_types = locales.get("filters_all_types"),
+	installed = locales.get("filters_installed"),
+	not_installed = locales.get("filters_not_installed"),
+	all_authors = locales.get("filters_all_authors"),
+	all_tags = locales.get("filters_all_tags"),
 }
 
 
 local M = {}
 
 
+---Build labels with overrides
+---@param overrides table|nil Label overrides
+---@return table labels Labels table
 local function build_labels(overrides)
 	if not overrides then
 		return DEFAULT_LABELS
@@ -27,6 +33,9 @@ local function build_labels(overrides)
 end
 
 
+---Build type filter options
+---@param overrides table|nil Label overrides
+---@return table options Array of type option strings
 function M.build_type_options(overrides)
 	local labels = build_labels(overrides and overrides.labels)
 
@@ -38,6 +47,10 @@ function M.build_type_options(overrides)
 end
 
 
+---Build author filter options
+---@param authors table Array of author names
+---@param overrides table|nil Label overrides
+---@return table options Array of author option strings
 function M.build_author_options(authors, overrides)
 	local labels = build_labels(overrides and overrides.labels)
 	local options = {labels.all_authors}
@@ -50,6 +63,10 @@ function M.build_author_options(authors, overrides)
 end
 
 
+---Build tag filter options
+---@param tags table Array of tag names
+---@param overrides table|nil Label overrides
+---@return table options Array of tag option strings
 function M.build_tag_options(tags, overrides)
 	local labels = build_labels(overrides and overrides.labels)
 	local options = {labels.all_tags}
@@ -62,6 +79,9 @@ function M.build_tag_options(tags, overrides)
 end
 
 
+---Create filters UI component
+---@param params table Parameters: filter_type, filter_author, filter_tag, type_options, author_options, tag_options, on_type_change, on_author_change, on_tag_change, labels
+---@return userdata component UI component
 function M.create(params)
 	local labels = build_labels(params and params.labels)
 

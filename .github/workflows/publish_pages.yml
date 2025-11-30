@@ -114,11 +114,6 @@ jobs:
             rm -rf dist/bundle
           fi
 
-      - name: copy web UI to dist
-        run: |
-          echo "📁 Copying web UI to dist directory"
-          cp -r web dist/web
-
       - name: configure pages
         uses: actions/configure-pages@v5
 

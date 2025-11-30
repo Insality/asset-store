@@ -5,8 +5,8 @@ local M = {}
 
 
 ---Get adapter for specific asset type
----@param asset_type string - Asset type: "dependency" or "folder" (default)
----@return table - Adapter module with install, is_installed, and other methods
+---@param asset_type string Asset type: "dependency" or "folder" (default)
+---@return table adapter Adapter module with install, is_installed, and other methods
 function M.get_adapter(asset_type)
 	if asset_type == "dependency" then
 		return dependency_adapter

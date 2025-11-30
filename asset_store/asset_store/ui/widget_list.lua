@@ -4,10 +4,15 @@ local widget_card = require("asset_store.asset_store.ui.widget_card")
 local M = {}
 
 
+---No-op function
+---@param ... any Arguments (ignored)
 local function noop(...)
 end
 
 
+---Build widget card context
+---@param overrides table|nil Context overrides
+---@return table context Context table
 local function build_context(overrides)
 	return {
 		on_install = overrides.on_install or noop,
@@ -21,6 +26,10 @@ local function build_context(overrides)
 end
 
 
+---Create widget list UI component
+---@param items table Array of asset items
+---@param overrides table|nil Overrides: on_install, on_update, on_version_change, open_url, is_installed, can_update, get_version_options, get_installed_version_name, labels
+---@return userdata component UI component
 function M.create(items, overrides)
 	local card_context = build_context(overrides or {})
 	local is_installed = overrides and overrides.is_installed or function(_)

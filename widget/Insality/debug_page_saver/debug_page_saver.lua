@@ -5,7 +5,7 @@ local M = {}
 
 
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_properties_panel(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Saver Panel")

@@ -8,7 +8,7 @@ local M = {}
 
 ---@param world world
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_properties_panel(world, druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Decore Panel")
@@ -46,7 +46,7 @@ end
 
 ---@param world world
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_entities_page(world, druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Entities")
@@ -100,7 +100,7 @@ end
 
 ---@param world world
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_systems_page(world, druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Systems")
@@ -130,7 +130,7 @@ end
 
 ---@param world world
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_entity_prefabs_page(world, druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Entity Prefabs")

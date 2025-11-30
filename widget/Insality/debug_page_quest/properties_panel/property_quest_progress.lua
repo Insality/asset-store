@@ -1,6 +1,4 @@
-local color = require("druid.color")
-
----@class druid.widget.property_quest_progress: druid.widget
+---@class widget.property_quest_progress: druid.widget
 ---@field root node
 ---@field text_name druid.text
 ---@field progress druid.progress
@@ -28,14 +26,14 @@ end
 
 
 ---@param text string
----@return druid.widget.property_quest_progress
+---@return widget.property_quest_progress
 function M:set_text_property(text)
 	self.text_name:set_text(text)
 	return self
 end
 
 
----@return druid.widget.property_quest_progress
+---@return widget.property_quest_progress
 function M:set_progress(current_value, max_value)
 	local progress = current_value / max_value
 	progress = math.max(0, math.min(1, progress))

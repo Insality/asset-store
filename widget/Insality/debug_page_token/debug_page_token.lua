@@ -4,7 +4,7 @@ local M = {}
 
 
 ---@param druid druid.instance
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_properties_panel(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Token Panel")
@@ -56,7 +56,7 @@ end
 ---Render a specific container page
 ---@param token token
 ---@param container_id string
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_container_page(token, container_id, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Container: " .. container_id)
@@ -98,7 +98,7 @@ end
 ---Render the details page for a specific token
 ---@param container token.container
 ---@param token_id string
----@param properties_panel druid.widget.properties_panel
+---@param properties_panel widget.properties_panel
 function M.render_token_details_page(container, token_id, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Token: " .. token_id)

@@ -1,6 +1,9 @@
 local M = {}
 
 
+---Build dialog UI component
+---@param params table Parameters: title, children, buttons, spacing, padding
+---@return userdata dialog UI dialog component
 function M.build(params)
 	return editor.ui.dialog({
 		title = params.title or "Asset Store",

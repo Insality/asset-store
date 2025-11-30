@@ -1,6 +1,12 @@
+local locales = require("asset_store.asset_store.locales")
+
+
 local M = {}
 
 
+---Create pagination UI component
+---@param params table Parameters: current_page, total_pages, total_items, items_per_page, on_page_change
+---@return userdata component UI component
 function M.create(params)
 	local current_page = params.current_page or 1
 	local total_pages = params.total_pages or 1
@@ -15,17 +21,16 @@ function M.create(params)
 	-- Build page info text: "Page 1 of 5 • Showing 1–50 of 300"
 	local page_info_text
 	if total_items > 0 then
-		page_info_text = string.format("Page %d of %d • Showing %d–%d of %d",
-			current_page, total_pages, start_index, end_index, total_items)
+		page_info_text = locales.get("pagination_page_info", current_page, total_pages, start_index, end_index, total_items)
 	else
-		page_info_text = "Page 1 of 1"
+		page_info_text = locales.get("pagination_page_info_single")
 	end
 
 	local children = {}
 
 	-- Previous button with solid arrow (◀)
 	table.insert(children, editor.ui.button({
-		text = "◀",
+		text = locales.get("pagination_prev_button"),
 		on_pressed = function() on_page_change(current_page - 1) end,
 		enabled = current_page > 1
 	}))
@@ -38,7 +43,7 @@ function M.create(params)
 
 	-- Next button with solid arrow (▶)
 	table.insert(children, editor.ui.button({
-		text = "▶",
+		text = locales.get("pagination_next_button"),
 		on_pressed = function() on_page_change(current_page + 1) end,
 		enabled = current_page < total_pages
 	}))

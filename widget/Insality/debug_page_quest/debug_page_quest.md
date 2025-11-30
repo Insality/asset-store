@@ -25,7 +25,7 @@ debug_page_quest:render_properties_panel(druid, properties_panel)
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_active_quests_page
 
@@ -38,7 +38,7 @@ Render the active quests page
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### add_render_quests
 
@@ -52,7 +52,7 @@ Render the quests page
 - **Parameters:**
 	- `druid` *(druid.instance)*:
 	- `quests` *(table<string, any>)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_completed_quests_page
 
@@ -65,7 +65,7 @@ Render the completed quests page
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_available_quests_page
 
@@ -78,7 +78,7 @@ Render the available quests page
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_all_quests_page
 
@@ -91,7 +91,7 @@ Render the all quests page
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_quest_events_page
 
@@ -104,7 +104,7 @@ Render the quest events page
 
 - **Parameters:**
 	- `druid` *(druid.instance)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### render_quest_event_page
 
@@ -118,7 +118,7 @@ Render the quest event page
 - **Parameters:**
 	- `druid` *(druid.instance)*:
 	- `action` *(string)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
 ### get_quest_status
 
@@ -148,5 +148,5 @@ Render the details page for a specific quest
 - **Parameters:**
 	- `druid` *(druid.instance)*:
 	- `quest_id` *(string)*:
-	- `properties_panel` *(druid.widget.properties_panel)*:
+	- `properties_panel` *(widget.properties_panel)*:
 
