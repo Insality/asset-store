@@ -37,49 +37,49 @@ function M.get_commands()
 				})
 			end
 		},
-		{
-			label = "[Asset Store] Assets",
-			locations = { "Project" },
-			run = function()
-				-- Define available stores
-				local stores = {}
+		--{
+		--	label = "[Asset Store] Assets",
+		--	locations = { "Project" },
+		--	run = function()
+		--		-- Define available stores
+		--		local stores = {}
 
-				-- Add Druid Widgets if druid is installed
-				local is_druid_installed = pcall(editor.can_get, "/druid", "path")
-				if is_druid_installed then
-					table.insert(stores, {
-						name = "Druid Widgets",
-						store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
-						info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
-						title = "Druid Widgets",
-						install_prefs_key = "asset_store.install_folder_druid",
-						asset_type = "folder",
-						add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
-					})
-				end
+		--		-- Add Druid Widgets if druid is installed
+		--		local is_druid_installed = pcall(editor.can_get, "/druid", "path")
+		--		if is_druid_installed then
+		--			table.insert(stores, {
+		--				name = "Druid Widgets",
+		--				store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
+		--				info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
+		--				title = "Druid Widgets",
+		--				install_prefs_key = "asset_store.install_folder_druid",
+		--				asset_type = "folder",
+		--				add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
+		--			})
+		--		end
 
-				-- Add Editor Scripts
-				--table.insert(stores, {
-				--	name = "Editor Scripts",
-				--	store_url = "https://insality.github.io/asset-store/assets_editor_scripts_store.json",
-				--	info_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md",
-				--	title = "Editor Scripts Asset Store",
-				--	install_prefs_key = "asset_store.install_folder_editor_scripts",
-				--	asset_type = "folder",
-				--	add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
-				--})
+		--		-- Add Editor Scripts
+		--		--table.insert(stores, {
+		--		--	name = "Editor Scripts",
+		--		--	store_url = "https://insality.github.io/asset-store/assets_editor_scripts_store.json",
+		--		--	info_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md",
+		--		--	title = "Editor Scripts Asset Store",
+		--		--	install_prefs_key = "asset_store.install_folder_editor_scripts",
+		--		--	asset_type = "folder",
+		--		--	add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
+		--		--})
 
-				if #stores == 0 then
-					print("No asset stores available")
-					return
-				end
+		--		if #stores == 0 then
+		--			print("No asset stores available")
+		--			return
+		--		end
 
-				return asset_store.open({
-					stores = stores,
-					title = "Asset Store",
-				})
-			end
-		},
+		--		return asset_store.open({
+		--			stores = stores,
+		--			title = "Asset Store",
+		--		})
+		--	end
+		--},
 	}
 
 	return asset_store_commands
