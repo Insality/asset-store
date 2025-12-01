@@ -9,15 +9,14 @@ The repository in **development stage** and not fully ready. But if you interest
 
 # Asset Store
 
-**Asset Store** - is an editor script for the [Defold](https://defold.com/) game engine. It provides a convenient way to browse, publish and install assets (Defold Dependencies, Druid Widgets, and other resources) directly from the Defold editor interface.
+**Asset Store** - is an editor script for the [Defold](https://defold.com/) game engine. It provides a convenient way to browse, publish and install Defold Dependencies directly from the Defold editor interface.
 
 ## Features
 
-- **Browse Assets**: View available assets inside Defold Editor.
-- **Search & Filter**: Search assets by title, author, description, or tags.
-- **One-Click Installation**: Install assets directly into your project with automatic dependency resolution.
-- **Multiple Stores**: Support for multiple asset stores.
-- **Community Driven**: You can contribute by easily adding your own assets to this repository.
+- **Browse Dependencies**: View available Defold library dependencies inside Defold Editor.
+- **Search & Filter**: Search dependencies by title, author, description, or tags.
+- **One-Click Installation**: Install dependencies directly into your project with automatic dependency resolution.
+- **Community Driven**: You can contribute by easily adding your own dependencies to this repository or [Defold Asset Portal](https://defold.com/assets/).
 
 ## Setup
 
@@ -33,7 +32,7 @@ https://github.com/Insality/asset-store/archive/refs/tags/1.zip
 
 After that, select `Project ▸ Fetch Libraries` to update [library dependencies](https://defold.com/manuals/libraries/#setting-up-library-dependencies). This happens automatically whenever you open a project so you will only need to do this if the dependencies change without re-opening the project.
 
-The Asset Store editor script will be automatically available in the Defold editor menu under `Project ▸ [Asset Store] {Store Name}`.
+The Asset Store editor script will be automatically available in the Defold editor menu under `Project ▸ [Asset Store] Dependencies`.
 
 ## Usage
 
@@ -43,13 +42,12 @@ After installing the dependency, the Asset Store will appear in your Defold edit
 
 1. Open Defold Editor
 2. Go to `Project` menu
-3. Select `[Asset Store] {Store Name}` to open the store
-4. Browse, search, and install assets
+3. Select `[Asset Store] Dependencies` to open the store
+4. Browse, search, and install dependencies
 
-### Stores
+### Store
 
-- [Dependencies](/dependencies_store.md)
-- [Druid Widgets](/druid_widget_store.md)
+- [Dependencies](/dependencies_store.md) - Browse and install Defold library dependencies
 
 ## License
 
