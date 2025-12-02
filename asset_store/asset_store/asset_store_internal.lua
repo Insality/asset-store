@@ -130,8 +130,9 @@ function M.extract_tags(items)
 	for _, item in ipairs(items) do
 		if not item.unlisted and item.tags then
 			for _, tag in ipairs(item.tags) do
-				if not tag_set[tag] then
-					tag_set[tag] = true
+				local lower_tag = string.lower(tag)
+				if not tag_set[lower_tag] then
+					tag_set[lower_tag] = tag
 					table.insert(tags, tag)
 				end
 			end
