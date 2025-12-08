@@ -415,7 +415,8 @@ def sort_content_by_date(content: List[str], portal_releases: List[Dict]) -> Lis
             return (0, parsed_version)  # 0 means use version
         elif url in url_to_date:
             # Return date string for sorting (ISO format sorts correctly)
-            return (1, url_to_date[url])  # 1 means has date
+            # Convert to string to ensure consistent type for comparison
+            return (1, str(url_to_date[url]))  # 1 means has date
         elif url in url_to_version:
             # Use version for sorting if date is not available
             version = url_to_version[url]
