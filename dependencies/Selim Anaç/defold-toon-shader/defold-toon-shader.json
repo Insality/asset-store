@@ -1,0 +1,16 @@
+{
+	"author": "Selim Anaç",
+	"id": "defold-toon-shader",
+	"title": "Toon Shader",
+	"description": "Toon shader for 3D models.",
+	"tags": [
+		"3D",
+		"Rendering",
+		"Shaders"
+	],
+	"stars": 11,
+	"content": [],
+	"example_code": "https://github.com/selimanac/defold-toon-shader",
+	"author_url": "https://github.com/selimanac",
+	"image": "toon-shader-thumb.png"
+}

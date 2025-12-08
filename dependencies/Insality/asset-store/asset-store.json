@@ -1,0 +1,18 @@
+{
+	"author": "Insality",
+	"id": "asset-store",
+	"title": "Asset Store",
+	"description": "Defold In-Editor Asset Store",
+	"tags": [
+		"System",
+		"Tools",
+		"Editor script"
+	],
+	"stars": 15,
+	"content": [
+		"https://github.com/Insality/asset-store/archive/refs/tags/1.zip"
+	],
+	"example_code": "https://github.com/Insality/asset-store",
+	"author_url": "https://github.com/Insality",
+	"image": "asset-store-thumb.png"
+}

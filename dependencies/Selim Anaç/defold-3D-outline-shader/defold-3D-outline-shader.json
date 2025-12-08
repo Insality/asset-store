@@ -1,0 +1,15 @@
+{
+	"author": "Selim Anaç",
+	"id": "defold-3D-outline-shader",
+	"title": "Outline Shader",
+	"description": "Simple outline shader for 3D models using STENCIL and INVERTED HULL techniques.",
+	"tags": [
+		"Rendering",
+		"Shaders"
+	],
+	"stars": 22,
+	"content": [],
+	"example_code": "https://github.com/selimanac/defold-3D-outline-shader",
+	"author_url": "https://github.com/selimanac",
+	"image": "outline-shader-thumb.jpg"
+}

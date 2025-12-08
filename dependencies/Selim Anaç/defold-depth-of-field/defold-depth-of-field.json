@@ -1,0 +1,16 @@
+{
+	"author": "Selim Anaç",
+	"id": "defold-depth-of-field",
+	"title": "Depth of Field Shader",
+	"description": "Depth of Field shader",
+	"tags": [
+		"3D",
+		"Rendering",
+		"Shaders"
+	],
+	"stars": 6,
+	"content": [],
+	"example_code": "https://github.com/selimanac/defold-depth-of-field",
+	"author_url": "https://github.com/selimanac",
+	"image": "dof-shader-thumb.jpg"
+}
