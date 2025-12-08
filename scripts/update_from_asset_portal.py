@@ -369,33 +369,46 @@ def sort_content_by_date(content: List[str], portal_releases: List[Dict]) -> Lis
             if extracted_version:
                 url_to_version[url] = extracted_version
 
-    def parse_version(version_str: str) -> tuple:
+    def parse_version(version_str: str, force_string: bool = False) -> tuple:
         """Parse version string into tuple for sorting (e.g., "1.2.3" -> (1, 2, 3))."""
         if not version_str:
-            return (0,)
+            return ('0',) if force_string else (0,)
         try:
             # Remove common prefixes
             version_str = str(version_str).replace('v', '').replace('V', '').strip()
             # Try to parse as numbers
             parts = []
+            has_string_parts = False
             for part in version_str.split('.'):
                 try:
-                    parts.append(int(part))
+                    if force_string:
+                        parts.append(str(int(part)))
+                    else:
+                        parts.append(int(part))
                 except ValueError:
                     # If not a number, try to extract number from string (e.g., "Alpha_v2.1" -> 2, 1)
                     numbers = re.findall(r'\d+', part)
                     if numbers:
-                        parts.extend([int(n) for n in numbers])
+                        if force_string:
+                            parts.extend([str(int(n)) for n in numbers])
+                        else:
+                            parts.extend([int(n) for n in numbers])
                     else:
                         # If no numbers, use string comparison
-                        parts.append(part)
+                        parts.append(str(part))
+                        has_string_parts = True
+            
+            # If we have mixed types (int and str), convert all to strings for consistent comparison
+            if has_string_parts or force_string:
+                return tuple(str(p) for p in parts)
             return tuple(parts)
         except Exception:
-            return (0,)
+            return ('0',) if force_string else (0,)
 
     # Check if all URLs have simple numeric versions (like "1", "2", "3")
-    # If so, prefer version-based sorting over date-based sorting
+    # Also check if any version has string parts (which requires normalizing all to strings)
     all_have_simple_versions = True
+    has_any_string_versions = False
     for url in content:
         if url not in url_to_version:
             all_have_simple_versions = False
@@ -405,13 +418,25 @@ def sort_content_by_date(content: List[str], portal_releases: List[Dict]) -> Lis
         # Check if version is a simple number (like "1", "2", "3" or "1.0", "2.0")
         if not re.match(r'^v?\d+(\.\d+)*$', version_str, re.IGNORECASE):
             all_have_simple_versions = False
-            break
+            # Check if this version has string parts by parsing it
+            test_parts = []
+            for part in version_str.replace('v', '').replace('V', '').split('.'):
+                try:
+                    int(part)
+                except ValueError:
+                    # Check if part has any non-numeric content
+                    if not re.match(r'^\d+$', part):
+                        has_any_string_versions = True
+                        break
+
+    # If any version has string parts, normalize all to strings for consistent comparison
+    force_string_normalization = has_any_string_versions
 
     def sort_key(url: str) -> tuple:
         if all_have_simple_versions and url in url_to_version:
             # If all have simple numeric versions, use version for sorting
             version = url_to_version[url]
-            parsed_version = parse_version(str(version))
+            parsed_version = parse_version(str(version), force_string_normalization)
             return (0, parsed_version)  # 0 means use version
         elif url in url_to_date:
             # Return date string for sorting (ISO format sorts correctly)
@@ -420,7 +445,7 @@ def sort_content_by_date(content: List[str], portal_releases: List[Dict]) -> Lis
         elif url in url_to_version:
             # Use version for sorting if date is not available
             version = url_to_version[url]
-            parsed_version = parse_version(str(version))
+            parsed_version = parse_version(str(version), force_string_normalization)
             return (2, parsed_version)  # 2 means has version but no date
         else:
             # URLs without date or version go to the end, sorted alphabetically
