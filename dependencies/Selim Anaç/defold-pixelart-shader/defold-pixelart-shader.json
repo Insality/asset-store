@@ -1,0 +1,16 @@
+{
+	"author": "Selim Anaç",
+	"id": "defold-pixelart-shader",
+	"title": "Pixelart shader",
+	"description": "Pixelart shader",
+	"tags": [
+		"3D",
+		"Rendering",
+		"Shaders"
+	],
+	"stars": 8,
+	"content": [],
+	"example_code": "https://github.com/selimanac/defold-pixelart-shader",
+	"author_url": "https://github.com/selimanac",
+	"image": "pixelart-shader-thumb.jpg"
+}

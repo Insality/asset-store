@@ -1,0 +1,18 @@
+{
+	"author": "Selim Anaç",
+	"id": "defold-uuid4",
+	"title": "Defold UUID4 Generator",
+	"description": "UUID4 generator native extension.",
+	"tags": [
+		"Math",
+		"Tools",
+		"Util"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/selimanac/defold-uuid4/archive/refs/tags/v1.0.zip"
+	],
+	"example_code": "https://github.com/selimanac/defold-uuid4",
+	"author_url": "https://github.com/selimanac",
+	"image": "uuid4-thumb.jpg"
+}

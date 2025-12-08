@@ -10,7 +10,7 @@
 		"platform",
 		"social"
 	],
-	"stars": 26,
+	"stars": 29,
 	"content": [
 		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.20.0.zip",
 		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.21.0.zip",
@@ -19,7 +19,8 @@
 		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.24.0.zip",
 		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.25.0.zip",
 		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.26.0.zip",
-		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.26.1.zip"
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.26.1.zip",
+		"https://github.com/playgama/bridge-defold/archive/refs/tags/v1.27.0.zip"
 	],
 	"example_code": "https://github.com/playgama/bridge-defold",
 	"author_url": "https://github.com/playgama",
