@@ -611,8 +611,8 @@ pack_dependency_store() {
     if [[ -z "$content" || "$content" == "null" || "$content" == "[]" ]]; then
       local display_id="${author}:${id}"
       [[ -n "$version" && "$version" != "null" ]] && display_id="${display_id}@${version}"
-      echo "  ❌ ERROR: $display_id has no content array" >&2
-      exit 1
+      echo "  ⚠️  SKIP: $display_id has no content array (all releases filtered or missing)" >&2
+      continue
     fi
 
     # Generate URLs
