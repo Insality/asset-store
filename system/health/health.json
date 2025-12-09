@@ -1,0 +1,14 @@
+{
+	"author": "Insality",
+	"id": "health",
+	"version": 1,
+	"title": "Health System",
+	"description": "Health system for managing entity health and damage",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "health"],
+	"content": [
+		"health_command.lua",
+		"health_component.script",
+		"health_system.lua"
+	]
+}

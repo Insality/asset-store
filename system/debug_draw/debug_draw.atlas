@@ -1,0 +1,4 @@
+images {
+  image: "/assets/images/empty.png"
+}
+inner_padding: 1018

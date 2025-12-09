@@ -1,0 +1,14 @@
+{
+	"author": "Insality",
+	"id": "panthera",
+	"version": 1,
+	"title": "Panthera System",
+	"description": "System for managing Panthera animations",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "animation", "panthera"],
+	"content": [
+		"panthera_command.lua",
+		"panthera_component.script",
+		"panthera_system.lua"
+	]
+}

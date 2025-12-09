@@ -1,0 +1,12 @@
+{
+	"author": "Insality",
+	"id": "debug_draw_transform",
+	"version": 1,
+	"title": "Debug Draw Transform System",
+	"description": "System for drawing debug transform graphics",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "debug", "transform"],
+	"content": [
+		"debug_draw_transform_system.lua"
+	]
+}

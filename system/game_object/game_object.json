@@ -1,0 +1,13 @@
+{
+	"author": "Insality",
+	"id": "game_object",
+	"version": 1,
+	"title": "Game Object System",
+	"description": "System for managing game objects",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system"],
+	"content": [
+		"game_object_command.lua",
+		"game_object_system.lua"
+	]
+}

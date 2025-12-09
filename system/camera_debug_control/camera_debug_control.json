@@ -1,0 +1,12 @@
+{
+	"author": "Insality",
+	"id": "camera_debug_control",
+	"version": 1,
+	"title": "Camera Debug Control",
+	"description": "Debug control system for camera manipulation",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "camera", "debug"],
+	"content": [
+		"camera_debug_control.lua"
+	]
+}

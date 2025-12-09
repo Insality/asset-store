@@ -1,0 +1,13 @@
+{
+	"author": "Insality",
+	"id": "input",
+	"version": 1,
+	"title": "Input System",
+	"description": "System for handling input commands",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "input"],
+	"content": [
+		"input_command.lua",
+		"input_system.lua"
+	]
+}
