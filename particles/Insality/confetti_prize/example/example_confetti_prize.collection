@@ -1,0 +1,28 @@
+name: "example_fps_panel"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"confetti_prize\"\n"
+  "  component: \"/particles/Insality/confetti_prize/confetti_prize.particlefx\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"play_particlefx\"\n"
+  "  component: \"/example/shared/play_particlefx.script\"\n"
+  "  properties {\n"
+  "    id: \"particle\"\n"
+  "    value: \"confetti_prize\"\n"
+  "    type: PROPERTY_TYPE_HASH\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"loop_delay\"\n"
+  "    value: \"3.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 960.0
+    y: 540.0
+  }
+}

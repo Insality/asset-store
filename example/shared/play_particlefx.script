@@ -1,0 +1,13 @@
+go.property("particle", hash("component_id"))
+go.property("loop_delay", 0)
+
+function init(self)
+	local particle_url = msg.url(nil, nil, self.particle)
+	particlefx.play(particle_url)
+
+	if self.loop_delay > 0 then
+		timer.delay(self.loop_delay, true, function()
+			particlefx.play(particle_url)
+		end)
+	end
+end

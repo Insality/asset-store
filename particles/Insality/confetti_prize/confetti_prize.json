@@ -5,6 +5,7 @@
 	"title": "Confetti Prize",
 	"description": "Particle effect for confetti celebration with prize animation",
 	"author_url": "https://github.com/Insality",
+	"example": "/particles/Insality/confetti_prize/example/example_confetti_prize.collection",
 	"tags": ["particle", "effect", "celebration"],
 	"content": [
 		"confetti_prize.particlefx",

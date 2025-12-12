@@ -5,6 +5,7 @@
 	"title": "Explosion",
 	"description": "Particle effect for explosion animation",
 	"author_url": "https://github.com/Insality",
+	"example": "/particles/Insality/explosion/example/example_explosion.collection",
 	"tags": ["particle", "effect", "explosion"],
 	"content": [
 		"explosion.particlefx",

@@ -5,6 +5,7 @@
 	"title": "Background Stars",
 	"description": "Particle effect for animated background stars",
 	"author_url": "https://github.com/Insality",
+	"example": "/particles/Insality/background_stars/example/example_background_stars.collection",
 	"tags": ["particle", "effect", "background"],
 	"content": [
 		"background_stars.particlefx"

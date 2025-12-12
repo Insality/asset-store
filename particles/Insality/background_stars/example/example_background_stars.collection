@@ -1,0 +1,23 @@
+name: "example_fps_panel"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"background_stars\"\n"
+  "  component: \"/particles/Insality/background_stars/background_stars.particlefx\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"play_particlefx\"\n"
+  "  component: \"/example/shared/play_particlefx.script\"\n"
+  "  properties {\n"
+  "    id: \"particle\"\n"
+  "    value: \"background_stars\"\n"
+  "    type: PROPERTY_TYPE_HASH\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 960.0
+    y: 540.0
+  }
+}
