@@ -8,11 +8,64 @@ local internal = require("asset_store.asset_store.asset_store_internal")
 
 local M = {}
 
+
+---URL encode a string (percent encoding)
+---@param str string - String to encode
+---@return string - URL encoded string
+local function url_encode(str)
+	local result = {}
+	for i = 1, #str do
+		local char = str:sub(i, i)
+		local byte = string.byte(char)
+		if (byte >= 48 and byte <= 57) or -- 0-9
+		   (byte >= 65 and byte <= 90) or -- A-Z
+		   (byte >= 97 and byte <= 122) or -- a-z
+		   char == "-" or char == "_" or char == "." or char == "~" then
+			result[#result + 1] = char
+		elseif char == " " then
+			result[#result + 1] = "%20"
+		else
+			result[#result + 1] = string.format("%%%02X", byte)
+		end
+	end
+	return table.concat(result)
+end
+
+
+---Encode URL path component (encodes only the path part, not the scheme/host)
+---@param url string - Full URL
+---@return string - URL with encoded path
+local function encode_url_path(url)
+	local scheme_end = url:find("://")
+	if not scheme_end then
+		return url_encode(url)
+	end
+
+	local scheme = url:sub(1, scheme_end + 2)
+	local rest = url:sub(scheme_end + 3)
+	local host_end = rest:find("/")
+	
+	if not host_end then
+		return scheme .. rest
+	end
+
+	local host = rest:sub(1, host_end - 1)
+	local path = rest:sub(host_end)
+	
+	local encoded_path = path:gsub("([^/]+)", function(segment)
+		return url_encode(segment)
+	end)
+	
+	return scheme .. host .. encoded_path
+end
+
+
 ---Download a file from URL
 ---@param url string - The URL to download from
 ---@return string|nil, string|nil, table|nil - Downloaded content or nil, filename or nil, content list or nil
 local function download_file_zip_json(url)
-	local response = http.request(url, { as = "json" })
+	local encoded_url = encode_url_path(url)
+	local response = http.request(encoded_url, { as = "json" })
 
 	if response.status ~= 200 then
 		print("Failed to download file. HTTP status: " .. response.status)
