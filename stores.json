@@ -40,7 +40,7 @@
 			"name": "[Assets] Decore Systems",
 			"type": "folder",
 			"index": "decore_store.json",
-			"content": "decore"
+			"content": "system"
 		}
 	]
 }
