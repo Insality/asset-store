@@ -1,6 +1,3 @@
-local log = require("log.log")
-local panthera = require("panthera.panthera")
-
 --- The flow module simplifies asynchronous flows of execution where your
 -- code needs to wait for one asynchronous operation to finish before
 -- starting with the next one.
@@ -30,8 +27,6 @@ local panthera = require("panthera.panthera")
 -- 		flow.on_message(message_id, message, sender)
 -- 	end
 --
-
-local panthera = require("panthera.panthera")
 
 local M = {}
 
@@ -241,21 +236,10 @@ function M.until_true(fn)
 end
 
 
----Wait until a specific event is received
----@param event event
-function M.until_event(event)
-	local instance = create_or_get(coroutine.running())
-	instance.state = WAITING
-	local function on_event()
-		instance.state = READY
-		resume(instance)
-		event:unsubscribe(on_event)
-	end
-	event:subscribe(on_event)
-	return coroutine.yield()
-end
-
-
+--- Wait until any message is received
+-- @return message_id
+-- @return message
+-- @return sender
 function M.until_any_message()
 	local instance = create_or_get(coroutine.running())
 	instance.state = WAITING
@@ -508,29 +492,6 @@ function M.go_animate(url, property, playback, to, easing, duration, delay)
 end
 
 
---- Play a panthera animation and wait until it has finished
----@param animation_state panthera.animation
----@param animation_id string
----@param options panthera.options?
----@async
-function M.panthera_play(animation_state, animation_id, options)
-	assert(animation_state, "You must provide a panthera animation state")
-	assert(animation_id, "You must provide an animation id")
-
-	M.until_callback(function(cb)
-		options = options or {}
-		local callback = options.callback
-		options.callback = function(...)
-			if callback then
-				callback(...)
-			end
-			cb()
-		end
-		panthera.play(animation_state, animation_id, options)
-	end)
-end
-
-
 --- Call gui.animate and wait until it has finished
 -- NOTE: The argument order differs from gui.animate() (playback is shifted
 -- to the same position as for go.animate)
@@ -603,28 +564,6 @@ function M.until_group(group_id)
 	if #group > 0 then
 		M.until_flows(group)
 	end
-end
-
-
----Play animation asynchronously
----@param animation_state panthera.animation
----@param animation_id string
----@param options panthera.options?
----@async
-function M.panthera(animation_state, animation_id, options)
-	local co = coroutine.running()
-	if not co then
-		log:error("Can't play animation, coroutine is not running")
-		return
-	end
-
-	options = options or {}
-	M.until_callback(function(cb)
-		options.callback = cb
-		panthera.play(animation_state, animation_id, options)
-	end)
-
-	return coroutine.yield()
 end
 
 function M.ray_cast()

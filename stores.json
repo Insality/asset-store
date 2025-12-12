@@ -19,9 +19,9 @@
 			"content": "dependencies"
 		},
 		{
-			"name": "[Assets] Core Models",
+			"name": "[Assets] Core",
 			"type": "folder",
-			"index": "core_models_store.json",
+			"index": "core_store.json",
 			"content": "core"
 		},
 		{
