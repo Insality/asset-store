@@ -1,0 +1,14 @@
+{
+	"author": "Insality",
+	"id": "transform",
+	"version": 1,
+	"title": "Transform System",
+	"description": "System for managing entity transforms",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "transform"],
+	"content": [
+		"transform_command.lua",
+		"transform_system.lua"
+	]
+}
+

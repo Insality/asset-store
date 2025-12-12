@@ -1,0 +1,8 @@
+local component = require("decore.component")
+go.property("sprite_url", hash("#sprite"))
+
+function init(self)
+	component.init("debug_draw", {
+		sprite_url = self.sprite_url
+	})
+end

@@ -1,0 +1,12 @@
+{
+	"author": "Insality",
+	"id": "b64",
+	"version": 1,
+	"title": "Base64",
+	"description": "Lua Base64 encoding and decoding utility",
+	"author_url": "https://github.com/Insality",
+	"tags": ["core", "utility"],
+	"content": [
+		"b64.lua"
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"author": "Insality",
+	"id": "druid_widget",
+	"version": 1,
+	"title": "Druid Widget System",
+	"description": "System for integrating Druid widgets",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "widget", "druid"],
+	"content": [
+		"druid_widget_system.lua"
+	]
+}
+

@@ -42,3 +42,4 @@ build.ini
 bob*.jar
 *.pyc
 log.txt
+manifest.*.der

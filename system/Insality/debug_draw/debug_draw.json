@@ -1,0 +1,16 @@
+{
+	"author": "Insality",
+	"id": "debug_draw",
+	"version": 1,
+	"title": "Debug Draw System",
+	"description": "System for drawing debug graphics",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "debug"],
+	"content": [
+		"debug_draw_command.lua",
+		"debug_draw_component.script",
+		"debug_draw_system.lua",
+		"debug_draw.atlas"
+	]
+}
+

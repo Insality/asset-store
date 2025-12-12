@@ -1,0 +1,19 @@
+{
+	"author": "Insality",
+	"id": "camera",
+	"version": 1,
+	"title": "Camera System",
+	"description": "Camera system for managing camera visible size and position",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "camera"],
+	"content": [
+		"camera_command.lua",
+		"camera_entity.go",
+		"camera_entity.lua",
+		"camera_system.lua",
+		"component_camera.script",
+		"empty.png",
+		"screen_overlay.atlas"
+	]
+}
+

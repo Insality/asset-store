@@ -65,7 +65,9 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 			-- Load new store data
 			local new_store_data, fetch_error = internal.download_json(selected_store.store_url)
 			if not new_store_data then
-				set_install_status(locales.get("messages_error_failed_load_store", fetch_error or "unknown error"))
+				local error_msg = fetch_error or "unknown error"
+				print("Asset Store: Failed to load store '" .. store_name .. "':", error_msg)
+				set_install_status(locales.get("messages_error_failed_load_store", error_msg))
 				set_loading_store(false)
 				return
 			end

@@ -1,0 +1,13 @@
+{
+	"author": "Insality",
+	"id": "color",
+	"version": 1,
+	"title": "Color System",
+	"description": "Color system for managing entity colors",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "color"],
+	"content": [
+		"color_system.lua"
+	]
+}
+

@@ -1,0 +1,13 @@
+{
+	"author": "Insality",
+	"id": "follow_cursor",
+	"version": 1,
+	"title": "Follow Cursor System",
+	"description": "System for entities to follow cursor position",
+	"author_url": "https://github.com/Insality",
+	"tags": ["system", "input"],
+	"content": [
+		"follow_cursor_system.lua"
+	]
+}
+

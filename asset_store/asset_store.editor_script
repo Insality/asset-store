@@ -12,7 +12,27 @@ function M.get_prefs_schema()
 		["asset_store.install_folder_editor_scripts"] = editor.prefs.schema.string({
 			default = "/editor_scripts",
 			scope = editor.prefs.SCOPE.PROJECT
-		})
+		}),
+		["asset_store.install_folder_core"] = editor.prefs.schema.string({
+			default = "/core",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.install_folder_particles"] = editor.prefs.schema.string({
+			default = "/particles",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.install_folder_materials"] = editor.prefs.schema.string({
+			default = "/materials",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.install_folder_decore"] = editor.prefs.schema.string({
+			default = "/system",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.install_folder_dependencies"] = editor.prefs.schema.string({
+			default = "/dependencies",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
 	}
 end
 
@@ -37,50 +57,100 @@ function M.get_commands()
 				})
 			end
 		},
-		--{
-		--	label = "[Asset Store] Assets",
-		--	locations = { "Project" },
-		--	run = function()
-		--		-- Define available stores
-		--		local stores = {}
+		{
+			label = "[Asset Store] Assets",
+			locations = { "Project" },
+			run = function()
+				-- Define available stores
+				local stores = {}
 
-		--		-- Add Druid Widgets if druid is installed
-		--		local is_druid_installed = pcall(editor.can_get, "/druid", "path")
-		--		if is_druid_installed then
-		--			table.insert(stores, {
-		--				name = "Druid Widgets",
-		--				store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
-		--				info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
-		--				title = "Druid Widgets",
-		--				install_prefs_key = "asset_store.install_folder_druid",
-		--				asset_type = "folder",
-		--				add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
-		--			})
-		--		end
+				-- Add Druid Widgets if druid is installed
+				local is_druid_installed = pcall(editor.can_get, "/druid", "path")
+				if is_druid_installed then
+					table.insert(stores, {
+						name = "Druid Widgets",
+						store_url = "https://insality.github.io/asset-store/druid_widget_store.json",
+						info_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md",
+						title = "Druid Widgets",
+						install_prefs_key = "asset_store.install_folder_druid",
+						asset_type = "folder",
+						add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
+					})
+				end
 
-		--		-- Add Editor Scripts
-		--		--table.insert(stores, {
-		--		--	name = "Editor Scripts",
-		--		--	store_url = "https://insality.github.io/asset-store/assets_editor_scripts_store.json",
-		--		--	info_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md",
-		--		--	title = "Editor Scripts Asset Store",
-		--		--	install_prefs_key = "asset_store.install_folder_editor_scripts",
-		--		--	asset_type = "folder",
-		--		--	add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
-		--		--})
+				local is_decore_installed = pcall(editor.can_get, "/decore", "path")
+				if is_decore_installed then
+					table.insert(stores, {
+						name = "Decore Systems",
+						store_url = "https://insality.github.io/asset-store/decore_store.json",
+						info_url = "https://github.com/Insality/asset-store/blob/main/decore_store.md",
+						title = "Decore",
+						install_prefs_key = "asset_store.install_folder_decore",
+						asset_type = "folder",
+						add_asset_url = "https://github.com/Insality/asset-store/blob/main/decore_store.md#how-to-submit",
+					})
+				end
 
-		--		if #stores == 0 then
-		--			print("No asset stores available")
-		--			return
-		--		end
+				-- Add Editor Scripts
+				table.insert(stores, {
+					name = "Editor Scripts",
+					store_url = "https://insality.github.io/asset-store/assets_editor_scripts_store.json",
+					info_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md",
+					title = "Editor Scripts Asset Store",
+					install_prefs_key = "asset_store.install_folder_editor_scripts",
+					asset_type = "folder",
+					add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
+				})
 
-		--		return asset_store.open({
-		--			stores = stores,
-		--			title = "Asset Store",
-		--		})
-		--	end
-		--},
+				-- Add Core modelues
+				table.insert(stores, {
+					name = "Core",
+					store_url = "https://insality.github.io/asset-store/core_store.json",
+					info_url = "https://github.com/Insality/asset-store/blob/main/core_store.md",
+					title = "Core",
+					install_prefs_key = "asset_store.install_folder_core",
+					asset_type = "folder",
+					add_asset_url = "https://github.com/Insality/asset-store/blob/main/core_store.md#how-to-submit",
+				})
+
+				-- Add Particles
+				table.insert(stores, {
+					name = "Particles",
+					store_url = "https://insality.github.io/asset-store/particles_store.json",
+					info_url = "https://github.com/Insality/asset-store/blob/main/particles_store.md",
+					title = "Particles",
+					install_prefs_key = "asset_store.install_folder_particles",
+					asset_type = "folder",
+					add_asset_url = "https://github.com/Insality/asset-store/blob/main/particles_store.md#how-to-submit",
+				})
+
+				-- Add Materials
+				table.insert(stores, {
+					name = "Materials",
+					store_url = "https://insality.github.io/asset-store/materials_store.json",
+					info_url = "https://github.com/Insality/asset-store/blob/main/materials_store.md",
+					title = "Materials",
+					install_prefs_key = "asset_store.install_folder_materials",
+					asset_type = "folder",
+					add_asset_url = "https://github.com/Insality/asset-store/blob/main/materials_store.md#how-to-submit",
+				})
+
+
+				if #stores == 0 then
+					print("No asset stores available")
+					return
+				end
+
+				return asset_store.open({
+					stores = stores,
+					title = "Asset Store",
+				})
+			end
+		},
 	}
+
+	-- Until done it's disabled
+	--table.remove(asset_store_commands, 2)
 
 	return asset_store_commands
 end

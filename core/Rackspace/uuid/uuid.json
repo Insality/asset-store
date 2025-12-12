@@ -1,0 +1,12 @@
+{
+	"author": "Rackspace",
+	"id": "uuid",
+	"version": 1,
+	"title": "UUID",
+	"description": "UUID generator for Lua",
+	"author_url": "https://github.com/Tieske/uuid",
+	"tags": ["core", "utility"],
+	"content": [
+		"uuid.lua"
+	]
+}

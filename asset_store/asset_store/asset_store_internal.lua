@@ -35,14 +35,26 @@ end
 ---@return table|nil data JSON data or nil
 ---@return string|nil error Error message or nil
 function M.download_json(json_url)
-	local response = http.request(json_url, { as = "json" })
+	local success, response = pcall(function()
+		return http.request(json_url, { as = "json" })
+	end)
+
+	if not success then
+		local error_msg = "Failed to fetch store data: " .. tostring(response)
+		print("Asset Store Error:", error_msg)
+		return nil, error_msg
+	end
 
 	if response.status ~= 200 then
-		return nil, "Failed to fetch store data. HTTP status: " .. response.status
+		local error_msg = "Failed to fetch store data. HTTP status: " .. response.status
+		print("Asset Store Error:", error_msg)
+		return nil, error_msg
 	end
 
 	if not response.body or not response.body.items then
-		return nil, "Invalid store data format"
+		local error_msg = "Invalid store data format"
+		print("Asset Store Error:", error_msg)
+		return nil, error_msg
 	end
 
 	return response.body, nil
@@ -311,7 +323,8 @@ end
 ---@param url string|nil URL to open
 function M.open_url(url)
 	if not url then
-		print("No URL available for:", url)
+		print("No URL available")
+		return
 	end
 
 	editor.browse(url)

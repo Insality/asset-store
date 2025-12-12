@@ -1,0 +1,13 @@
+{
+	"author": "Insality",
+	"id": "gui_stencil",
+	"version": 1,
+	"title": "GUI Stencil Material",
+	"description": "Material with stencil support for GUI rendering",
+	"author_url": "https://github.com/Insality",
+	"tags": ["material", "GUI", "shader"],
+	"content": [
+		"gui_stencil.material",
+		"gui_stencil.fp"
+	]
+}
