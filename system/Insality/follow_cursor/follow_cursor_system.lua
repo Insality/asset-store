@@ -5,7 +5,6 @@ local decore = require("decore.decore")
 
 ---@class entity.follow_cursor: entity
 ---@field follow_cursor boolean
-
 decore.register_component("follow_cursor", false)
 
 ---@class system.follow_cursor: system
@@ -36,8 +35,6 @@ function M:process_input(action)
 		self.world.transform:set_position(entity, x, y)
 	end
 end
-
-
 
 
 return M

@@ -1,0 +1,14 @@
+{
+	"author": "Insality",
+	"id": "explosion",
+	"version": 1,
+	"title": "Explosion",
+	"description": "Particle effect for explosion animation",
+	"author_url": "https://github.com/Insality",
+	"tags": ["particle", "effect", "explosion"],
+	"content": [
+		"explosion.particlefx",
+		"explosion.atlas",
+		"ui_circle_64.png"
+	]
+}

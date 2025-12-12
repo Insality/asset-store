@@ -1,0 +1,12 @@
+{
+	"author": "Insality",
+	"id": "background_stars",
+	"version": 1,
+	"title": "Background Stars",
+	"description": "Particle effect for animated background stars",
+	"author_url": "https://github.com/Insality",
+	"tags": ["particle", "effect", "background"],
+	"content": [
+		"background_stars.particlefx"
+	]
+}

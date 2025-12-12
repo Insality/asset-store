@@ -1,0 +1,4 @@
+images {
+  image: "/particles/Insality/confetti_prize/confetti_prize.png"
+}
+extrude_borders: 2

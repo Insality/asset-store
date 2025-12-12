@@ -1,0 +1,14 @@
+{
+	"author": "Insality",
+	"id": "confetti_prize",
+	"version": 1,
+	"title": "Confetti Prize",
+	"description": "Particle effect for confetti celebration with prize animation",
+	"author_url": "https://github.com/Insality",
+	"tags": ["particle", "effect", "celebration"],
+	"content": [
+		"confetti_prize.particlefx",
+		"confetti_prize.atlas",
+		"confetti_prize.png"
+	]
+}
