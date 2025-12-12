@@ -99,7 +99,7 @@ function init(self)
 	self.fps_panel = self.druid:new_widget(fps_panel,"fps_panel")
 	self.properties_panel = self.druid:new_widget(properties_panel,"properties_panel")
 	self.properties_panel:set_hidden(true)
-	self.properties_panel:set_header("Druid Widgets")
+	self.properties_panel:set_header("Examples")
 
 	-- TODO: should be for any available store, not only druid widget
 	load_examples(self, "https://insality.github.io/asset-store/druid_widget_store.json", function(data)

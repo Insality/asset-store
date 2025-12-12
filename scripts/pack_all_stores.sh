@@ -288,6 +288,28 @@ build_dependency_item_json() {
     }'
 }
 
+# Get category display name
+get_category_display_name() {
+  local content_folder="$1"
+  case "$content_folder" in
+    widget)
+      echo "Druid Widgets"
+      ;;
+    particles)
+      echo "Particles"
+      ;;
+    materials)
+      echo "Materials"
+      ;;
+    core)
+      echo "Core"
+      ;;
+    *)
+      echo "Examples"
+      ;;
+  esac
+}
+
 # Build example HTML if needed
 build_example_if_needed() {
   local example_path="$1"
@@ -300,6 +322,8 @@ build_example_if_needed() {
   local api_url="$8"
   local author_url="$9"
   local example_code_url="${10}"
+  local content_folder="${11}"
+  local store_index="${12}"
 
   if [[ -z "$example_path" || "$example_path" == "null" ]]; then
     echo ""
@@ -313,9 +337,16 @@ build_example_if_needed() {
     return
   fi
 
+  local example_overlay_script_path="$ROOT/example/example_overlay/example_overlay.gui_script"
+  if [[ ! -f "$example_overlay_script_path" ]]; then
+    echo "  ❌ ERROR: Missing $example_overlay_script_path" >&2
+    echo ""
+    return
+  fi
+
   local example_dir_name="${author}:${id}@${version}"
-  local example_output_dir="$DIST_DIR/examples/$example_dir_name"
-  local example_url="${BASE_URL:+$BASE_URL/}examples/$example_dir_name/index.html"
+  local example_output_dir="$DIST_DIR/examples/$content_folder/$example_dir_name"
+  local example_url="${BASE_URL:+$BASE_URL/}examples/$content_folder/$example_dir_name/index.html"
 
   # Check if example directory already exists with required files (restored from GitHub Pages)
   # Do this BEFORE modifying the proxy file to avoid leaving it in wrong state
@@ -330,10 +361,34 @@ build_example_if_needed() {
   tmp_proxy_backup="$(mktemp)"
   cp "$collection_proxy_path" "$tmp_proxy_backup"
 
-  # Cleanup function: restore proxy file and remove INI file
-  trap 'cp "$tmp_proxy_backup" "$collection_proxy_path" 2>/dev/null || true; rm -f "$tmp_proxy_backup" "$ROOT/build.ini"; trap - RETURN' RETURN
+  local tmp_overlay_backup
+  tmp_overlay_backup="$(mktemp)"
+  cp "$example_overlay_script_path" "$tmp_overlay_backup"
+
+  # Cleanup function: restore proxy file, overlay script and remove INI file
+  trap 'cp "$tmp_proxy_backup" "$collection_proxy_path" 2>/dev/null || true; cp "$tmp_overlay_backup" "$example_overlay_script_path" 2>/dev/null || true; rm -f "$tmp_proxy_backup" "$tmp_overlay_backup" "$ROOT/build.ini"; trap - RETURN' RETURN
 
   printf 'collection: "%s"\n' "$collection_path_for_proxy" > "$collection_proxy_path"
+
+  # Modify example_overlay.gui_script to use category-specific store
+  local store_url
+  if [[ -n "$BASE_URL" ]]; then
+    store_url="${BASE_URL}/${store_index}"
+  else
+    store_url="https://insality.github.io/asset-store/${store_index}"
+  fi
+  local category_display_name
+  category_display_name="$(get_category_display_name "$content_folder")"
+  
+  # Replace store URL and header using sed (works on both macOS and Linux)
+  local sed_suffix=""
+  if [[ "$(uname)" == "Darwin" ]]; then
+    sed_suffix="''"
+  fi
+  sed -i "$sed_suffix" \
+    -e "s|https://insality.github.io/asset-store/druid_widget_store.json|${store_url}|g" \
+    -e "s|set_header(\"Druid Widgets\")|set_header(\"${category_display_name}\")|g" \
+    "$example_overlay_script_path"
 
   ensure_dir "$example_output_dir"
 
@@ -388,7 +443,7 @@ build_example_if_needed() {
     echo ""
   fi
 
-  # Cleanup handled by trap (proxy file restored, temp files removed)
+  # Cleanup handled by trap (proxy file and overlay script restored, temp files removed)
 }
 
 pack_folder_store() {
@@ -494,7 +549,7 @@ pack_folder_store() {
     if [[ -z "$example_url" || "$example_url" == "null" ]]; then
       if [[ -n "$example" && "$example" != "null" ]]; then
         local built_example_url
-        built_example_url="$(build_example_if_needed "$example" "$author" "$id" "$version" "$asset_dir" "$title" "$description" "$api_url" "$author_url" "$example_code_url")"
+        built_example_url="$(build_example_if_needed "$example" "$author" "$id" "$version" "$asset_dir" "$title" "$description" "$api_url" "$author_url" "$example_code_url" "$content_folder" "$store_index")"
         [[ -n "$built_example_url" ]] && example_url="$built_example_url"
       fi
     fi
