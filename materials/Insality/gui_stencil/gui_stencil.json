@@ -3,7 +3,7 @@
 	"id": "gui_stencil",
 	"version": 1,
 	"title": "GUI Stencil Material",
-	"description": "Material with stencil support for GUI rendering",
+	"description": "Material with stencil support (trim by alpha) for GUI rendering",
 	"author_url": "https://github.com/Insality",
 	"tags": ["material", "GUI", "shader"],
 	"content": [
