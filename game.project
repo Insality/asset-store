@@ -45,3 +45,7 @@ clear_color_red = 0.13
 [library]
 include_dirs = asset_store
 
+[particle_fx]
+max_count = 256
+max_emitter_count = 256
+
