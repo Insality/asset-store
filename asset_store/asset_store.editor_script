@@ -150,7 +150,7 @@ function M.get_commands()
 	}
 
 	-- Until done it's disabled
-	--table.remove(asset_store_commands, 2)
+	table.remove(asset_store_commands, 2)
 
 	return asset_store_commands
 end
