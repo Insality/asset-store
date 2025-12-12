@@ -1,0 +1,12 @@
+{
+	"author": "Ludobits",
+	"id": "flow",
+	"version": 1,
+	"title": "Flow",
+	"description": "Simplifies asynchronous flows of execution where code needs to wait for one asynchronous operation to finish before starting the next one",
+	"author_url": "https://github.com/ludobits",
+	"tags": ["core", "utility"],
+	"content": [
+		"flow.lua"
+	]
+}
