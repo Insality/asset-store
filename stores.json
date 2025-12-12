@@ -17,6 +17,30 @@
 			"type": "dependencies",
 			"index": "dependencies_store.json",
 			"content": "dependencies"
+		},
+		{
+			"name": "[Assets] Core Models",
+			"type": "folder",
+			"index": "core_models_store.json",
+			"content": "core"
+		},
+		{
+			"name": "[Assets] Particles",
+			"type": "folder",
+			"index": "particles_store.json",
+			"content": "particles"
+		},
+		{
+			"name": "[Assets] Materials",
+			"type": "folder",
+			"index": "materials_store.json",
+			"content": "materials"
+		},
+		{
+			"name": "[Assets] Decore Systems",
+			"type": "folder",
+			"index": "decore_store.json",
+			"content": "decore"
 		}
 	]
 }
