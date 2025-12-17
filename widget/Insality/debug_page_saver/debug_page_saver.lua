@@ -1,5 +1,5 @@
 local saver = require("saver.saver")
-local properties_saver_slots = require("saver.properties_panel.property_saver_slots")
+local properties_saver_slots = require("widget.Insality.debug_page_saver.properties_panel.property_saver_slots")
 
 local M = {}
 

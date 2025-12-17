@@ -1,10 +1,11 @@
+local lang = require("lang.lang")
+
 local M = {}
 
 
----@param lang lang
 ---@param druid table druid instance
 ---@param properties_panel table druid properties panel instance
-function M.render_properties_panel(lang, druid, properties_panel)
+function M.render_properties_panel(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Lang Panel")
 
