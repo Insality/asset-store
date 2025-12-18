@@ -78,6 +78,12 @@ Create a `{dependency_id}.json` file:
 
 ### How to Submit
 
+#### Add your dependency to the [Defold Asset Portal](https://defold.com/assets/)
+
+Use [this form](https://defold.com/submit_asset/) to submit your dependency to the Defold Asset Portal.
+
+#### Add your dependency to the Asset Store repository
+
 1. Fork the repository on GitHub
 2. Clone your fork:
    ```bash

@@ -3,10 +3,6 @@
 [![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/insality) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/insality) [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/insality)
 
 
-# Disclaimer
-
-The repository in **development stage** and not fully ready. But if you interested in the project, you can inspect what I'm building here :)
-
 # Asset Store
 
 **Asset Store** - is an editor script for the [Defold](https://defold.com/) game engine. It provides a convenient way to browse, publish and install Defold Dependencies directly from the Defold editor interface.
@@ -16,7 +12,7 @@ The repository in **development stage** and not fully ready. But if you interest
 - **Browse Dependencies**: View available Defold library dependencies inside Defold Editor.
 - **Search & Filter**: Search dependencies by title, author, description, or tags.
 - **One-Click Installation**: Install dependencies directly into your project with automatic dependency resolution.
-- **Community Driven**: You can contribute by easily adding your own dependencies to this repository or [Defold Asset Portal](https://defold.com/assets/).
+- **Community Driven**: You can contribute by easily adding your own dependencies to this repository or [Defold Asset Portal](https://defold.com/assets/) (they are automatically synced with this repository).
 
 ## Setup
 
@@ -70,7 +66,7 @@ If you have any issues, questions or suggestions please [create an issue](https:
 <details>
 
 ### **V1**
-- == We are in development ==
+- Initial release!
 
 </details>
 
