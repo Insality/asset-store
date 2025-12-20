@@ -212,7 +212,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "druid/empty"
-  id: "propeties"
+  id: "properties"
   parent: "content"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -221,7 +221,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "property_slider"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_slider.gui"
 }
@@ -285,7 +285,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "property_checkbox"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_checkbox.gui"
 }
@@ -331,7 +331,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "property_button"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_button.gui"
 }
@@ -377,7 +377,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "property_input"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_input.gui"
 }
@@ -453,7 +453,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "property_text"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_text.gui"
 }
@@ -481,7 +481,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "property_left_right_selector"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_left_right_selector.gui"
 }
@@ -545,7 +545,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "property_vector3"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_vector3.gui"
 }
@@ -753,7 +753,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "property_button_small"
-  parent: "propeties"
+  parent: "properties"
   inherit_alpha: true
   template: "/widget/Insality/properties_panel/properties/property_button.gui"
   enabled: false

@@ -17,7 +17,7 @@ local property_vector3 = require("widget.Insality.properties_panel.properties.pr
 ---@field container druid.container
 ---@field container_content druid.container
 ---@field container_scroll_view druid.container
----@field contaienr_scroll_content druid.container
+---@field container_scroll_content druid.container
 ---@field button_hidden druid.button
 ---@field text_header druid.text
 ---@field paginator widget.property_left_right_selector
@@ -37,7 +37,7 @@ function M:init()
 	self.container:add_container("header")
 	self.container_content = self.container:add_container("content")
 	self.container_scroll_view = self.container_content:add_container("scroll_view")
-	self.contaienr_scroll_content = self.container_scroll_view:add_container("scroll_content")
+	self.container_scroll_content = self.container_scroll_view:add_container("scroll_content")
 
 	self.default_size = self.container:get_size()
 	self.header_size = gui.get_size(self:get_node("header"))

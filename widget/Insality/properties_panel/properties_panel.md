@@ -42,7 +42,7 @@
 - [container](#container)
 - [container_content](#container_content)
 - [container_scroll_view](#container_scroll_view)
-- [contaienr_scroll_content](#contaienr_scroll_content)
+- [container_scroll_content](#container_scroll_content)
 - [button_hidden](#button_hidden)
 - [text_header](#text_header)
 - [paginator](#paginator)
@@ -379,8 +379,8 @@ properties_panel:render_lua_table(data)
 <a name="container_scroll_view"></a>
 - **container_scroll_view** (_druid.container_)
 
-<a name="contaienr_scroll_content"></a>
-- **contaienr_scroll_content** (_druid.container_)
+<a name="container_scroll_content"></a>
+- **container_scroll_content** (_druid.container_)
 
 <a name="button_hidden"></a>
 - **button_hidden** (_druid.button_)

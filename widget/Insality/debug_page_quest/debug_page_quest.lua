@@ -1,6 +1,6 @@
 local quest = require("quest.quest")
 local utils = require("quest.internal.quest_utils")
-local property_quest_progress = require("quest.properties_panel.property_quest_progress")
+local property_quest_progress = require("widget.Insality.debug_page_quest.properties_panel.property_quest_progress")
 
 local M = {}
 

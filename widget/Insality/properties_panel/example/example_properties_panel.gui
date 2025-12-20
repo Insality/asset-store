@@ -73,14 +73,14 @@ nodes {
 }
 nodes {
   type: TYPE_BOX
-  id: "properties_panel/propeties"
+  id: "properties_panel/properties"
   parent: "properties_panel/content"
   template_node_child: true
 }
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_slider"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
@@ -140,7 +140,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_checkbox"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
@@ -182,7 +182,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_button"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
@@ -224,7 +224,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_input"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
@@ -296,7 +296,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_text"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
@@ -320,7 +320,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_left_right_selector"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
@@ -380,7 +380,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_vector3"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
@@ -584,7 +584,7 @@ nodes {
 nodes {
   type: TYPE_TEMPLATE
   id: "properties_panel/property_button_small"
-  parent: "properties_panel/propeties"
+  parent: "properties_panel/properties"
   template_node_child: true
 }
 nodes {
