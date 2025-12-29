@@ -7,7 +7,7 @@
 		"game mechanic",
 		"physics"
 	],
-	"stars": 51,
+	"stars": 52,
 	"content": [
 		"https://github.com/whiteboxdev/library-defold-grid-engine/archive/refs/tags/0.1.0.zip",
 		"https://github.com/whiteboxdev/library-defold-grid-engine/archive/refs/tags/0.2.0.zip",

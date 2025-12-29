@@ -6,7 +6,7 @@
 	"tags": [
 		"gui"
 	],
-	"stars": 70,
+	"stars": 71,
 	"content": [
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.0.0.zip",
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.1.0.zip",
@@ -30,7 +30,8 @@
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.6.1.zip",
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.7.0.zip",
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.8.0.zip",
-		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.9.0.zip"
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.9.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.10.0.zip"
 	],
 	"example_code": "https://github.com/britzl/extension-imgui",
 	"author_url": "https://github.com/britzl",

@@ -1,0 +1,19 @@
+{
+	"author": "Insality",
+	"id": "defold-quest",
+	"title": "Defold Quest",
+	"description": "Quest system library for Defold games. Manage quests, objectives, and quest progression. Track events and customize behavior.",
+	"tags": [
+		"system",
+		"Game mechanic"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/Insality/defold-quest/archive/refs/tags/1.zip",
+		"https://github.com/Insality/defold-quest/archive/refs/tags/2.zip",
+		"https://github.com/Insality/defold-quest/archive/refs/tags/3.zip"
+	],
+	"example_code": "https://github.com/Insality/defold-quest",
+	"author_url": "https://github.com/Insality",
+	"image": "defold-quest-logo-thumb.png"
+}
