@@ -1,6 +1,9 @@
 ---@class world
 ---@field input system.input.command
 
+---@class action
+---@field action_id hash
+
 ---@class system.input.command
 ---@field private input system.input
 ---@field private world world

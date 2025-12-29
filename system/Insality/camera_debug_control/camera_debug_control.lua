@@ -59,7 +59,8 @@ function M:process_drag_camera(input_event)
 
 	if self.is_hold and not action_id then
 		local entity = self.world.camera:get_current_camera()
-		local koef = 1 / entity.camera.zoom * 0.5
+		local zoom = self.world.camera:get_zoom()
+		local koef = 1 / zoom
 		self.world.transform:add_position(entity, -input_event.dx * koef, -input_event.dy * koef)
 	end
 
