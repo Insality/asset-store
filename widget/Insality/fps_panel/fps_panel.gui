@@ -62,14 +62,32 @@ nodes {
 }
 nodes {
   type: TYPE_BOX
-  id: "mini_graph/prefab_line"
+  id: "mini_graph/background"
   parent: "mini_graph/content"
   template_node_child: true
 }
 nodes {
+  color {
+    x: 0.557
+    y: 0.835
+    z: 0.62
+  }
+  type: TYPE_BOX
+  id: "mini_graph/prefab_line"
+  parent: "mini_graph/content"
+  overridden_fields: 5
+  template_node_child: true
+}
+nodes {
+  color {
+    x: 0.957
+    y: 0.608
+    z: 0.608
+  }
   type: TYPE_BOX
   id: "mini_graph/color_low"
   parent: "mini_graph/content"
+  overridden_fields: 5
   template_node_child: true
 }
 nodes {
@@ -118,6 +136,7 @@ nodes {
     z: 1.0
   }
   parent: "content"
+  layer: "druid_text_regular"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -154,6 +173,7 @@ nodes {
     z: 1.0
   }
   parent: "content"
+  layer: "druid_text_bold"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -177,6 +197,7 @@ nodes {
   id: "line_second_1"
   pivot: PIVOT_N
   parent: "content"
+  layer: "druid"
   inherit_alpha: true
 }
 nodes {
@@ -198,7 +219,17 @@ nodes {
   id: "line_second_2"
   pivot: PIVOT_N
   parent: "content"
+  layer: "druid"
   inherit_alpha: true
+}
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_bold"
+}
+layers {
+  name: "druid_text_regular"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

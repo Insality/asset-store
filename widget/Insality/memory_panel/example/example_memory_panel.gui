@@ -53,6 +53,12 @@ nodes {
 }
 nodes {
   type: TYPE_BOX
+  id: "memory_panel/mini_graph/background"
+  parent: "memory_panel/mini_graph/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
   id: "memory_panel/mini_graph/prefab_line"
   parent: "memory_panel/mini_graph/content"
   template_node_child: true
@@ -98,6 +104,15 @@ nodes {
   id: "memory_panel/text_memory"
   parent: "memory_panel/content"
   template_node_child: true
+}
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_regular"
+}
+layers {
+  name: "druid_text_bold"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

@@ -41,6 +41,12 @@ nodes {
 }
 nodes {
   type: TYPE_BOX
+  id: "mini_graph/background"
+  parent: "mini_graph/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
   id: "mini_graph/prefab_line"
   parent: "mini_graph/content"
   template_node_child: true

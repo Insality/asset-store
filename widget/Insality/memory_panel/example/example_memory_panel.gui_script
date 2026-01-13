@@ -4,6 +4,9 @@ local memory_panel = require("widget.Insality.memory_panel.memory_panel")
 function init(self)
 	self.druid = druid.new(self)
 	self.memory_panel = self.druid:new_widget(memory_panel, "memory_panel")
+
+	profiler.enable_ui(true)
+	profiler.set_ui_view_mode(profiler.VIEW_MODE_MINIMIZED)
 end
 
 function final(self)

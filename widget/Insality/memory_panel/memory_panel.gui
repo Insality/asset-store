@@ -62,6 +62,12 @@ nodes {
 }
 nodes {
   type: TYPE_BOX
+  id: "mini_graph/background"
+  parent: "mini_graph/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
   id: "mini_graph/prefab_line"
   parent: "mini_graph/content"
   template_node_child: true
@@ -80,6 +86,7 @@ nodes {
   type: TYPE_BOX
   id: "content"
   parent: "root"
+  layer: "druid"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
   visible: false
@@ -119,6 +126,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_STRETCH
   parent: "content"
+  layer: "druid_text_regular"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -158,6 +166,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_STRETCH
   parent: "content"
+  layer: "druid_text_regular"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -181,6 +190,7 @@ nodes {
   id: "line_second_1"
   pivot: PIVOT_N
   parent: "content"
+  layer: "druid"
   inherit_alpha: true
 }
 nodes {
@@ -202,6 +212,7 @@ nodes {
   id: "line_second_2"
   pivot: PIVOT_N
   parent: "content"
+  layer: "druid"
   inherit_alpha: true
 }
 nodes {
@@ -236,9 +247,19 @@ nodes {
     z: 1.0
   }
   parent: "content"
+  layer: "druid_text_bold"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
+}
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_regular"
+}
+layers {
+  name: "druid_text_bold"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

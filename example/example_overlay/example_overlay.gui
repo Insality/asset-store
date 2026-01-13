@@ -96,6 +96,12 @@ nodes {
 }
 nodes {
   type: TYPE_BOX
+  id: "fps_panel/mini_graph/background"
+  parent: "fps_panel/mini_graph/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
   id: "fps_panel/mini_graph/prefab_line"
   parent: "fps_panel/mini_graph/content"
   template_node_child: true
@@ -187,6 +193,12 @@ nodes {
   type: TYPE_BOX
   id: "memory_panel/mini_graph/content"
   parent: "memory_panel/mini_graph/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "memory_panel/mini_graph/background"
+  parent: "memory_panel/mini_graph/content"
   template_node_child: true
 }
 nodes {

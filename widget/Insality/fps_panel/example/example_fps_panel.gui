@@ -53,6 +53,12 @@ nodes {
 }
 nodes {
   type: TYPE_BOX
+  id: "fps_panel/mini_graph/background"
+  parent: "fps_panel/mini_graph/content"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
   id: "fps_panel/mini_graph/prefab_line"
   parent: "fps_panel/mini_graph/content"
   template_node_child: true
@@ -92,6 +98,15 @@ nodes {
   id: "fps_panel/line_second_2"
   parent: "fps_panel/content"
   template_node_child: true
+}
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_bold"
+}
+layers {
+  name: "druid_text_regular"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
