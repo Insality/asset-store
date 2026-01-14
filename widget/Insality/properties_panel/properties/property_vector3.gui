@@ -19,6 +19,7 @@ nodes {
   texture: "druid/empty"
   id: "root"
   adjust_mode: ADJUST_MODE_STRETCH
+  layer: "druid"
   inherit_alpha: true
   visible: false
 }
@@ -55,6 +56,7 @@ nodes {
     z: 1.0
   }
   parent: "root"
+  layer: "druid_text_bold"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -93,7 +95,7 @@ nodes {
 }
 nodes {
   position {
-    x: 7.0
+    x: 6.0
   }
   scale {
     x: 0.5
@@ -113,6 +115,7 @@ nodes {
   font: "druid_text_regular"
   id: "text_x"
   parent: "field_x"
+  layer: "druid_text_regular"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -125,36 +128,64 @@ nodes {
   id: "rich_input_x"
   parent: "field_x"
   inherit_alpha: true
-  template: "/druid/custom/rich_input/rich_input.gui"
+  template: "/widget/Insality/rich_input/rich_input.gui"
 }
 nodes {
+  size {
+    x: 45.0
+    y: 40.0
+  }
   type: TYPE_BOX
   id: "rich_input_x/root"
   parent: "rich_input_x"
+  overridden_fields: 4
   template_node_child: true
 }
 nodes {
+  size {
+    x: 45.0
+    y: 40.0
+  }
   type: TYPE_BOX
   id: "rich_input_x/button"
   parent: "rich_input_x/root"
+  overridden_fields: 4
   template_node_child: true
 }
 nodes {
+  size {
+    x: 60.0
+    y: 50.0
+  }
   type: TYPE_TEXT
+  text: "..."
   id: "rich_input_x/placeholder_text"
   parent: "rich_input_x/root"
+  overridden_fields: 4
+  overridden_fields: 8
   template_node_child: true
 }
 nodes {
+  size {
+    x: 70.0
+    y: 50.0
+  }
   type: TYPE_TEXT
+  text: "10"
   id: "rich_input_x/input_text"
   parent: "rich_input_x/root"
+  overridden_fields: 4
+  overridden_fields: 8
   template_node_child: true
 }
 nodes {
+  position {
+    x: 15.0
+  }
   type: TYPE_BOX
   id: "rich_input_x/cursor_node"
   parent: "rich_input_x/root"
+  overridden_fields: 1
   template_node_child: true
 }
 nodes {
@@ -169,7 +200,7 @@ nodes {
     y: -20.0
   }
   size {
-    x: 50.0
+    x: 45.0
     y: 4.0
   }
   color {
@@ -183,6 +214,7 @@ nodes {
   pivot: PIVOT_S
   adjust_mode: ADJUST_MODE_STRETCH
   parent: "field_x"
+  layer: "druid"
   inherit_alpha: true
 }
 nodes {
@@ -203,7 +235,7 @@ nodes {
 }
 nodes {
   position {
-    x: 7.0
+    x: 6.0
   }
   scale {
     x: 0.5
@@ -223,6 +255,7 @@ nodes {
   font: "druid_text_regular"
   id: "text_y"
   parent: "field_y"
+  layer: "druid_text_regular"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -235,36 +268,64 @@ nodes {
   id: "rich_input_y"
   parent: "field_y"
   inherit_alpha: true
-  template: "/druid/custom/rich_input/rich_input.gui"
+  template: "/widget/Insality/rich_input/rich_input.gui"
 }
 nodes {
+  size {
+    x: 45.0
+    y: 40.0
+  }
   type: TYPE_BOX
   id: "rich_input_y/root"
   parent: "rich_input_y"
+  overridden_fields: 4
   template_node_child: true
 }
 nodes {
+  size {
+    x: 45.0
+    y: 40.0
+  }
   type: TYPE_BOX
   id: "rich_input_y/button"
   parent: "rich_input_y/root"
+  overridden_fields: 4
   template_node_child: true
 }
 nodes {
+  size {
+    x: 60.0
+    y: 50.0
+  }
   type: TYPE_TEXT
+  text: "..."
   id: "rich_input_y/placeholder_text"
   parent: "rich_input_y/root"
+  overridden_fields: 4
+  overridden_fields: 8
   template_node_child: true
 }
 nodes {
+  size {
+    x: 70.0
+    y: 50.0
+  }
   type: TYPE_TEXT
+  text: "10"
   id: "rich_input_y/input_text"
   parent: "rich_input_y/root"
+  overridden_fields: 4
+  overridden_fields: 8
   template_node_child: true
 }
 nodes {
+  position {
+    x: 15.0
+  }
   type: TYPE_BOX
   id: "rich_input_y/cursor_node"
   parent: "rich_input_y/root"
+  overridden_fields: 1
   template_node_child: true
 }
 nodes {
@@ -279,7 +340,7 @@ nodes {
     y: -20.0
   }
   size {
-    x: 50.0
+    x: 45.0
     y: 4.0
   }
   color {
@@ -293,6 +354,7 @@ nodes {
   pivot: PIVOT_S
   adjust_mode: ADJUST_MODE_STRETCH
   parent: "field_y"
+  layer: "druid"
   inherit_alpha: true
 }
 nodes {
@@ -313,7 +375,7 @@ nodes {
 }
 nodes {
   position {
-    x: 7.0
+    x: 6.0
   }
   scale {
     x: 0.5
@@ -333,6 +395,7 @@ nodes {
   font: "druid_text_regular"
   id: "text_z"
   parent: "field_z"
+  layer: "druid_text_regular"
   inherit_alpha: true
   outline_alpha: 0.0
   shadow_alpha: 0.0
@@ -345,36 +408,64 @@ nodes {
   id: "rich_input_z"
   parent: "field_z"
   inherit_alpha: true
-  template: "/druid/custom/rich_input/rich_input.gui"
+  template: "/widget/Insality/rich_input/rich_input.gui"
 }
 nodes {
+  size {
+    x: 45.0
+    y: 40.0
+  }
   type: TYPE_BOX
   id: "rich_input_z/root"
   parent: "rich_input_z"
+  overridden_fields: 4
   template_node_child: true
 }
 nodes {
+  size {
+    x: 45.0
+    y: 40.0
+  }
   type: TYPE_BOX
   id: "rich_input_z/button"
   parent: "rich_input_z/root"
+  overridden_fields: 4
   template_node_child: true
 }
 nodes {
+  size {
+    x: 60.0
+    y: 50.0
+  }
   type: TYPE_TEXT
+  text: "..."
   id: "rich_input_z/placeholder_text"
   parent: "rich_input_z/root"
+  overridden_fields: 4
+  overridden_fields: 8
   template_node_child: true
 }
 nodes {
+  size {
+    x: 70.0
+    y: 50.0
+  }
   type: TYPE_TEXT
+  text: "10"
   id: "rich_input_z/input_text"
   parent: "rich_input_z/root"
+  overridden_fields: 4
+  overridden_fields: 8
   template_node_child: true
 }
 nodes {
+  position {
+    x: 15.0
+  }
   type: TYPE_BOX
   id: "rich_input_z/cursor_node"
   parent: "rich_input_z/root"
+  overridden_fields: 1
   template_node_child: true
 }
 nodes {
@@ -389,7 +480,7 @@ nodes {
     y: -20.0
   }
   size {
-    x: 50.0
+    x: 45.0
     y: 4.0
   }
   color {
@@ -403,7 +494,17 @@ nodes {
   pivot: PIVOT_S
   adjust_mode: ADJUST_MODE_STRETCH
   parent: "field_z"
+  layer: "druid"
   inherit_alpha: true
+}
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_regular"
+}
+layers {
+  name: "druid_text_bold"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

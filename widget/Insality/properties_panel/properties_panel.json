@@ -3,6 +3,7 @@
 	"id": "properties_panel",
 	"version": 1,
 	"title": "Properties Panel",
+	"depends": [ "Insality:rich_input@1" ],
 	"description": "Allows to create a panel with properties",
 	"image": "properties_panel.png",
 	"api": "properties_panel.md",
