@@ -287,6 +287,7 @@ function M:add_vector3(on_create)
 end
 
 
+---@private
 ---@generic T: druid.widget
 ---@param widget_class T
 ---@param template string|nil

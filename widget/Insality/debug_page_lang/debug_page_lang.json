@@ -8,7 +8,6 @@
 	"api": "debug_page_lang.md",
 	"author_url": "https://github.com/Insality",
 	"tags": ["debug", "GUI"],
-	"unlisted": true,
 	"content": [
 		"debug_page_lang.lua"
 	]
