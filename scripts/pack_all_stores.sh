@@ -48,6 +48,10 @@ ensure_dir() {
   [[ ! -d "$path" ]] && mkdir -p "$path" || true
 }
 
+# Source image processing utilities
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/image_utils.sh"
+
 get_file_size() {
   local path="$1"
   if stat -c%s "$path" >/dev/null 2>&1; then
@@ -133,39 +137,6 @@ copy_manifest() {
   cp -f "$manifest" "$manifest_dist_dir/${id}.json"
   echo "${BASE_URL:+$BASE_URL/}manifests/$content_folder/$author/${id}.json"
 }
-
-# Copy image to dist directory and return URL (empty string if no image)
-copy_image() {
-  local image_rel="$1"
-  local asset_dir="$2"
-  local author="$3"
-  local id="$4"
-
-  if [[ -z "$image_rel" || "$image_rel" == "null" ]]; then
-    echo ""
-    return
-  fi
-
-  # If image_rel is a URL (starts with http:// or https://), return it as is
-  if [[ "$image_rel" =~ ^https?:// ]]; then
-    echo "$image_rel"
-    return
-  fi
-
-  # Otherwise, it's a local file path - check if it exists and copy it
-  if [[ ! -f "$asset_dir/$image_rel" ]]; then
-    echo ""
-    return
-  fi
-
-  local image_dir="$DIST_DIR/images/$author/$id"
-  ensure_dir "$image_dir"
-  cp -f "$asset_dir/$image_rel" "$image_dir/"
-  local img_name
-  img_name="$(basename "$image_rel")"
-  echo "${BASE_URL:+$BASE_URL/}images/$author/$id/$img_name"
-}
-
 
 # Create asset ZIP file
 create_asset_zip() {
