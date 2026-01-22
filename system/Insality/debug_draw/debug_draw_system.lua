@@ -10,7 +10,7 @@ local command_debug_draw = require("system.debug_draw.debug_draw_command")
 ---@field game_object component.game_object
 
 ---@class component.debug_draw: boolean
-decore.register_component("debug_draw")
+decore.register_component("debug_draw", false)
 
 ---@class system.debug_draw: system
 ---@field buffer_info table
