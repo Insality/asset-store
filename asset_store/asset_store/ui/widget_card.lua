@@ -108,6 +108,10 @@ function M.create(item, context)
 		text = item.description or locales.get("widget_card_no_description"),
 		color = editor.ui.COLOR.TEXT
 	}))
+	-- small offset from the right
+	table.insert(description_children, editor.ui.horizontal({
+		spacing = editor.ui.SPACING.SMALL
+	}))
 
 	local widget_details_children = {
 		editor.ui.horizontal({

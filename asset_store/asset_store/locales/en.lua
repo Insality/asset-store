@@ -22,8 +22,8 @@ return {
 	filters_all_types = "All",
 	filters_installed = "Installed",
 	filters_not_installed = "Not Installed                     ",
-	filters_all_authors = "All Authors",
-	filters_all_tags = "All Tags                               ",
+	filters_all_authors = "All Authors              ",
+	filters_all_tags = "All Tags              ",
 
 	-- Settings
 	settings_install_label = "Installation Folder:",
