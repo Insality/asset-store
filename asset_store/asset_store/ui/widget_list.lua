@@ -73,7 +73,7 @@ function M.create(items, overrides)
 	end
 
 	---- Add empty spacers if there are few items to make dialog taller
-	local min_items = 5
+	local min_items = 3
 	if #items < min_items then
 		for i = #items, min_items - 1 do
 			for index = 1, 18 do

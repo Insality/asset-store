@@ -1,4 +1,5 @@
 local locales = require("asset_store.asset_store.locales")
+local ui_utils = require("asset_store.asset_store.ui.ui_utils")
 
 
 local DEFAULT_LABELS = {
@@ -18,94 +19,12 @@ local DEFAULT_LABELS = {
 local M = {}
 
 
----Format size in bytes to human-readable string
----@param size_bytes number|nil Size in bytes
----@return string formatted Formatted size string
-local function format_size(size_bytes)
-	if not size_bytes then
-		return DEFAULT_LABELS.unknown_size
-	end
-
-	if size_bytes < 1024 then
-		return size_bytes .. " B"
-	elseif size_bytes < 1024 * 1024 then
-		return math.floor(size_bytes / 1024) .. " KB"
-	end
-
-	return math.floor(size_bytes / (1024 * 1024)) .. " MB"
-end
-
-
----Escape URL
----@param url string URL
----@return string escaped Escaped URL
-local function escape_url(url)
-	if not url or type(url) ~= "string" then
-		return url
-	end
-
-	local scheme_end = url:find("://")
-	if not scheme_end then
-		return url
-	end
-
-	local scheme = url:sub(1, scheme_end + 2)
-	local rest = url:sub(scheme_end + 3)
-	local host_end = rest:find("/")
-
-	if not host_end then
-		return url
-	end
-
-	local host = rest:sub(1, host_end - 1)
-	local path = rest:sub(host_end)
-
-	local encoded_path = path:gsub("([^/]+)", function(segment)
-		local result = {}
-		for i = 1, #segment do
-			local char = segment:sub(i, i)
-			local byte = string.byte(char)
-			if (byte >= 48 and byte <= 57) or
-			   (byte >= 65 and byte <= 90) or
-			   (byte >= 97 and byte <= 122) or
-			   char == "-" or char == "_" or char == "." or char == "~" then
-				result[#result + 1] = char
-			elseif char == " " then
-				result[#result + 1] = "%20"
-			else
-				result[#result + 1] = string.format("%%%02X", byte)
-			end
-		end
-		return table.concat(result)
-	end)
-
-	return scheme .. host .. encoded_path
-end
-
-
----Build labels with overrides
----@param overrides table|nil Label overrides
----@return table labels Labels table
-local function build_labels(overrides)
-	if not overrides then
-		return DEFAULT_LABELS
-	end
-
-	local labels = {}
-	for key, value in pairs(DEFAULT_LABELS) do
-		labels[key] = overrides[key] or value
-	end
-
-	return labels
-end
-
-
 ---Create widget card UI component
 ---@param item asset_store.item Asset item
 ---@param context table Context: on_install, on_update, on_version_change, open_url, is_installed, can_update, version_options, installed_version_name, labels
 ---@return userdata component UI component
 function M.create(item, context)
-	local labels = build_labels(context and context.labels)
+	local labels = ui_utils.build_labels(DEFAULT_LABELS, context and context.labels)
 	local open_url = context and context.open_url or function(_) end
 	local on_install = context and context.on_install or function(...) end
 	local on_update = context and context.on_update or function(...) end
@@ -140,7 +59,7 @@ function M.create(item, context)
 
 	-- Only add size if it exists
 	if item.size and item.size > 0 then
-		local size_text = format_size(item.size)
+		local size_text = ui_utils.format_size(item.size, labels.unknown_size)
 		table.insert(header_left, editor.ui.label({
 			text = labels.size_separator .. size_text,
 			color = editor.ui.COLOR.HINT
@@ -181,7 +100,7 @@ function M.create(item, context)
 	if item.image and item.image ~= "" then
 		description_spacing = editor.ui.SPACING.LARGE
 		table.insert(description_children, editor.ui.image({
-			image = escape_url(item.image),
+			image = ui_utils.escape_url(item.image),
 			width = 146,
 		}))
 	end

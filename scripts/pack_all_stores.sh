@@ -350,7 +350,7 @@ build_example_if_needed() {
   fi
   local category_display_name
   category_display_name="$(get_category_display_name "$content_folder")"
-  
+
   # Replace store URL and header using sed (works on both macOS and Linux)
   local sed_suffix=""
   if [[ "$(uname)" == "Darwin" ]]; then
