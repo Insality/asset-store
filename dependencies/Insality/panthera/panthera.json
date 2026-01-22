@@ -24,5 +24,6 @@
 		"https://github.com/Insality/panthera/archive/refs/tags/runtime.5.zip",
 		"https://github.com/Insality/panthera/archive/refs/tags/runtime.6.zip"
 	],
+	"image": "https://raw.githubusercontent.com/Insality/panthera/refs/heads/main/media/runtime_logo.png",
 	"stars": 96
 }
