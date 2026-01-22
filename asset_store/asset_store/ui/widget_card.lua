@@ -36,6 +36,53 @@ local function format_size(size_bytes)
 end
 
 
+---Escape URL
+---@param url string URL
+---@return string escaped Escaped URL
+local function escape_url(url)
+	if not url or type(url) ~= "string" then
+		return url
+	end
+
+	local scheme_end = url:find("://")
+	if not scheme_end then
+		return url
+	end
+
+	local scheme = url:sub(1, scheme_end + 2)
+	local rest = url:sub(scheme_end + 3)
+	local host_end = rest:find("/")
+
+	if not host_end then
+		return url
+	end
+
+	local host = rest:sub(1, host_end - 1)
+	local path = rest:sub(host_end)
+
+	local encoded_path = path:gsub("([^/]+)", function(segment)
+		local result = {}
+		for i = 1, #segment do
+			local char = segment:sub(i, i)
+			local byte = string.byte(char)
+			if (byte >= 48 and byte <= 57) or
+			   (byte >= 65 and byte <= 90) or
+			   (byte >= 97 and byte <= 122) or
+			   char == "-" or char == "_" or char == "." or char == "~" then
+				result[#result + 1] = char
+			elseif char == " " then
+				result[#result + 1] = "%20"
+			else
+				result[#result + 1] = string.format("%%%02X", byte)
+			end
+		end
+		return table.concat(result)
+	end)
+
+	return scheme .. host .. encoded_path
+end
+
+
 ---Build labels with overrides
 ---@param overrides table|nil Label overrides
 ---@return table labels Labels table
@@ -50,37 +97,6 @@ local function build_labels(overrides)
 	end
 
 	return labels
-end
-
-
----Extract version name from dependency URL (filename without .zip extension)
----@param url string Dependency URL
----@return string|nil version_name Version name or nil
-local function extract_version_name_from_url(url)
-	if not url or type(url) ~= "string" then
-		return nil
-	end
-
-	-- Remove query parameters if any
-	local path = url:match("^([^%?]+)")
-	if not path then
-		return nil
-	end
-
-	-- Extract the last path segment (filename)
-	local filename = path:match("([^/]+)/?$")
-	if not filename then
-		return nil
-	end
-
-	-- Remove .zip extension if present
-	local version_name = filename:match("^(.+)%.zip$")
-	if version_name then
-		return version_name
-	end
-
-	-- Return filename as-is if no .zip extension
-	return filename
 end
 
 
@@ -160,14 +176,28 @@ function M.create(item, context)
 		table.insert(header_children, child)
 	end
 
+	local description_children = {}
+	local description_spacing = editor.ui.SPACING.NONE
+	if item.image and item.image ~= "" then
+		description_spacing = editor.ui.SPACING.LARGE
+		table.insert(description_children, editor.ui.image({
+			image = escape_url(item.image),
+			width = 146,
+		}))
+	end
+	table.insert(description_children, editor.ui.paragraph({
+		text = item.description or locales.get("widget_card_no_description"),
+		color = editor.ui.COLOR.TEXT
+	}))
+
 	local widget_details_children = {
 		editor.ui.horizontal({
 			spacing = editor.ui.SPACING.SMALL,
 			children = header_children
 		}),
-		editor.ui.paragraph({
-			text = item.description or locales.get("widget_card_no_description"),
-			color = editor.ui.COLOR.TEXT
+		editor.ui.horizontal({
+			spacing = description_spacing,
+			children = description_children
 		})
 	}
 
@@ -235,6 +265,7 @@ function M.create(item, context)
 		end
 
 		table.insert(button_children, editor.ui.select_box({
+			grow = true,
 			value = selected_value,
 			options = version_options,
 			on_value_changed = function(selected_version_name)
@@ -247,15 +278,21 @@ function M.create(item, context)
 
 	table.insert(button_children, editor.ui.horizontal({ grow = true }))
 
+	local right_button_children = {}
 	if item.author_url then
-		table.insert(button_children, editor.ui.label({
+		table.insert(right_button_children, editor.ui.label({
 			text = labels.author_caption,
 			color = editor.ui.COLOR.HINT
 		}))
-		table.insert(button_children, editor.ui.button({
+		table.insert(right_button_children, editor.ui.button({
 			text = item.author or labels.author_caption,
 			on_pressed = function() open_url(item.author_url) end,
 			enabled = item.author_url ~= nil
+		}))
+
+		table.insert(button_children, editor.ui.horizontal({
+			spacing = editor.ui.SPACING.MEDIUM,
+			children = right_button_children
 		}))
 	end
 

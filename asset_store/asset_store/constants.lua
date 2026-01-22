@@ -53,7 +53,7 @@ M.DEFAULT_EMPTY_INSTALLED_MESSAGE = locales.get("empty_installed_message")
 M.DEFAULT_SEARCH_LABELS = {
 	search_tooltip = locales.get("search_tooltip")
 }
-M.ITEMS_PER_PAGE = 50
+M.ITEMS_PER_PAGE = 30
 
 
 return M
