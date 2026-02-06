@@ -64,6 +64,7 @@
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.0.1.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.0.2.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.0.3.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/9.0.4.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.1.0.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.1.1.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.1.2.zip",
@@ -71,7 +72,11 @@
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.3.0.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.3.1.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.3.3.zip",
-		"https://github.com/defold/extension-rive/archive/refs/tags/10.0.0.zip"
+		"https://github.com/defold/extension-rive/archive/refs/tags/9.3.4.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/9.3.5.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/10.0.0.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/10.1.0.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/10.2.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-rive",
 	"author_url": "https://github.com/defold",

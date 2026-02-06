@@ -6,7 +6,7 @@
 	"tags": [
 		"System"
 	],
-	"stars": 156,
+	"stars": 157,
 	"content": [
 		"https://github.com/subsoap/defos/archive/refs/tags/v1.0.0.zip",
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.0.0.zip",
@@ -28,7 +28,9 @@
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.1.zip",
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.2.zip",
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.3.zip",
-		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.4.zip"
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.4.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.5.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.6.zip"
 	],
 	"example_code": "https://github.com/subsoap/defos",
 	"author_url": "https://github.com/subsoap",

@@ -27,7 +27,9 @@
 		"https://github.com/defold/extension-websocket/archive/refs/tags/3.2.0.zip",
 		"https://github.com/defold/extension-websocket/archive/refs/tags/4.0.0.zip",
 		"https://github.com/defold/extension-websocket/archive/refs/tags/4.1.0.zip",
-		"https://github.com/defold/extension-websocket/archive/refs/tags/4.1.1.zip"
+		"https://github.com/defold/extension-websocket/archive/refs/tags/4.1.1.zip",
+		"https://github.com/defold/extension-websocket/archive/refs/tags/4.2.0.zip",
+		"https://github.com/defold/extension-websocket/archive/refs/tags/4.2.1.zip"
 	],
 	"example_code": "https://github.com/defold/extension-websocket",
 	"author_url": "https://github.com/defold",

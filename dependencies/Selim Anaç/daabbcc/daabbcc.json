@@ -6,7 +6,7 @@
 	"tags": [
 		"Physics"
 	],
-	"stars": 86,
+	"stars": 87,
 	"content": [
 		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/1.0.zip",
 		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/v1.1.zip",
@@ -20,7 +20,8 @@
 		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/v3.0.2.zip",
 		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/v3.0.3.zip",
 		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/v3.0.4.zip",
-		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/v3.0.5.zip"
+		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/v3.0.5.zip",
+		"https://github.com/selimanac/defold-daabbcc/archive/refs/tags/v3.0.6.zip"
 	],
 	"example_code": "https://github.com/selimanac/DAABBCC",
 	"author_url": "https://github.com/selimanac",
