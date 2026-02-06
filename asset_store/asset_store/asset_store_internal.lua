@@ -30,6 +30,71 @@ local function is_unlisted_visible(item, lower_query)
 end
 
 
+---Normalize required folder path (ensures leading slash)
+---@param required_path string|nil Folder path from requires field
+---@return string|nil normalized_path Normalized path or nil if invalid
+local function normalize_required_path(required_path)
+	if type(required_path) ~= "string" then
+		return nil
+	end
+
+	local normalized = required_path:match("^%s*(.-)%s*$")
+	if normalized == "" then
+		return nil
+	end
+
+	if normalized:sub(1, 1) ~= "/" then
+		normalized = "/" .. normalized
+	end
+
+	return normalized
+end
+
+
+---Check if all required folders for item are available
+---@param requires string[]|nil Required folder paths
+---@param cache table|nil Optional cache for folder checks
+---@return boolean available True if all required folders exist
+local function has_required_folders(requires, cache)
+	if not requires or type(requires) ~= "table" or #requires == 0 then
+		return true
+	end
+
+	if not editor or not editor.can_get then
+		return true
+	end
+
+	cache = cache or {}
+
+	for _, required_path in ipairs(requires) do
+		local normalized = normalize_required_path(required_path)
+		if normalized then
+			local is_available = cache[normalized]
+			if is_available == nil then
+				is_available = pcall(editor.can_get, normalized, "path")
+				cache[normalized] = is_available
+			end
+
+			if not is_available then
+				return false
+			end
+		end
+	end
+
+	return true
+end
+
+
+---Check if item should be visible based on unlisted/requires fields
+---@param item table Item to check
+---@param lower_query string|nil Lowercase search query
+---@param requires_cache table|nil Cache for folder availability checks
+---@return boolean visible True if item should be visible
+local function is_item_visible(item, lower_query, requires_cache)
+	return is_unlisted_visible(item, lower_query) and has_required_folders(item.requires, requires_cache)
+end
+
+
 ---Download JSON from URL
 ---@param json_url string URL to download JSON from
 ---@return table|nil data JSON data or nil
@@ -118,9 +183,10 @@ end
 function M.extract_authors(items)
 	local authors = {}
 	local author_set = {}
+	local requires_cache = {}
 
 	for _, item in ipairs(items) do
-		if not item.unlisted and item.author and not author_set[item.author] then
+		if is_item_visible(item, nil, requires_cache) and item.author and not author_set[item.author] then
 			author_set[item.author] = true
 			table.insert(authors, item.author)
 		end
@@ -138,9 +204,10 @@ end
 function M.extract_tags(items)
 	local tags = {}
 	local tag_set = {}
+	local requires_cache = {}
 
 	for _, item in ipairs(items) do
-		if not item.unlisted and item.tags then
+		if is_item_visible(item, nil, requires_cache) and item.tags then
 			for _, tag in ipairs(item.tags) do
 				local lower_tag = string.lower(tag)
 				if not tag_set[lower_tag] then
@@ -173,9 +240,10 @@ function M.filter_items_by_filters(items, search_query, filter_type, filter_auth
 	-- Normalize filter_type by trimming whitespace for comparison
 	local normalized_filter_type = filter_type and filter_type:match("^%s*(.-)%s*$") or nil
 	local visible_items = {}
+	local requires_cache = {}
 
 	for _, item in ipairs(items) do
-		if is_unlisted_visible(item, lower_query) then
+		if is_item_visible(item, lower_query, requires_cache) then
 			table.insert(visible_items, item)
 		end
 	end
@@ -385,4 +453,3 @@ end
 
 
 return M
-

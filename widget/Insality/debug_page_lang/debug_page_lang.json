@@ -3,6 +3,7 @@
 	"id": "debug_page_lang",
 	"version": 1,
 	"depends": [ "Insality:properties_panel@1" ],
+	"requires": [ "/lang" ],
 	"title": "Debug Page Lang",
 	"description": "Lang debug page for Properties Panel",
 	"api": "debug_page_lang.md",
