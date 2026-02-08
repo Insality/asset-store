@@ -14,6 +14,7 @@
 		"https://github.com/Insality/defold-quest/archive/refs/tags/3.zip"
 	],
 	"example_code": "https://github.com/Insality/defold-quest",
+	"api": "https://github.com/Insality/defold-quest/blob/main/api/quest_api.md",
 	"author_url": "https://github.com/Insality",
 	"image": "defold-quest-logo-thumb.png"
 }
