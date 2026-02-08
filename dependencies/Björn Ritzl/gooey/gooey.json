@@ -61,5 +61,6 @@
 	],
 	"example_code": "https://github.com/britzl/gooey",
 	"author_url": "https://github.com/britzl",
+	"api": "https://github.com/britzl/gooey?tab=readme-ov-file#components",
 	"image": "gooey-thumb.jpg"
 }

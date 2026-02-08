@@ -19,6 +19,7 @@
 		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.2.1.zip"
 	],
 	"example_code": "https://github.com/selimanac/defold-astar",
+	"api": "https://github.com/selimanac/defold-astar/wiki/API",
 	"author_url": "https://github.com/selimanac",
 	"image": "apathfinding-thumb.jpg"
 }

@@ -80,5 +80,6 @@
 	],
 	"example_code": "https://github.com/defold/extension-rive",
 	"author_url": "https://github.com/defold",
+	"api": "https://defold.com/extension-rive/rive_api/",
 	"image": "rive-thumb.jpg"
 }

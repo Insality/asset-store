@@ -60,6 +60,7 @@
 		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.4.1.zip"
 	],
 	"example_code": "https://github.com/britzl/defold-orthographic",
+	"api": "https://github.com/britzl/defold-orthographic?tab=readme-ov-file#the-orthographic-camera-api---functions",
 	"author_url": "https://github.com/britzl",
 	"image": "orthographic-thumb.jpg"
 }
