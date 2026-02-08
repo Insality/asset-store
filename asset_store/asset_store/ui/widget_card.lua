@@ -97,7 +97,7 @@ function M.create(item, context)
 
 	local description_children = {}
 	local description_spacing = editor.ui.SPACING.NONE
-	if item.image and item.image ~= "" then
+	if editor.ui.image and item.image and item.image ~= "" then
 		description_spacing = editor.ui.SPACING.LARGE
 		table.insert(description_children, editor.ui.image({
 			image = ui_utils.escape_url(item.image),

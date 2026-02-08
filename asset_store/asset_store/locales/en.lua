@@ -19,9 +19,9 @@ return {
 	filters_type_label = "Type:",
 	filters_author_label = "Author:",
 	filters_tag_label = "Tag:",
-	filters_all_types = "All",
+	filters_all_types = "All            ",
 	filters_installed = "Installed",
-	filters_not_installed = "Not Installed                     ",
+	filters_not_installed = "Not Installed            ",
 	filters_all_authors = "All Authors              ",
 	filters_all_tags = "All Tags              ",
 
