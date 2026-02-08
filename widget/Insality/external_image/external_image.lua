@@ -20,11 +20,13 @@ function M:init(node_or_node_id)
 end
 
 
+---@private
 function M:on_remove()
 	self:_release_texture(self.texture_id)
 end
 
 
+---@param resource_path string Resource path to the image, e.g. "/resources/images/example.png"
 function M:load_from_resource_path(resource_path)
 	local texture_data = sys.load_resource(resource_path)
 	if not texture_data then
@@ -37,6 +39,7 @@ function M:load_from_resource_path(resource_path)
 end
 
 
+---@param absolute_path string Absolute path to the image, e.g. "/Users/username/Documents/example.png"
 function M:load_from_absolute_path(absolute_path)
 	local file = io.open(absolute_path, "rb")
 	if not file then
@@ -52,6 +55,7 @@ function M:load_from_absolute_path(absolute_path)
 end
 
 
+---@param url string URL to the image, e.g. "https://example.com/image.png"
 function M:load_from_url(url)
 	local headers = nil
 	local cache_path = self:_convert_url_to_absolute_path(url)
@@ -69,6 +73,7 @@ function M:load_from_url(url)
 end
 
 
+---@private
 ---@param texture_id string
 ---@param bytes string
 ---@return boolean
@@ -102,6 +107,8 @@ function M:_create_texture(texture_id, bytes)
 end
 
 
+---@private
+---@param texture_id string
 function M:_release_texture(texture_id)
 	if not REFERENCE_COUNTER[texture_id] then
 		return false
@@ -118,6 +125,7 @@ function M:_release_texture(texture_id)
 end
 
 
+---@private
 ---@param texture_id string
 function M:_set_texture(texture_id)
 	gui.set_texture(self.root, texture_id)
@@ -142,9 +150,10 @@ function M:_set_texture(texture_id)
 end
 
 
----@param textures_refs table<string, number>
----@param texture_id string
----@return boolean
+---@private
+---@param textures_refs table<string, number> Table of texture ids and their reference counts
+---@param texture_id string Texture id to delete
+---@return boolean is_deleted True if the texture was deleted, false otherwise
 function M:_delete_texture(textures_refs, texture_id)
 	if not textures_refs[texture_id] then
 		return false
@@ -156,8 +165,9 @@ function M:_delete_texture(textures_refs, texture_id)
 end
 
 
----@param texture_id string
----@return string
+---@private
+---@param texture_id string Texture id to process
+---@return string texture_id Texture id with socket and path prefix
 function M:_process_texture_id(texture_id)
 	local current_url = msg.url()
 	local socket = current_url.socket
@@ -173,8 +183,9 @@ function M:_process_texture_id(texture_id)
 end
 
 
----@param url string
----@return string
+---@private
+---@param url string URL to convert to absolute path
+---@return string absolute_path Absolute path to the image
 function M:_convert_url_to_absolute_path(url)
 	-- Use sys.get save path to generate a filename from url, replace all special characters with _
 	local filename = url:gsub("[^a-zA-Z0-9_.-]", "_")

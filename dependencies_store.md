@@ -49,6 +49,10 @@ Create a `{dependency_id}.json` file:
   ```json
   "depends": ["Insality:defold-event"]
   ```
+- `requires` — array of required project folders (item is shown only if all exist):
+  ```json
+  "requires": ["/druid", "/decore"]
+  ```
 
 #### Optional Fields
 
@@ -117,6 +121,7 @@ After submitting, the automated system will check your dependency, maintainers w
 - Check out existing dependencies in `/dependencies/Insality/` for reference
 - Dependencies are added to `game.project` automatically — users don't need to manually edit the file
 - If your dependency requires other dependencies, list them in the `depends` field using format `"Author:id"` (e.g., `"Insality:defold-event"`)
+- If your dependency should appear only for projects with specific folders, use `requires` (e.g., `["/druid"]`)
 
 ## Updating a Dependency
 
@@ -129,4 +134,3 @@ To update an existing dependency:
 The asset store will automatically detect when a newer version is available and show an "Update" button to users who have an older version installed.
 
 All previous versions are preserved automatically in the `content` array.
-

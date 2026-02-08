@@ -28,9 +28,12 @@
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.1.zip",
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.2.zip",
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.3.zip",
-		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.4.zip"
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.4.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.5.zip",
+		"https://github.com/subsoap/defos/archive/refs/tags/v2.8.6.zip"
 	],
 	"example_code": "https://github.com/subsoap/defos",
+	"api": "https://github.com/subsoap/defos?tab=readme-ov-file#methods",
 	"author_url": "https://github.com/subsoap",
 	"image": "defos-thumb.jpg"
 }

@@ -3,6 +3,7 @@
 	"id": "debug_page_saver",
 	"version": 1,
 	"depends": [ "Insality:properties_panel@1" ],
+	"requires": [ "/saver" ],
 	"title": "Debug Page Saver",
 	"description": "Saver debug page for Properties Panel",
 	"api": "debug_page_saver.md",

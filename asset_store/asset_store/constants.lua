@@ -37,6 +37,7 @@ local M = {}
 ---@field sha256 string SHA256 hash of the ZIP file for integrity verification
 ---@field size number Size of the ZIP file in bytes
 ---@field depends string[] Array of dependency strings (format: "author:widget_id@version" or "author@widget_id" or "widget_id")
+---@field requires string[] Array of required folder paths (e.g., "/druid", "/decore"). Item is visible only when all required folders exist
 ---@field tags string[] Array of tag strings for categorization and filtering
 
 
@@ -57,4 +58,3 @@ M.ITEMS_PER_PAGE = 30
 
 
 return M
-

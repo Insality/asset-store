@@ -9,7 +9,7 @@
 		"input",
 		"physics"
 	],
-	"stars": 60,
+	"stars": 59,
 	"content": [
 		"https://github.com/astrochili/defold-kinematic-walker/archive/refs/tags/1.0.zip",
 		"https://github.com/astrochili/defold-kinematic-walker/archive/refs/tags/1.1.zip",

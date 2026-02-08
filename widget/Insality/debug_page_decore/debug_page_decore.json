@@ -3,6 +3,7 @@
 	"id": "debug_page_decore",
 	"version": 1,
 	"depends": [ "Insality:properties_panel@1" ],
+	"requires": [ "/decore" ],
 	"title": "Debug Page Decore",
 	"description": "Decore debug page for Properties Panel",
 	"api": "debug_page_decore.md",

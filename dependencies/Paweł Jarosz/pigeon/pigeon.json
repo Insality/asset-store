@@ -6,7 +6,7 @@
 	"tags": [
 		"System"
 	],
-	"stars": 56,
+	"stars": 57,
 	"content": [
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.0.zip",
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.1.zip",
@@ -15,5 +15,6 @@
 	],
 	"example_code": "https://github.com/paweljarosz/pigeon",
 	"author_url": "https://github.com/paweljarosz",
+	"api": "https://github.com/paweljarosz/pigeon?tab=readme-ov-file#api",
 	"image": "pigeon-thumb.jpg"
 }

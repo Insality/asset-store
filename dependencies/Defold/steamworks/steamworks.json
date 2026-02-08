@@ -9,7 +9,7 @@
 		"Social",
 		"Achievements"
 	],
-	"stars": 40,
+	"stars": 41,
 	"content": [
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.1.0.zip",
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.2.0.zip",

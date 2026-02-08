@@ -22,7 +22,7 @@ local command_game_object = require("system.game_object.game_object_command")
 ---@field is_factory boolean|nil
 ---@field runtime_created boolean|nil
 ---@field object_scheme table<string, boolean>|nil Ex: { "root", "circle", "cross" }. Required to set a struct of children game objects to fill inside object field. Used only if entity spawned from the collection with entitty.script
-decore.register_component("game_object")
+decore.register_component("game_object", {})
 decore.register_component("hidden", false)
 
 
