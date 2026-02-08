@@ -7,6 +7,7 @@
 	"author_url": "https://github.com/Insality",
 	"example": "/particles/Insality/background_stars/example/example_background_stars.collection",
 	"tags": ["particle", "effect", "background"],
+	"image": "background_stars_image.png",
 	"content": [
 		"background_stars.particlefx"
 	]

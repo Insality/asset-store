@@ -1,10 +1,10 @@
 {
-	"author": "Insality",
+	"author": "BaseSixtyFour",
 	"id": "b64",
 	"version": 1,
 	"title": "Base64",
 	"description": "Lua Base64 encoding and decoding utility",
-	"author_url": "https://github.com/Insality",
+	"author_url": "http://lua-users.org/wiki/BaseSixtyFour",
 	"tags": ["core", "utility"],
 	"content": [
 		"b64.lua"
