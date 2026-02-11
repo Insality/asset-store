@@ -187,8 +187,8 @@ build_folder_item_json() {
   local id="$1" version="$2" title="$3" author="$4" description="$5"
   local api_url="$6" author_url="$7" example_url="$8" example_code_url="$9"
   local image_url="${10}" zip_url="${11}" json_zip_url="${12}" sha256="${13}"
-  local manifest_url="${14}" size="${15}" depends="${16}" tags="${17}" unlisted="${18}"
-  local stats="${19}"
+  local manifest_url="${14}" size="${15}" depends="${16}" tags="${17}" requires="${18}" unlisted="${19}"
+  local stats="${20}"
 
   jq -n \
     --arg id "$id" --arg version "$version" --arg title "$title" \
@@ -197,7 +197,7 @@ build_folder_item_json() {
     --arg example_code "$example_code_url" --arg image "$image_url" \
     --arg zip_url "$zip_url" --arg json_zip_url "$json_zip_url" --arg sha256 "$sha256" \
     --arg manifest_url "$manifest_url" --arg size "$size" \
-    --argjson depends "$depends" --argjson tags "$tags" --argjson unlisted "$unlisted" \
+    --argjson depends "$depends" --argjson tags "$tags" --argjson requires "$requires" --argjson unlisted "$unlisted" \
     --argjson stats "$stats" \
     '{
       id: $id,
@@ -217,6 +217,7 @@ build_folder_item_json() {
       size: ($size | tonumber),
       depends: $depends,
       tags: $tags,
+      requires: $requires,
       unlisted: $unlisted,
       popularity: $stats
     }'
@@ -457,7 +458,7 @@ pack_folder_store() {
 
     # Read manifest fields
     local id version title author description api author_url image_rel
-    local depends tags example example_code example_url unlisted
+    local depends tags requires example example_code example_url unlisted
     id="$(jq -r '.id // "'$asset_folder'"' "$manifest")"
     version="$(jq -r '.version' "$manifest")"
     title="$(jq -r '.title // "'$id'"' "$manifest")"
@@ -471,6 +472,7 @@ pack_folder_store() {
     image_rel="$(jq -r '.image // empty' "$manifest")"
     depends="$(jq -c '.depends // []' "$manifest")"
     tags="$(jq -c '.tags // []' "$manifest")"
+    requires="$(jq -c '.requires // []' "$manifest")"
     unlisted="$(jq -c '.unlisted // false' "$manifest")"
 
     if [[ -z "$version" || "$version" == "null" ]]; then
@@ -536,7 +538,7 @@ pack_folder_store() {
       "$id" "$version" "$title" "$author" "$description" \
       "$api_url" "$author_url" "$example_url" "$example_code_url" \
       "$image_url" "$zip_url" "$json_zip_url" "$sha256" \
-      "$manifest_url" "$size" "$depends" "$tags" "$unlisted" \
+      "$manifest_url" "$size" "$depends" "$tags" "$requires" "$unlisted" \
       "$download_stats")"
 
     # Add item to index
