@@ -13,20 +13,9 @@ local function normalize_query(query)
 end
 
 
----Check if unlisted item should be visible
----@param item table Item to check
----@param lower_query string|nil Lowercase search query
----@return boolean visible True if item should be visible
-local function is_unlisted_visible(item, lower_query)
-	if not item.unlisted then
-		return true
-	end
-
-	if not lower_query or not item.id then
-		return false
-	end
-
-	return string.lower(item.id) == lower_query
+---True when search query matches item id exactly (case-insensitive)
+local function query_matches_id(lower_query, item)
+	return lower_query and item.id and string.lower(item.id) == lower_query
 end
 
 
@@ -91,7 +80,17 @@ end
 ---@param requires_cache table|nil Cache for folder availability checks
 ---@return boolean visible True if item should be visible
 local function is_item_visible(item, lower_query, requires_cache)
-	return is_unlisted_visible(item, lower_query) and has_required_folders(item.requires, requires_cache)
+	local exact_id_match = query_matches_id(lower_query, item)
+
+	local hidden_because_unlisted = item.unlisted and not exact_id_match
+	if hidden_because_unlisted then
+		return false
+	end
+
+	local visible_because_exact_id = exact_id_match
+	local visible_because_has_requirements = has_required_folders(item.requires, requires_cache)
+
+	return visible_because_exact_id or visible_because_has_requirements
 end
 
 
