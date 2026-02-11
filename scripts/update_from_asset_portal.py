@@ -264,13 +264,10 @@ def create_new_asset_file(
         zip_urls = [r.get('zip') for r in releases_to_use if r.get('zip') and is_tag_url(r.get('zip'))]
         new_data['content'] = sort_content_by_date(zip_urls, releases_to_use)
     elif has_library_url:
-        # Use library_url as single content item (only if it's a tag URL, not main/master)
+        # Use library_url as single content item; allow main/master when there are no releases so the asset is still installable
         library_url = portal_data.get('library_url')
-        if library_url and (is_tag_url(library_url) or not is_main_or_master_branch(library_url)):
+        if library_url:
             new_data['content'] = [library_url]
-        else:
-            # If library_url is main/master, don't add it
-            new_data['content'] = []
     
     # Remove None values
     new_data = {k: v for k, v in new_data.items() if v is not None}
@@ -607,7 +604,9 @@ def process_asset(
     missing_assets: List[str],
     config: Dict,
     created_assets: List[str],
-    skipped_assets: List[str]
+    skipped_assets: List[str],
+    removed_assets: List[str],
+    remove_non_defold_libraries: bool
 ) -> Dict[str, int]:
     """
     Process a single asset from asset-portal.
@@ -622,18 +621,28 @@ def process_asset(
     if not portal_data:
         return {'processed': False}
 
-    # Skip assets that are not Defold libraries
-    if portal_data.get('isDefoldLibrary') is False:
-        return {'processed': False, 'skipped': True, 'reason': 'not_defold_library'}
-
     author = portal_data.get('author')
     asset_id = portal_data.get('id')
-
-    # If id is missing, use asset filename (without .json extension) as id
     if not asset_id or (isinstance(asset_id, str) and asset_id.strip() == ""):
         asset_id = asset_name.replace('.json', '')
-        # Update portal_data so it's available for create_new_asset_file
-        portal_data['id'] = asset_id
+
+    if portal_data.get('isDefoldLibrary') is False:
+        if remove_non_defold_libraries and author and (isinstance(author, str) and author.strip()):
+            _author, _asset_id = apply_renames(author, asset_id.strip() if isinstance(asset_id, str) else asset_id, config)
+            local_dir = dependencies_dir / _author / _asset_id
+            if local_dir.exists():
+                shutil.rmtree(local_dir)
+                removed_assets.append(f"{_author}:{_asset_id}")
+                print("✓ (removed)")
+            else:
+                print("⚠ (skipped)")
+        else:
+            print("⚠ (skipped)")
+        return {'processed': False, 'skipped': True, 'reason': 'not_defold_library'}
+
+    # Update portal_data so id is available for create_new_asset_file
+    portal_data['id'] = asset_id
+
 
     # Check if author is missing or empty
     if not author or (isinstance(author, str) and author.strip() == ""):
@@ -707,6 +716,11 @@ def main():
         default='scripts/asset_portal_config.json',
         help='Path to configuration file (default: scripts/asset_portal_config.json)'
     )
+    parser.add_argument(
+        '--remove-non-defold-libraries',
+        action='store_true',
+        help='Remove local dependency folders for assets marked as non-Defold libraries in the portal'
+    )
     args = parser.parse_args()
 
     # Convert to Path objects
@@ -772,6 +786,7 @@ def main():
         missing_assets = []
         created_assets = []
         skipped_assets = []  # Assets skipped due to missing fields
+        removed_assets = []
         processed_count = 0
         updated_count = 0
         created_count = 0
@@ -779,11 +794,17 @@ def main():
         skipped_count = 0
         total_new_releases = 0
 
+        if args.remove_non_defold_libraries:
+            print("Mode: will remove local folders for non-Defold libraries")
+
         print(f"\nProcessing assets...")
         for i, asset_name in enumerate(asset_names, 1):
             print(f"[{i}/{len(asset_names)}] Processing {asset_name}...", end=' ')
 
-            stats = process_asset(asset_name, assets_dir, dependencies_dir, missing_assets, config, created_assets, skipped_assets)
+            stats = process_asset(
+                asset_name, assets_dir, dependencies_dir, missing_assets, config,
+                created_assets, skipped_assets, removed_assets, args.remove_non_defold_libraries
+            )
 
             if stats.get('processed'):
                 processed_count += 1
@@ -815,6 +836,17 @@ def main():
             else:
                 print("⚠ (skipped)")
 
+        repack_script = root_dir / 'scripts' / 'repack_images.sh'
+        if repack_script.exists():
+            result = subprocess.run(
+                ['bash', str(repack_script), '--content', 'dependencies', '--assets-root', str(root_dir)],
+                cwd=str(root_dir),
+                capture_output=True,
+                text=True
+            )
+            if result.returncode != 0 and result.stderr:
+                print(f"\n⚠ repack_images.sh: {result.stderr.strip()}", file=sys.stderr)
+
         # Print summary
         print(f"\n{'='*60}")
         print(f"Summary:")
@@ -826,6 +858,8 @@ def main():
         print(f"  Ignored: {ignored_count}")
         print(f"  Skipped (missing fields): {skipped_count}")
         print(f"  Missing (in portal, not local): {len(missing_assets)}")
+        if args.remove_non_defold_libraries:
+            print(f"  Removed (non-Defold libraries): {len(removed_assets)}")
 
         if created_assets:
             print(f"\nCreated assets:")
@@ -840,6 +874,11 @@ def main():
         if missing_assets:
             print(f"\nMissing assets (in portal but not in local repo):")
             for asset in sorted(missing_assets):
+                print(f"  - {asset}")
+
+        if removed_assets:
+            print(f"\nRemoved assets (non-Defold libraries):")
+            for asset in sorted(removed_assets):
                 print(f"  - {asset}")
 
         print(f"{'='*60}\n")

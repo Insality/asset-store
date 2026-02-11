@@ -5,7 +5,7 @@
 	"depends": [ "Insality:mini_graph@1" ],
 	"title": "Memory Panel",
 	"description": "Shows current memory usage and graph of the last 3 seconds of performance",
-	"image": "memory_panel.png",
+	"image": "memory_panel.jpg",
 	"api": "memory_panel.md",
 	"example": "/widget/Insality/memory_panel/example/example_memory_panel.collection",
 	"example_code": "/widget/Insality/memory_panel/example/example_memory_panel.gui_script",

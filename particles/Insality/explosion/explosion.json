@@ -7,7 +7,7 @@
 	"author_url": "https://github.com/Insality",
 	"example": "/particles/Insality/explosion/example/example_explosion.collection",
 	"tags": ["particle", "effect", "explosion"],
-	"image": "explosion_image.png",
+	"image": "explosion_image.jpg",
 	"content": [
 		"explosion.particlefx",
 		"explosion.atlas",

@@ -9,7 +9,7 @@
 		"util"
 	],
 	"content": [
-		"https://gitlab.com/defold-fastnoise/defold-fastnoise/-/releases"
+		"https://gitlab.com/defold-fastnoise/defold-fastnoise/-/archive/1.0.0/defold-fastnoise-1.0.0.zip"
 	],
 	"example_code": "https://gitlab.com/defold-fastnoise/defold-fastnoise",
 	"image": "fastnoise-thumb.jpg"

@@ -5,7 +5,7 @@
 	"title": "On Screen Joystick",
 	"description": "On screen joystick widget",
 	"api": "on_screen_joystick.md",
-	"image": "on_screen_joystick.png",
+	"image": "on_screen_joystick.jpg",
 	"example": "/widget/Insality/on_screen_joystick/example/example_on_screen_joystick.collection",
 	"example_code": "/widget/Insality/on_screen_joystick/example/example_on_screen_joystick.gui_script",
 	"author_url": "https://github.com/Insality",

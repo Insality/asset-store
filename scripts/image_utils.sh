@@ -35,6 +35,29 @@ download_image_from_url() {
 }
 
 
+# Get image width in pixels; echo to stdout, 0 if unknown
+get_image_width() {
+  local image_path="$1"
+  if [[ ! -f "$image_path" ]]; then
+    echo 0
+    return
+  fi
+  if command_exists magick; then
+    magick identify -format '%w' "$image_path" 2>/dev/null || echo 0
+    return
+  fi
+  if command_exists convert; then
+    identify -format '%w' "$image_path" 2>/dev/null || echo 0
+    return
+  fi
+  if command_exists sips; then
+    sips -g pixelWidth "$image_path" 2>/dev/null | awk '/pixelWidth/{print $2}' || echo 0
+    return
+  fi
+  echo 0
+}
+
+
 # Detect if image is PNG format
 is_png_image() {
   local image_path="$1"
@@ -168,6 +191,7 @@ process_local_image() {
 
 
 # Copy image to dist directory and return URL (empty string if no image)
+# Local images are copied as-is (no resize on CI). URL images are downloaded and resized when possible.
 copy_image() {
   local image_rel="$1"
   local asset_dir="$2"
@@ -182,63 +206,39 @@ copy_image() {
   local image_dir="$DIST_DIR/images/$author/$id"
   ensure_dir "$image_dir"
 
-  local source_path
-  local img_name
-  local temp_path=""
-  local is_url=false
-
   if [[ "$image_rel" =~ ^https?:// ]]; then
-    is_url=true
     local result
     result="$(process_url_image "$image_rel" "$image_dir")"
     if [[ $? -ne 0 ]]; then
       echo "$result"
       return
     fi
-    source_path="${result%%|*}"
-    img_name="${result##*|}"
-    temp_path="$source_path"
-  else
-    local result
-    result="$(process_local_image "$image_rel" "$asset_dir")"
-    if [[ $? -ne 0 ]]; then
-      echo ""
-      return
+    local source_path="${result%%|*}"
+    local img_name="${result##*|}"
+    local img_name_jpg="${img_name%.*}.jpg"
+    local output_path="$image_dir/$img_name_jpg"
+    if [[ ! "$output_path" =~ \.(jpg|jpeg|JPG|JPEG)$ ]]; then
+      output_path="${output_path%.*}.jpg"
+      img_name_jpg="$(basename "$output_path")"
     fi
-    source_path="${result%%|*}"
-    img_name="${result##*|}"
-  fi
-
-  local img_name_jpg="${img_name%.*}.jpg"
-  local output_path="$image_dir/$img_name_jpg"
-  
-  if [[ ! "$output_path" =~ \.(jpg|jpeg|JPG|JPEG)$ ]]; then
-    output_path="${output_path%.*}.jpg"
-    img_name_jpg="$(basename "$output_path")"
-  fi
-
-  if resize_image "$source_path" "$output_path" 146; then
-    cleanup_temp_file "$temp_path"
-    if [[ ! -f "$output_path" ]]; then
-      cleanup_temp_file "$temp_path"
-      if [[ "$is_url" == true ]]; then
-        echo "$image_rel"
-      else
-        local fallback_path="$image_dir/$img_name"
-        cp -f "$source_path" "$fallback_path"
-        build_image_url "$author" "$id" "$img_name"
-      fi
-      return
-    fi
-    build_image_url "$author" "$id" "$img_name_jpg"
-  else
-    cleanup_temp_file "$temp_path"
-    if [[ "$is_url" == true ]]; then
-      echo "$image_rel"
+    if resize_image "$source_path" "$output_path" 146; then
+      cleanup_temp_file "$source_path"
+      build_image_url "$author" "$id" "$img_name_jpg"
     else
-      local fallback_path="$image_dir/$img_name"
-      cp -f "$source_path" "$fallback_path"
-      build_image_url "$author" "$id" "$img_name"
+      cleanup_temp_file "$source_path"
+      echo "$image_rel"
     fi
+    return
   fi
+
+  local result
+  result="$(process_local_image "$image_rel" "$asset_dir")"
+  if [[ $? -ne 0 ]]; then
+    echo ""
+    return
+  fi
+  local source_path="${result%%|*}"
+  local img_name="${result##*|}"
+  cp -f "$source_path" "$image_dir/$img_name"
+  build_image_url "$author" "$id" "$img_name"
 }
