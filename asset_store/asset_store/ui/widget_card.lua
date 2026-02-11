@@ -1,3 +1,6 @@
+---For ui.image disable now
+---@diagnostic disable: undefined-field
+
 local locales = require("asset_store.asset_store.locales")
 local ui_utils = require("asset_store.asset_store.ui.ui_utils")
 

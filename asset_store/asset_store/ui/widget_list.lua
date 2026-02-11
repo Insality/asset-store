@@ -11,7 +11,7 @@ end
 
 
 ---Build widget card context
----@param overrides table|nil Context overrides
+---@param overrides table Context overrides
 ---@return table context Context table
 local function build_context(overrides)
 	return {
