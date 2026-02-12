@@ -10,37 +10,53 @@ local M = {}
 ---@param install_folder string Installation folder (e.g., "widget")
 ---@return string modified Modified content
 local function replace_paths_in_content(content, author, install_folder)
-	if not content or not author then
-		return content
-	end
-
 	-- Escape special characters for literal string replacement
 	local function escape_pattern(str)
 		return str:gsub("[%^%$%(%)%%%.%[%]%*%+%-%?]", "%%%0")
 	end
 
 	-- Remove leading / from install_folder if present
-	local clean_install_folder = install_folder
-	if clean_install_folder:sub(1, 1) == "/" then
-		clean_install_folder = clean_install_folder:sub(2)
+	local clean_install_folder = install_folder or ""
+	clean_install_folder = clean_install_folder:gsub("^/", "")
+	if clean_install_folder == "" then
+		return content
+	end
+	local clean_install_folder_dots = clean_install_folder:gsub("/", ".")
+
+	local function replace_literal(source, target)
+		source = escape_pattern(source)
+		target = target:gsub("%%", "%%%%")
+		content = content:gsub(source, target)
 	end
 
-	-- Replace all paths with author: widget/Insality/* -> widget/*
-	local author_path_pattern = escape_pattern(clean_install_folder .. "/" .. author .. "/")
 	local target_path_prefix = clean_install_folder .. "/"
-	content = content:gsub(author_path_pattern, target_path_prefix)
+	local target_dots_prefix = clean_install_folder_dots .. "."
+	local target_abs_path_prefix = "/" .. target_path_prefix
 
-	-- Replace all require statements with dots: widget.Insality.* -> widget.*
-	local author_dots_pattern = escape_pattern(clean_install_folder .. "." .. author .. ".")
-	local target_dots_prefix = clean_install_folder .. "."
-	content = content:gsub(author_dots_pattern, target_dots_prefix)
+	local default_folder_path = "widget"
+	local default_abs_folder_path = "/" .. default_folder_path .. "/"
 
-	-- Also replace paths that start with author directly: Insality/widget -> widget
-	-- But only if they're in require statements or paths
-	local author_start_pattern = escape_pattern(author .. "/")
-	content = content:gsub(author_start_pattern, "")
-	local author_start_dots_pattern = escape_pattern(author .. ".")
-	content = content:gsub(author_start_dots_pattern, "")
+	do -- Author paths
+		replace_literal("\"" .. default_abs_folder_path .. author .. "/", "\"" .. target_abs_path_prefix)
+		replace_literal("'" .. default_abs_folder_path .. author .. "/", "'" .. target_abs_path_prefix)
+
+		replace_literal("\"" .. default_folder_path .. "/" .. author .. "/", "\"" .. target_path_prefix)
+		replace_literal("'" .. default_folder_path .. "/" .. author .. "/", "'" .. target_path_prefix)
+
+		replace_literal("\"" .. default_folder_path .. "." .. author .. ".", "\"" .. target_dots_prefix)
+		replace_literal("'" .. default_folder_path .. "." .. author .. ".", "'" .. target_dots_prefix)
+	end
+
+	do -- Default paths
+		replace_literal("\"" .. default_abs_folder_path, "\"" .. target_abs_path_prefix)
+		replace_literal("'" .. default_abs_folder_path, "'" .. target_abs_path_prefix)
+
+		replace_literal("\"" .. default_folder_path .. "/", "\"" .. target_path_prefix)
+		replace_literal("'" .. default_folder_path .. "/", "'" .. target_path_prefix)
+
+		replace_literal("\"" .. default_folder_path .. ".", "\"" .. target_dots_prefix)
+		replace_literal("'" .. default_folder_path .. ".", "'" .. target_dots_prefix)
+	end
 
 	return content
 end
@@ -85,17 +101,12 @@ end
 ---@param folder_path string Path to the unpacked widget folder
 ---@param install_folder string Installation folder (e.g., "widget")
 ---@param widget_id string Widget ID (e.g., "fps_panel")
----@param author string|nil Author name (e.g., "Insality")
+---@param author string Author name (e.g., "Insality")
 ---@param file_list table Optional list of file paths from zip content
 ---@return boolean success Success status
 ---@return string|nil error Error message if any
 function M.process_widget_paths(folder_path, install_folder, widget_id, author, file_list)
 	print("Processing widget paths in:", folder_path)
-
-	if not author then
-		print("Warning: Missing author, skipping path replacement")
-		return true, nil
-	end
 
 	-- Get absolute project path
 	local absolute_project_path = editor.external_file_attributes(".").path
