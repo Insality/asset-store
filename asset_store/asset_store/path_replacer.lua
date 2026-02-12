@@ -97,8 +97,6 @@ function M.process_widget_paths(folder_path, install_folder, widget_id, author, 
 		return true, nil
 	end
 
-	print("Replacing all paths with author:", author, "in install folder:", install_folder)
-
 	-- Get absolute project path
 	local absolute_project_path = editor.external_file_attributes(".").path
 	if not absolute_project_path:match("[\\/]$") then
@@ -147,7 +145,6 @@ function M.process_widget_paths(folder_path, install_folder, widget_id, author, 
 		end
 	end
 
-	print("Path replacement complete. Processed", processed_count, "files")
 	return true, nil
 end
 

@@ -285,9 +285,7 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		return false, "Failed to download widget: " .. (filename or "unknown error")
 	end
 
-	if content_list then
-		print("Got file list from JSON:", #content_list, "files")
-	else
+	if not content_list then
 		print("Warning: No content list in JSON data")
 	end
 
@@ -306,7 +304,6 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 
 	zip_file:write(zip_data)
 	zip_file:close()
-	print("Zip written to file: " .. zip_file_path)
 
 	-- Unzip the zip file
 	local folder_path = "." .. install_folder .. "/" .. item.id
@@ -332,9 +329,6 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		return false, "Failed to unpack widget"
 	end
 
-	print("Widget unpacked successfully")
-	print("Zip file removed successfully")
-
 	-- Process paths within the extracted widget
 	if content_list and #content_list > 0 then
 		local success, err = path_replacer.process_widget_paths(folder_path, install_folder, item.id, item.author, content_list)
@@ -350,7 +344,8 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 	if item.version then
 		local version_written = write_installed_version(item, install_folder)
 		if version_written then
-			print("Version written to file:", item.author .. ":" .. item.id .. "@" .. tostring(item.version))
+			local version_path = install_folder .. "/" .. item.id .. "/" .. item.id .. ".version"
+			print("Version written to file:", version_path)
 		else
 			print("Warning: Failed to write version file")
 		end
