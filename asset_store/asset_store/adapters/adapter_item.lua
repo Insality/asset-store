@@ -44,18 +44,18 @@ local function encode_url_path(url)
 	local scheme = url:sub(1, scheme_end + 2)
 	local rest = url:sub(scheme_end + 3)
 	local host_end = rest:find("/")
-	
+
 	if not host_end then
 		return scheme .. rest
 	end
 
 	local host = rest:sub(1, host_end - 1)
 	local path = rest:sub(host_end)
-	
+
 	local encoded_path = path:gsub("([^/]+)", function(segment)
 		return url_encode(segment)
 	end)
-	
+
 	return scheme .. host .. encoded_path
 end
 
@@ -251,11 +251,36 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		end
 	end
 
+	-- Create install folder if it doesn't exist
+	local install_folder_attrs = editor.resource_attributes(install_folder)
+	if not install_folder_attrs or not install_folder_attrs.exists then
+		editor.create_directory(install_folder)
+		print("Created install folder:", install_folder)
+	end
+
+	-- Check if widget folder already exists
+	local widget_folder_path = install_folder .. "/" .. item.id
+	local widget_folder_attrs = editor.resource_attributes(widget_folder_path)
+	if widget_folder_attrs and widget_folder_attrs.exists then
+		if installing_set then
+			installing_set[item.id] = nil
+		end
+		return false, "Widget folder already exists: " .. widget_folder_path
+	end
+
+	-- Create widget folder before zip is downloaded
+	editor.create_directory(widget_folder_path)
+	local created_widget_folder = true
+	print("Created widget folder:", widget_folder_path)
+
 	-- Download the zip file
 	local zip_data, filename, content_list = download_file_zip_json(item.json_zip_url)
 	if not zip_data or not filename then
 		if installing_set then
 			installing_set[item.id] = nil
+		end
+		if created_widget_folder then
+			editor.delete_directory(widget_folder_path)
 		end
 		return false, "Failed to download widget: " .. (filename or "unknown error")
 	end
@@ -266,26 +291,14 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 		print("Warning: No content list in JSON data")
 	end
 
-	-- Create install folder if it doesn't exist
-	local install_folder_attrs = editor.resource_attributes(install_folder)
-	if not install_folder_attrs or not install_folder_attrs.exists then
-		editor.create_directory(install_folder)
-		print("Created install folder:", install_folder)
-	end
-
-	-- Create widget folder if it doesn't exist
-	local widget_folder_path = install_folder .. "/" .. item.id
-	local widget_folder_attrs = editor.resource_attributes(widget_folder_path)
-	if not widget_folder_attrs or not widget_folder_attrs.exists then
-		editor.create_directory(widget_folder_path)
-		print("Created widget folder:", widget_folder_path)
-	end
-
 	local zip_file_path = "." .. install_folder .. "/" .. filename
 	local zip_file = io.open(zip_file_path, "wb")
 	if not zip_file then
 		if installing_set then
 			installing_set[item.id] = nil
+		end
+		if created_widget_folder then
+			editor.delete_directory(widget_folder_path)
 		end
 		print("Failed to create zip file: " .. zip_file_path)
 		return false, "Failed to create zip file: " .. zip_file_path
@@ -298,11 +311,28 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 	-- Unzip the zip file
 	local folder_path = "." .. install_folder .. "/" .. item.id
 
-	zip.unpack(zip_file_path, folder_path)
-	print("Widget unpacked successfully")
+	local unpack_ok, unpack_result, unpack_err = pcall(zip.unpack, zip_file_path, folder_path)
 
-	-- Remove the zip file
+	-- Remove the zip file even if something goes wrong
 	os.remove(zip_file_path)
+
+	if not unpack_ok or unpack_result == false then
+		if installing_set then
+			installing_set[item.id] = nil
+		end
+		if created_widget_folder then
+			editor.delete_directory(widget_folder_path)
+		end
+
+		local err = unpack_ok and unpack_err or unpack_result
+		if err then
+			return false, "Failed to unpack widget: " .. tostring(err)
+		end
+
+		return false, "Failed to unpack widget"
+	end
+
+	print("Widget unpacked successfully")
 	print("Zip file removed successfully")
 
 	-- Process paths within the extracted widget
