@@ -369,15 +369,6 @@ function M.is_installed(item, install_folder)
 end
 
 
----Check if a widget is already installed (legacy method name, use is_installed instead)
----@param item table - Widget item data containing id
----@param install_folder string - Install folder to check in
----@return boolean - True if widget is already installed
-function M.is_widget_installed(item, install_folder)
-	return M.is_installed(item, install_folder)
-end
-
-
 ---Update a widget by removing old version and installing new one
 ---@param item asset_store.item - Widget item data
 ---@param install_folder string - Target folder to install to
