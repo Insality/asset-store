@@ -6,7 +6,7 @@
 	"title": "FPS Panel",
 	"description": "Shows current FPS and graph of the last 3 seconds of performance",
 	"image": "fps_panel.jpg",
-	"api": "example/example_fps_panel.gui_script",
+	"api": "fps_panel.md",
 	"example": "/widget/Insality/fps_panel/example/example_fps_panel.collection",
 	"example_code": "/widget/Insality/fps_panel/example/example_fps_panel.gui_script",
 	"author_url": "https://github.com/Insality",

@@ -127,17 +127,23 @@ function M.create(item, context)
 		})
 	}
 
+	local tags_depends_children = {}
 	if tags_text ~= "" then
-		table.insert(widget_details_children, editor.ui.label({
+		table.insert(tags_depends_children, editor.ui.label({
 			text = tags_text,
 			color = editor.ui.COLOR.HINT
 		}))
 	end
-
 	if deps_text ~= "" then
-		table.insert(widget_details_children, editor.ui.label({
+		table.insert(tags_depends_children, editor.ui.label({
 			text = deps_text,
 			color = editor.ui.COLOR.HINT
+		}))
+	end
+	if #tags_depends_children > 0 then
+		table.insert(widget_details_children, editor.ui.vertical({
+			spacing = editor.ui.SPACING.NONE,
+			children = tags_depends_children
 		}))
 	end
 
@@ -222,11 +228,6 @@ function M.create(item, context)
 		}))
 	end
 
-	table.insert(widget_details_children, editor.ui.horizontal({
-		spacing = editor.ui.SPACING.SMALL,
-		children = button_children
-	}))
-
 	return editor.ui.horizontal({
 		spacing = editor.ui.SPACING.NONE,
 		padding = editor.ui.PADDING.NONE,
@@ -236,9 +237,18 @@ function M.create(item, context)
 				color = editor.ui.COLOR.HINT
 			}),
 			editor.ui.vertical({
-				spacing = editor.ui.SPACING.SMALL,
+				spacing = editor.ui.SPACING.MEDIUM,
 				grow = true,
-				children = widget_details_children
+				children = {
+					editor.ui.vertical({
+						spacing = editor.ui.SPACING.SMALL,
+						children = widget_details_children
+					}),
+					editor.ui.horizontal({
+						spacing = editor.ui.SPACING.SMALL,
+						children = button_children
+					})
+				}
 			}),
 		}
 	})
