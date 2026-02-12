@@ -8,6 +8,7 @@
 	"description": "Token debug page for Properties Panel",
 	"api": "debug_page_token.md",
 	"author_url": "https://github.com/Insality",
+	"image": "debug_page_token.jpg",
 	"tags": ["debug", "GUI"],
 	"content": [
 		"debug_page_token.lua"
