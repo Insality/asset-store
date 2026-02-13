@@ -33,8 +33,8 @@ function M:init()
 	self.cursor_position = gui.get_position(self.cursor)
 	self.cursor_text = self:get_node("cursor_text")
 
-	self.drag = self.druid:new_drag("button", function(...) return self:_on_drag_callback(...) end)
-	self.drag.on_touch_start:subscribe(function(...) return self:_on_touch_start_callback(...) end)
+	self.drag = self.druid:new_drag("button", self._on_drag_callback)
+	self.drag.on_touch_start:subscribe(self._on_touch_start_callback)
 	self.drag:set_input_priority(const.PRIORITY_INPUT_MAX + 1)
 	self.drag:set_enabled(false)
 
@@ -244,7 +244,7 @@ end
 
 function M:_on_touch_start_callback(touch)
 	local cursor_index = self:_get_index_by_touch(touch)
-
+	pprint(touch)
 	if self._last_touch_info.cursor_index == cursor_index then
 		local time = socket.gettime()
 		if time - self._last_touch_info.time < DOUBLE_CLICK_TIME then

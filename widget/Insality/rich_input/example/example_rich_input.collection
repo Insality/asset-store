@@ -1,0 +1,10 @@
+name: "example_rich_input"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_rich_input\"\n"
+  "  component: \"/widget/Insality/rich_input/example/example_rich_input.gui\"\n"
+  "}\n"
+  ""
+}

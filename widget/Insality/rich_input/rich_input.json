@@ -5,6 +5,8 @@
 	"title": "Rich Input",
 	"description": "A rich text input field",
 	"api": "rich_input.md",
+	"example": "/widget/Insality/rich_input/example/example_rich_input.collection",
+	"example_code": "/widget/Insality/rich_input/example/example_rich_input.gui_script",
 	"author_url": "https://github.com/Insality",
 	"tags": ["GUI"],
 	"content": [

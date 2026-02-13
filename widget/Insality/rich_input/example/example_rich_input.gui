@@ -1,0 +1,55 @@
+script: "/widget/Insality/rich_input/example/example_rich_input.gui_script"
+nodes {
+  position {
+    x: 960.0
+    y: 540.0
+  }
+  type: TYPE_TEMPLATE
+  id: "rich_input"
+  inherit_alpha: true
+  template: "/widget/Insality/rich_input/rich_input.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "rich_input/root"
+  parent: "rich_input"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "rich_input/button"
+  parent: "rich_input/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "rich_input/placeholder_text"
+  parent: "rich_input/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "rich_input/input_text"
+  parent: "rich_input/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_BOX
+  id: "rich_input/cursor_node"
+  parent: "rich_input/root"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "rich_input/cursor_text"
+  parent: "rich_input/cursor_node"
+  template_node_child: true
+}
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_bold"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
