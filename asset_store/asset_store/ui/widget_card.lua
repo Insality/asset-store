@@ -104,7 +104,7 @@ function M.create(item, context)
 		description_spacing = editor.ui.SPACING.LARGE
 		table.insert(description_children, editor.ui.image({
 			image = ui_utils.escape_url(item.image),
-			width = 146,
+			width = 137,
 		}))
 	end
 	table.insert(description_children, editor.ui.paragraph({
@@ -165,14 +165,6 @@ function M.create(item, context)
 		}))
 	end
 
-	if item.api then
-		table.insert(button_children, editor.ui.button({
-			text = labels.api_button,
-			on_pressed = function() open_url(item.api) end,
-			enabled = item.api ~= nil
-		}))
-	end
-
 	-- Show Example button if example_url or example_code exists
 	local example_url = item.example_url or item.example_code
 	if example_url then
@@ -180,6 +172,14 @@ function M.create(item, context)
 			text = labels.example_button,
 			on_pressed = function() open_url(example_url) end,
 			enabled = example_url ~= nil
+		}))
+	end
+
+	if item.api then
+		table.insert(button_children, editor.ui.button({
+			text = labels.api_button,
+			on_pressed = function() open_url(item.api) end,
+			enabled = item.api ~= nil
 		}))
 	end
 

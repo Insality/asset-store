@@ -1,3 +1,4 @@
+---Widget to load and display an image from external sources (resource path, absolute path or URL)
 ---@class widget.external_image: druid.widget
 ---@field root node
 ---@field private size vector3
@@ -12,6 +13,7 @@ local SOCKET_IDS = {}
 local SOCKET_IDS_COUNT = 0
 
 
+---@private
 ---@param node_or_node_id node|string
 function M:init(node_or_node_id)
 	self.root = self:get_node(node_or_node_id)
@@ -56,18 +58,25 @@ end
 
 
 ---@param url string URL to the image, e.g. "https://example.com/image.png"
-function M:load_from_url(url)
+---@param callback function? Callback function to call when the image is loaded, optional
+function M:load_from_url(url, callback)
 	local headers = nil
 	local cache_path = self:_convert_url_to_absolute_path(url)
 
 	local is_loaded_from_cache = self:load_from_absolute_path(cache_path)
 	if is_loaded_from_cache then
+		if callback then
+			callback()
+		end
 		return
 	end
 
 	http.request(url, "GET", function(_, _, response)
 		if response.status == 200 then
 			self:load_from_absolute_path(cache_path)
+			if callback then
+				callback()
+			end
 		end
 	end, headers, nil, { path = cache_path })
 end

@@ -3,7 +3,7 @@
 	"id": "set_bootstrap_collection",
 	"version": 1,
 	"title": "Set Bootstrap Collection",
-	"description": "Editor script to set a collection as the bootstrap collection with context menu in the editor",
+	"description": "Add [Set as Bootstrap Collection] command in the context menu of *.collection files at the Assets pane",
 	"author_url": "https://github.com/Insality",
 	"tags": ["utility"],
 	"content": [
