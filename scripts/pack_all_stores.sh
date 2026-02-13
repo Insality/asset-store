@@ -356,14 +356,17 @@ build_example_if_needed() {
   category_display_name="$(get_category_display_name "$content_folder")"
 
   # Replace store URL and header using sed (works on both macOS and Linux)
-  local sed_suffix=""
   if [[ "$(uname)" == "Darwin" ]]; then
-    sed_suffix="''"
+    sed -i '' \
+      -e "s|https://insality.github.io/asset-store/druid_widget_store.json|${store_url}|g" \
+      -e "s|set_header(\"Druid Widgets\")|set_header(\"${category_display_name}\")|g" \
+      "$example_overlay_script_path"
+  else
+    sed -i \
+      -e "s|https://insality.github.io/asset-store/druid_widget_store.json|${store_url}|g" \
+      -e "s|set_header(\"Druid Widgets\")|set_header(\"${category_display_name}\")|g" \
+      "$example_overlay_script_path"
   fi
-  sed -i "$sed_suffix" \
-    -e "s|https://insality.github.io/asset-store/druid_widget_store.json|${store_url}|g" \
-    -e "s|set_header(\"Druid Widgets\")|set_header(\"${category_display_name}\")|g" \
-    "$example_overlay_script_path"
 
   ensure_dir "$example_output_dir"
 
