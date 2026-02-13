@@ -8,6 +8,7 @@
 	"example": "/widget/Insality/rich_input/example/example_rich_input.collection",
 	"example_code": "/widget/Insality/rich_input/example/example_rich_input.gui_script",
 	"author_url": "https://github.com/Insality",
+	"image": "rich_input.jpg",
 	"tags": ["GUI"],
 	"content": [
 		"rich_input.gui",
