@@ -1,111 +1,111 @@
 platforms:
   armv7-ios:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       frameworks: []
       linkFlags: []
   arm64-ios:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       frameworks: []
       linkFlags: []
   x86_64-ios:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       frameworks: []
       linkFlags: []
   armv7-android:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeJars: []
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       linkFlags: []
       jetifier: true
   arm64-android:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeJars: []
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       linkFlags: []
       jetifier: true
   arm64-osx:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       frameworks: []
       linkFlags: []
   x86_64-osx:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       frameworks: []
       linkFlags: []
   x86_64-linux:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       linkFlags: []
   arm64-linux:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_remotery]
       linkFlags: []
   x86-win32:
     context:
-      excludeLibs: [libphysics, libLinearMath, libBulletDynamics, libBulletCollision, libbox2d_defold, libscript_box2d_defold, libgamesys_model, libgamesys_rig, librig, librecord, vpx, libliveupdate]
+      excludeLibs: [libphysics, libLinearMath, libBulletDynamics, libBulletCollision, libbox2d_defold, libscript_box2d_defold, libgamesys_model, libgamesys_rig, librig, librecord, vpx, libliveupdate, libprofile_null, libprofilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [libphysics_null.lib, libgamesys_rig_null.lib, libgamesys_model_null.lib, librig_null.lib, librecord_null.lib, libliveupdate_null.lib]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [libphysics_null.lib, libgamesys_rig_null.lib, libgamesys_model_null.lib, librig_null.lib, librecord_null.lib, libliveupdate_null.lib, libprofile.lib, libprofilerext.lib, libprofiler_remotery.lib]
       linkFlags: []
   x86_64-win32:
     context:
-      excludeLibs: [libphysics, libLinearMath, libBulletDynamics, libBulletCollision, libbox2d_defold, libscript_box2d_defold, libgamesys_model, libgamesys_rig, librig, librecord, vpx, libliveupdate]
+      excludeLibs: [libphysics, libLinearMath, libBulletDynamics, libBulletCollision, libbox2d_defold, libscript_box2d_defold, libgamesys_model, libgamesys_rig, librig, librecord, vpx, libliveupdate, libprofile_null, libprofilerext_null]
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [libphysics_null.lib, libgamesys_rig_null.lib, libgamesys_model_null.lib, librig_null.lib, librecord_null.lib, libliveupdate_null.lib]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerRemotery]
+      libs: [libphysics_null.lib, libgamesys_rig_null.lib, libgamesys_model_null.lib, librig_null.lib, librecord_null.lib, libliveupdate_null.lib, libprofile.lib, libprofilerext.lib, libprofiler_remotery.lib]
       linkFlags: []
   js-web:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeJsLibs: []
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerJS]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_js]
       linkFlags: []
   wasm-web:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeJsLibs: []
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerJS]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_js]
       linkFlags: []
   wasm_pthread-web:
     context:
-      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate]
+      excludeLibs: [physics, LinearMath, BulletDynamics, BulletCollision, box2d_defold, script_box2d_defold, gamesys_model, gamesys_rig, rig, record, vpx, liveupdate, profile_null, profilerext_null]
       excludeJsLibs: []
       excludeSymbols: [ScriptBox2DExt, ScriptModelExt]
-      symbols: []
-      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null]
+      symbols: [ProfilerExt, ProfilerBasic, ProfilerJS]
+      libs: [physics_null, gamesys_rig_null, gamesys_model_null, rig_null, record_null, liveupdate_null, profile, profilerext, profiler_js]
       linkFlags: []

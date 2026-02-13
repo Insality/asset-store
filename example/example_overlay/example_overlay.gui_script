@@ -10,6 +10,18 @@ local properties_panel = require("widget.Insality.properties_panel.properties_pa
 ---@field properties_panel widget.properties_panel
 ---@field button_source druid.button
 ---@field example_code_url string
+---@field text_version druid.text
+
+
+---@return string
+local function get_text_version()
+	local info = sys.get_engine_info()
+	local version = info.version
+	local sha1 = info.version_sha1
+	local sha = string.sub(sha1, 1, 7)
+	return "Defold " .. version .. " (" .. sha .. ")"
+end
+
 
 ---@param self script.example_overlay
 local function on_source_click(self)
@@ -101,7 +113,7 @@ function init(self)
 	self.properties_panel:set_hidden(true)
 	self.properties_panel:set_header("Examples")
 
-	-- TODO: should be for any available store, not only druid widget
+	-- WARN: This link is replaced on build step
 	load_examples(self, "https://insality.github.io/asset-store/druid_widget_store.json", function(data)
 		create_pages(self, data.items)
 	end)
@@ -112,6 +124,8 @@ function init(self)
 	end
 
 	gui.set_enabled(self.button_source.node, self.example_code_url ~= nil)
+
+	self.text_version = self.druid:new_text("text_version", get_text_version())
 end
 
 ---@param self script.example_overlay
