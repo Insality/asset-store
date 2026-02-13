@@ -21,11 +21,13 @@ fi
 
 echo "✅ Found existing stores.json"
 
-# Restore examples from zip archive
+# Restore examples from zip archive (skip when REBUILD_EXAMPLES is set)
 examples_zip_url="$BASE_URL/examples.zip"
 examples_zip_path="$DIST_DIR/examples.zip"
 
-if curl -f -s -I "$examples_zip_url" -o /dev/null 2>/dev/null; then
+if [[ -n "${REBUILD_EXAMPLES:-}" && "${REBUILD_EXAMPLES}" != "0" && "${REBUILD_EXAMPLES}" != "false" ]]; then
+  echo "🔄 Rebuild examples requested, skipping examples restore"
+elif curl -f -s -I "$examples_zip_url" -o /dev/null 2>/dev/null; then
   echo "📦 Downloading examples.zip archive..."
   if curl -f -s -L --retry 2 --max-time 300 "$examples_zip_url" -o "$examples_zip_path" 2>/dev/null; then
     echo "  ✅ Downloaded examples.zip"

@@ -8,7 +8,11 @@ on:
   workflow_dispatch:
     inputs:
       clean_build:
-        description: 'Remove restored assets and rebuild everything from scratch'
+        description: 'Remove restored assets and rebuild everything from scratch (debug only)'
+        type: boolean
+        default: false
+      rebuild_examples:
+        description: 'Rebuild all examples from scratch (keep cache; use for production)'
         type: boolean
         default: false
       update_from_portal:
@@ -82,11 +86,24 @@ jobs:
           echo "🧽 Removing existing dist directory for clean build"
           rm -rf dist
 
+      - name: set rebuild examples flag
+        id: rebuild_examples
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" && "${REBUILD_EXAMPLES_INPUT}" == "true" ]]; then
+            echo "value=true" >> "$GITHUB_OUTPUT"
+            echo "🔄 Rebuild all examples requested."
+          else
+            echo "value=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          REBUILD_EXAMPLES_INPUT: ${{ github.event.inputs.rebuild_examples || 'false' }}
+
       - name: restore old assets
         if: steps.clean.outputs.value != 'true'
         continue-on-error: true
         env:
           DIST_DIR: dist
+          REBUILD_EXAMPLES: ${{ steps.rebuild_examples.outputs.value }}
         run: bash scripts/restore_assets.sh ${{ steps.base.outputs.url }}
 
       - name: update from asset-portal

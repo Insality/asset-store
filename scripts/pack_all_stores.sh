@@ -32,6 +32,9 @@ mkdir -p "$DIST_DIR"
 
 BASE_URL="${BASE_URL:-}"  # set by CI to Pages URL
 
+# First deployer run in this session uses full resolve; subsequent runs use --no-resolve
+DEPLOYER_FIRST_RUN=1
+
 require() { command -v "$1" >/dev/null 2>&1 || { echo "Missing '$1'"; exit 1; }; }
 require jq
 require zip
@@ -390,9 +393,11 @@ build_example_if_needed() {
     fi
   } > "$ROOT/$ini_file"
 
-  # Build using deployer
+  # Build using deployer (first run full resolve, next runs --no-resolve)
   local deployer_url="https://raw.githubusercontent.com/Insality/defold-deployer/refs/heads/update/deployer.sh"
-  if (cd "$ROOT" && curl -s "${deployer_url}" | bash -s hbr --settings "$ini_file") >&2; then
+  local no_resolve=""
+  [[ "${DEPLOYER_FIRST_RUN:-1}" -eq 0 ]] && no_resolve="--no-resolve"
+  if (cd "$ROOT" && curl -s "${deployer_url}" | bash -s hbr --settings "$ini_file" $no_resolve) >&2; then
     # Find the most recently created index.html
     local found_html=""
     found_html="$(find "$ROOT/dist/bundle" -name "index.html" -type f -path "*/_html/*" 2>/dev/null | head -1)"
@@ -402,6 +407,22 @@ build_example_if_needed() {
       local src_dir; src_dir="$(dirname "$found_html")"
       ensure_dir "$example_output_dir"
       cp -r "$src_dir"/* "$example_output_dir/" 2>/dev/null || true
+
+      local wasm_path="$example_output_dir/AssetStore.wasm"
+      if [[ -f "$wasm_path" ]]; then
+        local engine_id
+        engine_id="$(get_sha256 "$wasm_path" | cut -c1-16)"
+        local engine_dir="$DIST_DIR/engine/$engine_id"
+        if [[ ! -d "$engine_dir" || -z "$(ls -A "$engine_dir" 2>/dev/null)" ]]; then
+          ensure_dir "$engine_dir"
+          cp -f "$example_output_dir/AssetStore.wasm" "$engine_dir/" 2>/dev/null || true
+          [[ -f "$example_output_dir/AssetStore_wasm.js" ]] && cp -f "$example_output_dir/AssetStore_wasm.js" "$engine_dir/" 2>/dev/null || true
+          [[ -f "$example_output_dir/AssetStore_pthread.wasm" ]] && cp -f "$example_output_dir/AssetStore_pthread.wasm" "$engine_dir/" 2>/dev/null || true
+          [[ -f "$example_output_dir/AssetStore_pthread_wasm.js" ]] && cp -f "$example_output_dir/AssetStore_pthread_wasm.js" "$engine_dir/" 2>/dev/null || true
+        fi
+        rm -f "$example_output_dir/AssetStore.wasm" "$example_output_dir/AssetStore_wasm.js" "$example_output_dir/AssetStore_pthread.wasm" "$example_output_dir/AssetStore_pthread_wasm.js" 2>/dev/null || true
+        python3 "$ROOT/scripts/patch_example_for_shared_engine.py" "$example_output_dir" "$engine_id"
+      fi
 
       if [[ -f "$example_output_dir/index.html" && -f "$example_output_dir/dmloader.js" ]]; then
         echo "$example_url"
@@ -414,6 +435,7 @@ build_example_if_needed() {
   else
     echo ""
   fi
+  DEPLOYER_FIRST_RUN=0
 
   # Cleanup handled by trap (proxy file and overlay script restored, temp files removed)
 }
@@ -513,6 +535,7 @@ pack_folder_store() {
     size="$(get_file_size "$zip_path")"
     zip_url="${BASE_URL:+$BASE_URL/}$content_folder/$zip_name"
     json_zip_url="$(create_json_zip "$zip_path" "$zip_name" "$content_folder")"
+    rm -f "$zip_path"
     manifest_url="$(copy_manifest "$manifest" "$content_folder" "$author" "$id")"
     image_url="$(copy_image "$image_rel" "$asset_dir" "$author" "$id")"
     api_url="$(generate_github_url "$api" "$asset_dir")"
@@ -769,12 +792,16 @@ format_size() {
   fi
 }
 
-# Create examples.zip archive for faster restoration
+# Create examples.zip archive for faster restoration (include engine/ so restored examples can load shared wasm)
 if [[ -d "$DIST_DIR/examples" && -n "$(find "$DIST_DIR/examples" -mindepth 1 -maxdepth 1 2>/dev/null)" ]]; then
   echo ""
   echo "📦 Creating examples.zip archive..."
   examples_zip="$DIST_DIR/examples.zip"
-  (cd "$DIST_DIR" && zip -q -r "examples.zip" "examples/")
+  if [[ -d "$DIST_DIR/engine" && -n "$(find "$DIST_DIR/engine" -mindepth 1 -maxdepth 1 2>/dev/null)" ]]; then
+    (cd "$DIST_DIR" && zip -q -r "examples.zip" "examples/" "engine/")
+  else
+    (cd "$DIST_DIR" && zip -q -r "examples.zip" "examples/")
+  fi
   if [[ -f "$examples_zip" ]]; then
     zip_size="$(get_file_size "$examples_zip")"
     echo "✅ Created examples.zip ($(format_size "$zip_size"))"
