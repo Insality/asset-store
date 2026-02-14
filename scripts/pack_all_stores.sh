@@ -32,9 +32,6 @@ mkdir -p "$DIST_DIR"
 
 BASE_URL="${BASE_URL:-}"  # set by CI to Pages URL
 
-# First deployer run in this session uses full resolve; subsequent runs use --no-resolve
-DEPLOYER_FIRST_RUN=1
-
 require() { command -v "$1" >/dev/null 2>&1 || { echo "Missing '$1'"; exit 1; }; }
 require jq
 require zip
@@ -396,11 +393,8 @@ build_example_if_needed() {
     fi
   } > "$ROOT/$ini_file"
 
-  # Build using deployer (first run full resolve, next runs --no-resolve)
   local deployer_url="https://raw.githubusercontent.com/Insality/defold-deployer/refs/heads/update/deployer.sh"
-  local no_resolve=""
-  [[ "${DEPLOYER_FIRST_RUN:-1}" -eq 0 ]] && no_resolve="--no-resolve"
-  if (cd "$ROOT" && curl -s "${deployer_url}" | bash -s hbr --settings "$ini_file" $no_resolve) >&2; then
+  if (cd "$ROOT" && curl -s "${deployer_url}" | bash -s hbr --settings "$ini_file") >&2; then
     # Find the most recently created index.html
     local found_html=""
     found_html="$(find "$ROOT/dist/bundle" -name "index.html" -type f -path "*/_html/*" 2>/dev/null | head -1)"
@@ -438,7 +432,6 @@ build_example_if_needed() {
   else
     echo ""
   fi
-  DEPLOYER_FIRST_RUN=0
 
   # Cleanup handled by trap (proxy file and overlay script restored, temp files removed)
 }
