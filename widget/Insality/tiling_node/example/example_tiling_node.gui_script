@@ -4,6 +4,7 @@ local tiling_node = require("widget.Insality.tiling_node.tiling_node")
 function init(self)
 	self.druid = druid.new(self)
 	self.tiling_node = self.druid:new_widget(tiling_node, nil, nil, "tiling_node")
+	self.tiling_node:set_margin(0.1, 0.1)
 end
 
 function final(self)

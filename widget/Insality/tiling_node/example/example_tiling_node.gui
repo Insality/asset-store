@@ -17,7 +17,7 @@ nodes {
     y: 2.0
   }
   type: TYPE_BOX
-  texture: "druid/icon_drag"
+  texture: "druid/icon_arrow"
   id: "just_node"
   layer: "druid"
   inherit_alpha: true
@@ -37,7 +37,7 @@ nodes {
     y: 160.0
   }
   type: TYPE_BOX
-  texture: "druid/icon_drag"
+  texture: "druid/icon_arrow"
   id: "just_node_resized"
   layer: "druid"
   inherit_alpha: true
@@ -48,15 +48,15 @@ nodes {
     y: 656.0
   }
   scale {
-    x: 2.0
-    y: 2.0
+    x: 1.5
+    y: 1.5
   }
   size {
-    x: 320.0
-    y: 320.0
+    x: 420.0
+    y: 420.0
   }
   type: TYPE_BOX
-  texture: "druid/icon_drag"
+  texture: "druid/icon_arrow"
   id: "tiling_node"
   layer: "druid"
   inherit_alpha: true
