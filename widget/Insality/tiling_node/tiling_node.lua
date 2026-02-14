@@ -1,7 +1,9 @@
 local helper = require("druid.helper")
 local queues = require("event.queues")
 
----@class druid.tiling_node: druid.widget
+---This widget allow to use "repeat" shader over a node size in GUI.
+---To use this, you should add a `druid.script` file nearby the GUI component with this widget
+---@class widget.tiling_node: druid.widget
 ---@field animation table
 ---@field node node
 ---@field params vector4
@@ -14,6 +16,7 @@ M.PROP_SCALE_X = hash("scale.x")
 M.PROP_SCALE_Y = hash("scale.y")
 
 
+---@private
 ---@param node node|string
 function M:init(node)
 	self.node = self:get_node(node)
@@ -30,19 +33,20 @@ function M:init(node)
 	queues.push("druid.get_atlas_path", {
 		texture_name = gui.get_texture(self.node),
 		sender = msg.url(),
-	}, self.on_get_atlas_path, self)
+	}, self._on_get_atlas_path, self)
 end
 
 
 ---@param atlas_path string
-function M:on_get_atlas_path(atlas_path)
+function M:_on_get_atlas_path(atlas_path)
 	timer.cancel(self.timer_no_init)
-	self.is_inited = self:init_tiling_animation(atlas_path)
-	local repeat_x, repeat_y = self:get_repeat_count_from_node()
+	self.is_inited = self:_init_tiling_animation(atlas_path)
+	local repeat_x, repeat_y = self:_get_repeat_count_from_node()
 	self:start_animation(repeat_x, repeat_y)
 end
 
 
+---Call this if you want to update the tiling animation when the node size or scale changes
 ---@param node node
 ---@param property string
 function M:on_node_property_changed(node, property)
@@ -51,13 +55,13 @@ function M:on_node_property_changed(node, property)
 	end
 
 	if property == "size" or property == "scale" then
-		local repeat_x, repeat_y = self:get_repeat_count_from_node()
+		local repeat_x, repeat_y = self:_get_repeat_count_from_node()
 		self:set_repeat(repeat_x, repeat_y)
 	end
 end
 
 
-function M:get_repeat_count_from_node()
+function M:_get_repeat_count_from_node()
 	if not self.is_inited then
 		return 1, 1
 	end
@@ -75,7 +79,7 @@ end
 
 ---@param atlas_path string
 ---@return boolean
-function M:init_tiling_animation(atlas_path)
+function M:_init_tiling_animation(atlas_path)
 	if not atlas_path then
 		print("No atlas path found for node", gui.get_id(self.node), gui.get_texture(self.node))
 		print("Probably you should add druid.script at window collection to access resources")
@@ -117,6 +121,7 @@ function M:start_animation(repeat_x, repeat_y)
 end
 
 
+---@private
 function M:final()
 	local animation = self.animation
 	if animation.handle then
@@ -129,6 +134,7 @@ end
 ---Update repeat factor values
 ---@param repeat_x number? X factor
 ---@param repeat_y number? Y factor
+---@return widget.tiling_node
 function M:set_repeat(repeat_x, repeat_y)
 	local animation = self.animation
 	animation.v.x = repeat_x or animation.v.x
@@ -139,11 +145,16 @@ function M:set_repeat(repeat_x, repeat_y)
 	animation.v.w = anchor.y
 
 	gui.set(self.node, "uv_repeat", animation.v)
+
+	return self
 end
 
 
+---Set the distance offset between the tiles
+---Can used for the moving effect
 ---@param offset_perc_x number? X offset
 ---@param offset_perc_y number? Y offset
+---@return widget.tiling_node
 function M:set_offset(offset_perc_x, offset_perc_y)
 	self.params.z = offset_perc_x or self.params.z
 	self.params.w = offset_perc_y or self.params.w
@@ -152,8 +163,10 @@ function M:set_offset(offset_perc_x, offset_perc_y)
 end
 
 
----@param margin_x number? X margin
----@param margin_y number? Y margin
+---Set the distance between the tiles
+---@param margin_x number? X margin in percentage from 0 to 1
+---@param margin_y number? Y margin in percentage from 0 to 1
+---@return widget.tiling_node
 function M:set_margin(margin_x, margin_y)
 	self.params.x = margin_x or self.params.x
 	self.params.y = margin_y or self.params.y
@@ -162,7 +175,9 @@ function M:set_margin(margin_x, margin_y)
 end
 
 
----@param scale number
+---Set the scale of the node
+---@param scale number Scale factor
+---@return widget.tiling_node
 function M:set_scale(scale)
 	local current_scale_x = gui.get(self.node, M.PROP_SCALE_X)
 	local current_scale_y = gui.get(self.node, M.PROP_SCALE_Y)

@@ -1,63 +1,32 @@
 # widget.tiling_node API
 
-> at widget/Insality/tiling_node/tiling_node.lua
+> at /widget/Insality/tiling_node/tiling_node.lua
+
+This widget allow to use "repeat" shader over a node size in GUI.
+To use this, you should add a `druid.script` file nearby the GUI component with this widget
 
 ## Functions
 
-- [init](#init)
-- [final](#final)
-- [on_get_atlas_path](#on_get_atlas_path)
 - [on_node_property_changed](#on_node_property_changed)
-- [get_repeat_count_from_node](#get_repeat_count_from_node)
-- [init_tiling_animation](#init_tiling_animation)
 - [start_animation](#start_animation)
 - [set_repeat](#set_repeat)
 - [set_offset](#set_offset)
 - [set_margin](#set_margin)
 - [set_scale](#set_scale)
-
 ## Fields
 
 - [animation](#animation)
 - [node](#node)
 - [params](#params)
 - [time](#time)
+- [PROP_SIZE_X](#PROP_SIZE_X)
+- [PROP_SIZE_Y](#PROP_SIZE_Y)
+- [PROP_SCALE_X](#PROP_SCALE_X)
+- [PROP_SCALE_Y](#PROP_SCALE_Y)
+- [margin](#margin)
+- [timer_no_init](#timer_no_init)
+- [is_inited](#is_inited)
 
-
-### init
-
----
-```lua
-tiling_node:init(node)
-```
-
-Initialize the tiling node component
-
-- **Parameters:**
-	- `node` *(node|string)*: GUI node or node id to apply tiling to
-
-
-### final
-
----
-```lua
-tiling_node:final()
-```
-
-Clean up resources and cancel timers
-
-
-### on_get_atlas_path
-
----
-```lua
-tiling_node:on_get_atlas_path(atlas_path)
-```
-
-Callback when atlas path is retrieved
-
-- **Parameters:**
-	- `atlas_path` *(string)*: Path to the atlas texture
 
 
 ### on_node_property_changed
@@ -67,42 +36,11 @@ Callback when atlas path is retrieved
 tiling_node:on_node_property_changed(node, property)
 ```
 
-Handle node property changes (size or scale)
+Call this if you want to update the tiling animation when the node size or scale changes
 
 - **Parameters:**
-	- `node` *(node)*: The node that changed
-	- `property` *(string)*: Name of the property that changed
-
-
-### get_repeat_count_from_node
-
----
-```lua
-tiling_node:get_repeat_count_from_node()
-```
-
-Calculate repeat count based on node size and scale
-
-- **Returns:**
-	- `repeat_x` *(number)*: Number of times to repeat horizontally
-	- `repeat_y` *(number)*: Number of times to repeat vertically
-
-
-### init_tiling_animation
-
----
-```lua
-tiling_node:init_tiling_animation(atlas_path)
-```
-
-Initialize animation data from atlas
-
-- **Parameters:**
-	- `atlas_path` *(string)*: Path to the atlas texture
-
-- **Returns:**
-	- `success` *(boolean)*: Whether initialization was successful
-
+	- `node` *(node)*:
+	- `property` *(string)*:
 
 ### start_animation
 
@@ -111,60 +49,60 @@ Initialize animation data from atlas
 tiling_node:start_animation(repeat_x, repeat_y)
 ```
 
-Start tiling animation with specified repeat counts
+ Start our repeat shader work
 
 - **Parameters:**
-	- `repeat_x` *(number)*: X repeat factor
-	- `repeat_y` *(number)*: Y repeat factor
-
+	- `repeat_x` *(number)*: X factor
+	- `repeat_y` *(number)*: Y factor
 
 ### set_repeat
 
 ---
 ```lua
-tiling_node:set_repeat(repeat_x, repeat_y)
+tiling_node:set_repeat([repeat_x], [repeat_y])
 ```
 
 Update repeat factor values
 
 - **Parameters:**
-	- `[repeat_x]` *(number?)*: X factor (optional)
-	- `[repeat_y]` *(number?)*: Y factor (optional)
+	- `[repeat_x]` *(number?)*: X factor
+	- `[repeat_y]` *(number?)*: Y factor
 
+- **Returns:**
+	- `` *(widget.tiling_node)*:
 
 ### set_offset
 
 ---
 ```lua
-tiling_node:set_offset(offset_perc_x, offset_perc_y)
+tiling_node:set_offset([offset_perc_x], [offset_perc_y])
 ```
 
-Set offset in percentage
+Set the distance offset between the tiles
+Can used for the moving effect
 
 - **Parameters:**
-	- `[offset_perc_x]` *(number?)*: X offset (optional)
-	- `[offset_perc_y]` *(number?)*: Y offset (optional)
+	- `[offset_perc_x]` *(number?)*: X offset
+	- `[offset_perc_y]` *(number?)*: Y offset
 
 - **Returns:**
-	- `self` *(tiling_node)*: Returns self for chaining
-
+	- `` *(widget.tiling_node)*:
 
 ### set_margin
 
 ---
 ```lua
-tiling_node:set_margin(margin_x, margin_y)
+tiling_node:set_margin([margin_x], [margin_y])
 ```
 
-Set margin between tiles
+Set the distance between the tiles
 
 - **Parameters:**
-	- `[margin_x]` *(number?)*: X margin (optional)
-	- `[margin_y]` *(number?)*: Y margin (optional)
+	- `[margin_x]` *(number?)*: X margin in percentage from 0 to 1
+	- `[margin_y]` *(number?)*: Y margin in percentage from 0 to 1
 
 - **Returns:**
-	- `self` *(tiling_node)*: Returns self for chaining
-
+	- `` *(widget.tiling_node)*:
 
 ### set_scale
 
@@ -173,25 +111,46 @@ Set margin between tiles
 tiling_node:set_scale(scale)
 ```
 
-Set scale of the node
+Set the scale of the node
 
 - **Parameters:**
-	- `scale` *(number)*: Scale value
+	- `scale` *(number)*: Scale factor
 
 - **Returns:**
-	- `self` *(tiling_node)*: Returns self for chaining
+	- `` *(widget.tiling_node)*:
 
 
 ## Fields
 <a name="animation"></a>
-- **animation** (_table_): Animation data with frames and timing
+- **animation** (_table_)
 
 <a name="node"></a>
-- **node** (_node_): The GUI node being tiled
+- **node** (_node_)
 
 <a name="params"></a>
-- **params** (_vector4_): Shader parameters (margin_x, margin_y, offset_x, offset_y)
+- **params** (_vector4_)
 
 <a name="time"></a>
-- **time** (_number_): Current animation time
+- **time** (_number_)
+
+<a name="PROP_SIZE_X"></a>
+- **PROP_SIZE_X** (_unknown_)
+
+<a name="PROP_SIZE_Y"></a>
+- **PROP_SIZE_Y** (_unknown_)
+
+<a name="PROP_SCALE_X"></a>
+- **PROP_SCALE_X** (_unknown_)
+
+<a name="PROP_SCALE_Y"></a>
+- **PROP_SCALE_Y** (_unknown_)
+
+<a name="margin"></a>
+- **margin** (_integer_)
+
+<a name="timer_no_init"></a>
+- **timer_no_init** (_unknown_)
+
+<a name="is_inited"></a>
+- **is_inited** (_boolean_)
 
