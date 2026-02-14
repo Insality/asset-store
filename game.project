@@ -38,9 +38,9 @@ max_count = 128
 app_manifest = /scripts/asset-store.appmanifest
 
 [render]
-clear_color_blue = 0.16
-clear_color_green = 0.14
-clear_color_red = 0.13
+clear_color_blue = 0.137255
+clear_color_green = 0.121569
+clear_color_red = 0.113725
 
 [library]
 include_dirs = asset_store

@@ -19,6 +19,7 @@ nodes {
   type: TYPE_BOX
   texture: "druid/icon_drag"
   id: "just_node"
+  layer: "druid"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -38,6 +39,7 @@ nodes {
   type: TYPE_BOX
   texture: "druid/icon_drag"
   id: "just_node_resized"
+  layer: "druid"
   inherit_alpha: true
 }
 nodes {
@@ -56,6 +58,7 @@ nodes {
   type: TYPE_BOX
   texture: "druid/icon_drag"
   id: "tiling_node"
+  layer: "druid"
   inherit_alpha: true
   material: "gui_tiling_node"
 }
@@ -76,6 +79,7 @@ nodes {
   text: "Usual Node"
   font: "druid_text_bold"
   id: "just_node_hint"
+  layer: "druid_text_bold"
   inherit_alpha: true
 }
 nodes {
@@ -95,6 +99,7 @@ nodes {
   text: "Resized Node"
   font: "druid_text_bold"
   id: "just_node_hint1"
+  layer: "druid_text_bold"
   inherit_alpha: true
 }
 nodes {
@@ -114,7 +119,14 @@ nodes {
   text: "Tiling Node"
   font: "druid_text_bold"
   id: "just_node_hint2"
+  layer: "druid_text_bold"
   inherit_alpha: true
+}
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_bold"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

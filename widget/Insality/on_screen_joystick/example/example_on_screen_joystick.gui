@@ -193,5 +193,11 @@ nodes {
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
+layers {
+  name: "druid"
+}
+layers {
+  name: "druid_text_bold"
+}
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
