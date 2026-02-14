@@ -100,11 +100,13 @@ function M.create(item, context)
 
 	local description_children = {}
 	local description_spacing = editor.ui.SPACING.NONE
+	local width = is_installed and 146 or 138;
+
 	if editor.ui.image and item.image and item.image ~= "" then
 		description_spacing = editor.ui.SPACING.LARGE
 		table.insert(description_children, editor.ui.image({
 			image = ui_utils.escape_url(item.image),
-			width = 137,
+			width = width,
 		}))
 	end
 	table.insert(description_children, editor.ui.paragraph({
@@ -151,11 +153,11 @@ function M.create(item, context)
 
 	-- Show Update button if can update, otherwise show Install button
 	-- For dependencies, disable Install button when installed (even if can_update is false)
-	if can_update then
+	if is_installed then
 		table.insert(button_children, editor.ui.button({
 			text = labels.update_button,
 			on_pressed = on_update,
-			enabled = true
+			enabled = can_update
 		}))
 	else
 		table.insert(button_children, editor.ui.button({
