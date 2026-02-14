@@ -40,8 +40,10 @@ function M.create(item, context)
 	-- Detect if this is a dependency (has content array)
 	local is_dependency = item.content and type(item.content) == "table" and #item.content > 0
 
-	local tags_text = item.tags and #item.tags > 0 and labels.tags_prefix .. table.concat(item.tags, ", ") or ""
-	local deps_text = item.depends and #item.depends > 0 and labels.depends_prefix .. table.concat(item.depends, ", ") or ""
+	local tags_prefix = item.tags and #item.tags > 0 and labels.tags_prefix or ""
+	local tags_values = item.tags and #item.tags > 0 and table.concat(item.tags, ", ") or ""
+	local deps_prefix = item.depends and #item.depends > 0 and labels.depends_prefix or ""
+	local deps_values = item.depends and #item.depends > 0 and table.concat(item.depends, ", ") or ""
 
 	-- Build left side of header (title, version, size)
 	local header_left = {
@@ -130,16 +132,34 @@ function M.create(item, context)
 	}
 
 	local tags_depends_children = {}
-	if tags_text ~= "" then
-		table.insert(tags_depends_children, editor.ui.label({
-			text = tags_text,
-			color = editor.ui.COLOR.HINT
+	if tags_prefix ~= "" then
+		table.insert(tags_depends_children, editor.ui.horizontal({
+			spacing = editor.ui.SPACING.NONE,
+			children = {
+				editor.ui.label({
+					text = tags_prefix,
+					color = editor.ui.COLOR.TEXT
+				}),
+				editor.ui.label({
+					text = tags_values,
+					color = editor.ui.COLOR.HINT
+				})
+			}
 		}))
 	end
-	if deps_text ~= "" then
-		table.insert(tags_depends_children, editor.ui.label({
-			text = deps_text,
-			color = editor.ui.COLOR.HINT
+	if deps_prefix ~= "" then
+		table.insert(tags_depends_children, editor.ui.horizontal({
+			spacing = editor.ui.SPACING.NONE,
+			children = {
+				editor.ui.label({
+					text = deps_prefix,
+					color = editor.ui.COLOR.TEXT
+				}),
+				editor.ui.label({
+					text = deps_values,
+					color = editor.ui.COLOR.HINT
+				})
+			}
 		}))
 	end
 	if #tags_depends_children > 0 then
