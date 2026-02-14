@@ -14,7 +14,7 @@ mkdir -p "$DIST_DIR"
 echo "📥 Downloading existing assets from: $BASE_URL"
 
 # Try to download stores.json to get list of all stores
-if ! curl -f -s "$BASE_URL/stores.json" -o /tmp/old_stores.json 2>/dev/null; then
+if ! curl -f -s --max-time 30 "$BASE_URL/stores.json" -o /tmp/old_stores.json 2>/dev/null; then
   echo "ℹ️  No existing stores.json found, starting fresh"
   exit 0
 fi
@@ -27,9 +27,9 @@ examples_zip_path="$DIST_DIR/examples.zip"
 
 if [[ -n "${REBUILD_EXAMPLES:-}" && "${REBUILD_EXAMPLES}" != "0" && "${REBUILD_EXAMPLES}" != "false" ]]; then
   echo "🔄 Rebuild examples requested, skipping examples restore"
-elif curl -f -s -I "$examples_zip_url" -o /dev/null 2>/dev/null; then
+else
   echo "📦 Downloading examples.zip archive..."
-  if curl -f -s -L --retry 2 --max-time 300 "$examples_zip_url" -o "$examples_zip_path" 2>/dev/null; then
+  if curl -f -s -L --retry 3 --max-time 600 "$examples_zip_url" -o "$examples_zip_path" 2>/dev/null; then
     echo "  ✅ Downloaded examples.zip"
     echo "  📂 Extracting examples..."
     if unzip -q -o "$examples_zip_path" -d "$DIST_DIR" 2>/dev/null; then
@@ -41,10 +41,8 @@ elif curl -f -s -I "$examples_zip_url" -o /dev/null 2>/dev/null; then
       rm -f "$examples_zip_path"
     fi
   else
-    echo "  ⚠️  Warning: Failed to download examples.zip"
+    echo "ℹ️  No examples.zip found, examples will be built from scratch"
   fi
-else
-  echo "ℹ️  No examples.zip found, examples will be built from scratch"
 fi
 
 echo "✅ Old assets restored"
