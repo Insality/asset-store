@@ -4,19 +4,21 @@ local color = require("druid.color")
 
 function init(self)
 	self.druid = druid.new(self)
-	self.button_1 = self.druid:new_button("button_1")
-	self.button_2 = self.druid:new_button("button_2")
-	self.button_3 = self.druid:new_button("button_3")
-	self.button_4 = self.druid:new_button("button_4")
-	self.button_5 = self.druid:new_button("button_5")
-	self.button_6 = self.druid:new_button("button_6")
+	self.button_1 = self.druid:new_button("button_1/root")
+	self.button_2 = self.druid:new_button("button_2/root")
+	self.button_3 = self.druid:new_button("button_3/root")
+	self.button_4 = self.druid:new_button("button_4/root")
+	self.button_5 = self.druid:new_button("button_5/root")
 
 	self.navigation_handler = self.druid:new_widget(navigation_handler, nil, nil, "navigation_handler")
+
 	self.navigation_handler:select_component(self.button_1)
 	self.navigation_handler.on_select:subscribe(function(self, new, previous)
-		color.set_color(previous.node, "#BA92FF")
-		color.set_color(new.node, "#FFFFFF")
+		color.set_color(previous.node, "#0d6c8f")
+		color.set_color(new.node, "#53afd1")
 	end)
+
+	color.set_color(self.button_1.node, "#53afd1")
 end
 
 function final(self)

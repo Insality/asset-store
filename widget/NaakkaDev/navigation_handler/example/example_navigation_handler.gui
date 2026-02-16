@@ -5,114 +5,6 @@ fonts {
 }
 nodes {
   position {
-    x: 450.0
-    y: 700.0
-  }
-  size {
-    x: 200.0
-    y: 200.0
-  }
-  color {
-    x: 0.8
-    y: 0.702
-  }
-  type: TYPE_BOX
-  id: "button_1"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 960.0
-    y: 700.0
-  }
-  size {
-    x: 200.0
-    y: 200.0
-  }
-  color {
-    x: 0.8
-    y: 0.702
-  }
-  type: TYPE_BOX
-  id: "button_2"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1470.0
-    y: 700.0
-  }
-  size {
-    x: 200.0
-    y: 200.0
-  }
-  color {
-    x: 0.8
-    y: 0.702
-  }
-  type: TYPE_BOX
-  id: "button_3"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 450.0
-    y: 300.0
-  }
-  size {
-    x: 200.0
-    y: 200.0
-  }
-  color {
-    x: 0.8
-    y: 0.702
-  }
-  type: TYPE_BOX
-  id: "button_4"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 960.0
-    y: 300.0
-  }
-  size {
-    x: 200.0
-    y: 200.0
-  }
-  color {
-    x: 0.8
-    y: 0.702
-  }
-  type: TYPE_BOX
-  id: "button_5"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1470.0
-    y: 300.0
-  }
-  size {
-    x: 200.0
-    y: 200.0
-  }
-  color {
-    x: 0.8
-    y: 0.702
-  }
-  type: TYPE_BOX
-  id: "button_6"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
     x: 960.0
     y: 915.0
   }
@@ -129,6 +21,122 @@ nodes {
   font: "druid_text_bold"
   id: "text"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: 960.0
+    y: 700.0
+  }
+  type: TYPE_TEMPLATE
+  id: "button_1"
+  inherit_alpha: true
+  template: "/widget/NaakkaDev/navigation_handler/example/button.gui"
+}
+nodes {
+  color {
+    x: 0.22251143
+    y: 0.46979824
+    z: 0.56007755
+  }
+  type: TYPE_BOX
+  id: "button_1/root"
+  parent: "button_1"
+  overridden_fields: 5
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "button_1/text"
+  parent: "button_1/root"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 960.0
+    y: 550.0
+  }
+  type: TYPE_TEMPLATE
+  id: "button_2"
+  inherit_alpha: true
+  template: "/widget/NaakkaDev/navigation_handler/example/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_2/root"
+  parent: "button_2"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "button_2/text"
+  parent: "button_2/root"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 960.0
+    y: 400.0
+  }
+  type: TYPE_TEMPLATE
+  id: "button_3"
+  inherit_alpha: true
+  template: "/widget/NaakkaDev/navigation_handler/example/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_3/root"
+  parent: "button_3"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "button_3/text"
+  parent: "button_3/root"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 960.0
+    y: 250.0
+  }
+  type: TYPE_TEMPLATE
+  id: "button_4"
+  inherit_alpha: true
+  template: "/widget/NaakkaDev/navigation_handler/example/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_4/root"
+  parent: "button_4"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "button_4/text"
+  parent: "button_4/root"
+  template_node_child: true
+}
+nodes {
+  position {
+    x: 960.0
+    y: 100.0
+  }
+  type: TYPE_TEMPLATE
+  id: "button_5"
+  inherit_alpha: true
+  template: "/widget/NaakkaDev/navigation_handler/example/button.gui"
+}
+nodes {
+  type: TYPE_BOX
+  id: "button_5/root"
+  parent: "button_5"
+  template_node_child: true
+}
+nodes {
+  type: TYPE_TEXT
+  id: "button_5/text"
+  parent: "button_5/root"
+  template_node_child: true
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

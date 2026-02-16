@@ -1,0 +1,50 @@
+fonts {
+  name: "druid_text_bold"
+  font: "/druid/fonts/druid_text_bold.font"
+}
+textures {
+  name: "druid"
+  texture: "/druid/druid.atlas"
+}
+nodes {
+  size {
+    x: 300.0
+    y: 120.0
+  }
+  color {
+    x: 0.051014815
+    y: 0.42393285
+    z: 0.56007755
+  }
+  type: TYPE_BOX
+  texture: "druid/ui_circle_64"
+  id: "root"
+  inherit_alpha: true
+  slice9 {
+    x: 32.0
+    y: 32.0
+    z: 32.0
+    w: 32.0
+  }
+}
+nodes {
+  scale {
+    x: 1.5
+    y: 1.5
+  }
+  size {
+    x: 150.0
+    y: 50.0
+  }
+  type: TYPE_TEXT
+  text: "Button"
+  font: "druid_text_bold"
+  id: "text"
+  parent: "root"
+  inherit_alpha: true
+  alpha: 0.8
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

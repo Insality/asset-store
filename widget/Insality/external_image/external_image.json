@@ -4,7 +4,7 @@
 	"version": 1,
 	"title": "External Image",
 	"description": "Allows to load and display an image from external sources (resource path, absolute path or URL)",
-	"image": "external_image.png",
+	"image": "external_image.jpg",
 	"api": "external_image.md",
 	"example": "/widget/Insality/external_image/example/example_external_image.collection",
 	"example_code": "/widget/Insality/external_image/example/example_external_image.gui_script",
