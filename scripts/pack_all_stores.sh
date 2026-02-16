@@ -274,7 +274,7 @@ get_category_display_name() {
       echo "Materials"
       ;;
     core)
-      echo "Core"
+      echo "Lua Modules"
       ;;
     *)
       echo "Examples"

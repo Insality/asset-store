@@ -98,11 +98,11 @@ function M.get_commands()
 					asset_type = "folder",
 				})
 
-				-- Add Core modelues
+				-- Add Lua Modules
 				table.insert(stores, {
 					name = "Lua Modules",
 					store_url = "https://insality.github.io/asset-store/core_store.json",
-					info_url = "https://github.com/Insality/asset-store/blob/main/core_store.md",
+					info_url = "https://github.com/Insality/asset-store/blob/main/lua_modules_store.md",
 					title = "Lua Modules",
 					install_prefs_key = "asset_store.install_folder_core",
 					asset_type = "folder",

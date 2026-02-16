@@ -19,7 +19,7 @@
 			"content": "dependencies"
 		},
 		{
-			"name": "[Assets] Core",
+			"name": "[Assets] Lua Modules",
 			"type": "folder",
 			"index": "core_store.json",
 			"content": "core"
