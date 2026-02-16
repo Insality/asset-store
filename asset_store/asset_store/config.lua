@@ -30,8 +30,6 @@ function M.normalize_config(input)
 			title = input.title or constants.DEFAULT_TITLE,
 			info_button_label = input.info_button_label or constants.DEFAULT_INFO_BUTTON,
 			close_button_label = input.close_button_label or constants.DEFAULT_CLOSE_BUTTON,
-			add_asset_url = input.add_asset_url,
-			add_asset_button_label = input.add_asset_button_label,
 			empty_search_message = input.empty_search_message or constants.DEFAULT_EMPTY_SEARCH_MESSAGE,
 			empty_filter_message = input.empty_filter_message or constants.DEFAULT_EMPTY_FILTER_MESSAGE,
 			labels = input.labels or {},

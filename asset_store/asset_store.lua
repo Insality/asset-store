@@ -121,8 +121,6 @@ function M.open_single_store(config)
 			end
 		elseif result == constants.SUPPORT_RESULT then
 			internal.open_url("https://github.com/sponsors/insality")
-		elseif result == constants.ADD_ASSET_RESULT then
-			internal.open_url(config.add_asset_url)
 		end
 	end
 

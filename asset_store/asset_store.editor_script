@@ -48,7 +48,6 @@ function M.get_commands()
 					info_url = "https://github.com/Insality/asset-store/blob/main/dependencies_store.md",
 					title = "Defold Asset Portal",
 					asset_type = "dependency",
-					add_asset_url = "https://github.com/Insality/asset-store/blob/main/dependencies_store.md#how-to-submit",
 					labels = {
 						widget_card = {
 							example_button = "Repository",
@@ -74,7 +73,6 @@ function M.get_commands()
 						title = "Druid Widgets",
 						install_prefs_key = "asset_store.install_folder_druid",
 						asset_type = "folder",
-						add_asset_url = "https://github.com/Insality/asset-store/blob/main/druid_widget_store.md#how-to-submit",
 					})
 				end
 
@@ -87,7 +85,6 @@ function M.get_commands()
 						title = "Decore",
 						install_prefs_key = "asset_store.install_folder_decore",
 						asset_type = "folder",
-						add_asset_url = "https://github.com/Insality/asset-store/blob/main/decore_store.md#how-to-submit",
 					})
 				end
 
@@ -99,7 +96,6 @@ function M.get_commands()
 					title = "Editor Scripts Asset Store",
 					install_prefs_key = "asset_store.install_folder_editor_scripts",
 					asset_type = "folder",
-					add_asset_url = "https://github.com/Insality/asset-store/blob/main/assets_editor_scripts_store.md#how-to-submit",
 				})
 
 				-- Add Core modelues
@@ -110,7 +106,6 @@ function M.get_commands()
 					title = "Lua Modules",
 					install_prefs_key = "asset_store.install_folder_core",
 					asset_type = "folder",
-					add_asset_url = "https://github.com/Insality/asset-store/blob/main/core_store.md#how-to-submit",
 				})
 
 				-- Add Particles
@@ -121,7 +116,6 @@ function M.get_commands()
 					title = "Particles",
 					install_prefs_key = "asset_store.install_folder_particles",
 					asset_type = "folder",
-					add_asset_url = "https://github.com/Insality/asset-store/blob/main/particles_store.md#how-to-submit",
 				})
 
 				-- Add Materials
@@ -132,7 +126,6 @@ function M.get_commands()
 					title = "Materials",
 					install_prefs_key = "asset_store.install_folder_materials",
 					asset_type = "folder",
-					add_asset_url = "https://github.com/Insality/asset-store/blob/main/materials_store.md#how-to-submit",
 				})
 
 

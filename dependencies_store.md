@@ -1,10 +1,15 @@
 # Dependencies Asset Store
 
-Find all available library dependencies here and install them with one click into your project. After installation, the dependency URL is automatically added to your `game.project` file with all required dependencies. After any changes, the library will be automatically fetched.
+Find all available Defold dependencies here and install them with one click into your project. After installation, the dependency URL is automatically added to your `game.project` file with all required dependencies. After any changes, the library will be automatically fetched.
 
 ## How to Open
 
 `Project` -> `[Asset Store] Dependencies` in the menu.
+
+You will see the list of your current dependencies and here you can update them if an new version is available.
+
+To see the all list of dependencies, select "All" in the filter dropdown, instead of "Installed".
+
 
 ## How to Submit
 

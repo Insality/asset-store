@@ -12,8 +12,6 @@ local M = {}
 ---@field info_url string? The URL of the info page, if nil then info button will be hidden
 ---@field info_button_label string? The label text for the info button (default: "Info")
 ---@field close_button_label string? The label text for the close button (default: "Close")
----@field add_asset_url string? The URL to open when "Add Asset" button is clicked (if nil, button will be hidden)
----@field add_asset_button_label string? The label text for the add asset button (auto-determined by asset_type if not provided)
 ---@field empty_search_message string? The message format to show when no items match search query (default: "No items found matching '%s'.")
 ---@field empty_filter_message string? The message to show when no items match current filters (default: "No items found matching the current filters.")
 ---@field labels table Table containing UI label overrides for different sections
@@ -43,11 +41,9 @@ local M = {}
 
 M.INFO_RESULT = "asset_store_open_info"
 M.SUPPORT_RESULT = "asset_store_open_support"
-M.ADD_ASSET_RESULT = "asset_store_open_add_asset"
 M.DEFAULT_TITLE = locales.get("title")
 M.DEFAULT_INFO_BUTTON = locales.get("info_button")
 M.DEFAULT_CLOSE_BUTTON = locales.get("close_button")
-M.DEFAULT_ADD_ASSET_BUTTON_LABEL = locales.get("add_asset_button")
 M.DEFAULT_EMPTY_SEARCH_MESSAGE = locales.get("empty_search_message")
 M.DEFAULT_EMPTY_FILTER_MESSAGE = locales.get("empty_filter_message")
 M.DEFAULT_EMPTY_INSTALLED_MESSAGE = locales.get("empty_installed_message")
