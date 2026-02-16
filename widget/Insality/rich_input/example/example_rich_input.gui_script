@@ -5,6 +5,9 @@ function init(self)
 	self.druid = druid.new(self)
 	self.rich_input = self.druid:new_widget(rich_input, "rich_input")
 	self.rich_input:set_placeholder("Enter text...")
+	self.rich_input.input.on_input_unselect:subscribe(function(_, text)
+		print("Input changed", text)
+	end)
 end
 
 function final(self)
