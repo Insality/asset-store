@@ -5,7 +5,7 @@
 	"title": "Navigation Handler",
 	"description": "Widget to handle navigation with keyboard and gamepad",
 	"image": "navigation_handler.jpg",
-	"api": "example/example_navigation_handler.gui_script",
+	"api": "navigation_handler.md",
 	"example": "/widget/NaakkaDev/navigation_handler/example/example_navigation_handler.collection",
 	"example_code": "/widget/NaakkaDev/navigation_handler/example/example_navigation_handler.gui_script",
 	"author_url": "https://github.com/NaakkaDev",

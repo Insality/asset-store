@@ -3,15 +3,15 @@ local event = require("event.event")
 local helper = require("druid.helper")
 
 ---@class widget.on_screen_joystick: druid.widget
----@field stick_root node
----@field stick_position vector3
----@field on_action event @()
----@field on_movement event @(x: number, y: number, dt: number) X/Y values are in range -1..1
----@field on_movement_stop event @()
----@field is_multitouch boolean
----@field _is_stick_drag boolean|number
----@field _prev_x number
----@field _prev_y number
+---@field root node
+---@field on_movement event fun(x: number, y: number, dt: number) X/Y values are in range -1..1
+---@field on_movement_stop event fun()
+---@field private stick_position vector3
+---@field private stick_root node
+---@field private is_multitouch boolean
+---@field private _is_stick_drag boolean|number
+---@field private _prev_x number
+---@field private _prev_y number
 local M = {}
 
 local STICK_DISTANCE = 80
@@ -19,6 +19,7 @@ local ALPHA_IDLE = 0.5
 local ALPHA_ACTIVE = 1
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.content = self:get_node("content")
@@ -35,6 +36,7 @@ function M:init()
 end
 
 
+---@private
 ---@param action_id hash
 ---@param action action
 function M:on_input(action_id, action)
@@ -54,6 +56,7 @@ function M:on_input(action_id, action)
 end
 
 
+---@private
 ---@param action action|touch
 function M:process_touch(action)
 	local is_the_same_touch_id = not action.id or action.id == self._is_stick_drag
@@ -110,6 +113,7 @@ function M:process_touch(action)
 end
 
 
+---@private
 function M:update(dt)
 	if self.stick_position.x ~= 0 or self.stick_position.y ~= 0 then
 		self.on_movement:trigger(self.stick_position.x / STICK_DISTANCE, self.stick_position.y / STICK_DISTANCE, dt)

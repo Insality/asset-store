@@ -3,6 +3,14 @@ local mini_graph = require("widget.Insality.mini_graph.mini_graph")
 
 ---@class widget.fps_panel: druid.widget
 ---@field root node
+---@field text_min_fps druid.text
+---@field text_fps druid.text
+---@field mini_graph widget.mini_graph
+---@field private delta_time number
+---@field private collect_time number
+---@field private collect_time_counter number
+---@field private graph_samples number
+---@field private fps_samples number[]
 local M = {}
 
 local TARGET_FPS = sys.get_config_int("display.update_frequency", 60)
@@ -11,6 +19,7 @@ if TARGET_FPS == 0 then
 end
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 
@@ -49,11 +58,13 @@ function M:init()
 end
 
 
+---@private
 function M:on_remove()
 	timer.cancel(self.timer_id)
 end
 
 
+---@private
 function M:update(dt)
 	if not self.previous_time then
 		self.previous_time = socket.gettime()
@@ -75,6 +86,7 @@ function M:update(dt)
 end
 
 
+---@private
 function M:push_fps_value()
 	if #self.fps_samples == 0 then
 		return

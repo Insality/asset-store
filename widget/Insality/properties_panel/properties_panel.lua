@@ -28,6 +28,8 @@ local M = {}
 local COLOR_BUTTON = "#4E4F50"
 local COLOR_REFRESH_ACTIVE = "#8BD092"
 
+
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.scale_root = gui.get_scale(self.root)
@@ -96,6 +98,7 @@ function M:init()
 end
 
 
+---@private
 function M:on_remove()
 	self:clear()
 end
@@ -118,6 +121,7 @@ function M:toggle_auto_refresh()
 end
 
 
+---@private
 function M:on_drag_widget(dx, dy)
 	local position = self.container:get_position()
 	self.container:set_position(position.x + dx * self.scale_root.x, position.y + dy * self.scale_root.y)
@@ -188,6 +192,8 @@ function M:clear()
 end
 
 
+---@private
+---@param new_size vector3
 function M:on_size_changed(new_size)
 	self.container_content:set_size(new_size.x, new_size.y, gui.PIVOT_N)
 
@@ -208,6 +214,8 @@ function M:on_size_changed(new_size)
 end
 
 
+---@private
+---@param dt number
 function M:update(dt)
 	if not self.is_dirty then
 		return
@@ -370,6 +378,7 @@ function M:set_dirty()
 end
 
 
+---@param is_hidden boolean Set current hidden state
 function M:set_hidden(is_hidden)
 	self._is_hidden = is_hidden
 	local node_header = self:get_node("header")
@@ -394,6 +403,7 @@ function M:set_hidden(is_hidden)
 end
 
 
+---@return boolean
 function M:is_hidden()
 	return self._is_hidden
 end

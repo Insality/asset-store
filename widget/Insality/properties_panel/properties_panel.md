@@ -1,28 +1,23 @@
 # widget.properties_panel API
 
-> at widget/insality/properties_panel/properties_panel.lua
+> at /widget/Insality/properties_panel/properties_panel.lua
 
 ## Functions
 
 - [properties_constructors](#properties_constructors)
-- [init](#init)
-- [on_remove](#on_remove)
 - [toggle_auto_refresh](#toggle_auto_refresh)
-- [on_drag_widget](#on_drag_widget)
 - [clear_created_properties](#clear_created_properties)
 - [next_scene](#next_scene)
 - [previous_scene](#previous_scene)
 - [clear](#clear)
-- [on_size_changed](#on_size_changed)
-- [update](#update)
 - [add_checkbox](#add_checkbox)
 - [add_slider](#add_slider)
 - [add_button](#add_button)
+- [add_button_small](#add_button_small)
 - [add_input](#add_input)
 - [add_text](#add_text)
 - [add_left_right_selector](#add_left_right_selector)
 - [add_vector3](#add_vector3)
-- [add_inner_widget](#add_inner_widget)
 - [add_widget](#add_widget)
 - [remove](#remove)
 - [set_dirty](#set_dirty)
@@ -33,7 +28,6 @@
 - [set_page](#set_page)
 - [set_header](#set_header)
 - [render_lua_table](#render_lua_table)
-
 ## Fields
 
 - [root](#root)
@@ -69,37 +63,12 @@ properties_panel:properties_constructors()
 
 List of properties functions to create a new widget. Used to not spawn non-visible widgets but keep the reference
 
-### init
-
----
-```lua
-properties_panel:init()
-```
-
-### on_remove
-
----
-```lua
-properties_panel:on_remove()
-```
-
 ### toggle_auto_refresh
 
 ---
 ```lua
 properties_panel:toggle_auto_refresh()
 ```
-
-### on_drag_widget
-
----
-```lua
-properties_panel:on_drag_widget([dx], [dy])
-```
-
-- **Parameters:**
-	- `[dx]` *(any)*:
-	- `[dy]` *(any)*:
 
 ### clear_created_properties
 
@@ -128,26 +97,6 @@ properties_panel:previous_scene()
 ```lua
 properties_panel:clear()
 ```
-
-### on_size_changed
-
----
-```lua
-properties_panel:on_size_changed([new_size])
-```
-
-- **Parameters:**
-	- `[new_size]` *(any)*:
-
-### update
-
----
-```lua
-properties_panel:update([dt])
-```
-
-- **Parameters:**
-	- `[dt]` *(any)*:
 
 ### add_checkbox
 
@@ -180,6 +129,19 @@ properties_panel:add_slider([on_create])
 ---
 ```lua
 properties_panel:add_button([on_create])
+```
+
+- **Parameters:**
+	- `[on_create]` *(fun(button: widget.property_button)|nil)*:
+
+- **Returns:**
+	- `` *(widget.properties_panel)*:
+
+### add_button_small
+
+---
+```lua
+properties_panel:add_button_small([on_create])
 ```
 
 - **Parameters:**
@@ -240,22 +202,6 @@ properties_panel:add_vector3([on_create])
 - **Returns:**
 	- `` *(widget.properties_panel)*:
 
-### add_inner_widget
-
----
-```lua
-properties_panel:add_inner_widget(widget_class, [template], [nodes], [on_create])
-```
-
-- **Parameters:**
-	- `widget_class` *(<T:druid.widget>)*:
-	- `[template]` *(string|nil)*:
-	- `[nodes]` *(string|node|table<hash, node>|nil)*:
-	- `[on_create]` *(fun(widget: <T:druid.widget>)|nil)*:
-
-- **Returns:**
-	- `` *(widget.properties_panel)*:
-
 ### add_widget
 
 ---
@@ -292,11 +238,11 @@ Force to refresh properties next update
 
 ---
 ```lua
-properties_panel:set_hidden([is_hidden])
+properties_panel:set_hidden(is_hidden)
 ```
 
 - **Parameters:**
-	- `[is_hidden]` *(any)*:
+	- `is_hidden` *(boolean)*: Set current hidden state
 
 ### is_hidden
 
@@ -306,7 +252,7 @@ properties_panel:is_hidden()
 ```
 
 - **Returns:**
-	- `` *(unknown)*:
+	- `` *(boolean)*:
 
 ### load_previous_page
 

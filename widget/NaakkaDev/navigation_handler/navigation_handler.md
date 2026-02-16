@@ -1,6 +1,6 @@
 # widget.navigation_handler API
 
-> at widget/insality/navigation_handler/navigation_handler.lua
+> at /widget/NaakkaDev/navigation_handler/navigation_handler.lua
 
 Widget force handling GUI navigation via keyboard/gamepad.
 
@@ -35,7 +35,6 @@ With `self.nav.on_select:subscribe(on_select_btn)`
 
 ## Functions
 
-- [init](#init)
 - [select_component](#select_component)
 - [set_weight](#set_weight)
 - [set_tolerance](#set_tolerance)
@@ -44,21 +43,11 @@ With `self.nav.on_select:subscribe(on_select_btn)`
 - [set_temporary_select_triggers](#set_temporary_select_triggers)
 - [get_selected_component](#get_selected_component)
 - [set_deselect_directions](#set_deselect_directions)
-
 ## Fields
 
 - [on_select](#on_select)
 
 
-
-### init
-
----
-```lua
-navigation_handler:init()
-```
-
-The constructor for the navigation_handler widget.
 
 ### select_component
 

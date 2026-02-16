@@ -11,6 +11,7 @@ local event = require("event.event")
 local M = {}
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.selected = self:get_node("selected")
@@ -34,6 +35,8 @@ function M:init()
 end
 
 
+---@param text string
+---@return widget.property_left_right_selector
 function M:set_text(text)
 	self.text_name:set_text(text)
 	return self
@@ -132,10 +135,13 @@ local function step_array(array, current_value, step, is_loop)
 end
 
 
+---@private
 function M:on_button_left()
 	self:add_step(-1)
 end
 
+
+---@private
 function M:on_button_right()
 	self:add_step(1)
 end
@@ -162,6 +168,11 @@ function M:add_step(koef)
 end
 
 
+---@param min number
+---@param max number
+---@param is_loop boolean
+---@param steps number
+---@return widget.property_left_right_selector
 function M:set_number_type(min, max, is_loop, steps)
 	self.number_type = {
 		min = min,
@@ -174,6 +185,10 @@ function M:set_number_type(min, max, is_loop, steps)
 end
 
 
+---@param array table
+---@param is_loop boolean
+---@param steps number
+---@return widget.property_left_right_selector
 function M:set_array_type(array, is_loop, steps)
 	self.array_type = {
 		array = array,
@@ -186,9 +201,11 @@ end
 
 
 ---@param value string|number
+---@param is_instant boolean?
+---@return widget.property_left_right_selector
 function M:set_value(value, is_instant)
 	if self.value == value then
-		return
+		return self
 	end
 
 	self.value = value
@@ -199,6 +216,7 @@ function M:set_value(value, is_instant)
 		gui.set_alpha(self.selected, 1)
 		gui.animate(self.selected, "color.w", 0, gui.EASING_INSINE, 0.16)
 	end
+	return self
 end
 
 

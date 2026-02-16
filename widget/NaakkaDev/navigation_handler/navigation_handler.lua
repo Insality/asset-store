@@ -55,6 +55,7 @@ local COMPONENTS = { "button", "slider" }
 
 
 ---The constructor for the navigation_handler widget.
+---@private
 function M:init()
     self._weight = 10
     self._tolerance = 250

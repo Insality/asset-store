@@ -12,6 +12,7 @@ local helper = require("druid.helper")
 local M = {}
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.selected = self:get_node("selected")
@@ -89,6 +90,7 @@ function M:get_value()
 end
 
 
+---@param value number
 function M:update_value(value)
 	local current_value = self._value
 
@@ -105,6 +107,9 @@ function M:update_value(value)
 end
 
 
+---@param min number
+---@param max number
+---@param step number
 function M:set_number_type(min, max, step)
 	self.min = min or 0
 	self.max = max or 1
@@ -118,6 +123,8 @@ function M:set_number_type(min, max, step)
 end
 
 
+---@private
+---@param value number
 function M:_on_slider_change_by_user(value)
 	self:set_value(value)
 end

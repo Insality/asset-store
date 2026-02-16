@@ -1,8 +1,6 @@
 # widget.mini_graph API
 
-![Mini Graph](mini_graph.png)
-
-> at widget/insality/mini_graph/mini_graph.lua
+> at /widget/Insality/mini_graph/mini_graph.lua
 
 Widget to display a several lines with different height in a row
 Init, set amount of samples and max value of value means that the line will be at max height
@@ -12,8 +10,6 @@ Setup colors inside template file (at minimum and maximum)
 
 ## Functions
 
-- [init](#init)
-- [on_remove](#on_remove)
 - [clear](#clear)
 - [set_samples](#set_samples)
 - [get_samples](#get_samples)
@@ -24,9 +20,7 @@ Setup colors inside template file (at minimum and maximum)
 - [set_line_height](#set_line_height)
 - [get_lowest_value](#get_lowest_value)
 - [get_highest_value](#get_highest_value)
-- [on_drag_widget](#on_drag_widget)
 - [toggle_hide](#toggle_hide)
-
 ## Fields
 
 - [root](#root)
@@ -47,20 +41,6 @@ Setup colors inside template file (at minimum and maximum)
 
 
 
-### init
-
----
-```lua
-mini_graph:init()
-```
-
-### on_remove
-
----
-```lua
-mini_graph:on_remove()
-```
-
 ### clear
 
 ---
@@ -72,11 +52,11 @@ mini_graph:clear()
 
 ---
 ```lua
-mini_graph:set_samples([samples])
+mini_graph:set_samples(samples)
 ```
 
 - **Parameters:**
-	- `[samples]` *(any)*:
+	- `samples` *(number)*:
 
 ### get_samples
 
@@ -86,7 +66,7 @@ mini_graph:get_samples()
 ```
 
 - **Returns:**
-	- `` *(unknown)*:
+	- `` *(number)*:
 
 ### set_line_value
 
@@ -125,31 +105,31 @@ mini_graph:get_line_value([index])
 
 ---
 ```lua
-mini_graph:push_line_value([value])
+mini_graph:push_line_value(value)
 ```
 
 - **Parameters:**
-	- `[value]` *(any)*:
+	- `value` *(number)*:
 
 ### set_max_value
 
 ---
 ```lua
-mini_graph:set_max_value([max_value])
+mini_graph:set_max_value(max_value)
 ```
 
 - **Parameters:**
-	- `[max_value]` *(any)*:
+	- `max_value` *(number)*:
 
 ### set_line_height
 
 ---
 ```lua
-mini_graph:set_line_height([index])
+mini_graph:set_line_height(index)
 ```
 
 - **Parameters:**
-	- `[index]` *(any)*:
+	- `index` *(number)*:
 
 ### get_lowest_value
 
@@ -158,6 +138,9 @@ mini_graph:set_line_height([index])
 mini_graph:get_lowest_value()
 ```
 
+- **Returns:**
+	- `` *(number)*:
+
 ### get_highest_value
 
 ---
@@ -165,16 +148,8 @@ mini_graph:get_lowest_value()
 mini_graph:get_highest_value()
 ```
 
-### on_drag_widget
-
----
-```lua
-mini_graph:on_drag_widget([dx], [dy])
-```
-
-- **Parameters:**
-	- `[dx]` *(any)*:
-	- `[dy]` *(any)*:
+- **Returns:**
+	- `` *(number)*:
 
 ### toggle_hide
 
@@ -231,5 +206,5 @@ mini_graph:toggle_hide()
 - **default_size** (_unknown_)
 
 <a name="samples"></a>
-- **samples** (_any_)
+- **samples** (_number_)
 

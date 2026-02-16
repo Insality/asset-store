@@ -9,6 +9,7 @@ local event = require("event.event")
 local M = {}
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 
@@ -32,9 +33,11 @@ end
 
 
 ---@param value boolean
+---@param is_instant boolean?
+---@return widget.property_checkbox
 function M:set_value(value, is_instant)
 	if self._value == value then
-		return
+		return self
 	end
 
 	self._value = value
@@ -45,6 +48,7 @@ function M:set_value(value, is_instant)
 		gui.set_alpha(self.selected, 1)
 		gui.animate(self.selected, "color.w", 0, gui.EASING_INSINE, 0.16)
 	end
+	return self
 end
 
 
@@ -54,6 +58,7 @@ function M:get_value()
 end
 
 
+---@private
 function M:on_click()
 	self:set_value(not self:get_value())
 end
@@ -61,22 +66,28 @@ end
 
 ---Set the text property of the checkbox
 ---@param text string
+---@return widget.property_checkbox
 function M:set_text_property(text)
 	self.text_name:set_text(text)
+	return self
 end
 
 
 ---Set the callback function for when the checkbox value changes
----@param callback function
+---@param callback fun(value: boolean)
+---@return widget.property_checkbox
 function M:on_change(callback)
 	self.on_change_value:subscribe(callback)
+	return self
 end
 
 
 ---Set the enabled state of the checkbox
 ---@param enabled boolean
+---@return widget.property_checkbox
 function M:set_enabled(enabled)
 	self.button:set_enabled(enabled)
+	return self
 end
 
 

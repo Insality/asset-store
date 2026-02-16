@@ -3,9 +3,20 @@ local mini_graph = require("widget.Insality.mini_graph.mini_graph")
 
 ---@class widget.memory_panel: druid.widget
 ---@field root node
+---@field mini_graph widget.mini_graph
+---@field max_value druid.text
+---@field text_per_second druid.text
+---@field text_memory druid.text
+---@field private delta_time number
+---@field private samples_count number
+---@field private memory_limit number
+---@field private memory number
+---@field private memory_samples number[]
+---@field private timer_id number
 local M = {}
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.delta_time = 0.1
@@ -38,25 +49,22 @@ function M:init()
 	self.timer_id = timer.delay(self.delta_time, true, function()
 		self:push_next_value()
 	end)
-
-	--self.container = self.druid:new_container(self.root)
-	--self.container:add_container(self.mini_graph.container)
-	--local container_content = self.container:add_container("content")
-	--container_content:add_container("text_max_value")
-	--container_content:add_container("text_per_second")
 end
 
 
+---@private
 function M:on_remove()
 	timer.cancel(self.timer_id)
 end
 
 
+---@param limit number
 function M:set_low_memory_limit(limit)
 	self.memory_limit = limit
 end
 
 
+---@private
 function M:push_next_value()
 	local memory = collectgarbage("count")
 	local diff = math.max(0, memory - self.memory)
@@ -86,6 +94,7 @@ function M:push_next_value()
 end
 
 
+---@private
 function M:update_text_memory()
 	local memory = math.ceil(collectgarbage("count")) -- in KB
 	if memory > 1024 then

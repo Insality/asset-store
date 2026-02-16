@@ -41,6 +41,7 @@ function M.render_properties_panel(world, druid, properties_panel)
 end
 
 
+---@private
 ---@param world world
 ---@param druid druid.instance
 ---@param properties_panel widget.properties_panel
@@ -95,6 +96,7 @@ function M.render_entities_page(world, druid, properties_panel)
 end
 
 
+---@private
 ---@param world world
 ---@param druid druid.instance
 ---@param properties_panel widget.properties_panel
@@ -125,6 +127,7 @@ function M.render_systems_page(world, druid, properties_panel)
 end
 
 
+---@private
 ---@param world world
 ---@param druid druid.instance
 ---@param properties_panel widget.properties_panel

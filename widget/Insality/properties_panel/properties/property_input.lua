@@ -9,6 +9,8 @@ local event = require("event.event")
 ---@field on_change_value event fun(text: string)
 local M = {}
 
+
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.text_name = self.druid:new_text("text_name")

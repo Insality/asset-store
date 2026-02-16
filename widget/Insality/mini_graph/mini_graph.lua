@@ -11,7 +11,7 @@ local M = {}
 
 local SIZE_Y = hash("size.y")
 
-
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.text_header = self.druid:new_text("text_header")
@@ -49,6 +49,7 @@ function M:init()
 end
 
 
+---@private
 function M:on_remove()
 	self:clear()
 end
@@ -64,6 +65,7 @@ function M:clear()
 end
 
 
+---@param samples number
 function M:set_samples(samples)
 	self.samples = samples
 	self:clear()
@@ -79,6 +81,7 @@ function M:set_samples(samples)
 end
 
 
+---@return number
 function M:get_samples()
 	return self.samples
 end
@@ -111,6 +114,7 @@ function M:get_line_value(index)
 end
 
 
+---@param value number
 function M:push_line_value(value)
 	for index = 1, self.samples - 1 do
 		self:set_line_value(index, self:get_line_value(index + 1))
@@ -120,6 +124,7 @@ function M:push_line_value(value)
 end
 
 
+---@param max_value number
 function M:set_max_value(max_value)
 	if self.max_value == max_value then
 		return
@@ -132,6 +137,7 @@ function M:set_max_value(max_value)
 end
 
 
+---@param index number
 function M:set_line_height(index)
 	local value = self.values[index] or 0
 	local normalized = helper.clamp(value / self.max_value, 0, 1)
@@ -140,16 +146,21 @@ function M:set_line_height(index)
 end
 
 
+---@return number
 function M:get_lowest_value()
 	return math.min(unpack(self.values))
 end
 
 
+---@return number
 function M:get_highest_value()
 	return math.max(unpack(self.values))
 end
 
 
+---@private
+---@param dx number
+---@param dy number
 function M:on_drag_widget(dx, dy)
 	if not gui.is_enabled(self.icon_drag) then
 		return

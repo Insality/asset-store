@@ -16,6 +16,7 @@ local DOUBLE_CLICK_TIME = 0.35
 local TEMP_VECTOR = vmath.vector3(0)
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 
@@ -146,6 +147,7 @@ function M:set_allowed_characters(characters)
 end
 
 
+---@private
 function M:_animate_cursor()
 	gui.cancel_animations(self.cursor_text, "color.w")
 	gui.set_alpha(self.cursor_text, 1)
@@ -153,6 +155,8 @@ function M:_animate_cursor()
 end
 
 
+---@private
+---@param selection_width number
 function M:_set_selection_width(selection_width)
 	gui.set_visible(self.cursor, selection_width > 0)
 
@@ -165,6 +169,7 @@ function M:_set_selection_width(selection_width)
 end
 
 
+---@private
 function M:_update_text()
 	local full_text = self.input:get_text()
 	local visible_text = self.input.text:get_text()
@@ -196,6 +201,7 @@ function M:_update_text()
 end
 
 
+---@private
 function M:_on_select()
 	gui.set_enabled(self.cursor, true)
 	gui.set_enabled(self.placeholder.node, false)
@@ -206,6 +212,7 @@ function M:_on_select()
 end
 
 
+---@private
 function M:_on_unselect()
 	gui.cancel_animations(self.cursor, gui.PROP_COLOR)
 	gui.set_enabled(self.cursor, false)
@@ -217,11 +224,15 @@ end
 
 
 ---Update selection
+---@private
 function M:_update_selection()
 	self:_update_text()
 end
 
 
+---@private
+---@param touch table
+---@return number
 function M:_get_index_by_touch(touch)
 	local text_node = self.input.text.node
 	TEMP_VECTOR.x = touch.screen_x
@@ -242,6 +253,8 @@ function M:_get_index_by_touch(touch)
 end
 
 
+---@private
+---@param touch table
 function M:_on_touch_start_callback(touch)
 	local cursor_index = self:_get_index_by_touch(touch)
 	pprint(touch)
@@ -274,6 +287,7 @@ function M:_on_touch_start_callback(touch)
 end
 
 
+---@private
 ---@param dx number The delta x position
 ---@param dy number The delta y position
 ---@param x number The x position

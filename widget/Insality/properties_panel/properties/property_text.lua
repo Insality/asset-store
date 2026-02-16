@@ -5,6 +5,8 @@
 ---@field text_right druid.text
 local M = {}
 
+
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.text_name = self.druid:new_text("text_name")

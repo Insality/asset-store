@@ -9,6 +9,7 @@ local color = require("druid.color")
 local M = {}
 
 
+---@private
 function M:init()
 	self.root = self:get_node("root")
 	self.text_name = self.druid:new_text("text_name")
@@ -28,6 +29,7 @@ function M:init()
 end
 
 
+---@private
 function M:on_click()
 	gui.set_alpha(self.selected, 1)
 	gui.animate(self.selected, "color.w", 0, gui.EASING_INSINE, 0.16)
@@ -58,8 +60,11 @@ function M:set_enabled(enabled)
 end
 
 
+---@param color_value string|vector4
+---@return widget.property_button
 function M:set_color(color_value)
 	color.set_color(self:get_node("button"), color_value)
+	return self
 end
 
 
