@@ -15,14 +15,14 @@ local property_vector3 = require("widget.Insality.properties_panel.properties.pr
 ---@field scroll druid.scroll
 ---@field layout druid.layout
 ---@field container druid.container
----@field container_content druid.container
----@field container_scroll_view druid.container
----@field container_scroll_content druid.container
 ---@field button_hidden druid.button
 ---@field text_header druid.text
----@field paginator widget.property_left_right_selector
 ---@field properties druid.widget[] List of created properties
----@field properties_constructors fun()[] List of properties functions to create a new widget. Used to not spawn non-visible widgets but keep the reference
+---@field private container_content druid.container
+---@field private container_scroll_view druid.container
+---@field private container_scroll_content druid.container
+---@field private paginator widget.property_left_right_selector
+---@field private properties_constructors fun()[] List of properties functions to create a new widget. Used to not spawn non-visible widgets but keep the reference
 local M = {}
 
 local COLOR_BUTTON = "#4E4F50"
