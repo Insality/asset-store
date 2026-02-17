@@ -4,7 +4,7 @@ local M = {}
 
 
 ---@param druid table druid instance
----@param properties_panel table druid properties panel instance
+---@param properties_panel widget.properties_panel druid properties panel instance
 function M.render_properties_panel(druid, properties_panel)
 	properties_panel:next_scene()
 	properties_panel:set_header("Lang Panel")
@@ -16,7 +16,7 @@ function M.render_properties_panel(druid, properties_panel)
 
 	properties_panel:add_left_right_selector(function(left_right_selector)
 		left_right_selector:set_text("Langs")
-		left_right_selector:set_array_type(lang.get_langs())
+		left_right_selector:set_array_type(lang.get_langs(), true)
 		left_right_selector:set_value(lang.get_lang())
 		left_right_selector.on_change_value:subscribe(function(value)
 			lang.set_lang(value)

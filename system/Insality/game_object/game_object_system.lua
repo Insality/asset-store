@@ -1,5 +1,5 @@
 local decore = require("decore.decore")
-local command_game_object = require("system.game_object.game_object_command")
+local command_game_object = require("system.Insality.game_object.game_object_command")
 
 ---@class entity
 ---@field game_object component.game_object|nil

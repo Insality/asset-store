@@ -186,8 +186,8 @@ end
 
 
 ---@param array table
----@param is_loop boolean
----@param steps number
+---@param is_loop boolean?
+---@param steps number?
 ---@return widget.property_left_right_selector
 function M:set_array_type(array, is_loop, steps)
 	self.array_type = {

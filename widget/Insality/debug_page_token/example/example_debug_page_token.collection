@@ -1,0 +1,10 @@
+name: "example_debug_page_token"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_debug_page_token\"\n"
+  "  component: \"/widget/Insality/debug_page_token/example/example_debug_page_token.gui\"\n"
+  "}\n"
+  ""
+}

@@ -8,6 +8,8 @@
 	"description": "Quest debug page for Properties Panel",
 	"api": "debug_page_quest.md",
 	"image": "debug_page_quest.jpg",
+	"example": "/widget/Insality/debug_page_quest/example/example_debug_page_quest.collection",
+	"example_code": "/widget/Insality/debug_page_quest/example/example_debug_page_quest.gui_script",
 	"author_url": "https://github.com/Insality",
 	"tags": ["debug", "GUI"],
 	"content": [

@@ -1,0 +1,42 @@
+local druid = require("druid.druid")
+local properties_panel = require("widget.Insality.properties_panel.properties_panel")
+local debug_page_saver = require("widget.Insality.debug_page_saver.debug_page_saver")
+
+local saver = require("saver.saver")
+
+local function init_saver(self)
+	saver.init()
+end
+
+function init(self)
+	self.druid = druid.new(self)
+
+	init_saver(self)
+
+	self.properties_panel = self.druid:new_widget(properties_panel, "properties_panel")
+	self.properties_panel:set_header("Debug Panel")
+
+	self.properties_panel:add_button(function(button)
+		button:set_text_property("Saver")
+		button:set_text_button("Open")
+		button.button.on_click:subscribe(function()
+			debug_page_saver.render_properties_panel(self.druid, self.properties_panel)
+		end)
+	end)
+end
+
+function final(self)
+	self.druid:final()
+end
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end

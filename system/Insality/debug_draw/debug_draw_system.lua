@@ -1,6 +1,6 @@
 local color = require("druid.color")
 local decore = require("decore.decore")
-local command_debug_draw = require("system.debug_draw.debug_draw_command")
+local command_debug_draw = require("system.Insality.debug_draw.debug_draw_command")
 
 ---@class entity
 ---@field debug_draw component.debug_draw|nil

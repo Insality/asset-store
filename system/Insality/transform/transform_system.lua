@@ -1,5 +1,5 @@
 local decore = require("decore.decore")
-local transform_command = require("system.transform.transform_command")
+local transform_command = require("system.Insality.transform.transform_command")
 
 ---@class entity
 ---@field transform component.transform?

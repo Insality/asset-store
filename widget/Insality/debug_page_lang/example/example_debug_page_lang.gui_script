@@ -1,0 +1,50 @@
+local lang = require("lang.lang")
+local druid = require("druid.druid")
+local properties_panel = require("widget.Insality.properties_panel.properties_panel")
+local debug_page_lang = require("widget.Insality.debug_page_lang.debug_page_lang")
+
+local function init_lang(self)
+	lang.init({
+		{ id = "en", path = {
+			["hello"] = "Hello", ["world"] = "World", ["button_label"] = "Open"
+		} },
+		{ id = "es", path = {
+			["hello"] = "Hola", ["world"] = "Mundo", ["button_label"] = "Abrir"
+		} },
+		{ id = "fr", path = {
+			["hello"] = "Bonjour", ["world"] = "Monde", ["button_label"] = "Ouvrir"
+		} },
+	})
+end
+
+function init(self)
+	self.druid = druid.new(self)
+
+	init_lang(self)
+
+	self.properties_panel = self.druid:new_widget(properties_panel, "properties_panel")
+	self.properties_panel:set_header("Debug Panel")
+
+	self.properties_panel:add_button(function(button)
+		button:set_text_property("Lang")
+		button.button.on_click:subscribe(function()
+			debug_page_lang.render_properties_panel(self.druid, self.properties_panel)
+		end)
+	end)
+end
+
+function final(self)
+	self.druid:final()
+end
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	return self.druid:on_input(action_id, action)
+end

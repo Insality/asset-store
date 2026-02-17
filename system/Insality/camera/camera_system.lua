@@ -1,7 +1,7 @@
 local tweener = require("tweener.tweener")
 local decore = require("decore.decore")
 
-local command_camera = require("system.camera.camera_command")
+local command_camera = require("system.Insality.camera.camera_command")
 
 local TEMP_VECTOR = vmath.vector3()
 local HASH_SIZE_X = hash("size.x")

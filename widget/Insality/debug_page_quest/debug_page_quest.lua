@@ -120,6 +120,7 @@ function M.add_render_quests(druid, quests, properties_panel)
 	for _, quest_id in ipairs(sorted_quests) do
 		properties_panel:add_button(function(button)
 			button:set_text_property(quest_id)
+			button:set_text_button(M.get_quest_status(quest, quest_id))
 			button.button.on_click:subscribe(function()
 				M.render_quest_details_page(druid, quest_id, properties_panel)
 			end)

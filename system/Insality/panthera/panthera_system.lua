@@ -1,7 +1,7 @@
 local decore = require("decore.decore")
 local panthera = require("panthera.panthera")
 
-local command_panthera = require("system.panthera.panthera_command")
+local command_panthera = require("system.Insality.panthera.panthera_command")
 
 ---@class entity
 ---@field panthera component.panthera|nil

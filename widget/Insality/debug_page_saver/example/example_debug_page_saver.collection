@@ -1,0 +1,10 @@
+name: "example_debug_page_saver"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_debug_page_saver\"\n"
+  "  component: \"/widget/Insality/debug_page_saver/example/example_debug_page_saver.gui\"\n"
+  "}\n"
+  ""
+}

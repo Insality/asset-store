@@ -1,0 +1,10 @@
+name: "example_debug_page_decore"
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"example_debug_page_decore\"\n"
+  "  component: \"/widget/Insality/debug_page_decore/example/example_debug_page_decore.gui\"\n"
+  "}\n"
+  ""
+}

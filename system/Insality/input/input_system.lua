@@ -1,5 +1,5 @@
 local decore = require("decore.decore")
-local input_command = require("system.input.input_command")
+local input_command = require("system.Insality.input.input_command")
 
 ---@class system.input.event: action
 

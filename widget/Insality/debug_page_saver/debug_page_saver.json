@@ -9,6 +9,8 @@
 	"api": "debug_page_saver.md",
 	"author_url": "https://github.com/Insality",
 	"image": "debug_page_saver.jpg",
+	"example": "/widget/Insality/debug_page_saver/example/example_debug_page_saver.collection",
+	"example_code": "/widget/Insality/debug_page_saver/example/example_debug_page_saver.gui_script",
 	"tags": ["debug", "GUI"],
 	"content": [
 		"debug_page_saver.lua",

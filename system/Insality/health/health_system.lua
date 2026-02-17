@@ -1,5 +1,5 @@
 local decore = require("decore.decore")
-local command_health = require("system.health.health_command")
+local command_health = require("system.Insality.health.health_command")
 
 ---@class entity
 ---@field health component.health|nil
