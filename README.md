@@ -86,12 +86,16 @@ If you have any issues, questions or suggestions please [create an issue](https:
 ### **V1**
 - Initial release!
 
+### **V2**
+- Added Asset Store section in the editor menu
+- Added support for images in editor scripts
+
 </details>
 
 
 ## ❤️ Support project ❤️
 
-Love what I'm building for **Defold**? Your support means the world to me! Consider buying me a coffee ☕ or a donut 🍩 - it helps me keep creating awesome tools for the community.
+Love what I'm building for **Defold**? Your support means the world to me! Consider buying me a coffee or a eclair - it helps me keep creating awesome tools for the community.
 
 [![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/insality) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/insality) [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/insality)
 
