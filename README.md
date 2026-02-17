@@ -20,10 +20,10 @@
 
 Open your `game.project` file and add the following line to the dependencies field under the project section:
 
-**[Asset Store](https://github.com/Insality/asset-store/archive/refs/tags/1.zip)**
+**[Asset Store](https://github.com/Insality/asset-store/archive/refs/tags/2.zip)**
 
 ```
-https://github.com/Insality/asset-store/archive/refs/tags/1.zip
+https://github.com/Insality/asset-store/archive/refs/tags/2.zip
 ```
 
 After that, select `Project ▸ Fetch Libraries` to update [library dependencies](https://defold.com/manuals/libraries/#setting-up-library-dependencies). This happens automatically whenever you open a project so you will only need to do this if the dependencies change without re-opening the project.
