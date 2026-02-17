@@ -4,6 +4,7 @@
 	"version": 1,
 	"title": "GUI Stencil Material",
 	"description": "Material with stencil support (trim by alpha) for GUI rendering",
+	"image": "gui_stencil.jpg",
 	"example": "/materials/Insality/gui_stencil/example/example_gui_stencil.collection",
 	"example_code": "/materials/Insality/gui_stencil/example/example_gui_stencil.gui_script",
 	"author_url": "https://github.com/Insality",
