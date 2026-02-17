@@ -5,11 +5,11 @@
 
 # Asset Store
 
-**Asset Store** - is an editor script for the [Defold](https://defold.com/) game engine. It provides a convenient way to browse, publish and install Defold Dependencies directly from the Defold editor interface.
+**Asset Store** - is an editor script for the [Defold](https://defold.com/) game engine. It provides a convenient way to browse, publish and install Defold dependencies and assets directly from the Defold editor interface.
 
 ## Features
 
-- **Browse Dependencies**: View available Defold library dependencies inside Defold Editor.
+- **Browse Dependencies**: View available Defold dependencies inside Defold Editor.
 - **Search & Filter**: Search dependencies by title, author, description, or tags.
 - **One-Click Installation**: Install dependencies directly into your project with automatic dependency resolution.
 - **Community Driven**: You can contribute by easily adding your own dependencies to this repository or [Defold Asset Portal](https://defold.com/assets/) (they are automatically synced with this repository).
@@ -38,12 +38,30 @@ After installing the dependency, the Asset Store will appear in your Defold edit
 
 1. Open Defold Editor
 2. Go to `Project` menu
-3. Select `[Asset Store] Dependencies` to open the store
-4. Browse, search, and install dependencies
+3. Select `[Asset Store] Dependencies` to open the Dependency Store
+4. Select `[Asset Store] Assets` to open the Asset Store
+5. Browse, search, and install dependencies or assets
+
 
 ### Store
 
-- [Dependencies](/dependencies_store.md) - Browse and install Defold library dependencies
+- [Dependencies](/dependencies_store.md) - Browse and install Defold dependencies
+- [Druid Widgets](/druid_widget_store.md) - Browse and install Druid widgets
+- [Editor Scripts](/assets_editor_scripts_store.md) - Browse and install Editor scripts
+- [Lua Modules](/lua_modules_store.md) - Browse and install Lua modules
+- [Particles](/particles_store.md) - Browse and install Particles
+- [Materials](/materials_store.md) - Browse and install Materials
+
+
+### Publishing Dependencies
+
+Submit your library to the [Defold Asset Portal](https://defold.com/assets/). It will be synced to this repository and appear in the Dependencies store. See [dependencies_store.md](dependencies_store.md) for details (e.g. adding an API link).
+
+
+### Publishing Assets
+
+Add your asset in this repo under the right folder (`widget/`, `editor_scripts/`, `core/`, `particles/`, or `materials/`) and add a JSON manifest. Same manifest format for all; see [folder_assets_publishing.md](folder_assets_publishing.md) for the structure. Each store doc above has the exact path for that store.
+
 
 ## License
 
