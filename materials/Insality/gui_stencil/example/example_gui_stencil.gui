@@ -1,0 +1,88 @@
+script: "/materials/Insality/gui_stencil/example/example_gui_stencil.gui_script"
+textures {
+  name: "example_gui_stencil"
+  texture: "/materials/Insality/gui_stencil/example/example_gui_stencil.atlas"
+}
+nodes {
+  position {
+    x: 947.0
+    y: 528.0
+  }
+  scale {
+    x: 3.0
+    y: 3.0
+  }
+  type: TYPE_BOX
+  texture: "example_gui_stencil/icon_druid"
+  id: "mask"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+  size_mode: SIZE_MODE_AUTO
+  material: "gui_stencil"
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "group"
+  parent: "mask"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: -120.0
+    y: -55.0
+  }
+  type: TYPE_BOX
+  texture: "example_gui_stencil/tiling_texture"
+  id: "texture"
+  parent: "group"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -620.0
+    y: -420.0
+  }
+  type: TYPE_BOX
+  texture: "example_gui_stencil/tiling_texture"
+  id: "texture1"
+  parent: "group"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -120.0
+    y: -420.0
+  }
+  type: TYPE_BOX
+  texture: "example_gui_stencil/tiling_texture"
+  id: "texture2"
+  parent: "group"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -620.0
+    y: -55.0
+  }
+  type: TYPE_BOX
+  texture: "example_gui_stencil/tiling_texture"
+  id: "texture3"
+  parent: "group"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+materials {
+  name: "gui_stencil"
+  material: "/druid/materials/stencil/gui_stencil.material"
+}
