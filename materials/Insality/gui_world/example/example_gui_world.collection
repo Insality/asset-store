@@ -1,0 +1,78 @@
+name: "example_gui_world"
+collection_instances {
+  id: "example_gui_world_player"
+  collection: "/materials/Insality/gui_world/example/example_gui_world_player.collection"
+}
+collection_instances {
+  id: "example_gui_world_player1"
+  collection: "/materials/Insality/gui_world/example/example_gui_world_player.collection"
+  position {
+    x: -315.0
+    y: 406.0
+  }
+}
+collection_instances {
+  id: "example_gui_world_player2"
+  collection: "/materials/Insality/gui_world/example/example_gui_world_player.collection"
+  position {
+    x: 299.0
+    y: -422.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: -10.0\\n"
+  "far_z: 1000.0\\n"
+  "orthographic_projection: 1\\n"
+  "orthographic_zoom: 0.5\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: -10.0
+  }
+}
+embedded_instances {
+  id: "hint"
+  data: "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 1200.0\\n"
+  "  y: 300.0\\n"
+  "}\\n"
+  "color {\\n"
+  "  w: 0.8\\n"
+  "}\\n"
+  "outline {\\n"
+  "  w: 0.0\\n"
+  "}\\n"
+  "shadow {\\n"
+  "  w: 0.0\\n"
+  "}\\n"
+  "line_break: true\\n"
+  "text: \\\"The progress bar above the circles is a Druid GUI widget.\\\\n"
+  "\\\"\\n"
+  "  \\\"\\\\n"
+  "\\\"\\n"
+  "  \\\"Click the circles to interact with the Druid button.\\\\n"
+  "\\\"\\n"
+  "  \\\"\\\\n"
+  "\\\"\\n"
+  "  \\\"Custom GUI and font materials are used with the tag \\\\\\\"tile\\\\\\\".\\\"\\n"
+  "font: \\\"/druid/fonts/druid_text_bold.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: -800.0\n"
+  "    y: -350.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}

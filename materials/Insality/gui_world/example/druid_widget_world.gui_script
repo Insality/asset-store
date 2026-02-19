@@ -1,0 +1,36 @@
+-- This is the custom druid_widget.script, since we have to make
+-- Input transform from screen to world coordinates before passing it to Druid
+
+local druid = require("druid.druid")
+
+function init(self)
+	self.druid = druid.new(self)
+	druid.register_druid_as_widget(self.druid)
+end
+
+function final(self)
+	druid.unregister_druid_as_widget()
+	self.druid:final()
+end
+
+function update(self, dt)
+	self.druid:update(dt)
+end
+
+function on_message(self, message_id, message, sender)
+	if not self.druid then return end
+	self.druid:on_message(message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	-- World GUI transform action input position
+	if action.screen_x then
+		local window_x, window_y = window.get_size()
+		local stretch_x = window_x / gui.get_width()
+		local stretch_y = window_y / gui.get_height()
+		local world_position = camera.screen_xy_to_world(action.screen_x, action.screen_y)
+		action.x = world_position.x / stretch_x
+		action.y = world_position.y / stretch_y
+	end
+	return self.druid:on_input(action_id, action)
+end

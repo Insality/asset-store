@@ -1,0 +1,92 @@
+script: "/materials/Insality/gui_world/example/druid_widget_world.gui_script"
+fonts {
+  name: "druid_text_bold"
+  font: "/materials/Insality/gui_world/example/druid_text_bold_world.font"
+}
+textures {
+  name: "druid"
+  texture: "/druid/druid.atlas"
+}
+nodes {
+  size {
+    x: 250.0
+    y: 64.0
+  }
+  type: TYPE_BOX
+  texture: "druid/empty"
+  id: "root"
+  material: "gui_world"
+}
+nodes {
+  size {
+    x: 250.0
+    y: 64.0
+  }
+  color {
+    x: 0.26550388
+    y: 0.10033577
+    z: 0.10033577
+  }
+  type: TYPE_BOX
+  texture: "druid/ui_circle_64"
+  id: "progress_back"
+  parent: "root"
+  inherit_alpha: true
+  slice9 {
+    x: 32.0
+    y: 32.0
+    z: 32.0
+    w: 32.0
+  }
+}
+nodes {
+  position {
+    x: -125.0
+  }
+  size {
+    x: 250.0
+    y: 64.0
+  }
+  color {
+    x: 0.64534885
+    y: 0.22136965
+    z: 0.22136965
+  }
+  type: TYPE_BOX
+  texture: "druid/ui_circle_64"
+  id: "progress_fill"
+  pivot: PIVOT_W
+  parent: "root"
+  inherit_alpha: true
+  slice9 {
+    x: 32.0
+    y: 32.0
+    z: 32.0
+    w: 32.0
+  }
+}
+nodes {
+  scale {
+    x: 1.5
+    y: 1.5
+  }
+  size {
+    x: 100.0
+    y: 40.0
+  }
+  type: TYPE_TEXT
+  text: "100"
+  font: "druid_text_bold"
+  id: "text_progress"
+  parent: "root"
+  inherit_alpha: true
+  alpha: 0.8
+  outline_alpha: 0.0
+  shadow_alpha: 0.0
+}
+material: "/materials/Insality/gui_world/gui_world.material"
+adjust_reference: ADJUST_REFERENCE_DISABLED
+materials {
+  name: "gui_world"
+  material: "/materials/Insality/gui_world/gui_world.material"
+}

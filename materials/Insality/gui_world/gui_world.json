@@ -1,0 +1,20 @@
+{
+	"author": "Insality",
+	"id": "gui_world",
+	"version": 1,
+	"title": "GUI World Material",
+	"description": "Material for rendering GUI components in world space",
+	"author_url": "https://github.com/Insality",
+	"image": "gui_world.jpg",
+	"api": "gui_world.md",
+	"tags": ["material", "GUI"],
+	"content": [
+		"gui_world.material",
+		"gui_world_font_df.material"
+	],
+	"example": "/materials/Insality/gui_world/example/example_gui_world.collection",
+	"example_code": "/materials/Insality/gui_world/example/example_gui_world_player.script"
+}
+
+
+

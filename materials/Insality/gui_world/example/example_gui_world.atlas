@@ -1,0 +1,4 @@
+images {
+  image: "/materials/Insality/gui_stencil/example/icon_druid.png"
+}
+extrude_borders: 2

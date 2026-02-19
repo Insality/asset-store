@@ -1,0 +1,46 @@
+name: "example_gui_world_player"
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "gui"
+  children: "image"
+  data: "components {\n"
+  "  id: \"example_gui_world_player\"\n"
+  "  component: \"/materials/Insality/gui_world/example/example_gui_world_player.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"example_gui_world\"\n"
+  "  component: \"/materials/Insality/gui_world/example/example_gui_world.gui\"\n"
+  "}\n"
+  ""
+  position {
+    y: 150.0
+  }
+}
+embedded_instances {
+  id: "image"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"ui_circle_64\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 64.0\\n"
+  "  y: 64.0\\n"
+  "}\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/druid/druid.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  scale {\n"
+  "    x: 3.0\n"
+  "    y: 3.0\n"
+  "  }\n"
+  "}\n"
+  ""
+}

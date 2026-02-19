@@ -1,0 +1,41 @@
+local druid = require("druid.druid")
+local gui_world_widget = require("materials.Insality.gui_world.example.example_gui_world_widget")
+
+function init(self)
+	self.player_url = msg.url(".")
+	self.gui_url = msg.url("gui")
+
+	local position = go.get_position(self.player_url)
+	go.animate(self.player_url, "position.x", go.PLAYBACK_LOOP_PINGPONG, position.x + 500, gui.EASING_INOUTSINE, 4)
+
+	self.time = 0
+
+	-- We have to make init widget later that init step
+	-- Due the druid_widget.script can be not initialized yet
+	msg.post(".", "init_widget")
+end
+
+
+function late_update(self, dt)
+	self.time = self.time + dt / 6
+
+	if self.widget then
+		-- Update position of the GUI component from the Game Object
+		self.widget:set_position(go.get_world_position(self.gui_url))
+
+		-- should go from 0 to 1 and then from 1 to 0 in a loop
+		local target_progress = math.abs(math.sin(self.time * 2 * math.pi))
+		self.widget:set_progress(target_progress)
+	end
+end
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("init_widget") then
+		local gui_world_widget_url = msg.url(nil, "gui", "example_gui_world")
+		self.widget = druid.get_widget(gui_world_widget, gui_world_widget_url)
+
+		-- We need to control the scale and position of GUI component from the Game Object
+		self.widget:set_scale(go.get_world_scale(self.gui_url))
+	end
+end
