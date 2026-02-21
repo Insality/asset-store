@@ -2,11 +2,11 @@
 	"author": "Insality",
 	"id": "defold-event",
 	"title": "Defold Event",
-	"description": "Cross-Context Defold Event System",
+	"description": "Cross-Context Defold Event System. Allows to create and subscribe to events between different contexts (game objects, gui elements, etc.)",
 	"tags": [
 		"system"
 	],
-	"stars": 66,
+	"stars": 67,
 	"content": [
 		"https://github.com/Insality/defold-event/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-event/archive/refs/tags/2.zip",

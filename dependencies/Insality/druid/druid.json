@@ -2,7 +2,7 @@
 	"author": "Insality",
 	"id": "druid",
 	"title": "Druid",
-	"description": "Druid - powerful Defold component UI framework that empowers developers to create stunning and customizable GUIs by leveraging a wide range of embedded components or effortlessly designing their own game-specific components.",
+	"description": "Druid - Powerful Defold UI component framework. Allows to create and manage UI components for your game. Contains a wide range of components and tools for building your own UI.",
 	"depends": [
 		"Insality:defold-event"
 	],
@@ -11,7 +11,7 @@
 		"input",
 		"system"
 	],
-	"stars": 530,
+	"stars": 534,
 	"content": [
 		"https://github.com/Insality/druid/archive/refs/tags/0.1.0.zip",
 		"https://github.com/Insality/druid/archive/refs/tags/0.2.0.zip",

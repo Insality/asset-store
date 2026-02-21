@@ -2,7 +2,7 @@
 	"author": "Insality",
 	"id": "detiled",
 	"title": "Detiled",
-	"description": "Tiled to Decore Workflow for Defold. Convert Tiled maps to Lua tables, suitable for Decore library",
+	"description": "Tiled to Defold Map Parser.",
 	"tags": [
 		"system",
 		"tools"

@@ -2,14 +2,14 @@
 	"author": "Insality",
 	"id": "defold-tweener",
 	"title": "Defold Tweener",
-	"description": "Timer Based Defold Tween Library",
+	"description": "Timer Based Defold Tween Library. Allows you to create and control tween animations for any action in your game.",
 	"tags": [
 		"system",
 		"util",
 		"math",
 		"animation"
 	],
-	"stars": 55,
+	"stars": 56,
 	"content": [
 		"https://github.com/Insality/defold-tweener/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-tweener/archive/refs/tags/2.zip",

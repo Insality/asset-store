@@ -2,13 +2,13 @@
 	"author": "Insality",
 	"id": "defold-saver",
 	"title": "Defold Saver",
-	"description": "Defold Save File Manager",
+	"description": "Defold Save File Manager. Manage your game save state with easy to use API",
 	"tags": [
 		"system",
 		"util",
 		"tools"
 	],
-	"stars": 42,
+	"stars": 43,
 	"content": [
 		"https://github.com/Insality/defold-saver/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-saver/archive/refs/tags/2.zip",

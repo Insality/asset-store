@@ -2,7 +2,7 @@
 	"author": "Insality",
 	"id": "defold-lang",
 	"title": "Defold Lang",
-	"description": "Defold Localization Helper",
+	"description": "Defold Localization Helper. Load and manage translations for your game. Supports Lua, JSON and CSV formats.",
 	"tags": [
 		"system",
 		"util",

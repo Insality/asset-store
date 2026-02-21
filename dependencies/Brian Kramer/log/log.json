@@ -8,7 +8,8 @@
 	],
 	"stars": 11,
 	"content": [
-		"https://github.com/subsoap/log/archive/master.zip"
+		"https://github.com/subsoap/log/archive/refs/tags/v1.0.0.zip",
+		"https://github.com/subsoap/log/archive/refs/tags/v1.1.0b.zip"
 	],
 	"example_code": "https://github.com/subsoap/log",
 	"author_url": "https://github.com/subsoap",
