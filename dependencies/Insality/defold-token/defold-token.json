@@ -6,6 +6,9 @@
 	"tags": [
 		"system"
 	],
+	"depends": [
+		"Insality:defold-event"
+	],
 	"stars": 11,
 	"content": [
 		"https://github.com/Insality/defold-token/archive/refs/tags/1.zip",

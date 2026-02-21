@@ -7,6 +7,9 @@
 		"system",
 		"Game mechanic"
 	],
+	"depends": [
+		"Insality:defold-event"
+	],
 	"stars": 12,
 	"content": [
 		"https://github.com/Insality/defold-quest/archive/refs/tags/1.zip",
