@@ -9,6 +9,8 @@
 	],
 	"stars": 10,
 	"content": [
+		"https://github.com/DanEngelbrecht/LuaScriptInstance/archive/refs/tags/0.0.2.zip",
+		"https://github.com/DanEngelbrecht/LuaScriptInstance/archive/refs/tags/0.1.0.zip",
 		"https://github.com/DanEngelbrecht/LuaScriptInstance/archive/refs/tags/0.1.1.zip"
 	],
 	"example_code": "https://github.com/DanEngelbrecht/LuaScriptInstance",

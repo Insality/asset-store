@@ -277,40 +277,56 @@ def create_new_asset_file(
     return True
 
 
+def _merge_release_sources(release_tags: List[Dict], releases: List[Dict]) -> List[Dict]:
+    """
+    Merge release_tags and releases by zip URL so we have the complete set of versions.
+    release_tags usually has every version; releases may only have a subset (with notes).
+    For each zip URL we keep one entry with published_at/version from either source.
+    """
+    by_zip: Dict[str, Dict] = {}
+    for r in release_tags or []:
+        z = r.get('zip')
+        if z and isinstance(r.get('published_at'), str):
+            by_zip[z] = dict(r)
+    for r in releases or []:
+        z = r.get('zip')
+        if not z:
+            continue
+        if z not in by_zip:
+            entry = {'zip': z, 'published_at': r.get('published_at'), 'version': r.get('tag') or r.get('version')}
+            by_zip[z] = entry
+        elif r.get('published_at') and not by_zip[z].get('published_at'):
+            by_zip[z]['published_at'] = r.get('published_at')
+        if r.get('message') and 'message' not in by_zip[z]:
+            by_zip[z]['message'] = r.get('message')
+    return list(by_zip.values())
+
+
 def get_releases_to_use(portal_data: Dict, local_data: Optional[Dict] = None) -> Optional[List[Dict]]:
     """
-    Determine which releases to use: releases or release_tags.
+    Determine which releases to use for content merge (full list of version zip URLs).
     Returns list of releases to use, or None if neither is available.
-    
-    Logic:
-    1. If local_data has use_tags_as_releases: true, use release_tags (if available)
-    2. If releases exist and are not empty, use releases
-    3. If releases are missing or empty, use release_tags (if available)
+
+    When both release_tags and releases exist, they are merged by zip URL so that
+    all versions are included (releases often only has a subset with notes).
     """
-    # Check if local file has use_tags_as_releases flag
     use_tags = False
     if local_data:
         use_tags = local_data.get('use_tags_as_releases', False)
-    
-    # Check if release_tags exist
+
     release_tags = portal_data.get('release_tags')
     has_release_tags = bool(release_tags and isinstance(release_tags, list) and len(release_tags) > 0)
-    
-    # If use_tags_as_releases is true, prefer release_tags
-    if use_tags and has_release_tags:
-        return release_tags
-    
-    # Check if releases exist and are not empty
     releases = portal_data.get('releases')
     has_releases = bool(releases and isinstance(releases, list) and len(releases) > 0)
-    
+
+    if use_tags and has_release_tags:
+        return release_tags
+    if has_release_tags and has_releases:
+        return _merge_release_sources(release_tags, releases)
     if has_releases:
         return releases
-    
-    # Releases are missing or empty, use release_tags if available
     if has_release_tags:
         return release_tags
-    
     return None
 
 

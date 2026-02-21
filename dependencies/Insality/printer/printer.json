@@ -11,7 +11,8 @@
 	"content": [
 		"https://github.com/Insality/defold-printer/archive/refs/tags/1.0.0.zip",
 		"https://github.com/Insality/defold-printer/archive/refs/tags/1.1.0.zip",
-		"https://github.com/Insality/defold-printer/archive/refs/tags/1.2.0.zip"
+		"https://github.com/Insality/defold-printer/archive/refs/tags/1.2.0.zip",
+		"https://github.com/Insality/defold-printer/archive/refs/tags/1.2.1.zip"
 	],
 	"example_code": "https://github.com/Insality/defold-printer",
 	"author_url": "https://github.com/Insality",

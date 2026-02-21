@@ -8,7 +8,11 @@
 	],
 	"stars": 47,
 	"content": [
+		"https://github.com/defold/extension-teal/archive/refs/tags/v0.1.zip",
+		"https://github.com/defold/extension-teal/archive/refs/tags/v1.0.zip",
+		"https://github.com/defold/extension-teal/archive/refs/tags/v1.1.zip",
 		"https://github.com/defold/extension-teal/archive/refs/tags/v1.2.zip",
+		"https://github.com/defold/extension-teal/archive/refs/tags/v1.3.zip",
 		"https://github.com/defold/extension-teal/archive/refs/tags/v1.4.zip"
 	],
 	"example_code": "https://github.com/defold/extension-teal",
