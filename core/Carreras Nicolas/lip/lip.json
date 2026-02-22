@@ -4,7 +4,8 @@
 	"version": 1,
 	"title": "LIP",
 	"description": "Lua INI Parser library",
-	"author_url": "https://github.com/Dynodzzo/Lua_INI_Parser",
+	"author_url": "https://github.com/Dynodzzo",
+	"example_code": "https://github.com/Dynodzzo/Lua_INI_Parser",
 	"tags": ["core", "utility"],
 	"content": [
 		"lip.lua"

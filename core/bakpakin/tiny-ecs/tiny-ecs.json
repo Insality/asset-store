@@ -1,0 +1,12 @@
+{
+	"author": "bakpakin",
+	"id": "tiny-ecs",
+	"version": 1,
+	"title": "tiny-ecs",
+	"description": "ECS (Entity-Component-System) for Lua",
+	"author_url": "https://github.com/bakpakin",
+	"tags": ["core", "ecs", "system"],
+	"example_code": "https://github.com/bakpakin/tiny-ecs",
+	"api": "https://bakpakin.github.io/tiny-ecs/doc/",
+	"content": ["tiny.lua"]
+}

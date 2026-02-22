@@ -1,0 +1,12 @@
+{
+	"author": "BlackMATov",
+	"id": "evolved",
+	"version": 1,
+	"title": "evolved.lua",
+	"description": "Evolved ECS (Entity-Component-System) for Lua",
+	"author_url": "https://github.com/BlackMATov/",
+	"tags": ["core", "ecs", "system"],
+	"example_code": "https://github.com/BlackMATov/evolved.lua",
+	"api": "https://github.com/BlackMATov/evolved.lua?tab=readme-ov-file#quick-start",
+	"content": ["evolved.lua"]
+}
