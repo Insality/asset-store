@@ -4,7 +4,8 @@
 	"version": 1,
 	"title": "UUID",
 	"description": "UUID generator for Lua",
-	"author_url": "https://github.com/Tieske/uuid",
+	"example_code": "https://github.com/Tieske/uuid",
+	"author_url": "https://github.com/Tieske",
 	"tags": ["core", "utility"],
 	"content": [
 		"uuid.lua"

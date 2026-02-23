@@ -4,7 +4,8 @@
 	"version": 1,
 	"title": "ProFi",
 	"description": "Lua profiler for performance analysis",
-	"author_url": "https://github.com/jgrahamc/ProFi",
+	"example_code": "https://github.com/jgrahamc/ProFi",
+	"author_url": "https://github.com/jgrahamc",
 	"tags": ["core", "utility", "debug"],
 	"content": [
 		"profi.lua"
