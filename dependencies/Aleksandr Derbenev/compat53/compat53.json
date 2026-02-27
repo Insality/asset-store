@@ -7,7 +7,7 @@
 		"util",
 		"Lua"
 	],
-	"stars": 3,
+	"stars": 5,
 	"content": [
 		"https://github.com/alex-ac/defold-compat-5.3/archive/refs/tags/v1.0.0.zip"
 	],

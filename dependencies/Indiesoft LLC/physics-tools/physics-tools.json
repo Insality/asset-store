@@ -1,0 +1,18 @@
+{
+	"author": "Indiesoft LLC",
+	"id": "physics-tools",
+	"title": "Physics Tools for Defold",
+	"description": "Editor scripts to generate Defold physics shapes from 2D images. Includes a convex hull generator (up to 16 vertices) and a concave silhouette chain generator (built from thin boxes).",
+	"tags": [
+		"Physics",
+		"Tools",
+		"Editor script"
+	],
+	"stars": 13,
+	"content": [
+		"https://github.com/indiesoftby/defold-physics-tools/archive/refs/tags/1.0.0.zip"
+	],
+	"example_code": "https://github.com/indiesoftby/defold-physics-tools",
+	"author_url": "https://github.com/indiesoftby",
+	"image": "cover_thumb.jpg"
+}

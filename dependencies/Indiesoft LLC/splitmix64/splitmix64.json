@@ -6,10 +6,12 @@
 	"tags": [
 		"Math"
 	],
-	"stars": 20,
+	"stars": 22,
 	"content": [
 		"https://github.com/indiesoftby/defold-splitmix64/archive/refs/tags/1.0.0.zip",
-		"https://github.com/indiesoftby/defold-splitmix64/archive/refs/tags/1.0.1.zip"
+		"https://github.com/indiesoftby/defold-splitmix64/archive/refs/tags/1.0.1.zip",
+		"https://github.com/indiesoftby/defold-splitmix64/archive/refs/tags/2.0.0.zip",
+		"https://github.com/indiesoftby/defold-splitmix64/archive/refs/tags/2.1.0.zip"
 	],
 	"example_code": "https://github.com/indiesoftby/defold-splitmix64",
 	"author_url": "https://github.com/indiesoftby",
