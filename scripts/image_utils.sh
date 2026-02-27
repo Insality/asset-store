@@ -221,12 +221,17 @@ copy_image() {
       output_path="${output_path%.*}.jpg"
       img_name_jpg="$(basename "$output_path")"
     fi
+
     if resize_image "$source_path" "$output_path" 146; then
       cleanup_temp_file "$source_path"
       build_image_url "$author" "$id" "$img_name_jpg"
     else
+      # Fallback: use the downloaded image as-is instead of returning the original URL
+      local final_name="$img_name"
+      local final_path="$image_dir/$final_name"
+      mv -f "$source_path" "$final_path" 2>/dev/null || cp -f "$source_path" "$final_path"
       cleanup_temp_file "$source_path"
-      echo "$image_rel"
+      build_image_url "$author" "$id" "$final_name"
     fi
     return
   fi
