@@ -79,6 +79,7 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 			-- Update state and external variable
 			set_current_store_config(selected_store)
 			last_selected_store_config_ref[1] = selected_store
+			editor.prefs.set("asset_store.last_selected_store", selected_store.name)
 			set_all_items(new_store_data.items)
 			set_install_folder(new_install_folder)
 			set_filter_type(dialog_utils.get_default_type(selected_store.asset_type or "folder", new_store_data.items, new_install_folder))

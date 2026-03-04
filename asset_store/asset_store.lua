@@ -29,6 +29,15 @@ end
 function M.open_multiple_stores(config)
 	local stores = config.stores
 	local default_store = stores[1]
+	local last_selected_name = editor.prefs.get("asset_store.last_selected_store")
+	if last_selected_name then
+		for _, store in ipairs(stores) do
+			if store.name == last_selected_name then
+				default_store = store
+				break
+			end
+		end
+	end
 
 	-- Load initial store data
 	local store_data, fetch_error = internal.download_json(default_store.store_url)

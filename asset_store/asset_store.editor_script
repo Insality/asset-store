@@ -5,6 +5,10 @@ local M = {}
 
 function M.get_prefs_schema()
 	return {
+		["asset_store.last_selected_store"] = editor.prefs.schema.string({
+			default = "Druid Widgets",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
 		["asset_store.install_folder_druid"] = editor.prefs.schema.string({
 			default = "/widget",
 			scope = editor.prefs.SCOPE.PROJECT
