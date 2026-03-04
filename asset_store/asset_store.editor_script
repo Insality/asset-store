@@ -73,6 +73,7 @@ function M.get_commands()
 						title = "Druid Widgets",
 						install_prefs_key = "asset_store.install_folder_druid",
 						asset_type = "folder",
+						source_folder = "widget",
 					})
 				end
 
@@ -85,6 +86,7 @@ function M.get_commands()
 						title = "Decore",
 						install_prefs_key = "asset_store.install_folder_decore",
 						asset_type = "folder",
+						source_folder = "system",
 					})
 				end
 
@@ -96,6 +98,7 @@ function M.get_commands()
 					title = "Editor Scripts Asset Store",
 					install_prefs_key = "asset_store.install_folder_editor_scripts",
 					asset_type = "folder",
+					source_folder = "editor_scripts",
 				})
 
 				-- Add Lua Modules
@@ -106,6 +109,7 @@ function M.get_commands()
 					title = "Lua Modules",
 					install_prefs_key = "asset_store.install_folder_core",
 					asset_type = "folder",
+					source_folder = "core",
 					labels = {
 						widget_card = {
 							example_button = "Repository",
@@ -121,6 +125,7 @@ function M.get_commands()
 					title = "Particles",
 					install_prefs_key = "asset_store.install_folder_particles",
 					asset_type = "folder",
+					source_folder = "particles",
 				})
 
 				-- Add Materials
@@ -131,6 +136,7 @@ function M.get_commands()
 					title = "Materials",
 					install_prefs_key = "asset_store.install_folder_materials",
 					asset_type = "folder",
+					source_folder = "materials",
 				})
 
 

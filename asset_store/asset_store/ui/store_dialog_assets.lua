@@ -161,7 +161,8 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 				end,
 				function(message)
 					set_install_status(locales.get("messages_error", message))
-				end
+				end,
+				current_store_config.source_folder
 			)
 		end
 

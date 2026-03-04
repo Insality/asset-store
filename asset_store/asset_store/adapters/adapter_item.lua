@@ -178,8 +178,9 @@ end
 ---@param all_items table - List of all available widgets
 ---@param install_folder string - Installation folder
 ---@param installing_set table - Set of widget IDs currently being installed (to prevent cycles)
+---@param source_folder string|nil - Store source folder for path replacement
 ---@return boolean, string|nil - Success status and message
-local function install_dependencies(item, all_items, install_folder, installing_set)
+local function install_dependencies(item, all_items, install_folder, installing_set, source_folder)
 	if not item.depends or #item.depends == 0 then
 		return true, nil
 	end
@@ -202,7 +203,7 @@ local function install_dependencies(item, all_items, install_folder, installing_
 					-- Continue with other dependencies
 				else
 					print("Installing dependency:", dep_item.id)
-					local success, err = M.install(dep_item, install_folder, all_items, installing_set)
+					local success, err = M.install(dep_item, install_folder, all_items, installing_set, source_folder)
 					if not success then
 						return false, "Failed to install dependency " .. dep_item.id .. ": " .. (err or "unknown error")
 					end
@@ -220,9 +221,10 @@ end
 ---@param install_folder string - Target folder to install to
 ---@param all_items table|nil - Optional list of all widgets for dependency resolution
 ---@param installing_set table|nil - Optional set of widget IDs currently being installed (to prevent cycles)
+---@param source_folder string|nil - Store source folder for path replacement
 ---@return boolean, string - Success status and message
-function M.install(item, install_folder, all_items, installing_set)
-	return M.install_widget(item, install_folder, all_items, installing_set)
+function M.install(item, install_folder, all_items, installing_set, source_folder)
+	return M.install_widget(item, install_folder, all_items, installing_set, source_folder)
 end
 
 
@@ -231,8 +233,9 @@ end
 ---@param install_folder string - Target folder to install to
 ---@param all_items table|nil - Optional list of all widgets for dependency resolution
 ---@param installing_set table|nil - Optional set of widget IDs currently being installed (to prevent cycles)
+---@param source_folder string|nil - Store source folder for path replacement
 ---@return boolean, string - Success status and message
-function M.install_widget(item, install_folder, all_items, installing_set)
+function M.install_widget(item, install_folder, all_items, installing_set, source_folder)
 	if not item.json_zip_url or not item.id then
 		return false, "Invalid widget data: missing json_zip_url or id"
 	end
@@ -244,7 +247,7 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 			return false, "Circular dependency detected: " .. item.id
 		end
 		installing_set[item.id] = true
-		local dep_success, dep_err = install_dependencies(item, all_items, install_folder, installing_set)
+		local dep_success, dep_err = install_dependencies(item, all_items, install_folder, installing_set, source_folder)
 		if not dep_success then
 			installing_set[item.id] = nil
 			return false, dep_err or "Failed to install dependencies"
@@ -331,7 +334,7 @@ function M.install_widget(item, install_folder, all_items, installing_set)
 
 	-- Process paths within the extracted widget
 	if content_list and #content_list > 0 then
-		local success, err = path_replacer.process_widget_paths(folder_path, install_folder, item.id, item.author, content_list)
+		local success, err = path_replacer.process_widget_paths(folder_path, install_folder, item.id, item.author, content_list, source_folder)
 		if not success then
 			print("Warning: Path replacement failed:", err)
 			-- Don't fail installation if path replacement fails, just warn

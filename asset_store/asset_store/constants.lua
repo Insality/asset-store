@@ -8,6 +8,7 @@ local M = {}
 ---@field title string The title of the asset store displayed in the dialog window
 ---@field store_url string The URL of the asset store JSON file containing items list
 ---@field install_prefs_key string The preferences key used to store and retrieve the installation folder path
+---@field source_folder string? Top-level folder in the store repo for path replacement (e.g. "widget", "system")
 ---@field asset_type string? The type of assets in this store: "folder" (default) or "dependency"
 ---@field info_url string? The URL of the info page, if nil then info button will be hidden
 ---@field info_button_label string? The label text for the info button (default: "Info")

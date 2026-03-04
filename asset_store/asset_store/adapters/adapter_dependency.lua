@@ -222,8 +222,9 @@ end
 ---@param install_folder string|nil - Not used for dependencies, kept for interface compatibility
 ---@param all_items table|nil - Optional list of all items for dependency resolution
 ---@param installing_set table|nil - Optional set of dependency IDs currently being installed (to prevent cycles)
+---@param source_folder string|nil - Not used for dependencies, kept for interface compatibility
 ---@return boolean, string - Success status and message
-function M.install(item, install_folder, all_items, installing_set)
+function M.install(item, install_folder, all_items, installing_set, source_folder)
 	return M.install_dependency(item, all_items, installing_set)
 end
 

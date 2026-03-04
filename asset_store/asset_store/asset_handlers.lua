@@ -13,12 +13,13 @@ local M = {}
 ---@param asset_type string - Type of asset: "folder" or "dependency"
 ---@param on_success function - Success callback
 ---@param on_error function - Error callback
-function M.handle_install(item, install_folder, all_items, asset_type, on_success, on_error)
+---@param source_folder string|nil - Store source folder for path replacement (folder-type only)
+function M.handle_install(item, install_folder, all_items, asset_type, on_success, on_error, source_folder)
 	local adapter = adapters.get_adapter(asset_type)
 
 	print("Installing " .. asset_type .. ":", item.id)
 
-	local success, message = adapter.install(item, install_folder, all_items)
+	local success, message = adapter.install(item, install_folder, all_items, nil, source_folder)
 
 	if success then
 		print("Installation successful:", message)

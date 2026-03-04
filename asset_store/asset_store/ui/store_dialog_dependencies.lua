@@ -107,7 +107,8 @@ function M.create_dialog_component(config, initial_items, initial_install_folder
 				end,
 				function(message)
 					set_install_status(locales.get("messages_error", message))
-				end
+				end,
+				config.source_folder
 			)
 		end
 
