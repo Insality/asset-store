@@ -6,12 +6,13 @@
 	"tags": [
 		"System"
 	],
-	"stars": 57,
+	"stars": 59,
 	"content": [
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.0.zip",
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.1.zip",
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.2.zip",
-		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.3.zip"
+		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.3.zip",
+		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.4.zip"
 	],
 	"example_code": "https://github.com/paweljarosz/pigeon",
 	"author_url": "https://github.com/paweljarosz",

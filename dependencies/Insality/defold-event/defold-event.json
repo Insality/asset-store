@@ -6,7 +6,7 @@
 	"tags": [
 		"system"
 	],
-	"stars": 68,
+	"stars": 70,
 	"content": [
 		"https://github.com/Insality/defold-event/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-event/archive/refs/tags/2.zip",
@@ -21,7 +21,8 @@
 		"https://github.com/Insality/defold-event/archive/refs/tags/11.zip",
 		"https://github.com/Insality/defold-event/archive/refs/tags/12.zip",
 		"https://github.com/Insality/defold-event/archive/refs/tags/13.zip",
-		"https://github.com/Insality/defold-event/archive/refs/tags/14.zip"
+		"https://github.com/Insality/defold-event/archive/refs/tags/14.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/15.zip"
 	],
 	"example_code": "https://github.com/Insality/defold-event",
 	"api": "https://github.com/Insality/defold-event/blob/main/api/api.md",

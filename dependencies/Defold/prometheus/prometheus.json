@@ -7,7 +7,7 @@
 		"Lua",
 		"Security"
 	],
-	"stars": 32,
+	"stars": 34,
 	"content": [
 		"https://github.com/defold/extension-prometheus/archive/refs/tags/1.0.0.zip",
 		"https://github.com/defold/extension-prometheus/archive/refs/tags/2.0.0.zip",

@@ -59,7 +59,8 @@
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.0.zip",
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.1.zip",
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.2.zip",
-		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.3.zip"
+		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.3.zip",
+		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.4.zip"
 	],
 	"example_code": "https://github.com/colyseus/colyseus-defold",
 	"author_url": "https://github.com/colyseus",

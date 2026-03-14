@@ -9,7 +9,7 @@
 		"Social",
 		"Achievements"
 	],
-	"stars": 41,
+	"stars": 43,
 	"content": [
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.1.0.zip",
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.2.0.zip",
@@ -25,7 +25,8 @@
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.11.1.zip",
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.12.0.zip",
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.13.0.zip",
-		"https://github.com/defold/extension-steam/archive/refs/tags/1.13.1.zip"
+		"https://github.com/defold/extension-steam/archive/refs/tags/1.13.1.zip",
+		"https://github.com/defold/extension-steam/archive/refs/tags/1.14.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-steam",
 	"author_url": "https://github.com/defold",
