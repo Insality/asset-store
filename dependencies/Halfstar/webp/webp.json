@@ -1,0 +1,16 @@
+{
+	"author": "Halfstar",
+	"id": "webp",
+	"title": "Defold-WebP",
+	"description": "Decode and encode external WebP image files.",
+	"tags": [
+		"system"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/HalfstarDev/defold-webp/archive/refs/tags/1.0.0.zip"
+	],
+	"example_code": "https://github.com/HalfstarDev/defold-webp",
+	"author_url": "https://github.com/HalfstarDev",
+	"image": "webp-thumb.jpg"
+}

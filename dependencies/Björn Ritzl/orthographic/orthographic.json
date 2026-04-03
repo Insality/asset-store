@@ -6,7 +6,7 @@
 	"tags": [
 		"Camera"
 	],
-	"stars": 210,
+	"stars": 211,
 	"content": [
 		"https://github.com/britzl/defold-orthographic/archive/refs/tags/1.4.2.zip",
 		"https://github.com/britzl/defold-orthographic/archive/refs/tags/1.5.zip",
@@ -59,7 +59,11 @@
 		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.3.1.zip",
 		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.3.2.zip",
 		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.4.0.zip",
-		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.4.1.zip"
+		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.4.1.zip",
+		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.5.0.zip",
+		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.6.0.zip",
+		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.6.1.zip",
+		"https://github.com/britzl/defold-orthographic/archive/refs/tags/3.6.2.zip"
 	],
 	"example_code": "https://github.com/britzl/defold-orthographic",
 	"api": "https://github.com/britzl/defold-orthographic?tab=readme-ov-file#the-orthographic-camera-api---functions",

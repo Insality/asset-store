@@ -8,7 +8,7 @@
 		"Tools",
 		"Lua"
 	],
-	"stars": 68,
+	"stars": 69,
 	"content": [
 		"https://github.com/defold/extension-rive/archive/refs/tags/3.4.1.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/3.4.2.zip",
@@ -77,7 +77,9 @@
 		"https://github.com/defold/extension-rive/archive/refs/tags/9.3.5.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/10.0.0.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/10.1.0.zip",
-		"https://github.com/defold/extension-rive/archive/refs/tags/10.2.0.zip"
+		"https://github.com/defold/extension-rive/archive/refs/tags/10.2.0.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.0.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.1.zip"
 	],
 	"example_code": "https://github.com/defold/extension-rive",
 	"author_url": "https://github.com/defold",
