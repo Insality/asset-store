@@ -15,6 +15,20 @@ local widget_list_ui = require("asset_store.asset_store.ui.widget_list")
 local M = {}
 
 
+local DEPENDENCIES_FILTER_TYPE_PREFS_KEY = "asset_store.dependencies_filter_type"
+
+
+local function is_supported_filter_type(filter_type)
+	if not filter_type then
+		return false
+	end
+
+	return filter_type == locales.get("filters_all_types")
+		or filter_type == locales.get("filters_installed")
+		or filter_type == locales.get("filters_not_installed")
+end
+
+
 ---Create dialog component for dependencies store
 ---@param config table Store configuration
 ---@param initial_items table Initial items array
@@ -26,12 +40,14 @@ function M.create_dialog_component(config, initial_items, initial_install_folder
 
 	-- Determine default filter type
 	local default_type = dialog_utils.get_default_type(config.asset_type, initial_items, initial_install_folder)
+	local saved_filter_type = editor.prefs.get(DEPENDENCIES_FILTER_TYPE_PREFS_KEY)
+	local initial_filter_type = is_supported_filter_type(saved_filter_type) and saved_filter_type or default_type
 
 	return editor.ui.component(function(props)
 		local all_items = editor.ui.use_state(initial_items)
 		local install_folder, set_install_folder = editor.ui.use_state(initial_install_folder)
 		local search_query, set_search_query = editor.ui.use_state("")
-		local filter_type, set_filter_type = editor.ui.use_state(default_type)
+		local filter_type, set_filter_type = editor.ui.use_state(initial_filter_type)
 		local filter_author, set_filter_author = editor.ui.use_state(locales.get("filters_all_authors"))
 		local filter_tag, set_filter_tag = editor.ui.use_state(locales.get("filters_all_tags"))
 		local sort_by, set_sort_by = editor.ui.use_state(locales.get("sort_stars"))
@@ -206,6 +222,7 @@ function M.create_dialog_component(config, initial_items, initial_install_folder
 			tag_options = tag_options,
 			on_type_change = function(value)
 				set_filter_type(value)
+				editor.prefs.set(DEPENDENCIES_FILTER_TYPE_PREFS_KEY, value)
 				reset_page_if_needed()
 			end,
 			on_author_change = function(value)
