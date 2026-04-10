@@ -79,7 +79,9 @@
 		"https://github.com/defold/extension-rive/archive/refs/tags/10.1.0.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/10.2.0.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.0.zip",
-		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.1.zip"
+		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.1.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.2.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.3.zip"
 	],
 	"example_code": "https://github.com/defold/extension-rive",
 	"author_url": "https://github.com/defold",
