@@ -85,19 +85,6 @@ function M.get_commands()
 					})
 				end
 
-				local is_decore_installed = pcall(editor.can_get, "/decore", "path")
-				if is_decore_installed then
-					table.insert(stores, {
-						name = "Decore Systems",
-						store_url = "https://insality.github.io/asset-store/decore_store.json",
-						info_url = "https://github.com/Insality/asset-store/blob/main/decore_store.md",
-						title = "Decore",
-						install_prefs_key = "asset_store.install_folder_decore",
-						asset_type = "folder",
-						source_folder = "system",
-					})
-				end
-
 				-- Add Editor Scripts
 				table.insert(stores, {
 					name = "Editor Scripts",
