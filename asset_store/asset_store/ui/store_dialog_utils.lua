@@ -81,21 +81,9 @@ end
 ---@param asset_type string Type of asset: "folder" or "dependency"
 ---@param items table Array of items
 ---@param install_folder string|nil Installation folder
----@return string default_type Default filter type (localized "All" or "Installed")
+---@return string default_type Default filter type (localized "All")
 function M.get_default_type(asset_type, items, install_folder)
-	local default_type = locales.get("filters_all_types")
-	if asset_type == "dependency" then
-		local adapter = adapters.get_adapter(asset_type)
-		local has_installed = false
-		for _, item in ipairs(items) do
-			if adapter.is_installed(item) then
-				has_installed = true
-				break
-			end
-		end
-		default_type = has_installed and locales.get("filters_installed") or locales.get("filters_all_types")
-	end
-	return default_type
+	return locales.get("filters_all_types")
 end
 
 
