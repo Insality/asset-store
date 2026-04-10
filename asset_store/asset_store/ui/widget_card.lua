@@ -24,7 +24,7 @@ local M = {}
 
 ---Create widget card UI component
 ---@param item asset_store.item Asset item
----@param context table Context: on_install, on_update, on_version_change, open_url, is_installed, can_update, version_options, installed_version_name, labels
+---@param context table Context: on_install, on_update, on_version_change, on_author_click, open_url, is_installed, can_update, version_options, installed_version_name, labels
 ---@return userdata component UI component
 function M.create(item, context)
 	local labels = ui_utils.build_labels(DEFAULT_LABELS, context and context.labels)
@@ -34,6 +34,7 @@ function M.create(item, context)
 	local is_installed = context and context.is_installed or false
 	local can_update = context and context.can_update or false
 	local on_version_change = context and context.on_version_change or function(...) end
+	local on_author_click = context and context.on_author_click or function(...) end
 	local installed_version_name = context and context.installed_version_name or nil
 	local version_options = context and context.version_options or nil
 
@@ -233,15 +234,17 @@ function M.create(item, context)
 	table.insert(button_children, editor.ui.horizontal({ grow = true }))
 
 	local right_button_children = {}
-	if item.author_url then
+	if item.author and item.author ~= "" then
 		table.insert(right_button_children, editor.ui.label({
 			text = labels.author_caption,
 			color = editor.ui.COLOR.HINT
 		}))
 		table.insert(right_button_children, editor.ui.button({
 			text = item.author or labels.author_caption,
-			on_pressed = function() open_url(item.author_url) end,
-			enabled = item.author_url ~= nil
+			on_pressed = function()
+				on_author_click(item.author)
+			end,
+			enabled = true
 		}))
 
 		table.insert(button_children, editor.ui.horizontal({

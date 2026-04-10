@@ -18,6 +18,7 @@ local function build_context(overrides)
 		on_install = overrides.on_install or noop,
 		on_update = overrides.on_update or noop,
 		on_version_change = overrides.on_version_change or noop,
+		on_author_click = overrides.on_author_click or noop,
 		open_url = overrides.open_url or noop,
 		labels = overrides.labels,
 		get_version_options = overrides.get_version_options or function(_) return nil end,
@@ -28,7 +29,7 @@ end
 
 ---Create widget list UI component
 ---@param items table Array of asset items
----@param overrides table|nil Overrides: on_install, on_update, on_version_change, open_url, is_installed, can_update, get_version_options, get_installed_version_name, labels
+---@param overrides table|nil Overrides: on_install, on_update, on_version_change, on_author_click, open_url, is_installed, can_update, get_version_options, get_installed_version_name, labels
 ---@return userdata component UI component
 function M.create(items, overrides)
 	local card_context = build_context(overrides or {})
@@ -50,6 +51,9 @@ function M.create(items, overrides)
 			end,
 			on_version_change = function(item, url)
 				card_context.on_version_change(item, url)
+			end,
+			on_author_click = function(author_name)
+				card_context.on_author_click(author_name)
 			end,
 			open_url = card_context.open_url,
 			labels = card_context.labels,

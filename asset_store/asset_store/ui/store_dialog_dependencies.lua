@@ -269,6 +269,10 @@ function M.create_dialog_component(config, initial_items, initial_install_folder
 				on_install = on_install,
 				on_update = on_update,
 				on_version_change = on_version_change,
+				on_author_click = function(author_name)
+					set_filter_author(author_name)
+					reset_page_if_needed()
+				end,
 				open_url = internal.open_url,
 				is_installed = function(item)
 					return adapter.is_installed(item, install_folder)
