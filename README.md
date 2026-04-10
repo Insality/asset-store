@@ -90,6 +90,13 @@ If you have any issues, questions or suggestions please [create an issue](https:
 - Added Asset Store section in the editor menu
 - Added support for images in editor scripts
 
+### **V3** *In Progress*
+- [#4] InvalidPathException: Illegal Character in ZIP filename
+- Author button now sets the author filter to the selected author
+- Add Asset Store settings window for various adjustments
+- Keep tracking of last open filter between All/Installed/Not Installed options
+- Default type filter search is now "All" for new users
+
 </details>
 
 
