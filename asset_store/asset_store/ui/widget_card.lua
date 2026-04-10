@@ -37,6 +37,14 @@ function M.create(item, context)
 	local on_author_click = context and context.on_author_click or function(...) end
 	local installed_version_name = context and context.installed_version_name or nil
 	local version_options = context and context.version_options or nil
+	local show_preview_images = context and context.show_preview_images
+	local show_tags = context and context.show_tags
+	if show_preview_images == nil then
+		show_preview_images = true
+	end
+	if show_tags == nil then
+		show_tags = true
+	end
 
 	-- Detect if this is a dependency (has content array)
 	local is_dependency = item.content and type(item.content) == "table" and #item.content > 0
@@ -105,7 +113,7 @@ function M.create(item, context)
 	local description_spacing = editor.ui.SPACING.NONE
 	local width = is_installed and 146 or 138;
 
-	if editor.ui.image and item.image and item.image ~= "" then
+	if show_preview_images and editor.ui.image and item.image and item.image ~= "" then
 		description_spacing = editor.ui.SPACING.LARGE
 		table.insert(description_children, editor.ui.image({
 			image = ui_utils.escape_url(item.image),
@@ -133,7 +141,7 @@ function M.create(item, context)
 	}
 
 	local tags_depends_children = {}
-	if tags_prefix ~= "" then
+	if show_tags and tags_prefix ~= "" then
 		table.insert(tags_depends_children, editor.ui.horizontal({
 			spacing = editor.ui.SPACING.NONE,
 			children = {

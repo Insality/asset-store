@@ -23,6 +23,8 @@ local function build_context(overrides)
 		labels = overrides.labels,
 		get_version_options = overrides.get_version_options or function(_) return nil end,
 		get_installed_version_name = overrides.get_installed_version_name or function(_) return nil end,
+		show_preview_images = overrides.show_preview_images,
+		show_tags = overrides.show_tags,
 	}
 end
 
@@ -61,6 +63,8 @@ function M.create(items, overrides)
 			can_update = can_update(item),
 			version_options = card_context.get_version_options(item),
 			installed_version_name = card_context.get_installed_version_name(item),
+			show_preview_images = card_context.show_preview_images,
+			show_tags = card_context.show_tags,
 		}
 
 		table.insert(widget_items, widget_card.create(item, context))

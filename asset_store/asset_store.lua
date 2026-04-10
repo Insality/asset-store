@@ -3,6 +3,7 @@ local config_module = require("asset_store.asset_store.config")
 local internal = require("asset_store.asset_store.asset_store_internal")
 local store_dialog_assets = require("asset_store.asset_store.ui.store_dialog_assets")
 local store_dialog_dependencies = require("asset_store.asset_store.ui.store_dialog_dependencies")
+local settings_window = require("asset_store.asset_store.ui.settings_window")
 
 
 local M = {}
@@ -55,7 +56,6 @@ function M.open_multiple_stores(config)
 	local dependencies_changed = { false }
 	local last_selected_store_config = { initial_store_config }
 
-	-- Create dialog component
 	local dialog_component = store_dialog_assets.create_dialog_component(
 		stores,
 		initial_store_config,
@@ -65,7 +65,6 @@ function M.open_multiple_stores(config)
 		dependencies_changed,
 		last_selected_store_config
 	)
-
 	local result = editor.ui.show_dialog(dialog_component({}))
 
 	-- If dependencies were changed, call fetch-libraries via HTTP API
@@ -75,7 +74,10 @@ function M.open_multiple_stores(config)
 	end
 
 	if result then
-		if result == constants.INFO_RESULT then
+		if result == constants.SETTINGS_RESULT then
+			settings_window.open()
+			return M.open_multiple_stores(config)
+		elseif result == constants.INFO_RESULT then
 			if last_selected_store_config[1] and last_selected_store_config[1].info_url then
 				internal.open_url(last_selected_store_config[1].info_url)
 			end
@@ -107,14 +109,12 @@ function M.open_single_store(config)
 	-- Track if dependencies were changed during dialog session
 	local dependencies_changed = { false }
 
-	-- Create dialog component
 	local dialog_component = store_dialog_dependencies.create_dialog_component(
 		config,
 		initial_items,
 		initial_install_folder,
 		dependencies_changed
 	)
-
 	local result = editor.ui.show_dialog(dialog_component({}))
 
 	-- If dependencies were changed, call fetch-libraries via HTTP API
@@ -124,7 +124,10 @@ function M.open_single_store(config)
 	end
 
 	if result then
-		if result == constants.INFO_RESULT then
+		if result == constants.SETTINGS_RESULT then
+			settings_window.open()
+			return M.open_single_store(config)
+		elseif result == constants.INFO_RESULT then
 			if config.info_url then
 				internal.open_url(config.info_url)
 			end

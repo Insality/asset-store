@@ -45,6 +45,22 @@ function M.get_prefs_schema()
 			default = "",
 			scope = editor.prefs.SCOPE.PROJECT
 		}),
+		["asset_store.use_version_files"] = editor.prefs.schema.boolean({
+			default = true,
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.show_preview_images"] = editor.prefs.schema.boolean({
+			default = true,
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.items_per_page"] = editor.prefs.schema.integer({
+			default = 30,
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
+		["asset_store.show_dependencies_tags"] = editor.prefs.schema.boolean({
+			default = true,
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
 	}
 end
 

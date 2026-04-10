@@ -10,6 +10,7 @@ local pagination_ui = require("asset_store.asset_store.ui.pagination")
 local search_ui = require("asset_store.asset_store.ui.search")
 local store_selector = require("asset_store.asset_store.ui.store_selector")
 local widget_list_ui = require("asset_store.asset_store.ui.widget_list")
+local settings = require("asset_store.asset_store.settings")
 
 
 local M = {}
@@ -60,6 +61,9 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 		local filter_tag, set_filter_tag = editor.ui.use_state(locales.get("filters_all_tags"))
 		local sort_by, set_sort_by = editor.ui.use_state(locales.get("sort_stars"))
 		local current_page, set_current_page = editor.ui.use_state(1)
+		local show_preview_images, set_show_preview_images = editor.ui.use_state(settings.get_show_preview_images())
+		local show_tags, set_show_tags = editor.ui.use_state(settings.get_show_dependencies_tags())
+		local items_per_page, set_items_per_page = editor.ui.use_state(settings.get_items_per_page())
 
 		-- Handle store change
 		local function on_store_change(store_name)
@@ -146,7 +150,7 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 		)
 
 		-- Calculate pagination
-		local total_pages = math.max(1, math.ceil(#filtered_items / constants.ITEMS_PER_PAGE))
+		local total_pages = math.max(1, math.ceil(#filtered_items / items_per_page))
 
 		-- Ensure current_page is valid (in case filtered_items count decreased)
 		local safe_current_page = math.min(current_page, math.max(1, total_pages))
@@ -169,7 +173,7 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 			end
 
 			return page_items
-		end, filtered_items, safe_current_page, constants.ITEMS_PER_PAGE)
+		end, filtered_items, safe_current_page, items_per_page)
 
 		local function on_install(item)
 			asset_handlers.handle_install(item, install_folder, all_items, asset_type,
@@ -350,6 +354,8 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 				end,
 				get_version_options = get_version_options,
 				get_installed_version_name = get_installed_version_name,
+				show_preview_images = show_preview_images,
+				show_tags = show_tags,
 				labels = current_store_config.labels and current_store_config.labels.widget_card,
 			}))
 		end
@@ -360,12 +366,17 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 				current_page = safe_current_page,
 				total_pages = total_pages,
 				total_items = #filtered_items,
-				items_per_page = constants.ITEMS_PER_PAGE,
+				items_per_page = items_per_page,
 				on_page_change = set_current_page
 			}))
 		end
 
 		local buttons = {}
+
+		table.insert(buttons, editor.ui.dialog_button({
+			text = locales.get("settings_button"),
+			result = constants.SETTINGS_RESULT,
+		}))
 
 		table.insert(buttons, editor.ui.dialog_button({
 			text = locales.get("support_button"),

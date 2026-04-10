@@ -29,6 +29,14 @@ return {
 	settings_install_label = "Installation Folder:",
 	settings_install_title = "Installation Folder:",
 	settings_install_tooltip = "The folder to install the assets to",
+	settings_button = "Settings",
+	settings_window_title = "Asset Store Settings",
+	settings_use_version_files = "Write .version files for tracking asset updates",
+	settings_show_preview_images = "Show asset preview images in list",
+	settings_show_tags = "Show tags in list",
+	settings_items_per_page_label = "Cards per page:",
+	settings_cancel_button = "Cancel",
+	settings_save_button = "Save",
 
 	-- Store Selector
 	store_selector_store_label = "Store:",

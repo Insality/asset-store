@@ -42,6 +42,7 @@ local M = {}
 
 M.INFO_RESULT = "asset_store_open_info"
 M.SUPPORT_RESULT = "asset_store_open_support"
+M.SETTINGS_RESULT = "asset_store_open_settings"
 M.DEFAULT_TITLE = locales.get("title")
 M.DEFAULT_INFO_BUTTON = locales.get("info_button")
 M.DEFAULT_CLOSE_BUTTON = locales.get("close_button")

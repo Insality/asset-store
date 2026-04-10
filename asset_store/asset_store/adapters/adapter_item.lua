@@ -5,6 +5,7 @@
 local base64 = require("asset_store.asset_store.base64")
 local path_replacer = require("asset_store.asset_store.path_replacer")
 local internal = require("asset_store.asset_store.asset_store_internal")
+local settings = require("asset_store.asset_store.settings")
 
 local M = {}
 
@@ -352,7 +353,7 @@ function M.install_widget(item, install_folder, all_items, installing_set, sourc
 	end
 
 	-- Write version to version file
-	if item.version then
+	if settings.get_use_version_files() and item.version then
 		local version_written = write_installed_version(item, install_folder)
 		if version_written then
 			local version_path = install_folder .. "/" .. item.id .. "/" .. item.id .. ".version"
@@ -425,6 +426,10 @@ function M.get_installed_version(item, install_folder)
 	if not item or not item.id or not install_folder then
 		return nil
 	end
+	if not settings.get_use_version_files() then
+		return nil
+	end
+
 	return read_installed_version(item, install_folder)
 end
 
@@ -455,6 +460,9 @@ end
 ---@return boolean, nil - True if can be updated, nil if no update available
 function M.can_update(item, install_folder)
 	if not item or not item.id or not item.version then
+		return false, nil
+	end
+	if not settings.get_use_version_files() then
 		return false, nil
 	end
 
