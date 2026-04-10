@@ -9,6 +9,14 @@ local internal = require("asset_store.asset_store.asset_store_internal")
 local M = {}
 
 
+---Create a filesystem-safe local zip filename for temporary download
+---@param item table - Widget item data
+---@return string - Safe local zip filename
+local function create_local_zip_filename(item)
+	return item.id .. ".zip"
+end
+
+
 ---URL encode a string (percent encoding)
 ---@param str string - String to encode
 ---@return string - URL encoded string
@@ -292,7 +300,7 @@ function M.install_widget(item, install_folder, all_items, installing_set, sourc
 		print("Warning: No content list in JSON data")
 	end
 
-	local zip_file_path = "." .. install_folder .. "/" .. filename
+	local zip_file_path = "." .. install_folder .. "/" .. create_local_zip_filename(item)
 	local zip_file = io.open(zip_file_path, "wb")
 	if not zip_file then
 		if installing_set then
