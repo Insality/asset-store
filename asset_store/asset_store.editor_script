@@ -41,6 +41,10 @@ function M.get_prefs_schema()
 			default = "",
 			scope = editor.prefs.SCOPE.PROJECT
 		}),
+		["asset_store.assets_filter_type"] = editor.prefs.schema.string({
+			default = "",
+			scope = editor.prefs.SCOPE.PROJECT
+		}),
 	}
 end
 

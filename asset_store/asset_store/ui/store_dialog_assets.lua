@@ -15,6 +15,20 @@ local widget_list_ui = require("asset_store.asset_store.ui.widget_list")
 local M = {}
 
 
+local ASSETS_FILTER_TYPE_PREFS_KEY = "asset_store.assets_filter_type"
+
+
+local function is_supported_filter_type(filter_type)
+	if not filter_type then
+		return false
+	end
+
+	return filter_type == locales.get("filters_all_types")
+		or filter_type == locales.get("filters_installed")
+		or filter_type == locales.get("filters_not_installed")
+end
+
+
 ---Create dialog component for assets stores
 ---@param stores table Array of store configurations
 ---@param initial_store_config table Initial store configuration
@@ -39,7 +53,9 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 		local install_status, set_install_status = editor.ui.use_state("")
 		local search_query, set_search_query = editor.ui.use_state("")
 		local default_type = dialog_utils.get_default_type(initial_store_config.asset_type or "folder", initial_items, initial_install_folder)
-		local filter_type, set_filter_type = editor.ui.use_state(default_type)
+		local saved_filter_type = editor.prefs.get(ASSETS_FILTER_TYPE_PREFS_KEY)
+		local initial_filter_type = is_supported_filter_type(saved_filter_type) and saved_filter_type or default_type
+		local filter_type, set_filter_type = editor.ui.use_state(initial_filter_type)
 		local filter_author, set_filter_author = editor.ui.use_state(locales.get("filters_all_authors"))
 		local filter_tag, set_filter_tag = editor.ui.use_state(locales.get("filters_all_tags"))
 		local sort_by, set_sort_by = editor.ui.use_state(locales.get("sort_stars"))
@@ -82,7 +98,10 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 			editor.prefs.set("asset_store.last_selected_store", selected_store.name)
 			set_all_items(new_store_data.items)
 			set_install_folder(new_install_folder)
-			set_filter_type(dialog_utils.get_default_type(selected_store.asset_type or "folder", new_store_data.items, new_install_folder))
+			local selected_store_default_type = dialog_utils.get_default_type(selected_store.asset_type or "folder", new_store_data.items, new_install_folder)
+			local selected_store_saved_filter_type = editor.prefs.get(ASSETS_FILTER_TYPE_PREFS_KEY)
+			local selected_store_filter_type = is_supported_filter_type(selected_store_saved_filter_type) and selected_store_saved_filter_type or selected_store_default_type
+			set_filter_type(selected_store_filter_type)
 			set_filter_author(locales.get("filters_all_authors"))
 			set_filter_tag(locales.get("filters_all_tags"))
 			set_search_query("")
@@ -264,6 +283,7 @@ function M.create_dialog_component(stores, initial_store_config, initial_items, 
 			tag_options = tag_options,
 			on_type_change = function(value)
 				set_filter_type(value)
+				editor.prefs.set(ASSETS_FILTER_TYPE_PREFS_KEY, value)
 				reset_page_if_needed()
 			end,
 			on_author_change = function(value)
