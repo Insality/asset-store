@@ -8,6 +8,7 @@
 	"example_code": "/particles/yeqwep/particles/example/example_yeqwep_particles.script",
 	"author_url": "https://github.com/yeqwep/ParticleExamples/",
 	"tags": ["particle", "effect", "pack", "GUI"],
+	"image": "particles_image.jpg",
 	"content": [
 		"fx/confetti.particlefx",
 		"fx/dust.particlefx",

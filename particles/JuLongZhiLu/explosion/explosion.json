@@ -7,6 +7,7 @@
 	"example": "/particles/JuLongZhiLu/explosion/example/example_julong_explosion.collection",
 	"example_code": "/particles/JuLongZhiLu/explosion/example/example_julong_explosion.script",
 	"author_url": "https://github.com/JuLongZhiLu/easy_explosion_vfx",
+	"image": "explosion_image.jpg",
 	"tags": ["particle", "effect", "explosion"],
 	"content": [
 		"explosion.particlefx"
