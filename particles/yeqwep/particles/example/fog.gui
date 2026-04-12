@@ -1,0 +1,93 @@
+script: "/particles/yeqwep/particles/example/fog.gui_script"
+fonts {
+  name: "default"
+  font: "/builtins/fonts/default.font"
+}
+nodes {
+  position {
+    x: 480.0
+    y: 650.0
+  }
+  type: TYPE_PARTICLEFX
+  id: "confetti"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  particlefx: "confetti"
+}
+nodes {
+  position {
+    x: 180.0
+    y: 60.0
+  }
+  size {
+    x: 200.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  id: "button1"
+  alpha: 0.5
+}
+nodes {
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "SLASH!"
+  font: "default"
+  id: "text1"
+  parent: "button1"
+}
+nodes {
+  position {
+    x: 780.0
+    y: 60.0
+  }
+  size {
+    x: 200.0
+    y: 60.0
+  }
+  type: TYPE_BOX
+  id: "button2"
+  alpha: 0.5
+}
+nodes {
+  scale {
+    x: 1.25
+    y: 1.25
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "DISABLE FOG"
+  font: "default"
+  id: "text2"
+  parent: "button2"
+}
+nodes {
+  position {
+    x: 480.0
+    y: 320.0
+  }
+  type: TYPE_PARTICLEFX
+  id: "fog"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  particlefx: "fog"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+particlefxs {
+  name: "confetti"
+  particlefx: "/particles/yeqwep/particles/fx/confetti.particlefx"
+}
+particlefxs {
+  name: "fog"
+  particlefx: "/particles/yeqwep/particles/fx/fog.particlefx"
+}

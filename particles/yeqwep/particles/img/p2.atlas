@@ -1,0 +1,7 @@
+images {
+  image: "/particles/yeqwep/particles/img/particle/twirl_01.png"
+}
+images {
+  image: "/particles/yeqwep/particles/img/particle/circle_05_up.png"
+}
+extrude_borders: 2

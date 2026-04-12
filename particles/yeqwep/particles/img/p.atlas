@@ -1,0 +1,10 @@
+images {
+  image: "/particles/yeqwep/particles/img/particle/circle_05_s.png"
+}
+images {
+  image: "/particles/yeqwep/particles/img/particle/scorch_01_s.png"
+}
+images {
+  image: "/particles/yeqwep/particles/img/particle/ta.png"
+}
+extrude_borders: 2

@@ -1,0 +1,300 @@
+emitters {
+  mode: PLAY_MODE_LOOP
+  duration: 1.0
+  space: EMISSION_SPACE_WORLD
+  tile_source: "/builtins/graphics/particle_blob.tilesource"
+  animation: "anim"
+  material: "/builtins/materials/particlefx.material"
+  blend_mode: BLEND_MODE_SCREEN
+  max_particle_count: 48
+  type: EMITTER_TYPE_2DCONE
+  properties {
+    key: EMITTER_KEY_SPAWN_RATE
+    points {
+      y: 12.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_SIZE_X
+    points {
+      y: 20.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_SIZE_Y
+    points {
+      y: 10.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_LIFE_TIME
+    points {
+      y: 4.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_SPEED
+    points {
+      y: 60.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_SIZE
+    points {
+      y: 70.0
+    }
+    spread: 10.0
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_RED
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ALPHA
+    points {
+      y: 1.0
+    }
+    spread: 0.9
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_STRETCH_FACTOR_X
+    points {
+      y: 0.2
+    }
+    spread: 0.1
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_STRETCH_FACTOR_Y
+    points {
+      y: 0.2
+    }
+    spread: 0.2
+  }
+  particle_properties {
+    key: PARTICLE_KEY_SCALE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_RED
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ALPHA
+    points {
+      y: 0.0
+      t_x: 0.25012192
+      t_y: 0.96821433
+    }
+    points {
+      x: 0.187948
+      y: 0.813054
+      t_x: 0.5147182
+      t_y: 0.85735947
+    }
+    points {
+      x: 0.347059
+      y: 0.415806
+      t_x: 0.793931
+      t_y: -0.608008
+    }
+    points {
+      x: 0.579585
+      y: 0.610088
+      t_x: 0.15353696
+      t_y: -0.9881429
+    }
+    points {
+      x: 1.0
+      y: 0.007225
+      t_x: 0.74923277
+      t_y: -0.6623068
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_STRETCH_FACTOR_X
+    points {
+      y: 0.199637
+    }
+    points {
+      x: 1.0
+      y: 3.488542
+      t_x: 0.78639495
+      t_y: 0.617724
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_STRETCH_FACTOR_Y
+    points {
+      y: 0.0
+    }
+    points {
+      x: 0.266782
+      y: 0.274577
+      t_x: 0.27085206
+      t_y: -0.962621
+    }
+    points {
+      x: 0.659862
+      y: 2.056932
+      t_x: 0.3678867
+      t_y: -0.9298706
+    }
+    points {
+      x: 1.0
+      y: 4.083937
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ANGULAR_VELOCITY
+    points {
+      y: 1.0
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_ACCELERATION
+    position {
+      y: 65.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: 80.0
+      }
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_DRAG
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: 3.0
+      }
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_RADIAL
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: 36.0
+      }
+      spread: 36.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAX_DISTANCE
+      points {
+        y: 500.0
+      }
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_VORTEX
+    position {
+      x: -29.0
+      y: 13.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: 150.0
+      }
+      spread: 150.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAX_DISTANCE
+      points {
+        y: 30.0
+      }
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_VORTEX
+    position {
+      x: 27.0
+      y: 31.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: -150.0
+      }
+      spread: 150.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAX_DISTANCE
+      points {
+        y: 30.0
+      }
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_VORTEX
+    position {
+      x: 54.0
+      y: 76.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: -200.0
+      }
+      spread: 200.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAX_DISTANCE
+      points {
+        y: 60.0
+      }
+    }
+  }
+  modifiers {
+    type: MODIFIER_TYPE_VORTEX
+    position {
+      x: -62.0
+      y: 105.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAGNITUDE
+      points {
+        y: 100.0
+      }
+      spread: 100.0
+    }
+    properties {
+      key: MODIFIER_KEY_MAX_DISTANCE
+      points {
+        y: 60.0
+      }
+    }
+  }
+}

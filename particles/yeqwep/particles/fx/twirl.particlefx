@@ -1,0 +1,129 @@
+emitters {
+  id: "emitter1"
+  mode: PLAY_MODE_LOOP
+  duration: 1.0
+  space: EMISSION_SPACE_WORLD
+  tile_source: "/particles/yeqwep/particles/img/p2.atlas"
+  animation: "twirl_01"
+  material: "/builtins/materials/particlefx.material"
+  blend_mode: BLEND_MODE_ADD
+  max_particle_count: 1
+  type: EMITTER_TYPE_BOX
+  properties {
+    key: EMITTER_KEY_SPAWN_RATE
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_LIFE_TIME
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_SIZE
+    points {
+      y: 100.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_RED
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ALPHA
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_SCALE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_RED
+    points {
+      y: 1.0
+    }
+    points {
+      x: 0.495122
+      y: 0.27328
+    }
+    points {
+      x: 1.0
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_GREEN
+    points {
+      y: 1.0
+    }
+    points {
+      x: 0.23561
+      y: 0.122274
+    }
+    points {
+      x: 1.0
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_BLUE
+    points {
+      y: 1.0
+    }
+    points {
+      x: 0.740975
+      y: 0.565857
+    }
+    points {
+      x: 1.0
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ALPHA
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ROTATION
+    points {
+      y: 0.0
+      t_x: 0.0016680628
+      t_y: 0.9999986
+    }
+    points {
+      x: 1.0
+      y: 359.9995
+      t_x: 0.0010684693
+      t_y: 0.9999994
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ANGULAR_VELOCITY
+    points {
+      y: 1.0
+    }
+  }
+  start_offset: 0.5
+}

@@ -1,0 +1,169 @@
+emitters {
+  mode: PLAY_MODE_ONCE
+  duration: 1.0
+  space: EMISSION_SPACE_WORLD
+  tile_source: "/particles/yeqwep/particles/img/p2.atlas"
+  animation: "circle_05_up"
+  material: "/builtins/materials/particlefx.material"
+  blend_mode: BLEND_MODE_ADD
+  max_particle_count: 1
+  type: EMITTER_TYPE_BOX
+  properties {
+    key: EMITTER_KEY_SPAWN_RATE
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_LIFE_TIME
+    points {
+      y: 0.8
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_SIZE
+    points {
+      y: 200.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_RED
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ALPHA
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ROTATION
+    points {
+      y: 90.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_STRETCH_FACTOR_X
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_SCALE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_RED
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ALPHA
+    points {
+      y: -0.015513
+      t_x: 0.86311597
+      t_y: 0.5050058
+    }
+    points {
+      x: 0.078723
+      y: 1.039916
+      t_x: 0.96130776
+      t_y: 0.2754767
+    }
+    points {
+      x: 0.286495
+      y: -0.014878
+      t_x: 0.9643715
+      t_y: -0.2645518
+    }
+    points {
+      x: 1.0
+      y: -0.015545
+      t_x: 0.9999995
+      t_y: 9.680736E-4
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ROTATION
+    points {
+      y: 0.0
+      t_x: 0.0011004915
+      t_y: -0.9999994
+    }
+    points {
+      x: 1.0
+      y: -313.254
+      t_x: 0.009425972
+      t_y: -0.9999556
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_STRETCH_FACTOR_X
+    points {
+      y: 0.0
+      t_x: 0.109303534
+      t_y: 0.9940084
+    }
+    points {
+      x: 0.065958
+      y: 1.771697
+    }
+    points {
+      x: 0.219149
+      y: -0.078695
+      t_x: 0.429272
+      t_y: -0.903175
+    }
+    points {
+      x: 1.0
+      y: 0.0
+      t_x: 0.94904816
+      t_y: -0.31513104
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_STRETCH_FACTOR_Y
+    points {
+      y: 0.089688
+    }
+    points {
+      x: 0.056029
+      y: 0.018768
+      t_x: 0.9450041
+      t_y: 0.3270585
+    }
+    points {
+      x: 1.0
+      y: 0.0
+    }
+  }
+}

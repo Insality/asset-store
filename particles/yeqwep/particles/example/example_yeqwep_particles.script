@@ -1,0 +1,39 @@
+local function hex2rgba(hex, w)
+	local alpha = 1
+	if w then
+		alpha = w
+	end
+	hex = hex:gsub("#", "")
+	local rgba =
+		vmath.vector4(
+			tonumber("0x" .. hex:sub(1, 2)) / 255,
+			tonumber("0x" .. hex:sub(3, 4)) / 255,
+			tonumber("0x" .. hex:sub(5, 6)) / 255,
+			alpha
+		)
+	return rgba
+end
+
+function init(self)
+	msg.post("@render:", "clear_color", { color = hex2rgba("#8196AE") })
+
+	particlefx.play("/dust#dust")
+	particlefx.play("/energy#energy")
+	particlefx.play("/exp1#exp1")
+	particlefx.play("/exp2#exp2")
+	particlefx.play("/fire#fire")
+	particlefx.play("/loading#loading")
+	particlefx.play("/slash#slash")
+	particlefx.play("/slash_knife#slash_knife")
+	particlefx.play("/smoke#smoke")
+	particlefx.play("/twirl#twirl")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("slash") then
+		particlefx.play("/exp1#exp1")
+		particlefx.play("/exp2#exp2")
+		particlefx.play("/slash#slash")
+		particlefx.play("/slash_knife#slash_knife")
+	end
+end

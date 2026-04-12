@@ -1,0 +1,45 @@
+local simple_button = require "particles.yeqwep.particles.example.simple_button.simple_button"
+
+local function create_button(node, callback)
+	return simple_button.create(node, nil, nil, callback)
+end
+
+local function toggle_fog_mode(self, confetti_node, fog_node)
+	self.fog_mode = (self.fog_mode + 1) % 3
+	if self.fog_mode == 0 then
+		gui.set_text(gui.get_node("text2"), "Fog Mode: Fog")
+		gui.set_enabled(confetti_node, true)
+		gui.stop_particlefx(fog_node)
+		gui.play_particlefx(confetti_node)
+	elseif self.fog_mode == 1 then
+		gui.set_text(gui.get_node("text2"), "Fog Mode: None")
+		gui.set_enabled(fog_node, true)
+		gui.play_particlefx(fog_node)
+		gui.stop_particlefx(confetti_node)
+	elseif self.fog_mode == 2 then
+		gui.set_text(gui.get_node("text2"), "Fog Mode: Confetti")
+		gui.set_enabled(fog_node, false)
+		gui.set_enabled(confetti_node, false)
+	end
+end
+
+function init(self)
+	local confetti_node = gui.get_node("confetti")
+	local fog_node = gui.get_node("fog")
+	msg.post(".", "acquire_input_focus")
+
+	self.fog_mode = 1
+	toggle_fog_mode(self, confetti_node, fog_node)
+
+	self.button1 = create_button(gui.get_node("button1"), function()
+		msg.post("/go#main", "slash")
+	end)
+	self.button2 = create_button(gui.get_node("button2"), function()
+		toggle_fog_mode(self, confetti_node, fog_node)
+	end)
+end
+
+function on_input(self, action_id, action)
+	self.button1.on_input(action_id, action)
+	self.button2.on_input(action_id, action)
+end

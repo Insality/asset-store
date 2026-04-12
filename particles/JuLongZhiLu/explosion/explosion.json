@@ -1,0 +1,14 @@
+{
+	"author": "JuLongZhiLu",
+	"id": "explosion",
+	"version": 1,
+	"title": "Explosion",
+	"description": "Multi-phase explosion particle effect using built-in particle blob textures",
+	"example": "/particles/JuLongZhiLu/explosion/example/example_julong_explosion.collection",
+	"example_code": "/particles/JuLongZhiLu/explosion/example/example_julong_explosion.script",
+	"author_url": "https://github.com/JuLongZhiLu/easy_explosion_vfx",
+	"tags": ["particle", "effect", "explosion"],
+	"content": [
+		"explosion.particlefx"
+	]
+}

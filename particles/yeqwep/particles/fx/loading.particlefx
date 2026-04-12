@@ -1,0 +1,111 @@
+emitters {
+  mode: PLAY_MODE_LOOP
+  duration: 1.0
+  space: EMISSION_SPACE_WORLD
+  tile_source: "/particles/yeqwep/particles/img/p2.atlas"
+  animation: "circle_05_up"
+  material: "/builtins/materials/particlefx.material"
+  blend_mode: BLEND_MODE_ADD
+  max_particle_count: 12
+  type: EMITTER_TYPE_BOX
+  properties {
+    key: EMITTER_KEY_SPAWN_RATE
+    points {
+      y: 4.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_LIFE_TIME
+    points {
+      y: 2.5
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_SIZE
+    points {
+      y: 100.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_RED
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ALPHA
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_SCALE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_RED
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ALPHA
+    points {
+      y: 0.0
+      t_x: 0.86311597
+      t_y: 0.5050058
+    }
+    points {
+      x: 0.267985
+      y: 1.01179
+      t_x: 0.935575
+      t_y: 0.353128
+    }
+    points {
+      x: 1.0
+      y: 0.0072254334
+      t_x: 0.9615144
+      t_y: -0.27475455
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ROTATION
+    points {
+      y: 0.0
+      t_x: 0.0028497826
+      t_y: 0.99999595
+    }
+    points {
+      x: 1.0
+      y: 359.9999
+      t_x: 0.0024046558
+      t_y: 0.9999971
+    }
+  }
+}

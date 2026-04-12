@@ -1,0 +1,4 @@
+images {
+  image: "/particles/yeqwep/particles/img/b/background.png"
+}
+extrude_borders: 2

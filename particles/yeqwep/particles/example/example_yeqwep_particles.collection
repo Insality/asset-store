@@ -1,0 +1,325 @@
+name: "main"
+scale_along_z: 0
+embedded_instances {
+  id: "gui"
+  data: "components {\n"
+  "  id: \"kamifubuki\"\n"
+  "  component: \"/particles/yeqwep/particles/example/fog.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "go"
+  children: "dust"
+  children: "energy"
+  children: "exp1"
+  children: "exp2"
+  children: "fire"
+  children: "loading"
+  children: "slash"
+  children: "slash_knife"
+  children: "smoke"
+  children: "twirl"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/particles/yeqwep/particles/example/example_yeqwep_particles.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"background\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_MULT\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/particles/yeqwep/particles/img/bg.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "go2"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.0\\n"
+  "far_z: 1000.0\\n"
+  "orthographic_projection: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 500.0
+  }
+}
+embedded_instances {
+  id: "dust"
+  data: "components {\n"
+  "  id: \"dust\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/dust.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"DUST\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -400.0
+    y: 200.0
+  }
+}
+embedded_instances {
+  id: "energy"
+  data: "components {\n"
+  "  id: \"energy\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/energy.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"ENERGY\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -200.0
+    y: 200.0
+  }
+}
+embedded_instances {
+  id: "exp1"
+  data: "components {\n"
+  "  id: \"exp1\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/exp1.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"EXPLOSION-1\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    y: 200.0
+  }
+}
+embedded_instances {
+  id: "exp2"
+  data: "components {\n"
+  "  id: \"exp2\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/exp2.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"EXPLOSION-2\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 200.0
+    y: 200.0
+  }
+}
+embedded_instances {
+  id: "fire"
+  data: "components {\n"
+  "  id: \"fire\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/fire.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"FIRE\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 400.0
+    y: 200.0
+  }
+}
+embedded_instances {
+  id: "loading"
+  data: "components {\n"
+  "  id: \"loading\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/loading.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"LOADING\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -400.0
+    y: -100.0
+  }
+}
+embedded_instances {
+  id: "slash"
+  data: "components {\n"
+  "  id: \"slash\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/slash.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"SLASH\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -200.0
+    y: -100.0
+  }
+}
+embedded_instances {
+  id: "slash_knife"
+  data: "components {\n"
+  "  id: \"slash_knife\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/slash_knife.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"SLASH KNIFE\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    y: -100.0
+  }
+}
+embedded_instances {
+  id: "smoke"
+  data: "components {\n"
+  "  id: \"smoke\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/smoke.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"SMOKE\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 200.0
+    y: -100.0
+  }
+}
+embedded_instances {
+  id: "twirl"
+  data: "components {\n"
+  "  id: \"twirl\"\n"
+  "  component: \"/particles/yeqwep/particles/fx/twirl.particlefx\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"label\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 128.0\\n"
+  "  y: 32.0\\n"
+  "}\\n"
+  "text: \\\"TWIRL\\\"\\n"
+  "font: \\\"/builtins/fonts/default.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    y: -100.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 400.0
+    y: -100.0
+  }
+}

@@ -1,0 +1,219 @@
+emitters {
+  mode: PLAY_MODE_LOOP
+  duration: 1.0
+  space: EMISSION_SPACE_WORLD
+  tile_source: "/builtins/graphics/particle_blob.tilesource"
+  animation: "anim"
+  material: "/builtins/materials/particlefx.material"
+  blend_mode: BLEND_MODE_SCREEN
+  max_particle_count: 32
+  type: EMITTER_TYPE_BOX
+  properties {
+    key: EMITTER_KEY_SPAWN_RATE
+    points {
+      y: 8.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_SIZE_X
+    points {
+      y: 600.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_SIZE_Y
+    points {
+      y: 400.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_LIFE_TIME
+    points {
+      y: 10.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_SIZE
+    points {
+      y: 400.0
+    }
+    spread: 100.0
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_RED
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_ALPHA
+    points {
+      y: 0.95
+    }
+    spread: 0.5
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_STRETCH_FACTOR_X
+    points {
+      y: 3.0
+    }
+    spread: 1.25
+  }
+  properties {
+    key: EMITTER_KEY_PARTICLE_STRETCH_FACTOR_Y
+    points {
+      y: 0.5
+    }
+    spread: 0.5
+  }
+  particle_properties {
+    key: PARTICLE_KEY_SCALE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_RED
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_GREEN
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_BLUE
+    points {
+      y: 1.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ALPHA
+    points {
+      y: 0.0
+      t_x: 0.07194582
+      t_y: 0.99740857
+    }
+    points {
+      x: 0.133968
+      y: 0.939959
+      t_x: 0.99418455
+      t_y: 0.10768964
+    }
+    points {
+      x: 0.323711
+      y: -0.207634
+      t_x: 0.5694311
+      t_y: -0.82203907
+    }
+    points {
+      x: 0.533909
+      y: 0.500935
+      t_x: 0.958265
+      t_y: -0.285882
+    }
+    points {
+      x: 0.719378
+      y: 0.070837
+      t_x: 0.526847
+      t_y: -0.84996
+    }
+    points {
+      x: 0.85917
+      y: 0.195436
+      t_x: 0.791077
+      t_y: -0.611717
+    }
+    points {
+      x: 1.0
+      y: -0.002301
+      t_x: 0.4737472
+      t_y: -0.8806609
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_STRETCH_FACTOR_X
+    points {
+      y: 0.0
+    }
+    points {
+      x: 0.161592
+      y: 0.161945
+    }
+    points {
+      x: 0.308305
+      y: -0.061991
+      t_x: 0.974709
+      t_y: -0.223477
+    }
+    points {
+      x: 0.513148
+      y: 0.050582
+      t_x: 0.99592
+      t_y: 0.090246
+    }
+    points {
+      x: 0.724913
+      y: -0.087014
+      t_x: 0.98906
+      t_y: -0.147516
+    }
+    points {
+      x: 1.0
+      y: 0.0
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_STRETCH_FACTOR_Y
+    points {
+      y: 0.0
+    }
+    points {
+      x: 0.142215
+      y: 0.361996
+    }
+    points {
+      x: 0.369205
+      y: 0.118133
+      t_x: 0.946811
+      t_y: -0.321789
+    }
+    points {
+      x: 0.580968
+      y: 0.259497
+      t_x: 0.996314
+      t_y: -0.085786
+    }
+    points {
+      x: 0.773356
+      y: 0.122828
+      t_x: 0.787448
+      t_y: -0.616381
+    }
+    points {
+      x: 1.0
+      y: 0.352469
+    }
+  }
+  particle_properties {
+    key: PARTICLE_KEY_ANGULAR_VELOCITY
+    points {
+      y: 1.0
+    }
+  }
+}

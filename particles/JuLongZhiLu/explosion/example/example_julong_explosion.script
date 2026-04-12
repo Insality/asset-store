@@ -1,0 +1,11 @@
+local PARTICLE_ID = hash("explosion")
+local LOOP_DELAY = 1.5
+
+
+function init(self)
+	local particle_url = msg.url(nil, nil, PARTICLE_ID)
+	particlefx.play(particle_url)
+	timer.delay(LOOP_DELAY, true, function()
+		particlefx.play(particle_url)
+	end)
+end
