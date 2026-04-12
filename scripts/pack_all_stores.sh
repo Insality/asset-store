@@ -82,7 +82,7 @@ encode_base64() {
   if base64 --version 2>&1 | grep -q GNU; then
     base64 -w 0 "$path"  # Linux
   else
-    base64 -i "$path"     # macOS
+    base64 -i "$path" | tr -d '\n'  # macOS (no -w0; strip PEM line breaks)
   fi
 }
 
@@ -166,18 +166,25 @@ create_json_zip() {
   local json_zip_path="$DIST_DIR/$content_folder/$json_zip_name"
   local size
   size="$(get_file_size "$zip_path")"
-  local base64_data
-  base64_data="$(encode_base64 "$zip_path")"
+  local b64_tmp
+  b64_tmp="$(mktemp)"
+  if ! encode_base64 "$zip_path" > "$b64_tmp"; then
+    rm -f "$b64_tmp"
+    echo "  ❌ ERROR: base64 encode failed for $zip_path" >&2
+    exit 1
+  fi
   local zip_content
   zip_content="$(zipinfo -1 "$zip_path" | jq -R -s -c 'split("\n") | map(select(length > 0 and (. | endswith("/") | not)))')"
 
+  # Use --rawfile so large zips are not passed on the shell argv (ARG_MAX / truncation → empty .json on Pages).
   jq -n \
-    --arg data "$base64_data" \
+    --rawfile data "$b64_tmp" \
     --arg filename "$zip_name" \
     --arg size "$size" \
     --argjson content "$zip_content" \
     '{"data": $data, "filename": $filename, "size": ($size|tonumber), "content": $content}' \
     > "$json_zip_path"
+  rm -f "$b64_tmp"
 
   echo "${BASE_URL:+$BASE_URL/}$content_folder/$json_zip_name"
 }
