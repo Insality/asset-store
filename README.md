@@ -23,7 +23,7 @@ Open your `game.project` file and add the following line to the dependencies fie
 **[Asset Store](https://github.com/Insality/asset-store/archive/refs/tags/2.zip)**
 
 ```
-https://github.com/Insality/asset-store/archive/refs/tags/2.zip
+https://github.com/Insality/asset-store/archive/refs/tags/3.zip
 ```
 
 After that, select `Project ▸ Fetch Libraries` to update [library dependencies](https://defold.com/manuals/libraries/#setting-up-library-dependencies). This happens automatically whenever you open a project so you will only need to do this if the dependencies change without re-opening the project.
@@ -90,7 +90,7 @@ If you have any issues, questions or suggestions please [create an issue](https:
 - Added Asset Store section in the editor menu
 - Added support for images in editor scripts
 
-### **V3** *In Progress*
+### **V3**
 - [#4] InvalidPathException: Illegal Character in ZIP filename
 - Author button now sets the author filter to the selected author
 - Add Asset Store settings window for various adjustments

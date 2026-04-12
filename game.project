@@ -21,7 +21,7 @@ show_made_with_defold = 0
 [project]
 developer = Insality
 title = Asset Store
-version = 1.0
+version = 3
 dependencies#0 = https://github.com/Insality/decore/archive/refs/heads/main.zip
 dependencies#1 = https://github.com/subsoap/defos/archive/refs/tags/v2.8.3.zip
 dependencies#2 = https://github.com/Insality/defold-event/archive/refs/tags/14.zip
