@@ -6,10 +6,9 @@
 	"tags": [
 		"Ads",
 		"Platform",
-		"Social",
-		"System"
+		"Social"
 	],
-	"stars": 35,
+	"stars": 36,
 	"content": [
 		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.0.0.zip",
 		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/1.1.0.zip",
@@ -35,7 +34,10 @@
 		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.3.0.zip",
 		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.4.0.zip",
 		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.4.1.zip",
-		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.5.0.zip"
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.5.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.5.1.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/3.6.0.zip",
+		"https://github.com/defold/extension-poki-sdk/archive/refs/tags/4.0.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-poki-sdk",
 	"api": "https://defold.com/extension-poki-sdk/poki_sdk_api/",

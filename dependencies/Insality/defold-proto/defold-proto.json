@@ -4,11 +4,10 @@
 	"title": "Defold Proto",
 	"description": "Defold Protobuf Library to encode, decode and verifying messages",
 	"tags": [
-		"system",
-		"util",
-		"tools"
+		"Serialization",
+		"Filesystem"
 	],
-	"stars": 15,
+	"stars": 16,
 	"content": [
 		"https://github.com/Insality/defold-proto/archive/refs/tags/1.zip"
 	],

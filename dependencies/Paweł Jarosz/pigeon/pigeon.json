@@ -4,15 +4,16 @@
 	"title": "Pigeon",
 	"description": "Easily and safely manage posting messages in Defold.",
 	"tags": [
-		"System"
+		"Architecture"
 	],
-	"stars": 61,
+	"stars": 63,
 	"content": [
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.0.zip",
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.1.zip",
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.2.zip",
 		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.3.zip",
-		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.4.zip"
+		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.4.zip",
+		"https://github.com/paweljarosz/pigeon/archive/refs/tags/v1.5.zip"
 	],
 	"example_code": "https://github.com/paweljarosz/pigeon",
 	"author_url": "https://github.com/paweljarosz",

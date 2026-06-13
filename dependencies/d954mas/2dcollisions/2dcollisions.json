@@ -4,8 +4,7 @@
 	"title": "2D Collisions",
 	"description": "Efficiently find collisions between rects and circles",
 	"tags": [
-		"Physics",
-		"System"
+		"Physics"
 	],
 	"stars": 3,
 	"content": [

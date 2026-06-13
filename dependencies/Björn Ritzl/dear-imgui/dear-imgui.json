@@ -4,9 +4,11 @@
 	"title": "Dear ImGUI",
 	"description": "Dear ImGui is a bloat-free graphical user interface library.",
 	"tags": [
-		"gui"
+		"GUI",
+		"Tools",
+		"Rendering"
 	],
-	"stars": 75,
+	"stars": 80,
 	"content": [
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.0.0.zip",
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/1.1.0.zip",
@@ -34,7 +36,9 @@
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.10.0.zip",
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.11.0.zip",
 		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.12.0.zip",
-		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.13.0.zip"
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.13.0.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.13.1.zip",
+		"https://github.com/britzl/extension-imgui/archive/refs/tags/2.14.0.zip"
 	],
 	"example_code": "https://github.com/britzl/extension-imgui",
 	"author_url": "https://github.com/britzl",

@@ -4,7 +4,9 @@
 	"title": "Log",
 	"description": "General purpose logging.",
 	"tags": [
-		"System"
+		"Logging",
+		"Filesystem",
+		"Debugging"
 	],
 	"stars": 11,
 	"content": [

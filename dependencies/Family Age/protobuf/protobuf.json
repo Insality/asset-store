@@ -4,9 +4,10 @@
 	"title": "Protobuf",
 	"description": "This extension allow you work with google protobuf protocol (files .proto), encode and decode them.",
 	"tags": [
-		"System"
+		"Serialization",
+		"Filesystem"
 	],
-	"stars": 15,
+	"stars": 16,
 	"content": [
 		"https://github.com/Melsoft-Games/defold-protobuf/archive/master.zip"
 	],

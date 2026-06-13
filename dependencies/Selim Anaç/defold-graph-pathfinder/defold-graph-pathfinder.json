@@ -7,11 +7,12 @@
 		"AI",
 		"Math"
 	],
-	"stars": 29,
+	"stars": 33,
 	"content": [
 		"https://github.com/selimanac/defold-graph-pathfinder/archive/refs/tags/0.0.1-beta.1.zip",
 		"https://github.com/selimanac/defold-graph-pathfinder/archive/refs/tags/0.0.2-beta.1.zip",
-		"https://github.com/selimanac/defold-graph-pathfinder/archive/refs/tags/0.0.3-beta.1.zip"
+		"https://github.com/selimanac/defold-graph-pathfinder/archive/refs/tags/0.0.3-beta.1.zip",
+		"https://github.com/selimanac/defold-graph-pathfinder/archive/refs/tags/0.0.4.zip"
 	],
 	"example_code": "https://github.com/selimanac/defold-graph-pathfinder",
 	"author_url": "https://github.com/selimanac",

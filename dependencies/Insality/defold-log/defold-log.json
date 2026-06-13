@@ -4,11 +4,11 @@
 	"title": "Defold Log",
 	"description": "Context logger with performance metrics for Defold",
 	"tags": [
-		"system",
-		"util",
-		"tools"
+		"Logging",
+		"Filesystem",
+		"Debugging"
 	],
-	"stars": 33,
+	"stars": 35,
 	"content": [
 		"https://github.com/Insality/defold-log/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-log/archive/refs/tags/2.zip",

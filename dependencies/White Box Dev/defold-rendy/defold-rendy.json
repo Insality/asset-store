@@ -5,8 +5,8 @@
 	"description": "Defold Rendy provides a versatile camera suite and render pipeline in a Defold game engine project.",
 	"tags": [
 		"3D",
-		"camera",
-		"rendering"
+		"Camera",
+		"Rendering"
 	],
 	"stars": 78,
 	"content": [

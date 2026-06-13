@@ -4,8 +4,8 @@
 	"title": "Defold Persist",
 	"description": "Defold Persist provides a simple interface for saving and loading data in a Defold game engine project.",
 	"tags": [
-		"system",
-		"util"
+		"Storage",
+		"Filesystem"
 	],
 	"stars": 15,
 	"content": [

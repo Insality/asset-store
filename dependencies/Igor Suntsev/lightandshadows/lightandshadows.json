@@ -5,11 +5,11 @@
 	"description": "Pack of shaders and scene setup examples.",
 	"tags": [
 		"3D",
-		"rendering",
-		"sample project",
-		"shaders"
+		"Rendering",
+		"Samples",
+		"Shaders"
 	],
-	"stars": 127,
+	"stars": 136,
 	"content": [
 		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.3.0.zip",
 		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.4.0.zip",
@@ -23,7 +23,11 @@
 		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.3.zip",
 		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.4.zip",
 		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.5.zip",
-		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.6.zip"
+		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.6.zip",
+		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.7.zip",
+		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.8.zip",
+		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.61.zip",
+		"https://github.com/Dragosha/defold-light-and-shadows/archive/refs/tags/v0.8.71.zip"
 	],
 	"example_code": "https://github.com/Dragosha/defold-light-and-shadows",
 	"author_url": "https://github.com/Dragosha",

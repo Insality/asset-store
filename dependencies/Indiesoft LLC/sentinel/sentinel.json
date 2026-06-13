@@ -4,7 +4,8 @@
 	"title": "Sentinel",
 	"description": "Unofficial Sentry.io SDK for Defold to monitor and track Lua code errors.",
 	"tags": [
-		"Util"
+		"Debugging",
+		"Logging"
 	],
 	"stars": 20,
 	"content": [

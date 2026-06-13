@@ -4,10 +4,10 @@
 	"title": "Squid",
 	"description": "Squid is a standalone injectable system for saveable logging of user logs, errors and crashes for Defold",
 	"tags": [
-		"security",
-		"system",
-		"tools",
-		"util"
+		"Security",
+		"Logging",
+		"Debugging",
+		"Filesystem"
 	],
 	"stars": 9,
 	"content": [

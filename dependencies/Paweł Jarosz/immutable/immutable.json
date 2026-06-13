@@ -4,10 +4,8 @@
 	"title": "Immutable",
 	"description": "Makes any Lua table runtime immutable (read-only).",
 	"tags": [
-		"lua",
-		"security",
-		"system",
-		"util"
+		"Security",
+		"Utilities"
 	],
 	"stars": 8,
 	"content": [

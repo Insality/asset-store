@@ -1,0 +1,32 @@
+{
+	"author": "Daniel Widgren",
+	"id": "asobi",
+	"title": "Asobi",
+	"description": "Asobi is an open source, server-authoritative multiplayer game backend built on Erlang/OTP with a Defold Lua SDK. The SDK provides REST APIs and realtime WebSocket integration for authentication, worlds, matchmaking, leaderboards, economy, inventory, chat, presence, storage, and entity sync.",
+	"tags": [
+		"Network",
+		"Platform",
+		"Social"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.1.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.2.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.3.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.3.1.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.4.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.5.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.6.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.7.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.7.1.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.7.2.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.7.3.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.7.4.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.8.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.0.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.1.0.zip"
+	],
+	"example_code": "https://github.com/widgrensit/asobi-defold",
+	"author_url": "https://github.com/widgrensit",
+	"image": "asobi.jpg"
+}

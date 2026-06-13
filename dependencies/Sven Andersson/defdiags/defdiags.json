@@ -4,7 +4,9 @@
 	"title": "Def-Diags",
 	"description": "Simpe cross-platform (OSX, Windows, Linux) native open and save dialogs.",
 	"tags": [
-		"Input"
+		"Input",
+		"Filesystem",
+		"OS"
 	],
 	"stars": 15,
 	"content": [

@@ -1,0 +1,21 @@
+{
+	"author": "HGPoint",
+	"id": "live-unbundler",
+	"title": "Defold Live Unbundler",
+	"description": "Defold Live Unbundler is a Live Update helper for splitting large archives into smaller dependency-aware chunks, hosting them alongside an HTML5 build, and downloading and mounting them dynamically at runtime.",
+	"tags": [
+		"Build",
+		"Live Update",
+		"Tools",
+		"Filesystem"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/1.0.zip",
+		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/1.1.zip",
+		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/1.2.zip"
+	],
+	"example_code": "https://github.com/HGPoint/defold_live_unbundler",
+	"author_url": "https://github.com/HGPoint",
+	"image": "live-unbundler.jpg"
+}

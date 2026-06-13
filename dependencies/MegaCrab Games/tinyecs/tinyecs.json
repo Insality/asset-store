@@ -4,8 +4,7 @@
 	"title": "Defold Tiny ECS",
 	"description": "The Tiny ECS library packaged as a Defold library.",
 	"tags": [
-		"lua",
-		"system"
+		"Architecture"
 	],
 	"stars": 10,
 	"content": [

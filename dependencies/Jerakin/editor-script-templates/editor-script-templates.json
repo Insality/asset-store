@@ -4,7 +4,9 @@
 	"title": "editor-script-templates",
 	"description": "Create files from your own defined templates.",
 	"tags": [
-		"Editor script"
+		"Tools",
+		"Filesystem",
+		"Editor"
 	],
 	"stars": 6,
 	"content": [

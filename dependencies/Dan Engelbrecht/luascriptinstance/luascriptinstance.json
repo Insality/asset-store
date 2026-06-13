@@ -4,8 +4,7 @@
 	"title": "Lua Script Instance",
 	"description": "Library to expose access for getting and setting the current script instance.",
 	"tags": [
-		"System",
-		"Lua"
+		"Architecture"
 	],
 	"stars": 11,
 	"content": [

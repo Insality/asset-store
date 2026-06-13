@@ -4,10 +4,11 @@
 	"title": "NavGO",
 	"description": "NavGO is an easy to use path finding tool meant for use when tile map based path finding is just not possible or is to complicated for the project at hand.",
 	"tags": [
-		"ai",
-		"math"
+		"AI",
+		"Math",
+		"Mechanics"
 	],
-	"stars": 14,
+	"stars": 15,
 	"content": [
 		"https://github.com/DrCampbell2017/NavGO/archive/refs/tags/Alpha.zip",
 		"https://github.com/DrCampbell2017/NavGO/archive/refs/tags/Alpha.2.zip",

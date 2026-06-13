@@ -4,10 +4,10 @@
 	"title": "DefCon",
 	"description": "Defold developer console. The console allows you to interact with a running game (locally or on device) through a browser.",
 	"tags": [
-		"System",
+		"Debugging",
 		"Tools"
 	],
-	"stars": 59,
+	"stars": 61,
 	"content": [
 		"https://github.com/britzl/defcon/archive/refs/tags/1.0.zip",
 		"https://github.com/britzl/defcon/archive/refs/tags/1.0-beta1.zip",

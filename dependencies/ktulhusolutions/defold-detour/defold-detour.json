@@ -5,10 +5,12 @@
 	"description": "Defold native extension for recast navigation.",
 	"tags": [
 		"3D",
-		"ai",
-		"math"
+		"AI",
+		"Math",
+		"Mechanics",
+		"Bindings"
 	],
-	"stars": 23,
+	"stars": 22,
 	"content": [
 		"https://github.com/abadonna/defold-detour/archive/main.zip"
 	],

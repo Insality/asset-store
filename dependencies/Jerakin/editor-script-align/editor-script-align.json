@@ -4,7 +4,8 @@
 	"title": "editor-script-align",
 	"description": "Adds a menu items under Edit to align GUI nodes. Currently only supports root items due to Defold limitations.",
 	"tags": [
-		"Editor script"
+		"Tools",
+		"Editor"
 	],
 	"stars": 8,
 	"content": [

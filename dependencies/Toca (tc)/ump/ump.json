@@ -4,11 +4,11 @@
 	"title": "UMP - Google User Messaging Platform (Android)",
 	"description": "This Defold extension allows you to integrate Google's User Messaging Platform (UMP) into your Defold game to manage user consent for ads on Android. It helps you request consent information, show the consent form, and check the user's consent status",
 	"tags": [
-		"ads",
-		"monetization",
-		"platform"
+		"Ads",
+		"Monetization",
+		"Platform"
 	],
-	"stars": 6,
+	"stars": 7,
 	"content": [
 		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v0.0.1.zip",
 		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v0.0.2.zip",
@@ -17,7 +17,8 @@
 		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v0.0.5.zip",
 		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v0.0.6.zip",
 		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v0.0.7.zip",
-		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v3.2.0.zip"
+		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v3.2.0.zip",
+		"https://github.com/tocaRepo/defold-androidextension-ump/archive/refs/tags/v4.0.0.zip"
 	],
 	"example_code": "https://github.com/tocaRepo/defold-androidextension-ump",
 	"author_url": "https://github.com/tocaRepo",

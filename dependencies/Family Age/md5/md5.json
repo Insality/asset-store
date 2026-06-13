@@ -4,7 +4,7 @@
 	"title": "MD5",
 	"description": "This Extension allows you calculate MD5 in native from string",
 	"tags": [
-		"System",
+		"Security",
 		"Math"
 	],
 	"stars": 6,

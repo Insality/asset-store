@@ -4,8 +4,8 @@
 	"title": "Checkpoint",
 	"description": "Checkpoint is a simple library for writing and reading data to and from files in a Defold game engine project.",
 	"tags": [
-		"system",
-		"util"
+		"Storage",
+		"Filesystem"
 	],
 	"stars": 10,
 	"content": [

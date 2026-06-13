@@ -4,9 +4,10 @@
 	"title": "Defold Event",
 	"description": "Cross-Context Defold Event System. Allows to create and subscribe to events between different contexts (game objects, gui elements, etc.)",
 	"tags": [
-		"system"
+		"Mechanics",
+		"Architecture"
 	],
-	"stars": 72,
+	"stars": 73,
 	"content": [
 		"https://github.com/Insality/defold-event/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-event/archive/refs/tags/2.zip",
@@ -22,7 +23,8 @@
 		"https://github.com/Insality/defold-event/archive/refs/tags/12.zip",
 		"https://github.com/Insality/defold-event/archive/refs/tags/13.zip",
 		"https://github.com/Insality/defold-event/archive/refs/tags/14.zip",
-		"https://github.com/Insality/defold-event/archive/refs/tags/15.zip"
+		"https://github.com/Insality/defold-event/archive/refs/tags/15.zip",
+		"https://github.com/Insality/defold-event/archive/refs/tags/16.zip"
 	],
 	"example_code": "https://github.com/Insality/defold-event",
 	"api": "https://github.com/Insality/defold-event/blob/main/api/api.md",

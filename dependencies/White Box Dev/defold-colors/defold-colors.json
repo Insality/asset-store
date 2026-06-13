@@ -4,9 +4,8 @@
 	"title": "Defold Colors",
 	"description": "Defold Colors provides customizable palettes and color utility features in a Defold game engine project.",
 	"tags": [
-		"art assets",
-		"rendering",
-		"util"
+		"Color",
+		"Utilities"
 	],
 	"stars": 20,
 	"content": [

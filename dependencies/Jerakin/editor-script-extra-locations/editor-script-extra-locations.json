@@ -4,7 +4,9 @@
 	"title": "editor-script-extra-locations",
 	"description": "Editor script to open the finder/explorer at different important locations.",
 	"tags": [
-		"Editor script"
+		"Tools",
+		"Filesystem",
+		"Editor"
 	],
 	"stars": 2,
 	"content": [

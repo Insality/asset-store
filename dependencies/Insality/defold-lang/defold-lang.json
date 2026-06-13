@@ -4,11 +4,12 @@
 	"title": "Defold Lang",
 	"description": "Defold Localization Helper. Load and manage translations for your game. Supports Lua, JSON and CSV formats.",
 	"tags": [
-		"system",
-		"util",
-		"gui"
+		"Localization",
+		"GUI",
+		"Text",
+		"Filesystem"
 	],
-	"stars": 35,
+	"stars": 37,
 	"content": [
 		"https://github.com/Insality/defold-lang/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-lang/archive/refs/tags/2.zip",

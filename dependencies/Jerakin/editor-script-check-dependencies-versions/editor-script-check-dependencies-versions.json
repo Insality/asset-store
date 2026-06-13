@@ -4,7 +4,8 @@
 	"title": "editor-script-check-dependencies-versions",
 	"description": "Checks your dependencies against github releases to see if there are any updates.",
 	"tags": [
-		"Editor script"
+		"Tools",
+		"Editor"
 	],
 	"stars": 3,
 	"content": [

@@ -4,7 +4,8 @@
 	"title": "Defold-WebP",
 	"description": "Decode and encode external WebP image files.",
 	"tags": [
-		"system"
+		"Image",
+		"Filesystem"
 	],
 	"stars": 6,
 	"content": [

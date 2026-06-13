@@ -4,10 +4,9 @@
 	"title": "Simplex Noise",
 	"description": "Functions to generate Simplex noise, a fast successor to Perlin noise, suitable for textures, animation, terrain generation, and more.",
 	"tags": [
-		"Math",
-		"Tools"
+		"Math"
 	],
-	"stars": 6,
+	"stars": 7,
 	"content": [
 		"https://github.com/indiesoftby/defold-simplex-noise/archive/refs/tags/1.0.0.zip"
 	],

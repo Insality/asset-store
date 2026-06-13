@@ -7,7 +7,7 @@
 		"AI",
 		"Math"
 	],
-	"stars": 103,
+	"stars": 106,
 	"content": [
 		"https://github.com/selimanac/defold-astar/archive/refs/tags/1.0.zip",
 		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.0.1.zip",
@@ -16,7 +16,9 @@
 		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.1.0.zip",
 		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.1.1.zip",
 		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.2.0.zip",
-		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.2.1.zip"
+		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.2.1.zip",
+		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.2.2.zip",
+		"https://github.com/selimanac/defold-astar/archive/refs/tags/v1.2.3.zip"
 	],
 	"example_code": "https://github.com/selimanac/defold-astar",
 	"api": "https://github.com/selimanac/defold-astar/wiki/API",

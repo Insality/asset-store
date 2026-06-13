@@ -4,7 +4,8 @@
 	"title": "editor-script-cleanup",
 	"description": "Editor script that adds clean up functionallity.",
 	"tags": [
-		"Editor script"
+		"Tools",
+		"Editor"
 	],
 	"stars": 4,
 	"content": [

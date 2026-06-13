@@ -4,8 +4,7 @@
 	"title": "DefPro",
 	"description": "Interact with the profiler using Lua",
 	"tags": [
-		"System",
-		"Tools"
+		"Debugging"
 	],
 	"stars": 27,
 	"content": [

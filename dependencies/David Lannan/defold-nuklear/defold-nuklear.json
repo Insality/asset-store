@@ -4,7 +4,8 @@
 	"title": "defold-nuklear",
 	"description": "Nuklear is a minimal-state, immediate-mode graphical user interface toolkit.",
 	"tags": [
-		"gui"
+		"GUI",
+		"Rendering"
 	],
 	"stars": 17,
 	"content": [

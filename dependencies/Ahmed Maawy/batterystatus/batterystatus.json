@@ -4,9 +4,7 @@
 	"title": "Android Battery Status Extension",
 	"description": "Allows the developer to get Battery Percentage & Charging Status on Android.",
 	"tags": [
-		"Device control",
-		"System",
-		"Tools"
+		"Device"
 	],
 	"stars": 7,
 	"content": [

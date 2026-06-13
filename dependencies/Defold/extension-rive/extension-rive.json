@@ -5,10 +5,9 @@
 	"description": "Rive is a real-time interactive design and animation tool by Rive Inc. Use Rive to create vector based motion graphics for use in Defold.",
 	"tags": [
 		"Animation",
-		"Tools",
-		"Lua"
+		"Tools"
 	],
-	"stars": 69,
+	"stars": 73,
 	"content": [
 		"https://github.com/defold/extension-rive/archive/refs/tags/3.4.1.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/3.4.2.zip",
@@ -81,7 +80,9 @@
 		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.0.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.1.zip",
 		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.2.zip",
-		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.3.zip"
+		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.3.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/11.0.4.zip",
+		"https://github.com/defold/extension-rive/archive/refs/tags/12.0.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-rive",
 	"author_url": "https://github.com/defold",

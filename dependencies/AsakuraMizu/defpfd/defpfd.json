@@ -5,7 +5,8 @@
 	"description": "Portable File Dialogs for Defold",
 	"tags": [
 		"Input",
-		"System"
+		"OS",
+		"Filesystem"
 	],
 	"stars": 9,
 	"content": [

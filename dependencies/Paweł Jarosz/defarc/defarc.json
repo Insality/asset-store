@@ -4,11 +4,11 @@
 	"title": "DefArc - Defold Arcweave",
 	"description": "DefArc is an Arcweave runtime for Defold, a toolset to easily create branching, interactive narratives in your games!",
 	"tags": [
-		"game mechanic",
-		"template projects",
-		"tools",
-		"tutorials",
-		"util"
+		"Mechanics",
+		"Samples",
+		"Tutorials",
+		"GUI",
+		"Text"
 	],
 	"stars": 34,
 	"content": [

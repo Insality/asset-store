@@ -4,10 +4,10 @@
 	"title": "Starly",
 	"description": "Starly is an orthographic camera library for Defold.",
 	"tags": [
-		"camera",
-		"rendering"
+		"Camera",
+		"Rendering"
 	],
-	"stars": 34,
+	"stars": 35,
 	"content": [
 		"https://github.com/VowSoftware/starly/archive/main.zip"
 	],

@@ -4,7 +4,8 @@
 	"title": "editor-script-components",
 	"description": "This script adds a menu items in the outline to create new resources depending on your selection. ",
 	"tags": [
-		"Editor script"
+		"Tools",
+		"Editor"
 	],
 	"stars": 4,
 	"content": [

@@ -4,7 +4,8 @@
 	"title": "Gyro",
 	"description": "Read gyroscope data",
 	"tags": [
-		"Input"
+		"Input",
+		"Device"
 	],
 	"stars": 10,
 	"content": [

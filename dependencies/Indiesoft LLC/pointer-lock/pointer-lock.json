@@ -4,7 +4,7 @@
 	"title": "Pointer Lock",
 	"description": "Mouse locking, cursor UI and mouselook for first-person 3D games made with Defold.",
 	"tags": [
-		"System"
+		"OS"
 	],
 	"stars": 23,
 	"content": [

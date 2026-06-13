@@ -5,9 +5,9 @@
 	"description": "2D Platformer engine",
 	"tags": [
 		"Physics",
-		"Game mechanic"
+		"Mechanics"
 	],
-	"stars": 71,
+	"stars": 72,
 	"content": [
 		"https://github.com/britzl/platypus/archive/refs/tags/1.0.0.zip",
 		"https://github.com/britzl/platypus/archive/refs/tags/1.1.0.zip",

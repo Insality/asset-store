@@ -4,9 +4,9 @@
 	"title": "DefTest",
 	"description": "Run unit tests using the Telescope unit testing framework.",
 	"tags": [
-		"Tools"
+		"Testing"
 	],
-	"stars": 49,
+	"stars": 50,
 	"content": [
 		"https://github.com/britzl/deftest/archive/refs/tags/1.0.zip",
 		"https://github.com/britzl/deftest/archive/refs/tags/1.1.zip",

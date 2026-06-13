@@ -4,7 +4,9 @@
 	"title": "ResZip",
 	"description": "Use Defold's Live Update to improve the loading speed of the HTML5 games.",
 	"tags": [
-		"Util"
+		"Build",
+		"Live Update",
+		"Filesystem"
 	],
 	"stars": 38,
 	"content": [

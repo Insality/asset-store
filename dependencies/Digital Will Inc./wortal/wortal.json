@@ -4,10 +4,10 @@
 	"title": "Wortal",
 	"description": "Wortal SDK native extension for Defold.",
 	"tags": [
-		"ads",
-		"analytics",
-		"monetization",
-		"platform"
+		"Ads",
+		"Analytics",
+		"Monetization",
+		"Platform"
 	],
 	"stars": 2,
 	"content": [

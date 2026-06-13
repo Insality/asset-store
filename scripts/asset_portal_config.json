@@ -1,7 +1,9 @@
 {
 	"author_renames": {
 		"Agnis 'NeZvers' Aldins": "Agnis Aldins",
-		"Maxim Tuprikov": "Insality"
+		"Maxim Tuprikov": "Insality",
+		"wistpotion (Isabelle Fougner Axrup)": "wistpotion",
+		"The Defold Foundation": "Defold"
 	},
 	"asset_renames": {
 		"author:old_asset_id": "new_asset_id"

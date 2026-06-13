@@ -4,9 +4,8 @@
 	"title": "Dicebag",
 	"description": "A module of probability functions designed specifically for games.",
 	"tags": [
-		"game mechanic",
-		"math",
-		"util"
+		"Mechanics",
+		"Math"
 	],
 	"stars": 39,
 	"content": [

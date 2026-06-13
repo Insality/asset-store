@@ -4,7 +4,8 @@
 	"title": "extension-directories",
 	"description": "Provides path to various system directories.",
 	"tags": [
-		"System"
+		"OS",
+		"Filesystem"
 	],
 	"stars": 13,
 	"content": [

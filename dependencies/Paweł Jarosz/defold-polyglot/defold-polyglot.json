@@ -4,9 +4,10 @@
 	"title": "Defold Polyglot",
 	"description": "Defold Polyglot is a simple Polyglot to Defold Tool for game localisations. Polyglot is one of many community-driven open-source localisation projects available online.",
 	"tags": [
-		"template projects",
-		"tools",
-		"util"
+		"Samples",
+		"Localization",
+		"Text",
+		"Filesystem"
 	],
 	"stars": 11,
 	"content": [

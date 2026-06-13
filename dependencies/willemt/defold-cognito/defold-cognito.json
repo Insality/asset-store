@@ -4,7 +4,9 @@
 	"title": "defold-cognito",
 	"description": "Defold native extension which provides access to AWS Cognito. Useful for user signup/login.",
 	"tags": [
-		"social"
+		"Social",
+		"Network",
+		"Platform"
 	],
 	"stars": 4,
 	"content": [

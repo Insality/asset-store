@@ -4,9 +4,10 @@
 	"title": "Teal",
 	"description": "Defold transpilation support for Teal.",
 	"tags": [
-		"Tools"
+		"Language",
+		"Bindings"
 	],
-	"stars": 48,
+	"stars": 53,
 	"content": [
 		"https://github.com/defold/extension-teal/archive/refs/tags/v0.1.zip",
 		"https://github.com/defold/extension-teal/archive/refs/tags/v1.0.zip",

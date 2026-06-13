@@ -4,8 +4,7 @@
 	"title": "Vibration",
 	"description": "Adds support for device vibration service.",
 	"tags": [
-		"Device control",
-		"System"
+		"Device"
 	],
 	"stars": 19,
 	"content": [

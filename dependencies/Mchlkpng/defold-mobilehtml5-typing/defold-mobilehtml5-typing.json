@@ -4,9 +4,8 @@
 	"title": "Mobile HTML5 Text Keyboard Input",
 	"description": "A Lua module to get text input on mobile browsers for Defold projects.\n",
 	"tags": [
-		"input",
-		"tools",
-		"util"
+		"Input",
+		"Text"
 	],
 	"stars": 3,
 	"content": [

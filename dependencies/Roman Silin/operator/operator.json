@@ -5,11 +5,11 @@
 	"description": "Camera movement controller for 3D games. Tweakable, smooth and cinematic.",
 	"tags": [
 		"3D",
-		"camera",
-		"input",
-		"animation"
+		"Camera",
+		"Input",
+		"Animation"
 	],
-	"stars": 58,
+	"stars": 59,
 	"content": [
 		"https://github.com/astrochili/defold-operator/archive/refs/tags/1.0.zip",
 		"https://github.com/astrochili/defold-operator/archive/refs/tags/1.1.zip",

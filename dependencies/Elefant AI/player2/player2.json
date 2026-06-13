@@ -4,7 +4,8 @@
 	"title": "Player 2 AI NPC Plugin for Defold",
 	"description": "The Official Player2 AI NPC Plugin for Defold. The Player 2 AI NPC Defold plugin allows developers to easily create AI NPCs in their Defold projects.",
 	"tags": [
-		"ai"
+		"AI",
+		"Mechanics"
 	],
 	"stars": 4,
 	"content": [

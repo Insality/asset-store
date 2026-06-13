@@ -4,9 +4,10 @@
 	"title": "Videoplayer - native",
 	"description": "A fullscreen videoplayer extension for iOS and Android using native OS functionality and components for videoplayback.",
 	"tags": [
-		"Video"
+		"Video",
+		"OS"
 	],
-	"stars": 11,
+	"stars": 13,
 	"content": [
 		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.zip",
 		"https://github.com/defold/extension-videoplayer-native/archive/refs/tags/1.0.1.zip",

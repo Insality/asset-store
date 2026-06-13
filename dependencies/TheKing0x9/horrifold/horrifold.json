@@ -4,10 +4,10 @@
 	"title": "Horri-Fold",
 	"description": "A Lo-Fi Horror shader.",
 	"tags": [
-		"rendering",
-		"shaders"
+		"Rendering",
+		"Shaders"
 	],
-	"stars": 49,
+	"stars": 51,
 	"content": [
 		"https://github.com/TheKing0x9/horri-fold/archive/refs/tags/v1.0.0-beta.1.zip",
 		"https://github.com/TheKing0x9/horri-fold/archive/refs/tags/v1.0.0-beta.2.zip",

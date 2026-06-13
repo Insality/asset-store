@@ -4,7 +4,8 @@
 	"title": "Def String",
 	"description": "A module with a set of extra string functions.",
 	"tags": [
-		"System"
+		"Text",
+		"Utilities"
 	],
 	"stars": 6,
 	"content": [

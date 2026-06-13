@@ -4,9 +4,10 @@
 	"title": "Image Loader",
 	"description": "Loads JPG, PNG and other images efficiently into Buffer object.",
 	"tags": [
-		"System"
+		"Image",
+		"Filesystem"
 	],
-	"stars": 23,
+	"stars": 24,
 	"content": [
 		"https://github.com/Lerg/extension-imageloader/archive/master.zip"
 	],

@@ -6,7 +6,7 @@
 	"tags": [
 		"Network"
 	],
-	"stars": 46,
+	"stars": 48,
 	"content": [
 		"https://github.com/defold/extension-websocket/archive/refs/tags/1.0.0.zip",
 		"https://github.com/defold/extension-websocket/archive/refs/tags/1.1.0.zip",
@@ -31,7 +31,8 @@
 		"https://github.com/defold/extension-websocket/archive/refs/tags/4.1.1.zip",
 		"https://github.com/defold/extension-websocket/archive/refs/tags/4.2.0.zip",
 		"https://github.com/defold/extension-websocket/archive/refs/tags/4.2.1.zip",
-		"https://github.com/defold/extension-websocket/archive/refs/tags/4.2.2.zip"
+		"https://github.com/defold/extension-websocket/archive/refs/tags/4.2.2.zip",
+		"https://github.com/defold/extension-websocket/archive/refs/tags/4.2.3.zip"
 	],
 	"example_code": "https://github.com/defold/extension-websocket",
 	"author_url": "https://github.com/defold",

@@ -5,8 +5,7 @@
 	"description": "UUID4 generator native extension.",
 	"tags": [
 		"Math",
-		"Tools",
-		"Util"
+		"Utilities"
 	],
 	"stars": 9,
 	"content": [

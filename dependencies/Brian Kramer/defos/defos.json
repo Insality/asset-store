@@ -4,9 +4,9 @@
 	"title": "DefOS",
 	"description": "Extra native OS functions.",
 	"tags": [
-		"System"
+		"OS"
 	],
-	"stars": 160,
+	"stars": 163,
 	"content": [
 		"https://github.com/subsoap/defos/archive/refs/tags/v1.0.0.zip",
 		"https://github.com/subsoap/defos/archive/refs/tags/v2.0.0.zip",

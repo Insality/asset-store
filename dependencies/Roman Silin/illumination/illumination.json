@@ -5,10 +5,10 @@
 	"description": "Ready-to-use forward shading lighting for 3D games. Just set the provided material to your mesh and place light sources on the scene.",
 	"tags": [
 		"3D",
-		"rendering",
-		"shaders"
+		"Rendering",
+		"Shaders"
 	],
-	"stars": 55,
+	"stars": 57,
 	"content": [
 		"https://github.com/astrochili/defold-illumination/archive/refs/tags/1.0.zip",
 		"https://github.com/astrochili/defold-illumination/archive/refs/tags/1.0.1.zip",

@@ -6,7 +6,7 @@
 	"tags": [
 		"Input"
 	],
-	"stars": 159,
+	"stars": 162,
 	"content": [
 		"https://github.com/britzl/defold-input/archive/refs/tags/1.4.1.zip",
 		"https://github.com/britzl/defold-input/archive/refs/tags/1.5.0.zip",
@@ -57,7 +57,8 @@
 		"https://github.com/britzl/defold-input/archive/refs/tags/4.6.0.zip",
 		"https://github.com/britzl/defold-input/archive/refs/tags/4.6.1.zip",
 		"https://github.com/britzl/defold-input/archive/refs/tags/4.6.2.zip",
-		"https://github.com/britzl/defold-input/archive/refs/tags/4.7.0.zip"
+		"https://github.com/britzl/defold-input/archive/refs/tags/4.7.0.zip",
+		"https://github.com/britzl/defold-input/archive/refs/tags/4.7.1.zip"
 	],
 	"example_code": "https://github.com/britzl/defold-input",
 	"author_url": "https://github.com/britzl",

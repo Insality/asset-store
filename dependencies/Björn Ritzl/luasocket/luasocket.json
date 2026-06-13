@@ -5,7 +5,7 @@
 	"description": "The missing LuaSocket .lua files, modified to play nicely with Defold.",
 	"tags": [
 		"Network",
-		"Lua"
+		"Bindings"
 	],
 	"stars": 13,
 	"content": [

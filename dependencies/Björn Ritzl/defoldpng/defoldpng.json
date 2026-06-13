@@ -4,9 +4,10 @@
 	"title": "Defold-PNG",
 	"description": "Decode and encode PNG images.",
 	"tags": [
-		"System"
+		"Image",
+		"Filesystem"
 	],
-	"stars": 19,
+	"stars": 20,
 	"content": [
 		"https://github.com/britzl/defold-png/archive/refs/tags/1.0.zip",
 		"https://github.com/britzl/defold-png/archive/refs/tags/1.1.zip",

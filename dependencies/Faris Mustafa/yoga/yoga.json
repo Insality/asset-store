@@ -4,8 +4,8 @@
 	"title": "Defold Yoga",
 	"description": "A Defold native extension exposing Facebook's Yoga layout library via a Lua wrapper.",
 	"tags": [
-		"gui",
-		"rendering"
+		"GUI",
+		"Rendering"
 	],
 	"stars": 17,
 	"content": [

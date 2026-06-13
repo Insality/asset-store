@@ -1,0 +1,19 @@
+{
+	"author": "HGPoint",
+	"id": "def_usercentrics",
+	"title": "Defold Usercentrics CMP",
+	"description": "Defold Usercentrics CMP is a native extension for integrating the Usercentrics Consent Management Platform on Android and iOS. It lets Lua code configure a ruleset, initialize the SDK, show the consent banner, and receive callbacks with readiness and consent data.",
+	"tags": [
+		"Security",
+		"Platform"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/HGPoint/def_usercentrics/archive/refs/tags/1.0.0.zip",
+		"https://github.com/HGPoint/def_usercentrics/archive/refs/tags/1.0.1.zip",
+		"https://github.com/HGPoint/def_usercentrics/archive/refs/tags/1.0.2.zip"
+	],
+	"example_code": "https://github.com/HGPoint/def_usercentrics",
+	"author_url": "https://github.com/HGPoint",
+	"image": "def_usercentrics-thumb.jpg"
+}

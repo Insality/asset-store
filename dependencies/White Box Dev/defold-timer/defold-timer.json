@@ -4,10 +4,10 @@
 	"title": "Defold Timer",
 	"description": "Defold Timer provides a visual timer widget in a Defold game engine project.",
 	"tags": [
-		"gui",
-		"game mechanic"
+		"GUI",
+		"Mechanics"
 	],
-	"stars": 18,
+	"stars": 19,
 	"content": [
 		"https://github.com/whiteboxdev/library-defold-timer/archive/main.zip"
 	],

@@ -4,9 +4,10 @@
 	"title": "Narrator",
 	"description": "The Ink language runtime. Narrator allows to convert Ink scripts to the book and play it as a story. Suitable for interactive fiction games, dialogues and complex narrative stories. Requires the LPeg extension.",
 	"tags": [
-		"game mechanic"
+		"Mechanics",
+		"Text"
 	],
-	"stars": 161,
+	"stars": 166,
 	"content": [
 		"https://github.com/astrochili/narrator/archive/refs/tags/1.0.zip",
 		"https://github.com/astrochili/narrator/archive/refs/tags/1.1.zip",

@@ -5,9 +5,10 @@
 	"description": "A system to create styled text based on an HTML inspired markup language",
 	"tags": [
 		"Fonts",
-		"GUI"
+		"GUI",
+		"Text"
 	],
-	"stars": 81,
+	"stars": 82,
 	"content": [
 		"https://github.com/britzl/defold-richtext/archive/refs/tags/1.2.0.zip",
 		"https://github.com/britzl/defold-richtext/archive/refs/tags/2.1.0.zip",

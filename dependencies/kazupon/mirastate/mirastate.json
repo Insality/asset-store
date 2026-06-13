@@ -4,9 +4,9 @@
 	"title": "MiraState",
 	"description": "Hierarchical State Machine.",
 	"tags": [
-		"system"
+		"Architecture"
 	],
-	"stars": 5,
+	"stars": 4,
 	"content": [
 		"https://github.com/stepism/defold-mira-substate/archive/master.zip"
 	],

@@ -4,9 +4,8 @@
 	"title": "FontScale",
 	"description": "Get the user's preferred font scaling factor.",
 	"tags": [
-		"fonts",
-		"gui",
-		"system"
+		"Fonts",
+		"GUI"
 	],
 	"stars": 10,
 	"content": [

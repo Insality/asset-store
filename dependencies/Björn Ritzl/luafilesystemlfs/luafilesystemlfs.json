@@ -4,7 +4,9 @@
 	"title": "Lua File System (LFS)",
 	"description": "LuaFileSystem offers a portable way to access the underlying directory structure and file attributes.",
 	"tags": [
-		"System"
+		"OS",
+		"Filesystem",
+		"Bindings"
 	],
 	"stars": 13,
 	"content": [

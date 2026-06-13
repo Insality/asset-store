@@ -1,0 +1,19 @@
+{
+	"author": "Alchimystic",
+	"id": "defold-rng",
+	"title": "Defold RNG",
+	"description": "Defold RNG is a native random number generator extension with instance-based generators for deterministic procedural generation. It supports multiple algorithms, including PCG32 and TinyMT32.",
+	"tags": [
+		"Math"
+	],
+	"stars": 12,
+	"content": [
+		"https://github.com/alchimystic/defold-rng/archive/refs/tags/v1.0.0.zip",
+		"https://github.com/alchimystic/defold-rng/archive/refs/tags/v1.1.0.zip",
+		"https://github.com/alchimystic/defold-rng/archive/refs/tags/v1.1.1.zip",
+		"https://github.com/alchimystic/defold-rng/archive/refs/tags/v1.2.0.zip"
+	],
+	"example_code": "https://github.com/alchimystic/defold-rng",
+	"author_url": "https://github.com/alchimystic",
+	"image": "defold-rng.jpg"
+}

@@ -5,7 +5,8 @@
 	"description": "A localization module. Easily support multiple translations of your game.",
 	"tags": [
 		"GUI",
-		"System"
+		"Localization",
+		"Text"
 	],
 	"stars": 26,
 	"content": [

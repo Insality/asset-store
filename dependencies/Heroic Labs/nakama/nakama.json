@@ -5,11 +5,12 @@
 	"description": "Nakama is an open-source server designed to power modern games and apps. Features include user accounts, chat, social, matchmaker, realtime multiplayer, and much more. This client implements the full API and socket options with the server.",
 	"tags": [
 		"Social",
+		"Network",
 		"Platform",
 		"Analytics",
 		"Achievements"
 	],
-	"stars": 101,
+	"stars": 103,
 	"content": [
 		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/v1.0.0.zip",
 		"https://github.com/heroiclabs/nakama-defold/archive/refs/tags/1.0.1.zip",

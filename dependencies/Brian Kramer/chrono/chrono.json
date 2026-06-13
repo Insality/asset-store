@@ -4,7 +4,8 @@
 	"title": "Chrono",
 	"description": "Reliable server based time.",
 	"tags": [
-		"System"
+		"Network",
+		"Utilities"
 	],
 	"stars": 16,
 	"content": [

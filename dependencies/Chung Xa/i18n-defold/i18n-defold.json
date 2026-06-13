@@ -4,10 +4,11 @@
 	"title": "i18n",
 	"description": "i18n for Defold",
 	"tags": [
-		"gui",
-		"util"
+		"GUI",
+		"Localization",
+		"Text"
 	],
-	"stars": 7,
+	"stars": 9,
 	"content": [
 		"https://github.com/baochungit/i18n-defold/archive/refs/tags/1.0.0.zip"
 	],

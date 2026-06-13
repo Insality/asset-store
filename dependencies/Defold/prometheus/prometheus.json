@@ -4,10 +4,10 @@
 	"title": "Prometheus",
 	"description": "Lua obfuscation using Prometheus.",
 	"tags": [
-		"Lua",
-		"Security"
+		"Security",
+		"Utilities"
 	],
-	"stars": 34,
+	"stars": 36,
 	"content": [
 		"https://github.com/defold/extension-prometheus/archive/refs/tags/1.0.0.zip",
 		"https://github.com/defold/extension-prometheus/archive/refs/tags/2.0.0.zip",

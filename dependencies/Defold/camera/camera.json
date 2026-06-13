@@ -4,7 +4,8 @@
 	"title": "Camera",
 	"description": "Capture images and show a live camera preview using the native camera APIs.",
 	"tags": [
-		"Camera"
+		"Camera",
+		"Device"
 	],
 	"stars": 8,
 	"content": [

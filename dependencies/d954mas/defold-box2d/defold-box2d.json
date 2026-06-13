@@ -4,7 +4,8 @@
 	"title": "defold-box2d",
 	"description": "Box2D Lua bindings for Defold Game Engine.",
 	"tags": [
-		"physics"
+		"Physics",
+		"Bindings"
 	],
 	"stars": 42,
 	"content": [

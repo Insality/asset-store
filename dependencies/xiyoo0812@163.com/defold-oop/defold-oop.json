@@ -4,9 +4,9 @@
 	"title": "defold-oop",
 	"description": "Defold Ext for work with lua Object Oriented Programming!",
 	"tags": [
-		"lua"
+		"Architecture"
 	],
-	"stars": 2,
+	"stars": 3,
 	"content": [
 		"https://github.com/xiyoo0812/defold-oop/archive/master.zip"
 	],

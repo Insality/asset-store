@@ -1,0 +1,37 @@
+{
+	"author": "Ronald K Bett",
+	"id": "defdragon",
+	"title": "defDragon",
+	"description": "Defold native extension for DragonBones 2D skeletal animation with DragonBones Pro 5.5 runtime support.",
+	"tags": [
+		"Animation",
+		"Rendering"
+	],
+	"stars": 6,
+	"content": [
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.1-alpha.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.2.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.3.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.4.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.5.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.6.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.1.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.2.0.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.3.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.3.1.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.4.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.5.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.5.1.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.5.2.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.5.3.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.5.4.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.6.0.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.6.1.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.6.2.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.6.3.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.6.4.zip"
+	],
+	"example_code": "https://github.com/wraplord/extension-dragonbones",
+	"author_url": "https://github.com/wraplord",
+	"image": "defdragon.jpg"
+}

@@ -4,7 +4,9 @@
 	"title": "Err",
 	"description": "Error logging helper.",
 	"tags": [
-		"System"
+		"Debugging",
+		"Filesystem",
+		"Logging"
 	],
 	"stars": 5,
 	"content": [

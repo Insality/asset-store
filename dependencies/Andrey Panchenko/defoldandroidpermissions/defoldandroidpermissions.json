@@ -4,7 +4,7 @@
 	"title": "Defold Android Permissions",
 	"description": "This is Native Extension that adds support for Android Runtime Permissions",
 	"tags": [
-		"System"
+		"OS"
 	],
 	"stars": 5,
 	"content": [

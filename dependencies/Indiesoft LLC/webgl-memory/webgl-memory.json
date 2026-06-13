@@ -4,8 +4,7 @@
 	"title": "WebGL Memory Tracker",
 	"description": "A quick and easy way to find out the memory usage of your Defold game on HTML5 platform.",
 	"tags": [
-		"System",
-		"Util"
+		"Debugging"
 	],
 	"stars": 16,
 	"content": [

@@ -4,9 +4,10 @@
 	"title": "SCML Parser",
 	"description": "SCML Parser is a tool to import Spriter .scml animations directly into Defold as .collection files.",
 	"tags": [
-		"animation",
-		"game mechanic",
-		"editor script"
+		"Animation",
+		"Mechanics",
+		"Tools",
+		"Filesystem"
 	],
 	"stars": 13,
 	"content": [

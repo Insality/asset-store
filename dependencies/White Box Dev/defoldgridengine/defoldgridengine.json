@@ -4,10 +4,10 @@
 	"title": "Defold Grid Engine",
 	"description": "Defold Grid Engine provides grid-based movement, interactions, and utility features in a Defold game engine project.",
 	"tags": [
-		"game mechanic",
-		"physics"
+		"Mechanics",
+		"Physics"
 	],
-	"stars": 52,
+	"stars": 53,
 	"content": [
 		"https://github.com/whiteboxdev/library-defold-grid-engine/archive/refs/tags/0.1.0.zip",
 		"https://github.com/whiteboxdev/library-defold-grid-engine/archive/refs/tags/0.2.0.zip",

@@ -4,10 +4,7 @@
 	"title": "Defold Wrap",
 	"description": "This library aims to help you change the way you write code on Defold.",
 	"tags": [
-		"lua",
-		"system",
-		"gui",
-		"util"
+		"Architecture"
 	],
 	"stars": 6,
 	"content": [

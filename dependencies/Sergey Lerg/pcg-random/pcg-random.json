@@ -4,7 +4,7 @@
 	"title": "PCG Random",
 	"description": "PCG Random Number Generator Extension for Defold wraps PCG, A Family of Better Random Number Generators. C implementation v0.98.",
 	"tags": [
-		"math"
+		"Math"
 	],
 	"stars": 7,
 	"content": [

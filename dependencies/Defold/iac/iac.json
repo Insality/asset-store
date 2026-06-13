@@ -4,7 +4,7 @@
 	"title": "Inter-app communication",
 	"description": "Defold provides a unified, simple to use interface to get application invocation information such as deep links and install referrer.",
 	"tags": [
-		"System"
+		"OS"
 	],
 	"stars": 7,
 	"content": [
@@ -21,7 +21,8 @@
 		"https://github.com/defold/extension-iac/archive/refs/tags/1.2.3.zip",
 		"https://github.com/defold/extension-iac/archive/refs/tags/1.2.4.zip",
 		"https://github.com/defold/extension-iac/archive/refs/tags/1.2.5.zip",
-		"https://github.com/defold/extension-iac/archive/refs/tags/1.3.0.zip"
+		"https://github.com/defold/extension-iac/archive/refs/tags/1.3.0.zip",
+		"https://github.com/defold/extension-iac/archive/refs/tags/1.4.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-iac",
 	"author_url": "https://github.com/defold",

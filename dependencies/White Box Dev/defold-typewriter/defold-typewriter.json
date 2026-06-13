@@ -4,7 +4,8 @@
 	"title": "Defold Typewriter",
 	"description": "Defold Typewriter provides text scrolling and styling in a Defold game engine project.",
 	"tags": [
-		"gui"
+		"GUI",
+		"Text"
 	],
 	"stars": 29,
 	"content": [

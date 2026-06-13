@@ -4,7 +4,8 @@
 	"title": "Pack",
 	"description": "Compress, decompress, and obfuscate table data.",
 	"tags": [
-		"System"
+		"Security",
+		"Utilities"
 	],
 	"stars": 10,
 	"content": [

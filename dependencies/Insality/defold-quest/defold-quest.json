@@ -4,8 +4,8 @@
 	"title": "Defold Quest",
 	"description": "Quest system library for Defold games. Manage quests, objectives, and quest progression. Track events and customize behavior.",
 	"tags": [
-		"system",
-		"Game mechanic"
+		"Mechanics",
+		"Utilities"
 	],
 	"depends": [
 		"Insality:defold-event"

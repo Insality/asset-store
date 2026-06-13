@@ -1,0 +1,17 @@
+{
+	"author": "Defold",
+	"id": "firebase-crashlytics",
+	"title": "Firebase Crashlytics",
+	"description": "Firebase Crashlytics extension for reporting native crashes on Android, iOS, and macOS.",
+	"tags": [
+		"Platform"
+	],
+	"stars": 5,
+	"content": [
+		"https://github.com/defold/extension-firebase-crashlytics/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-firebase-crashlytics/archive/refs/tags/1.0.1.zip"
+	],
+	"example_code": "https://github.com/defold/extension-firebase-crashlytics",
+	"author_url": "https://github.com/defold",
+	"image": "firebase-crashlytics.jpg"
+}

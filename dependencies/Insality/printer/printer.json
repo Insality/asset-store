@@ -5,7 +5,8 @@
 	"description": "A symbol-by-symbol text writer for rich game dialogs.",
 	"tags": [
 		"Fonts",
-		"GUI"
+		"GUI",
+		"Text"
 	],
 	"stars": 54,
 	"content": [

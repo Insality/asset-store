@@ -4,12 +4,11 @@
 	"title": "Steamworks",
 	"description": "Steamworks SDK provides a range of features which are designed to help ship your application or game on Steam in an efficient manner.",
 	"tags": [
-		"System",
 		"Platform",
 		"Social",
 		"Achievements"
 	],
-	"stars": 43,
+	"stars": 44,
 	"content": [
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.1.0.zip",
 		"https://github.com/defold/extension-steam/archive/refs/tags/1.2.0.zip",

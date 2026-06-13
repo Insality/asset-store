@@ -4,13 +4,15 @@
 	"title": "Detiled",
 	"description": "Tiled to Defold Map Parser.",
 	"tags": [
-		"system",
-		"tools"
+		"Tools",
+		"Tilemaps",
+		"Filesystem"
 	],
-	"stars": 6,
+	"stars": 10,
 	"content": [
 		"https://github.com/Insality/detiled/archive/refs/tags/1.zip",
-		"https://github.com/Insality/detiled/archive/refs/tags/2.zip"
+		"https://github.com/Insality/detiled/archive/refs/tags/2.zip",
+		"https://github.com/Insality/detiled/archive/refs/tags/3.zip"
 	],
 	"example_code": "https://github.com/Insality/detiled",
 	"api": "https://github.com/Insality/detiled/blob/main/api/detiled_api.md",

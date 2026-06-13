@@ -4,7 +4,8 @@
 	"title": "LPeg",
 	"description": "LPeg is a pattern-matching library by Roberto Ierusalimschy based on Parsing Expression Grammars (PEGs).",
 	"tags": [
-		"util"
+		"Text",
+		"Bindings"
 	],
 	"stars": 9,
 	"content": [
