@@ -5,7 +5,7 @@
 	"depends": [
 		"Insality:defold-tweener"
 	],
-	"description": "Panthera Software - give you the huge speed up at Defold animation flow even with more accuracy! You not required to do animations via code and run the game every change to see the changes. Make animations and export it via code right into the game!",
+	"description": "a Defold library designed to seamlessly integrate animations created with Panthera 2.0 Editor. This runtime can play animation for Collections and GUI nodes with also a animation cursor support.",
 	"example_code": "https://github.com/Insality/panthera",
 	"api": "https://github.com/Insality/panthera/blob/main/api/panthera_api.md",
 	"author_url": "https://github.com/Insality",
