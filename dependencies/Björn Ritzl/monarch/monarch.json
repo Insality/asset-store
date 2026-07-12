@@ -6,7 +6,7 @@
 	"tags": [
 		"GUI"
 	],
-	"stars": 215,
+	"stars": 217,
 	"content": [
 		"https://github.com/britzl/monarch/archive/refs/tags/2.10.0.zip",
 		"https://github.com/britzl/monarch/archive/refs/tags/2.11.0.zip",
@@ -64,7 +64,8 @@
 		"https://github.com/britzl/monarch/archive/refs/tags/5.3.1.zip",
 		"https://github.com/britzl/monarch/archive/refs/tags/5.4.0.zip",
 		"https://github.com/britzl/monarch/archive/refs/tags/6.0.0.zip",
-		"https://github.com/britzl/monarch/archive/refs/tags/6.0.1.zip"
+		"https://github.com/britzl/monarch/archive/refs/tags/6.0.1.zip",
+		"https://github.com/britzl/monarch/archive/refs/tags/6.0.2.zip"
 	],
 	"example_code": "https://github.com/britzl/monarch",
 	"api": "https://github.com/britzl/monarch/blob/master/README_API.md",

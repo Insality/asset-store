@@ -1,0 +1,21 @@
+{
+	"author": "Jhonny Göransson",
+	"id": "vantage",
+	"title": "Vantage",
+	"description": "Vantage is a small Defold camera controller for mouse, keyboard, and touch-driven 3D camera movement.",
+	"tags": [
+		"Rendering",
+		"Camera",
+		"3D"
+	],
+	"stars": 7,
+	"content": [
+		"https://github.com/Jhonnyg/defold-vantage/archive/refs/tags/0.1.zip",
+		"https://github.com/Jhonnyg/defold-vantage/archive/refs/tags/0.1.1.zip",
+		"https://github.com/Jhonnyg/defold-vantage/archive/refs/tags/0.2.0.zip",
+		"https://github.com/Jhonnyg/defold-vantage/archive/refs/tags/0.3.0.zip"
+	],
+	"example_code": "https://github.com/Jhonnyg/defold-vantage",
+	"author_url": "https://github.com/Jhonnyg",
+	"image": "vantage-thumb.jpg"
+}

@@ -1,0 +1,16 @@
+{
+	"author": "Glorius Silver",
+	"id": "xoshiro256",
+	"title": "defold-xoshiro256",
+	"description": "A fast, high-quality PRNG for Defold based on the xoshiro256++ algorithm, seeded via splitmix64. xoshiro256++ has a 256-bit state, passes known statistical tests, and avoids systematic bias in floating-point output.",
+	"tags": [
+		"Math"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/glorius-silver/defold-xoshiro256/archive/master.zip"
+	],
+	"example_code": "https://github.com/glorius-silver/defold-xoshiro256",
+	"author_url": "https://github.com/glorius-silver",
+	"image": "xoshiro256.jpg"
+}

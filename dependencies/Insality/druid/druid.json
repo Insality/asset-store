@@ -10,7 +10,7 @@
 		"GUI",
 		"Input"
 	],
-	"stars": 566,
+	"stars": 578,
 	"content": [
 		"https://github.com/Insality/druid/archive/refs/tags/0.1.0.zip",
 		"https://github.com/Insality/druid/archive/refs/tags/0.2.0.zip",
@@ -46,7 +46,9 @@
 		"https://github.com/Insality/druid/archive/refs/tags/1.2.0.zip",
 		"https://github.com/Insality/druid/archive/refs/tags/1.2.1.zip",
 		"https://github.com/Insality/druid/archive/refs/tags/1.2.2.zip",
-		"https://github.com/Insality/druid/archive/refs/tags/1.2.3.zip"
+		"https://github.com/Insality/druid/archive/refs/tags/1.2.3.zip",
+		"https://github.com/Insality/druid/archive/refs/tags/1.2.4.zip",
+		"https://github.com/Insality/druid/archive/refs/tags/1.2.5.zip"
 	],
 	"example_code": "https://github.com/Insality/druid",
 	"api": "https://github.com/Insality/druid/blob/master/api/quick_api_reference.md",

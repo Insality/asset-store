@@ -2,11 +2,11 @@
 	"author": "Selim Anaç",
 	"id": "pcgrandom",
 	"title": "PCG Random",
-	"description": "PCG Random Number Generator Native Extension.",
+	"description": "PCG Random Number Generator Native Extension for Defold. This extension allows you to generate random numbers using minimal C implementation of PCG (Permuted Congruential Generator) - a family of fast, space-efficient, and statistically high-quality pseudo-random number generators.",
 	"tags": [
 		"Math"
 	],
-	"stars": 32,
+	"stars": 33,
 	"content": [
 		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.0.zip",
 		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.1.zip",
@@ -15,7 +15,8 @@
 		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.2.3.zip",
 		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.2.4.zip",
 		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.2.5.zip",
-		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.2.6.zip"
+		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.2.6.zip",
+		"https://github.com/selimanac/defold-random/archive/refs/tags/v1.2.8.zip"
 	],
 	"example_code": "https://github.com/selimanac/defold-random",
 	"author_url": "https://github.com/selimanac",
