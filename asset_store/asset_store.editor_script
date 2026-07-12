@@ -46,7 +46,7 @@ function M.get_prefs_schema()
 			scope = editor.prefs.SCOPE.PROJECT
 		}),
 		["asset_store.use_version_files"] = editor.prefs.schema.boolean({
-			default = true,
+			default = false,
 			scope = editor.prefs.SCOPE.PROJECT
 		}),
 		["asset_store.show_preview_images"] = editor.prefs.schema.boolean({
