@@ -10,7 +10,7 @@
 	"depends": [
 		"Insality:defold-event"
 	],
-	"stars": 22,
+	"stars": 23,
 	"content": [
 		"https://github.com/Insality/defold-quest/archive/refs/tags/1.zip",
 		"https://github.com/Insality/defold-quest/archive/refs/tags/2.zip",

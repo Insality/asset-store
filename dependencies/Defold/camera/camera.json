@@ -7,7 +7,7 @@
 		"Camera",
 		"Device"
 	],
-	"stars": 8,
+	"stars": 9,
 	"content": [
 		"https://github.com/defold/extension-camera/archive/refs/tags/1.0.0.zip",
 		"https://github.com/defold/extension-camera/archive/refs/tags/2.0.0.zip",

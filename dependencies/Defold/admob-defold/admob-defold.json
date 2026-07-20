@@ -38,7 +38,8 @@
 		"https://github.com/defold/extension-admob/archive/refs/tags/3.8.0.zip",
 		"https://github.com/defold/extension-admob/archive/refs/tags/3.8.1.zip",
 		"https://github.com/defold/extension-admob/archive/refs/tags/4.0.0.zip",
-		"https://github.com/defold/extension-admob/archive/refs/tags/4.1.0.zip"
+		"https://github.com/defold/extension-admob/archive/refs/tags/4.1.0.zip",
+		"https://github.com/defold/extension-admob/archive/refs/tags/4.1.1.zip"
 	],
 	"example_code": "https://github.com/defold/extension-admob",
 	"author_url": "https://github.com/defold",
