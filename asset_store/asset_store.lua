@@ -67,9 +67,9 @@ function M.open_multiple_stores(config)
 	)
 	local result = editor.ui.show_dialog(dialog_component({}))
 
-	-- If dependencies were changed, call fetch-libraries via HTTP API
+	-- If dependencies were changed, fetch libraries via editor API
 	if dependencies_changed[1] then
-		internal.call_editor_command("fetch-libraries")
+		editor.fetch_libraries()
 		editor.save()
 	end
 
@@ -117,9 +117,9 @@ function M.open_single_store(config)
 	)
 	local result = editor.ui.show_dialog(dialog_component({}))
 
-	-- If dependencies were changed, call fetch-libraries via HTTP API
+	-- If dependencies were changed, fetch libraries via editor API
 	if dependencies_changed[1] and config.asset_type == "dependency" then
-		internal.call_editor_command("fetch-libraries")
+		editor.fetch_libraries()
 		editor.save()
 	end
 
