@@ -6,11 +6,12 @@
 	"tags": [
 		"Math"
 	],
-	"stars": 13,
+	"stars": 14,
 	"content": [
 		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.3.0.zip",
 		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.5.0.zip",
-		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.7.0.zip"
+		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.7.0.zip",
+		"https://github.com/JCash/defold-voronoi/archive/refs/tags/v0.10.0.zip"
 	],
 	"example_code": "https://github.com/JCash/defold-voronoi",
 	"author_url": "https://github.com/JCash",

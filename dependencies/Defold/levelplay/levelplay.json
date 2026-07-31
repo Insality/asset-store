@@ -1,0 +1,34 @@
+{
+	"author": "Defold",
+	"id": "levelplay",
+	"title": "Unity LevelPlay",
+	"description": "Official Defold native extension for Unity LevelPlay, an ad mediation and monetization platform for Android and iOS. It exposes an object-based Lua API for rewarded, interstitial and banner ads, supports multiple ad units, and provides configurable adapters for networks including Unity Ads, Google AdMob, AppLovin, Meta Audience Network, Pangle and Mintegral. LevelPlay combines real-time bidding and waterfall mediation with reporting, A/B testing and revenue-optimization tools. Version 2.0.0 replaces the legacy ironSource API with Unity LevelPlay SDK 9 and requires existing integrations to migrate to the levelplay namespace and [levelplay] configuration. Learn more about LevelPlay at https://unity.com/products/levelplay.",
+	"tags": [
+		"Ads",
+		"Monetization"
+	],
+	"stars": 17,
+	"content": [
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.4.0.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.4.1.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.5.0.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.5.1.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.5.2.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.5.3.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.5.4.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.6.0.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.6.1.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/0.7.0.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/1.0.1.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/1.2.0.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/1.2.1.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/1.2.2.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/1.3.0.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/1.3.2.zip",
+		"https://github.com/defold/extension-levelplay/archive/refs/tags/2.0.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-levelplay",
+	"author_url": "https://github.com/defold",
+	"image": "levelplay.jpg"
+}

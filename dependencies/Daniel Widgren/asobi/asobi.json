@@ -29,7 +29,14 @@
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.2.1.zip",
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.3.0.zip",
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.4.0.zip",
-		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.5.0.zip"
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.5.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.6.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.7.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.7.1.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.7.2.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.1.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.2.zip"
 	],
 	"example_code": "https://github.com/widgrensit/asobi-defold",
 	"author_url": "https://github.com/widgrensit",

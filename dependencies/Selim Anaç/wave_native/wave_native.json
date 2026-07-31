@@ -1,0 +1,18 @@
+{
+	"author": "Selim Anaç",
+	"id": "wave_native",
+	"title": "Wave Native Extension",
+	"description": "A native C++ extension for Defold that simulates waves for floating game objects. \n\n defold-wave is primarily designed as the floating-objects companion to the defold-stylized-water-shader. The shader renders the water surface; this extension drives the waves so that objects float, pitch, and roll on that surface in sync. \n\n It can also be used as a standalone extension, any Defold project that needs wave-driven floating objects can integrate it without the stylized water shader. ",
+	"tags": [
+		"3D",
+		"Math",
+		"Physics"
+	],
+	"stars": 8,
+	"content": [
+		"https://github.com/selimanac/defold-wave/archive/refs/heads/main.zip"
+	],
+	"example_code": "https://github.com/selimanac/defold-wave",
+	"author_url": "https://github.com/selimanac",
+	"image": "wave_900x600.jpg"
+}

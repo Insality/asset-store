@@ -59,7 +59,9 @@
 		"https://github.com/defold/extension-spine/archive/refs/tags/4.6.0.zip",
 		"https://github.com/defold/extension-spine/archive/refs/tags/4.6.1.zip",
 		"https://github.com/defold/extension-spine/archive/refs/tags/4.7.0.zip",
-		"https://github.com/defold/extension-spine/archive/refs/tags/4.7.1.zip"
+		"https://github.com/defold/extension-spine/archive/refs/tags/4.7.1.zip",
+		"https://github.com/defold/extension-spine/archive/refs/tags/4.7.2.zip",
+		"https://github.com/defold/extension-spine/archive/refs/tags/4.7.3.zip"
 	],
 	"example_code": "https://github.com/defold/extension-spine",
 	"author_url": "https://github.com/defold",

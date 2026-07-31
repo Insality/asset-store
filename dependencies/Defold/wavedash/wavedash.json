@@ -10,7 +10,8 @@
 	],
 	"stars": 4,
 	"content": [
-		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.0.0.zip"
+		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.0.0.zip",
+		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.1.0.zip"
 	],
 	"example_code": "https://github.com/wvdsh/sdk-defold",
 	"author_url": "https://github.com/wvdsh",
