@@ -1,0 +1,18 @@
+{
+	"author": "Sonilo",
+	"id": "sonilo",
+	"title": "Sonilo Audio Generator",
+	"description": "Generate AI music and sound effects from the Defold editor using the Sonilo API. Preview generated WAV files, save them to a project, create audio prefabs, or add sounds to existing game objects. It includes a Defold editor script with custom UI to interact with the API, and it creates .sound and .go files, and helper scripts.",
+	"tags": [
+		"Audio",
+		"Editor",
+		"Tools"
+	],
+	"stars": 0,
+	"content": [
+		"https://github.com/Sonilodeveloper/defold-sonilo/archive/main.zip"
+	],
+	"example_code": "https://github.com/Sonilodeveloper/defold-sonilo",
+	"author_url": "https://github.com/Sonilodeveloper",
+	"image": "sonilo-thumb.jpg"
+}

@@ -17,5 +17,6 @@
 		"https://github.com/defold/extension-webmonetization/archive/refs/tags/4.0.0.zip"
 	],
 	"example_code": "https://www.github.com/defold/extension-webmonetization",
-	"image": "webmonetization-thumb.jpg"
+	"image": "webmonetization-thumb.jpg",
+	"author_url": "https://github.com/defold"
 }

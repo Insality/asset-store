@@ -8,11 +8,12 @@
 		"Filesystem",
 		"Editor"
 	],
-	"stars": 31,
+	"stars": 32,
 	"content": [
 		"https://github.com/Insality/asset-store/archive/refs/tags/1.zip",
 		"https://github.com/Insality/asset-store/archive/refs/tags/2.zip",
-		"https://github.com/Insality/asset-store/archive/refs/tags/3.zip"
+		"https://github.com/Insality/asset-store/archive/refs/tags/3.zip",
+		"https://github.com/Insality/asset-store/archive/refs/tags/4.zip"
 	],
 	"example_code": "https://github.com/Insality/asset-store",
 	"author_url": "https://github.com/Insality",

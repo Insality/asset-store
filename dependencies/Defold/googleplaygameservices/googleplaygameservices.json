@@ -47,5 +47,6 @@
 		"https://github.com/defold/extension-gpgs/archive/refs/tags/5.0.0.zip"
 	],
 	"example_code": "https://www.github.com/defold/extension-gpgs",
-	"image": "googleplaygameservices-thumb.jpg"
+	"image": "googleplaygameservices-thumb.jpg",
+	"author_url": "https://github.com/defold"
 }

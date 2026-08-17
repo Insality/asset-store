@@ -4,6 +4,9 @@ Sync asset information from Defold's asset-portal repository to local dependency
 
 This script downloads the asset-portal repository, parses asset metadata, and updates
 existing dependency JSON files with stars, tags, description, and new releases.
+
+Asset portal files use `author_id` (not `author`). Display names are resolved from
+the Defold authors catalog (defold.github.io `_data/authors.json`).
 """
 
 import argparse
@@ -158,6 +161,109 @@ def extract_github_author_url(project_url: str) -> Optional[str]:
         return f"https://github.com/{username}"
     
     return None
+
+
+def extract_github_username(project_url: str) -> Optional[str]:
+    """Extract GitHub username/org from a project URL."""
+    author_url = extract_github_author_url(project_url)
+    if not author_url:
+        return None
+    return author_url.rsplit('/', 1)[-1]
+
+
+def load_authors_catalog(authors_path: Path) -> Dict[str, Dict]:
+    """
+    Load author_id -> author metadata mapping.
+    Accepts either a list of {id, name, ...} objects or a dict keyed by author_id.
+    """
+    data = load_json_file(authors_path)
+    if not data:
+        return {}
+
+    catalog: Dict[str, Dict] = {}
+    if isinstance(data, list):
+        for entry in data:
+            if isinstance(entry, dict) and entry.get('id'):
+                catalog[str(entry['id'])] = entry
+    elif isinstance(data, dict):
+        for key, entry in data.items():
+            if isinstance(entry, dict):
+                author_id = entry.get('id') or key
+                catalog[str(author_id)] = entry
+            elif isinstance(entry, str):
+                catalog[str(key)] = {'id': key, 'name': entry}
+
+    return catalog
+
+
+def resolve_author(portal_data: Dict, authors_by_id: Dict[str, Dict]) -> Optional[str]:
+    """
+    Resolve a display author name from portal asset data.
+
+    Asset portal now stores `author_id` instead of `author`. Display names live in
+    the authors catalog (defold.github.io _data/authors.json). Fall back to GitHub
+    username, then author_id, so sync can still proceed if the catalog is incomplete.
+    """
+    author = portal_data.get('author')
+    if isinstance(author, str) and author.strip():
+        return author.strip()
+
+    author_id = portal_data.get('author_id')
+    if not isinstance(author_id, str) or not author_id.strip():
+        return extract_github_username(portal_data.get('project_url'))
+
+    author_id = author_id.strip()
+    info = authors_by_id.get(author_id) or {}
+    name = info.get('name')
+    if isinstance(name, str) and name.strip():
+        return name.strip()
+
+    github = info.get('github')
+    if isinstance(github, str) and github.strip():
+        return github.strip()
+
+    github_username = extract_github_username(portal_data.get('project_url'))
+    if github_username:
+        return github_username
+
+    return author_id
+
+
+def author_url_from_catalog(portal_data: Dict, authors_by_id: Dict[str, Dict]) -> Optional[str]:
+    """Build a GitHub author URL from the authors catalog when available."""
+    author_id = portal_data.get('author_id')
+    if not isinstance(author_id, str) or not author_id.strip():
+        return None
+    info = authors_by_id.get(author_id.strip()) or {}
+    github = info.get('github')
+    if isinstance(github, str) and github.strip():
+        return f"https://github.com/{github.strip()}"
+    return None
+
+
+def find_local_asset_path(dependencies_dir: Path, author: str, asset_id: str) -> Path:
+    """
+    Return the local asset JSON path, preferring dependencies/{author}/{id}/{id}.json.
+    If that file is missing, fall back to a unique match by asset id so author
+    catalog/rename mismatches do not create duplicate folders.
+    """
+    expected = dependencies_dir / author / asset_id / f"{asset_id}.json"
+    if expected.exists():
+        return expected
+
+    matches = sorted(dependencies_dir.glob(f"*/{asset_id}/{asset_id}.json"))
+    if not matches:
+        return expected
+
+    author_lower = author.lower()
+    for match in matches:
+        if match.parent.parent.name.lower() == author_lower:
+            return match
+
+    if len(matches) == 1:
+        return matches[0]
+
+    return expected
 
 
 def is_main_or_master_branch(url: str) -> bool:
@@ -622,7 +728,8 @@ def process_asset(
     created_assets: List[str],
     skipped_assets: List[str],
     removed_assets: List[str],
-    remove_non_defold_libraries: bool
+    remove_non_defold_libraries: bool,
+    authors_by_id: Optional[Dict[str, Dict]] = None
 ) -> Dict[str, int]:
     """
     Process a single asset from asset-portal.
@@ -637,7 +744,8 @@ def process_asset(
     if not portal_data:
         return {'processed': False}
 
-    author = portal_data.get('author')
+    authors_by_id = authors_by_id or {}
+    author = resolve_author(portal_data, authors_by_id)
     asset_id = portal_data.get('id')
     if not asset_id or (isinstance(asset_id, str) and asset_id.strip() == ""):
         asset_id = asset_name.replace('.json', '')
@@ -645,7 +753,7 @@ def process_asset(
     if portal_data.get('isDefoldLibrary') is False:
         if remove_non_defold_libraries and author and (isinstance(author, str) and author.strip()):
             _author, _asset_id = apply_renames(author, asset_id.strip() if isinstance(asset_id, str) else asset_id, config)
-            local_dir = dependencies_dir / _author / _asset_id
+            local_dir = find_local_asset_path(dependencies_dir, _author, _asset_id).parent
             if local_dir.exists():
                 shutil.rmtree(local_dir)
                 removed_assets.append(f"{_author}:{_asset_id}")
@@ -658,11 +766,14 @@ def process_asset(
 
     # Update portal_data so id is available for create_new_asset_file
     portal_data['id'] = asset_id
-
+    if not portal_data.get('author_url'):
+        catalog_author_url = author_url_from_catalog(portal_data, authors_by_id)
+        if catalog_author_url:
+            portal_data['author_url'] = catalog_author_url
 
     # Check if author is missing or empty
     if not author or (isinstance(author, str) and author.strip() == ""):
-        reason = f"Missing or empty 'author' field"
+        reason = f"Missing or empty 'author'/'author_id' field"
         skipped_assets.append(f"{asset_name}: {reason}")
         print(f"  ⚠ {reason} in {asset_name}")
         return {'processed': False, 'skipped': True}
@@ -681,7 +792,7 @@ def process_asset(
         return {'processed': False, 'ignored': True}
 
     # Construct local file path: dependencies/{author}/{id}/{id}.json
-    local_path = dependencies_dir / author / asset_id / f"{asset_id}.json"
+    local_path = find_local_asset_path(dependencies_dir, author, asset_id)
 
     # Load local file if it exists (needed for use_tags_as_releases flag)
     local_data = None
@@ -725,6 +836,12 @@ def main():
         type=str,
         default='https://github.com/defold/asset-portal/archive/refs/heads/master.zip',
         help='URL to asset-portal zip archive'
+    )
+    parser.add_argument(
+        '--authors-url',
+        type=str,
+        default='https://raw.githubusercontent.com/defold/defold.github.io/master/_data/authors.json',
+        help='URL to authors catalog JSON (author_id -> display name)'
     )
     parser.add_argument(
         '--config',
@@ -778,6 +895,24 @@ def main():
         # Extract
         extracted_root = extract_zip(zip_path, extract_dir)
 
+        authors_by_id: Dict[str, Dict] = {}
+        bundled_authors = extracted_root / 'authors.json'
+        if bundled_authors.exists():
+            authors_by_id = load_authors_catalog(bundled_authors)
+            print(f"✓ Loaded {len(authors_by_id)} authors from {bundled_authors}")
+        else:
+            authors_path = temp_dir / 'authors.json'
+            try:
+                download_file(args.authors_url, authors_path)
+                authors_by_id = load_authors_catalog(authors_path)
+                if authors_by_id:
+                    print(f"✓ Loaded {len(authors_by_id)} authors from authors catalog")
+                else:
+                    print("⚠ Authors catalog is empty, falling back to GitHub usernames / author_id")
+            except Exception as e:
+                print(f"⚠ Could not load authors catalog: {e}", file=sys.stderr)
+                print("  Falling back to GitHub usernames / author_id")
+
         # Read header.json
         header_path = extracted_root / 'header.json'
         if not header_path.exists():
@@ -819,7 +954,8 @@ def main():
 
             stats = process_asset(
                 asset_name, assets_dir, dependencies_dir, missing_assets, config,
-                created_assets, skipped_assets, removed_assets, args.remove_non_defold_libraries
+                created_assets, skipped_assets, removed_assets, args.remove_non_defold_libraries,
+                authors_by_id
             )
 
             if stats.get('processed'):

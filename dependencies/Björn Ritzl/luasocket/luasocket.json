@@ -7,7 +7,7 @@
 		"Network",
 		"Bindings"
 	],
-	"stars": 13,
+	"stars": 14,
 	"content": [
 		"https://github.com/britzl/defold-luasocket/archive/refs/tags/0.9.zip",
 		"https://github.com/britzl/defold-luasocket/archive/refs/tags/0.10.zip",

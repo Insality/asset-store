@@ -8,7 +8,7 @@
 		"Filesystem",
 		"Bindings"
 	],
-	"stars": 13,
+	"stars": 15,
 	"content": [
 		"https://github.com/britzl/defold-lfs/archive/refs/tags/1.0.zip",
 		"https://github.com/britzl/defold-lfs/archive/refs/tags/1.0.1.zip",

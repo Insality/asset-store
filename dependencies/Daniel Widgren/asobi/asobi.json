@@ -8,7 +8,7 @@
 		"Platform",
 		"Social"
 	],
-	"stars": 3,
+	"stars": 4,
 	"content": [
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.1.0.zip",
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v0.2.0.zip",
@@ -36,7 +36,20 @@
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.7.2.zip",
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.0.zip",
 		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.1.zip",
-		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.2.zip"
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.2.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.8.3.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.9.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.9.1.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.10.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.11.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.12.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.13.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.13.1.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.13.2.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.14.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.15.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.16.0.zip",
+		"https://github.com/widgrensit/asobi-defold/archive/refs/tags/v1.17.0.zip"
 	],
 	"example_code": "https://github.com/widgrensit/asobi-defold",
 	"author_url": "https://github.com/widgrensit",
