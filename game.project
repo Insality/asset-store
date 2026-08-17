@@ -48,6 +48,7 @@ clear_color_red = 0.113725
 
 [library]
 include_dirs = asset_store
+defold_min_version = 1.13.1
 
 [particle_fx]
 max_count = 256
