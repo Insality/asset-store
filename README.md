@@ -97,6 +97,12 @@ If you have any issues, questions or suggestions please [create an issue](https:
 - Keep tracking of last open filter between All/Installed/Not Installed options
 - Default type filter search is now "All" for new users
 
+### **V4**
+- Require Defold 1.13.1 or later
+- Fetch libraries via native editor API
+- Asset Store windows are now resizable
+- Version files setting is now disabled by default
+
 </details>
 
 
