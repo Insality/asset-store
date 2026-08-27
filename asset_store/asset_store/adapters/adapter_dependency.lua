@@ -346,7 +346,7 @@ end
 ---Get the latest version URL that can be used with the current Defold version
 ---@param item table - Dependency item with content array
 ---@return string|nil - Latest compatible version URL or nil if every version requires a newer editor
----@note Versions that declare a `defold_min_version` above the running editor are skipped,
+---@note Versions whose `min_versions` entry is above the running editor are skipped,
 ---@note since the editor refuses to fetch them anyway
 function M.get_latest_compatible_version_url(item)
 	if not item.content or type(item.content) ~= "table" or #item.content == 0 then

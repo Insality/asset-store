@@ -103,9 +103,9 @@ If you have any issues, questions or suggestions please [create an issue](https:
 - Asset Store windows are now resizable
 - Version files setting is now disabled by default
 - Respect the minimum Defold version declared by an asset
-	- Versions that need a newer Defold are marked in the version list and cannot be selected
-	- `Install` picks the newest version supported by your editor
-	- `Update` is disabled once you are on the newest version available to you
+  - Versions that need a newer Defold are marked in the version list and cannot be selected
+  - `Install` picks the newest version supported by your editor
+  - `Update` is disabled once you are on the newest version available to you
 
 </details>
 
