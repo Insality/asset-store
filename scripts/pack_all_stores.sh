@@ -195,7 +195,7 @@ build_folder_item_json() {
   local api_url="$6" author_url="$7" example_url="$8" example_code_url="$9"
   local image_url="${10}" zip_url="${11}" json_zip_url="${12}" sha256="${13}"
   local manifest_url="${14}" size="${15}" depends="${16}" tags="${17}" requires="${18}" unlisted="${19}"
-  local stats="${20}"
+  local stats="${20}" defold_min_version="${21}"
 
   jq -n \
     --arg id "$id" --arg version "$version" --arg title "$title" \
@@ -205,7 +205,7 @@ build_folder_item_json() {
     --arg zip_url "$zip_url" --arg json_zip_url "$json_zip_url" --arg sha256 "$sha256" \
     --arg manifest_url "$manifest_url" --arg size "$size" \
     --argjson depends "$depends" --argjson tags "$tags" --argjson requires "$requires" --argjson unlisted "$unlisted" \
-    --argjson stats "$stats" \
+    --argjson stats "$stats" --arg defold_min_version "$defold_min_version" \
     '{
       id: $id,
       version: $version,
@@ -226,7 +226,8 @@ build_folder_item_json() {
       tags: $tags,
       requires: $requires,
       unlisted: $unlisted,
-      popularity: $stats
+      popularity: $stats,
+      defold_min_version: (if $defold_min_version == "null" or $defold_min_version == "" then null else $defold_min_version end)
     }'
 }
 
@@ -236,6 +237,7 @@ build_dependency_item_json() {
   local api_url="$6" author_url="$7" image_url="$8" manifest_url="$9"
   local depends="${10}" tags="${11}" content="${12}" unlisted="${13}"
   local stats="${14}" example_code="${15}" example_url="${16}" stars="${17}"
+  local min_versions="${18}"
 
   jq -n \
     --arg id "$id" --arg version "$version" --arg title "$title" \
@@ -245,7 +247,7 @@ build_dependency_item_json() {
     --arg example_code "$example_code" --arg example_url "$example_url" \
     --argjson depends "$depends" --argjson tags "$tags" --argjson content "$content" \
     --argjson unlisted "$unlisted" --argjson stats "$stats" \
-    --arg stars "$stars" \
+    --arg stars "$stars" --argjson min_versions "$min_versions" \
     '{
       id: $id,
       version: (if $version == "null" or $version == "" then null else $version end),
@@ -263,7 +265,8 @@ build_dependency_item_json() {
       content: $content,
       unlisted: $unlisted,
       popularity: $stats,
-      stars: (if $stars == "null" or $stars == "" then null else ($stars | tonumber) end)
+      stars: (if $stars == "null" or $stars == "" then null else ($stars | tonumber) end),
+      min_versions: $min_versions
     }'
 }
 
@@ -483,7 +486,7 @@ pack_folder_store() {
 
     # Read manifest fields
     local id version title author description api author_url image_rel
-    local depends tags requires example example_code example_url unlisted
+    local depends tags requires example example_code example_url unlisted defold_min_version
     id="$(jq -r '.id // "'$asset_folder'"' "$manifest")"
     version="$(jq -r '.version' "$manifest")"
     title="$(jq -r '.title // "'$id'"' "$manifest")"
@@ -499,6 +502,7 @@ pack_folder_store() {
     tags="$(jq -c '.tags // []' "$manifest")"
     requires="$(jq -c '.requires // []' "$manifest")"
     unlisted="$(jq -c '.unlisted // false' "$manifest")"
+    defold_min_version="$(jq -r '.defold_min_version // empty' "$manifest")"
 
     if [[ -z "$version" || "$version" == "null" ]]; then
       echo "  ❌ ERROR: $author:$id@$version has no version" >&2
@@ -565,7 +569,7 @@ pack_folder_store() {
       "$api_url" "$author_url" "$example_url" "$example_code_url" \
       "$image_url" "$zip_url" "$json_zip_url" "$sha256" \
       "$manifest_url" "$size" "$depends" "$tags" "$requires" "$unlisted" \
-      "$download_stats")"
+      "$download_stats" "$defold_min_version")"
 
     # Add item to index
     jq --argjson item "$item" '.items += [$item]' "$tmp_index" > "${tmp_index}.tmp" && mv "${tmp_index}.tmp" "$tmp_index"
@@ -638,7 +642,7 @@ pack_dependency_store() {
 
     # Read manifest fields
     local id version title author description api author_url image_rel
-    local depends tags content unlisted example_code example_url stars
+    local depends tags content unlisted example_code example_url stars min_versions
     id="$(jq -r '.id // "'$asset_folder'"' "$manifest")"
     version="$(jq -r '.version // null' "$manifest")"
     title="$(jq -r '.title // "'$id'"' "$manifest")"
@@ -654,6 +658,7 @@ pack_dependency_store() {
     example_code="$(jq -r '.example_code // empty' "$manifest")"
     example_url="$(jq -r '.example_url // empty' "$manifest")"
     stars="$(jq -r '.stars // null' "$manifest")"
+    min_versions="$(jq -c '.min_versions // {}' "$manifest")"
 
     if [[ -z "$author" || "$author" == "null" ]]; then
       local display_id="${id}"
@@ -694,7 +699,8 @@ pack_dependency_store() {
       "$id" "$version" "$title" "$author" "$description" \
       "$api_url" "$author_url" "$image_url" "$manifest_url" \
       "$depends" "$tags" "$content" "$unlisted" \
-      "$download_stats" "$example_code_url" "$example_url" "$stars")"
+      "$download_stats" "$example_code_url" "$example_url" "$stars" \
+      "$min_versions")"
 
     # Add item to index
     jq --argjson item "$item" '.items += [$item]' "$tmp_index" > "${tmp_index}.tmp" && mv "${tmp_index}.tmp" "$tmp_index"

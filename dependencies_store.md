@@ -25,6 +25,21 @@ To add API button to your dependency, you need to add the `api` field to your de
 
 The `api` field should point to the API documentation of your dependency.
 
+## Minimum Defold version
+
+A dependency version can require a newer Defold than the one you run. Such versions are shown in the version dropdown as `4.7.7 — needs Defold 1.13.1` and cannot be selected, since the editor refuses to fetch them anyway. `Install` picks the newest version your editor supports, and `Update` stays disabled once you are on it.
+
+This comes from the `min_versions` field, filled automatically by the asset-portal sync from the `min_defold_version` of a release:
+
+```json
+"min_versions": {
+	"4.7.0": "1.13.1",
+	"4.7.7": "1.13.1"
+}
+```
+
+A release declares it with a Defold badge in its GitHub release notes, e.g. `https://img.shields.io/badge/Defold-1.13.1-blue`. Versions without an entry are treated as usable by any editor version.
+
 ## Example of dependency file
 
 ```json
