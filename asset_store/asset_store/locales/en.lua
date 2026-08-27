@@ -53,6 +53,9 @@ return {
 	widget_card_size_separator = "• ",
 	widget_card_unknown_size = "Unknown size",
 	widget_card_no_description = "No description available",
+	widget_card_version_needs = " — needs Defold %s",
+	widget_card_latest_needs_defold = "⚠ %s needs Defold %s, you have %s",
+	widget_card_requires_defold = "⚠ Requires Defold %s, you have %s",
 
 	-- Sort Options
 	sort_asset_name = "Asset Name",
@@ -83,6 +86,8 @@ return {
 	messages_error = "Error: %s",
 	messages_error_failed_load_store = "Error: Failed to load store: %s",
 	messages_error_could_not_find_url = "Error: Could not find URL for version: %s",
+	messages_version_not_supported = "Version %s needs Defold %s, you have %s",
+	messages_no_compatible_version = "No version compatible with Defold %s",
 	messages_installation_successful = "Installation successful",
 	messages_installation_failed = "Installation failed",
 	messages_update_successful = "Update successful",

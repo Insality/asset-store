@@ -3,6 +3,7 @@ local constants = require("asset_store.asset_store.constants")
 local internal = require("asset_store.asset_store.asset_store_internal")
 local asset_handlers = require("asset_store.asset_store.asset_handlers")
 local dialog_utils = require("asset_store.asset_store.ui.store_dialog_utils")
+local version_utils = require("asset_store.asset_store.version_utils")
 local dialog_ui = require("asset_store.asset_store.ui.dialog")
 local filters_ui = require("asset_store.asset_store.ui.filters")
 local locales = require("asset_store.asset_store.locales")
@@ -157,12 +158,12 @@ function M.create_dialog_component(config, initial_items, initial_install_folder
 		end
 
 		-- Handle version change (immediately update or remove dependency)
-		local function on_version_change(item, selected_version_name)
-			if asset_type ~= "dependency" then
+		local function on_version_change(item, selected_option)
+			if asset_type ~= "dependency" or not selected_option then
 				return
 			end
 
-			if selected_version_name == locales.get("actions_delete") then
+			if selected_option.is_delete then
 				asset_handlers.handle_remove(item, asset_type,
 					function(message)
 						set_install_status(locales.get("messages_success", message))
@@ -175,19 +176,18 @@ function M.create_dialog_component(config, initial_items, initial_install_folder
 				return
 			end
 
-			local selected_url = nil
-			if item.content then
-				for _, url in ipairs(item.content) do
-					local version_name = dialog_utils.extract_version_name_from_url(url)
-					if version_name == selected_version_name then
-						selected_url = url
-						break
-					end
-				end
+			-- The editor refuses to fetch versions that require a newer Defold, so do not offer them
+			if not selected_option.supported then
+				set_install_status(locales.get("messages_version_not_supported",
+					selected_option.name,
+					selected_option.min_version or "?",
+					version_utils.get_editor_version() or "?"))
+				return
 			end
 
+			local selected_url = selected_option.url
 			if not selected_url then
-				set_install_status(locales.get("messages_error_could_not_find_url", selected_version_name))
+				set_install_status(locales.get("messages_error_could_not_find_url", selected_option.name))
 				return
 			end
 

@@ -1,8 +1,10 @@
 ---For ui.image disable now
 ---@diagnostic disable: undefined-field
 
+local dialog_utils = require("asset_store.asset_store.ui.store_dialog_utils")
 local locales = require("asset_store.asset_store.locales")
 local ui_utils = require("asset_store.asset_store.ui.ui_utils")
+local version_utils = require("asset_store.asset_store.version_utils")
 
 
 local DEFAULT_LABELS = {
@@ -49,6 +51,11 @@ function M.create(item, context)
 	-- Detect if this is a dependency (has content array)
 	local is_dependency = item.content and type(item.content) == "table" and #item.content > 0
 
+	-- Defold version requirements: the newest version may need a newer editor than we run
+	local editor_version = version_utils.get_editor_version()
+	local blocked_version, blocked_min_version = version_utils.get_blocked_version_info(item)
+	local has_supported_version = version_utils.has_supported_version(item)
+
 	local tags_prefix = item.tags and #item.tags > 0 and labels.tags_prefix or ""
 	local tags_values = item.tags and #item.tags > 0 and table.concat(item.tags, ", ") or ""
 	local deps_prefix = item.depends and #item.depends > 0 and labels.depends_prefix or ""
@@ -67,6 +74,19 @@ function M.create(item, context)
 		-- Show installed version for dependencies
 		table.insert(header_left, editor.ui.label({
 			text = (installed_version_name or item.version),
+			color = editor.ui.COLOR.WARNING
+		}))
+	end
+
+	-- Warn when the newest version needs a newer Defold than the one we run
+	if blocked_min_version and editor_version then
+		-- When nothing is usable, report the cheapest upgrade instead of the newest version's need
+		local lowest_requirement = version_utils.get_lowest_requirement(item) or blocked_min_version
+		local warning_text = has_supported_version
+			and locales.get("widget_card_latest_needs_defold", tostring(blocked_version), blocked_min_version, editor_version)
+			or locales.get("widget_card_requires_defold", lowest_requirement, editor_version)
+		table.insert(header_left, editor.ui.label({
+			text = warning_text,
 			color = editor.ui.COLOR.WARNING
 		}))
 	end
@@ -192,7 +212,7 @@ function M.create(item, context)
 		table.insert(button_children, editor.ui.button({
 			text = labels.install_button,
 			on_pressed = on_install,
-			enabled = not is_installed
+			enabled = not is_installed and has_supported_version
 		}))
 	end
 
@@ -220,7 +240,7 @@ function M.create(item, context)
 		local selected_value = nil
 		if installed_version_name then
 			for _, option in ipairs(version_options) do
-				if option == installed_version_name then
+				if option.name == installed_version_name then
 					selected_value = option
 					break
 				end
@@ -231,10 +251,11 @@ function M.create(item, context)
 			grow = true,
 			value = selected_value,
 			options = version_options,
-			on_value_changed = function(selected_version_name)
-				-- Pass selected version name directly to on_version_change
-				-- It will handle both version updates and "delete" option
-				on_version_change(item, selected_version_name)
+			to_string = dialog_utils.get_version_option_label,
+			on_value_changed = function(selected_option)
+				-- Pass selected option directly to on_version_change
+				-- It will handle version updates, unsupported versions and the "delete" option
+				on_version_change(item, selected_option)
 			end
 		}))
 	end

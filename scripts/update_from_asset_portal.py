@@ -374,7 +374,11 @@ def create_new_asset_file(
         library_url = portal_data.get('library_url')
         if library_url:
             new_data['content'] = [library_url]
-    
+
+    # Minimum Defold version per shipped version, when the release declares one
+    if has_releases:
+        apply_min_versions(new_data, releases_to_use)
+
     # Remove None values
     new_data = {k: v for k, v in new_data.items() if v is not None}
     
@@ -405,6 +409,9 @@ def _merge_release_sources(release_tags: List[Dict], releases: List[Dict]) -> Li
             by_zip[z]['published_at'] = r.get('published_at')
         if r.get('message') and 'message' not in by_zip[z]:
             by_zip[z]['message'] = r.get('message')
+        # min_defold_version only ever comes from `releases` (release_tags has no notes to parse)
+        if r.get('min_defold_version') and not by_zip[z].get('min_defold_version'):
+            by_zip[z]['min_defold_version'] = r.get('min_defold_version')
     return list(by_zip.values())
 
 
@@ -434,6 +441,89 @@ def get_releases_to_use(portal_data: Dict, local_data: Optional[Dict] = None) ->
     if has_release_tags:
         return release_tags
     return None
+
+
+def normalize_min_defold_version(value: Optional[str]) -> Optional[str]:
+    """
+    Normalize a minimum Defold version declared by an asset.
+
+    Portal values come from a shields.io badge in the release notes, so they may carry
+    decoration like "1.12.2+" or "v1.12.2". Returns a plain "X.Y.Z" string, or None.
+    """
+    if not value or not isinstance(value, str):
+        return None
+
+    cleaned = value.strip().lstrip('vV')
+    match = re.match(r'^(\d+(?:\.\d+)*)', cleaned)
+    if not match:
+        return None
+
+    return match.group(1)
+
+
+def version_name_from_url(url: str) -> Optional[str]:
+    """
+    Version name for a content URL, matching the editor script exactly
+    (see extract_version_name_from_url in asset_store/ui/store_dialog_utils.lua):
+    last path segment with a trailing ".zip" removed.
+    """
+    if not url or not isinstance(url, str):
+        return None
+
+    path = url.split('?')[0].rstrip('/')
+    filename = path.split('/')[-1]
+    if not filename:
+        return None
+
+    return filename[:-4] if filename.endswith('.zip') else filename
+
+
+def build_min_versions(content: List[str], portal_releases: List[Dict]) -> Dict[str, str]:
+    """
+    Build a {version name -> minimum Defold version} map for the content URLs we ship.
+    Only versions that actually declare a requirement end up in the map.
+    """
+    url_to_min = {}
+    for release in portal_releases or []:
+        zip_url = release.get('zip')
+        min_version = normalize_min_defold_version(release.get('min_defold_version'))
+        if zip_url and min_version:
+            url_to_min[zip_url] = min_version
+
+    if not url_to_min:
+        return {}
+
+    min_versions = {}
+    for url in content or []:
+        min_version = url_to_min.get(url)
+        if not min_version:
+            continue
+        version_name = version_name_from_url(url)
+        if version_name:
+            min_versions[version_name] = min_version
+
+    return min_versions
+
+
+def apply_min_versions(local_data: Dict, portal_releases: List[Dict]) -> bool:
+    """
+    Write the min_versions map into the local asset data.
+    Returns True when the stored value changed.
+    """
+    min_versions = build_min_versions(local_data.get('content', []), portal_releases)
+    old_min_versions = local_data.get('min_versions')
+
+    if not min_versions:
+        if 'min_versions' in local_data:
+            del local_data['min_versions']
+            return True
+        return False
+
+    if old_min_versions == min_versions:
+        return False
+
+    local_data['min_versions'] = min_versions
+    return True
 
 
 def get_existing_content_urls(local_data: Dict) -> Set[str]:
@@ -711,6 +801,9 @@ def update_local_asset(local_path: Path, portal_data: Dict) -> Dict[str, int]:
             stats['updated'] = True
             if 'content (resorted)' not in stats['fields_updated']:
                 stats['fields_updated'].append('content (resorted)')
+        if apply_min_versions(local_data, releases_to_use):
+            stats['updated'] = True
+            stats['fields_updated'].append('min_versions')
 
     # Save if updated
     if stats['updated']:

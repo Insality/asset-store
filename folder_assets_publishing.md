@@ -52,6 +52,7 @@ The **manifest format and publishing steps are the same** for all of these store
 | `author_url`   | string   | Link to author (e.g. `"https://github.com/Insality"`). |
 | `unlisted`     | boolean  | If `true`, hide from the default listing. The asset can still be found when the user searches for its exact ID. |
 | `requires`     | string[] | Folder paths that must exist in the project for this asset to be shown (e.g. `["/decore", "/token"]`). The asset is visible only when **all** listed folders exist. |
+| `defold_min_version` | string | Minimum Defold version the asset needs (e.g. `"1.13.1"`). On older editors the asset is listed with a warning and cannot be installed. |
 
 Paths in `api`, `example`, and `example_code` can be relative to the asset folder or absolute from the repo root. For `example`, use the path that points to the `.collection` file so the build can run the example. Examples are built automatically when you provide correct `example` (and optionally `example_code`) links; you do not need to host the example yourself.
 

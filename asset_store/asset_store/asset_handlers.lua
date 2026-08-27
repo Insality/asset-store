@@ -1,6 +1,24 @@
 local adapters = require("asset_store.asset_store.adapters.adapters")
 local locales = require("asset_store.asset_store.locales")
 local update_confirmation_ui = require("asset_store.asset_store.ui.update_confirmation")
+local version_utils = require("asset_store.asset_store.version_utils")
+
+
+---Report assets that require a newer Defold than the one we run
+---@param item table - Asset item
+---@param on_error function - Error callback
+---@return boolean is_blocked True if the asset cannot be used at all
+local function reject_unsupported(item, on_error)
+	if version_utils.has_supported_version(item) then
+		return false
+	end
+
+	local message = locales.get("messages_no_compatible_version", version_utils.get_editor_version() or "?")
+	print("Asset requires a newer Defold:", item.id, message)
+	on_error(message)
+
+	return true
+end
 
 
 local M = {}
@@ -16,6 +34,10 @@ local M = {}
 ---@param source_folder string|nil - Store source folder for path replacement (folder-type only)
 function M.handle_install(item, install_folder, all_items, asset_type, on_success, on_error, source_folder)
 	local adapter = adapters.get_adapter(asset_type)
+
+	if reject_unsupported(item, on_error) then
+		return
+	end
 
 	print("Installing " .. asset_type .. ":", item.id)
 
@@ -41,6 +63,10 @@ end
 ---@param new_url string|nil - Optional URL to update to (if nil, uses latest from can_update)
 function M.handle_update(item, all_items, asset_type, install_folder, on_success, on_error, new_url)
 	local adapter = adapters.get_adapter(asset_type)
+
+	if reject_unsupported(item, on_error) then
+		return
+	end
 
 	-- For widgets (folder type), show confirmation dialog
 	if asset_type == "folder" then

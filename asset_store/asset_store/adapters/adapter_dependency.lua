@@ -2,6 +2,7 @@
 --- Handles dependency installation to game.project
 --- Adds dependency URLs to game.project file instead of copying files
 local internal = require("asset_store.asset_store.asset_store_internal")
+local version_utils = require("asset_store.asset_store.version_utils")
 
 local M = {}
 
@@ -257,12 +258,19 @@ function M.install_dependency(item, all_items, installing_set)
 		end
 	end
 
-	-- Use the latest version (last element in content array, sorted by date ascending)
-	local latest_url = M.get_latest_version_url(item)
+	-- Use the latest version the current editor can actually fetch
+	local latest_url = M.get_latest_compatible_version_url(item)
 	if not latest_url or latest_url == "" then
 		if installing_set then
 			installing_set[item.id] = nil
 		end
+
+		local min_version = version_utils.get_lowest_requirement(item)
+		if min_version then
+			return false, "All versions of " .. item.id .. " require a newer Defold (" ..
+				min_version .. " or newer)"
+		end
+
 		return false, "No valid dependency URL found in content array"
 	end
 
@@ -335,6 +343,20 @@ function M.get_latest_version_url(item)
 end
 
 
+---Get the latest version URL that can be used with the current Defold version
+---@param item table - Dependency item with content array
+---@return string|nil - Latest compatible version URL or nil if every version requires a newer editor
+---@note Versions that declare a `defold_min_version` above the running editor are skipped,
+---@note since the editor refuses to fetch them anyway
+function M.get_latest_compatible_version_url(item)
+	if not item.content or type(item.content) ~= "table" or #item.content == 0 then
+		return nil
+	end
+
+	return version_utils.get_latest_supported_url(item)
+end
+
+
 ---Check if a dependency can be updated
 ---@param item table - Dependency item with content array
 ---@return boolean, string|nil - True if can be updated, and new version URL if available
@@ -352,7 +374,7 @@ function M.can_update_dependency(item)
 		return false, nil
 	end
 
-	local latest_url = M.get_latest_version_url(item)
+	local latest_url = M.get_latest_compatible_version_url(item)
 	if not latest_url then
 		return false, nil
 	end
