@@ -1,0 +1,18 @@
+{
+	"author": "Insality",
+	"id": "gradient_text",
+	"version": 1,
+	"title": "Gradient Text Material",
+	"description": "Distance-field font material with a vertical glyph gradient. Color is the top, shadow color is the bottom",
+	"api": "gradient_text.md",
+	"example": "/materials/Insality/gradient_text/example/example_gradient_text.collection",
+	"example_code": "/materials/Insality/gradient_text/example/example_gradient_text.gui_script",
+	"author_url": "https://github.com/Insality",
+	"tags": ["material", "GUI", "shader", "font"],
+	"content": [
+		"gradient_text.material",
+		"gradient_text.vp",
+		"gradient_text.fp",
+		"gradient_text.md"
+	]
+}

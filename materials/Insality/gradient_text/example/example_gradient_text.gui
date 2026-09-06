@@ -1,0 +1,196 @@
+script: "/materials/Insality/gradient_text/example/example_gradient_text.gui_script"
+fonts {
+  name: "gradient_text"
+  font: "/materials/Insality/gradient_text/example/gradient_text.font"
+}
+nodes {
+  position {
+    x: 960.0
+    y: 900.0
+  }
+  size {
+    x: 1400.0
+    y: 120.0
+  }
+  color {
+    y: 0.95
+    z: 0.45
+  }
+  type: TYPE_TEXT
+  text: "GRADIENT TEXT"
+  font: "gradient_text"
+  id: "title"
+  material: "gradient_text"
+  outline {
+    x: 0.2
+    y: 0.08
+  }
+  shadow {
+    x: 0.9
+    y: 0.35
+    z: 0.05
+  }
+  inherit_alpha: true
+  outline_alpha: 0.0
+}
+nodes {
+  position {
+    x: 960.0
+    y: 720.0
+  }
+  size {
+    x: 1000.0
+    y: 100.0
+  }
+  color {
+    y: 0.55
+    z: 0.35
+  }
+  type: TYPE_TEXT
+  text: "Sunset"
+  font: "gradient_text"
+  id: "sunset"
+  material: "gradient_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 0.55
+    y: 0.1
+    z: 0.35
+  }
+  inherit_alpha: true
+  outline_alpha: 0.0
+}
+nodes {
+  position {
+    x: 960.0
+    y: 560.0
+  }
+  size {
+    x: 1000.0
+    y: 100.0
+  }
+  color {
+    x: 0.45
+    y: 0.95
+  }
+  type: TYPE_TEXT
+  text: "Ocean"
+  font: "gradient_text"
+  id: "ocean"
+  material: "gradient_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 0.1
+    y: 0.25
+    z: 0.75
+  }
+  inherit_alpha: true
+  outline_alpha: 0.0
+}
+nodes {
+  position {
+    x: 960.0
+    y: 400.0
+  }
+  size {
+    x: 1000.0
+    y: 100.0
+  }
+  color {
+    x: 0.85
+    z: 0.4
+  }
+  type: TYPE_TEXT
+  text: "Neon"
+  font: "gradient_text"
+  id: "neon"
+  material: "gradient_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 0.9
+    y: 0.15
+    z: 0.85
+  }
+  inherit_alpha: true
+  outline_alpha: 0.0
+}
+nodes {
+  position {
+    x: 960.0
+    y: 240.0
+  }
+  size {
+    x: 1000.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Outline"
+  font: "gradient_text"
+  id: "outline"
+  material: "gradient_text"
+  outline {
+    x: 0.05
+    y: 0.1
+    z: 0.35
+  }
+  shadow {
+    x: 0.35
+    y: 0.7
+    z: 1.0
+  }
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 960.0
+    y: 80.0
+  }
+  scale {
+    x: 0.35
+    y: 0.35
+  }
+  size {
+    x: 2500.0
+    y: 80.0
+  }
+  color {
+    x: 0.75
+    y: 0.78
+    z: 0.82
+  }
+  type: TYPE_TEXT
+  text: "Color = top   Shadow = bottom   Shadow Alpha = softness"
+  font: "gradient_text"
+  id: "hint"
+  material: "gradient_text"
+  outline {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+  shadow {
+    x: 0.45
+    y: 0.48
+    z: 0.52
+  }
+  inherit_alpha: true
+  outline_alpha: 0.0
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+materials {
+  name: "gradient_text"
+  material: "/materials/Insality/gradient_text/gradient_text.material"
+}

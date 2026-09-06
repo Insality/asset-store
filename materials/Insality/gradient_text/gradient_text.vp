@@ -1,0 +1,37 @@
+#version 140
+
+in mediump vec4 position;
+in mediump vec2 texcoord0;
+in mediump vec4 sdf_params;
+in mediump vec4 face_color;
+in mediump vec4 outline_color;
+in mediump vec4 shadow_color;
+in mediump vec3 layer_mask;
+
+out mediump vec2 var_texcoord0;
+out mediump vec4 var_face_color;
+out mediump vec4 var_outline_color;
+out mediump vec4 var_shadow_color;
+out mediump vec4 var_sdf_params;
+out mediump vec4 var_layer_mask;
+out mediump float var_cell_t;
+
+uniform vs_uniforms
+{
+	highp mat4 view_proj;
+	mediump vec4 texture_size_recip;
+};
+
+void main()
+{
+	var_texcoord0 = texcoord0;
+	var_face_color = face_color;
+	var_outline_color = vec4(outline_color.xyz * outline_color.w, outline_color.w);
+	var_shadow_color = shadow_color;
+	var_sdf_params = sdf_params;
+	var_layer_mask.rgb = layer_mask;
+	var_layer_mask.a = layer_mask.r * layer_mask.g * layer_mask.b;
+	// Un-fracted cell Y so interpolation stays valid across the glyph quad.
+	var_cell_t = texcoord0.y / max(texture_size_recip.w, 0.0001);
+	gl_Position = view_proj * vec4(position.xyz, 1.0);
+}

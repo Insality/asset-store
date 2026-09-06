@@ -1,0 +1,22 @@
+--- Apply a vertical glyph gradient.
+--- Color is the top of the glyph, shadow is the bottom.
+--- Shadow alpha is softness: 1 = full-height blend, lower = sharper mid split.
+---@param node node
+---@param top vector4
+---@param bottom vector4
+local function set_gradient(node, top, bottom)
+	gui.set_color(node, top)
+	gui.set_shadow(node, bottom)
+end
+
+function init(self)
+	set_gradient(gui.get_node("title"), vmath.vector4(1.0, 0.95, 0.45, 1.0), vmath.vector4(0.9, 0.35, 0.05, 1.0))
+	set_gradient(gui.get_node("sunset"), vmath.vector4(1.0, 0.55, 0.35, 1.0), vmath.vector4(0.55, 0.1, 0.35, 1.0))
+	set_gradient(gui.get_node("ocean"), vmath.vector4(0.45, 0.95, 1.0, 1.0), vmath.vector4(0.1, 0.25, 0.75, 1.0))
+	set_gradient(gui.get_node("neon"), vmath.vector4(0.85, 1.0, 0.4, 1.0), vmath.vector4(0.9, 0.15, 0.85, 1.0))
+	set_gradient(gui.get_node("outline"), vmath.vector4(1.0, 1.0, 1.0, 1.0), vmath.vector4(0.35, 0.7, 1.0, 1.0))
+	gui.set_outline(gui.get_node("outline"), vmath.vector4(0.05, 0.1, 0.35, 1.0))
+
+	gui.animate(gui.get_node("neon"), "color.x", 0.2, gui.EASING_INOUTSINE, 2.5, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+	gui.animate(gui.get_node("neon"), "shadow.y", 1.0, gui.EASING_INOUTSINE, 2.5, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+end
