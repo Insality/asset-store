@@ -1,0 +1,19 @@
+{
+	"author": "Defold",
+	"id": "energy-saver",
+	"title": "Energy Saver",
+	"description": "Reduce a Defold game's power use after periods of inactivity by lowering its frame rate, dimming the screen, or pausing rendering. Each measure has a configurable delay and can be disabled when needed. Requires Defold 1.13.2 or newer.",
+	"tags": [
+		"Device",
+		"Rendering",
+		"Utilities"
+	],
+	"stars": 9,
+	"content": [
+		"https://github.com/defold/extension-energy-saver/archive/refs/tags/1.0.0.zip",
+		"https://github.com/defold/extension-energy-saver/archive/refs/tags/1.1.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-energy-saver",
+	"author_url": "https://github.com/defold",
+	"image": "energy-saver-thumb.jpg"
+}

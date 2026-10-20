@@ -8,7 +8,7 @@
 		"Platform",
 		"Achievements"
 	],
-	"stars": 32,
+	"stars": 34,
 	"content": [
 		"https://github.com/defold/extension-gpgs/archive/refs/tags/0.7.0.zip",
 		"https://github.com/defold/extension-gpgs/archive/refs/tags/0.7.1.zip",
@@ -44,7 +44,8 @@
 		"https://github.com/defold/extension-gpgs/archive/refs/tags/4.1.0.zip",
 		"https://github.com/defold/extension-gpgs/archive/refs/tags/4.2.0.zip",
 		"https://github.com/defold/extension-gpgs/archive/refs/tags/4.2.1.zip",
-		"https://github.com/defold/extension-gpgs/archive/refs/tags/5.0.0.zip"
+		"https://github.com/defold/extension-gpgs/archive/refs/tags/5.0.0.zip",
+		"https://github.com/defold/extension-gpgs/archive/refs/tags/5.0.1.zip"
 	],
 	"example_code": "https://www.github.com/defold/extension-gpgs",
 	"image": "googleplaygameservices-thumb.jpg",

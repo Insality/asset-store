@@ -1,0 +1,21 @@
+{
+	"author": "Evandro Costa",
+	"id": "tilemaps-store",
+	"title": "Tilemaps Store for Defold",
+	"description": "Import Tilemaps.com projects into Defold from the editor. Browse your own, shared, and purchased maps, then import a stable release or the latest development build. Supports orthogonal and isometric tilemaps, including infinite maps.",
+	"tags": [
+		"Editor",
+		"Tilemaps",
+		"Tools"
+	],
+	"stars": 5,
+	"content": [
+		"https://github.com/EVEVGames/Tilemaps-Store-for-Defold/archive/refs/tags/1.0.zip",
+		"https://github.com/EVEVGames/Tilemaps-Store-for-Defold/archive/refs/tags/1.1.zip",
+		"https://github.com/EVEVGames/Tilemaps-Store-for-Defold/archive/refs/tags/1.2.zip",
+		"https://github.com/EVEVGames/Tilemaps-Store-for-Defold/archive/refs/tags/1.3.zip"
+	],
+	"example_code": "https://github.com/EVEVGames/Tilemaps-Store-for-Defold",
+	"author_url": "https://github.com/EVEVGames",
+	"image": "tilemaps-store-thumb.jpg"
+}

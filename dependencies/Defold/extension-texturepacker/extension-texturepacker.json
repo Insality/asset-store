@@ -8,7 +8,7 @@
 		"Tools",
 		"Filesystem"
 	],
-	"stars": 22,
+	"stars": 23,
 	"content": [
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/1.0.zip",
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/1.1.zip",
@@ -25,7 +25,11 @@
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.4.0.zip",
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.5.0.zip",
 		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.6.0.zip",
-		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.7.0.zip"
+		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.7.0.zip",
+		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.8.0.zip",
+		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.8.1.zip",
+		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.8.2.zip",
+		"https://github.com/defold/extension-texturepacker/archive/refs/tags/2.9.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-texturepacker",
 	"author_url": "https://github.com/defold",

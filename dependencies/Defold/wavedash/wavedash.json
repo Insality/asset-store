@@ -8,10 +8,12 @@
 		"Platform",
 		"Social"
 	],
-	"stars": 4,
+	"stars": 5,
 	"content": [
 		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.0.0.zip",
-		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.1.0.zip"
+		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.1.0.zip",
+		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.2.0.zip",
+		"https://github.com/wvdsh/sdk-defold/archive/refs/tags/1.3.0.zip"
 	],
 	"example_code": "https://github.com/wvdsh/sdk-defold",
 	"author_url": "https://github.com/wvdsh",

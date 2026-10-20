@@ -1,0 +1,16 @@
+{
+	"author": "Miad",
+	"id": "myket",
+	"title": "Myket IAP for Defold",
+	"description": "An Android native extension that adds Myket in-app purchases to the Defold game engine. The Lua API intentionally follows Defold's IAP extension and is exposed as iapm.",
+	"tags": [
+		"Tools"
+	],
+	"stars": 2,
+	"content": [
+		"https://github.com/itzmiadm/Myket-IAP-Defold/archive/refs/tags/1.2.0.zip"
+	],
+	"example_code": "https://github.com/itzmiadm/Myket-IAP-Defold",
+	"author_url": "https://github.com/itzmiadm",
+	"image": "myket-thumb.jpg"
+}

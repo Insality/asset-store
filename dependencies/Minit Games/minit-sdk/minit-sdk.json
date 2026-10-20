@@ -7,9 +7,12 @@
 		"Platform",
 		"Social"
 	],
-	"stars": 0,
+	"stars": 1,
 	"content": [
-		"https://github.com/Minit-Games/minit-defold/archive/refs/tags/v0.1.0.zip"
+		"https://github.com/Minit-Games/minit-defold/archive/refs/tags/v0.1.0.zip",
+		"https://github.com/Minit-Games/minit-defold/archive/refs/tags/v0.2.0.zip",
+		"https://github.com/Minit-Games/minit-defold/archive/refs/tags/v0.3.0.zip",
+		"https://github.com/Minit-Games/minit-defold/archive/refs/tags/v1.16.0.zip"
 	],
 	"example_code": "https://github.com/Minit-Games/minit-defold",
 	"author_url": "https://github.com/Minit-Games",

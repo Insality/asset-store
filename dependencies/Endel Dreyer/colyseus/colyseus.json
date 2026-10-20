@@ -7,7 +7,7 @@
 		"Network",
 		"Platform"
 	],
-	"stars": 70,
+	"stars": 69,
 	"content": [
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.8.0.zip",
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.9.0.zip",
@@ -61,7 +61,9 @@
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.2.zip",
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.3.zip",
 		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.4.zip",
-		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.5.zip"
+		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.17.5.zip",
+		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.18.0.zip",
+		"https://github.com/colyseus/colyseus-defold/archive/refs/tags/0.18.1.zip"
 	],
 	"example_code": "https://github.com/colyseus/colyseus-defold",
 	"author_url": "https://github.com/colyseus",

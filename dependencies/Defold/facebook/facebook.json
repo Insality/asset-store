@@ -7,9 +7,8 @@
 		"Social",
 		"Platform"
 	],
-	"stars": 12,
+	"stars": 13,
 	"content": [
-		"https://github.com/defold/extension-facebook/archive/refs/tags/v1.0.zip",
 		"https://github.com/defold/extension-facebook/archive/refs/tags/v1.1.zip",
 		"https://github.com/defold/extension-facebook/archive/refs/tags/v1.2.zip",
 		"https://github.com/defold/extension-facebook/archive/refs/tags/v1.3.zip",
@@ -58,7 +57,11 @@
 		"https://github.com/defold/extension-facebook/archive/refs/tags/8.0.0.zip",
 		"https://github.com/defold/extension-facebook/archive/refs/tags/8.0.1.zip",
 		"https://github.com/defold/extension-facebook/archive/refs/tags/9.0.0.zip",
-		"https://github.com/defold/extension-facebook/archive/refs/tags/9.0.1.zip"
+		"https://github.com/defold/extension-facebook/archive/refs/tags/9.0.1.zip",
+		"https://github.com/defold/extension-facebook/archive/refs/tags/9.0.2.zip",
+		"https://github.com/defold/extension-facebook/archive/refs/tags/9.1.0.zip",
+		"https://github.com/defold/extension-facebook/archive/refs/tags/10.0.0.zip",
+		"https://github.com/defold/extension-facebook/archive/refs/tags/v1.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-facebook",
 	"author_url": "https://github.com/defold",

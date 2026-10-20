@@ -1,0 +1,19 @@
+{
+	"author": "Defold",
+	"id": "photon-fusion",
+	"title": "Photon Fusion",
+	"description": "Photon Fusion brings scalable multiplayer networking to Defold as a drop-in native extension.",
+	"tags": [
+		"Network"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/defold/extension-photon-fusion/archive/refs/tags/0.5.0.zip",
+		"https://github.com/defold/extension-photon-fusion/archive/refs/tags/1.0.zip",
+		"https://github.com/defold/extension-photon-fusion/archive/refs/tags/1.0.1.zip",
+		"https://github.com/defold/extension-photon-fusion/archive/refs/tags/1.1.0.zip"
+	],
+	"example_code": "https://github.com/defold/extension-photon-fusion",
+	"author_url": "https://github.com/defold",
+	"image": "photon-fusion-thumb.jpg"
+}

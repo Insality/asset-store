@@ -9,13 +9,15 @@
 		"Tools",
 		"Filesystem"
 	],
-	"stars": 11,
+	"stars": 14,
 	"content": [
 		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/1.0.zip",
 		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/1.1.zip",
 		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/1.2.zip",
 		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/2.0.zip",
-		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/2.1.zip"
+		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/2.1.zip",
+		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/2.2.zip",
+		"https://github.com/HGPoint/defold_live_unbundler/archive/refs/tags/2.3.zip"
 	],
 	"example_code": "https://github.com/HGPoint/defold_live_unbundler",
 	"author_url": "https://github.com/HGPoint",

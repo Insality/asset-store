@@ -1,0 +1,18 @@
+{
+	"author": "Defold",
+	"id": "youtube-playables",
+	"title": "YouTube Playables SDK",
+	"description": "Defold native extension for the YouTube Playables SDK. Access game lifecycle, saved data, audio and pause events, scores, YouTube content, rewarded and interstitial ads, and error reporting from Lua.",
+	"tags": [
+		"Ads",
+		"Platform",
+		"Social"
+	],
+	"stars": 3,
+	"content": [
+		"https://github.com/defold/extension-playables/archive/refs/heads/master.zip"
+	],
+	"example_code": "https://github.com/defold/extension-playables",
+	"author_url": "https://github.com/defold",
+	"image": "youtube-playables-thumb.jpg"
+}

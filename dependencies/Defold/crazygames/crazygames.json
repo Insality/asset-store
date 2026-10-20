@@ -10,12 +10,13 @@
 		"Network",
 		"Monetization"
 	],
-	"stars": 15,
+	"stars": 16,
 	"content": [
 		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.0.0.zip",
 		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.1.0.zip",
 		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.1.1.zip",
-		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.2.0.zip"
+		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.2.0.zip",
+		"https://github.com/defold/extension-crazygames/archive/refs/tags/1.3.0.zip"
 	],
 	"example_code": "https://github.com/defold/extension-crazygames",
 	"author_url": "https://github.com/defold",

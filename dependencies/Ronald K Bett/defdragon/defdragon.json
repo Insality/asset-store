@@ -7,7 +7,7 @@
 		"Animation",
 		"Rendering"
 	],
-	"stars": 7,
+	"stars": 9,
 	"content": [
 		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.1-alpha.zip",
 		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.0.2.zip",
@@ -34,7 +34,8 @@
 		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.7.0.zip",
 		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.7.1.zip",
 		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.7.2.zip",
-		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.7.3.zip"
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.7.3.zip",
+		"https://github.com/wraplord/extension-dragonbones/archive/refs/tags/0.7.4.zip"
 	],
 	"example_code": "https://github.com/wraplord/extension-dragonbones",
 	"author_url": "https://github.com/wraplord",
